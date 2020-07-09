@@ -6,20 +6,3 @@
 ## Currently
 
 - Senior Android Developer at DevGrid.
-
-## Education
-
-#### Android Development
-- Android Development
-- Nanodegree Program Course
-- *Udacity*
-
-#### Computer Scientist
-- Parallel Computing
-- Master degree Program
-- *Federal University of Rio Grande do Sul*
-
-#### **Software Engineer**
-- Self-adaptative Systems
-- Bachelor degree
-- *Federal University of Pampa*
