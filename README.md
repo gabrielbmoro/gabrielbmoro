@@ -4,6 +4,19 @@
 
 Hi, My name's Gabriel, you can call me just Moro.
 
+
+## Recent information
+
+Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat. I've worked on the following repositories:
+
+- [First Challenge - NodeJS concepts](https://github.com/gabrielbmoro/ignite-nodejs-concepts)
+
+- [Second Challenge - Middlewares](https://github.com/gabrielbmoro/ignite-nodejs-middlewares)
+
+- [Third Challenge - Working against bugs](https://github.com/gabrielbmoro/ignite-working-against-bugs)
+
+- [Fourth Challenge - Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles)
+
 ## Personal Repositories
 
 - [MovieDBApi](https://gitlab.com/gabrielbmoro/MovieDBApi)
