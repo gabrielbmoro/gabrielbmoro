@@ -17,6 +17,8 @@ Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat. I've wor
 
 - [Fourth Challenge - Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles)
 
+- [Fifth Challenge - Data Base Queries](https://github.com/gabrielbmoro/ignite-database-queries)
+
 ## Personal Repositories
 
 - [MovieDBApi](https://gitlab.com/gabrielbmoro/MovieDBApi)
