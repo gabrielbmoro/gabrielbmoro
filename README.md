@@ -21,9 +21,9 @@ Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat. I've wor
 
 ## Personal Repositories
 
-- [MovieDBApi](https://gitlab.com/gabrielbmoro/MovieDBApi)
+- [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
 
-This repository provides an Android project that uses the library Movie DB API.
+- [MovieDB - Flutter](https://github.com/gabrielbmoro/MovieDB-Flutter)
 
 - [CrazyMath](https://gitlab.com/gabrielbmoro/CrazyMath)
 
