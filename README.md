@@ -4,6 +4,17 @@
 
 Hi, My name's Gabriel, you can call me just Moro.
 
+## Personal Repositories
+
+- [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
+
+- [MovieDB - Flutter](https://github.com/gabrielbmoro/MovieDB-Flutter)
+
+- [CrazyMath](https://gitlab.com/gabrielbmoro/CrazyMath)
+
+CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+
+- [Knowledge Transfer Sessions](https://github.com/gabrielbmoro/knowledge-transfer-gbmoro)
 
 ## Recent information
 
@@ -18,15 +29,3 @@ Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat. I've wor
 - [Fourth Challenge - Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles)
 
 - [Fifth Challenge - Data Base Queries](https://github.com/gabrielbmoro/ignite-database-queries)
-
-## Personal Repositories
-
-- [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
-
-- [MovieDB - Flutter](https://github.com/gabrielbmoro/MovieDB-Flutter)
-
-- [CrazyMath](https://gitlab.com/gabrielbmoro/CrazyMath)
-
-CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
-
-- [Knowledge Transfer Sessions](https://github.com/gabrielbmoro/knowledge-transfer-gbmoro)
