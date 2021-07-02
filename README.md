@@ -20,16 +20,6 @@ CrazyMath is a project for children to practice mathematics as the game. I thoug
 
 ## Recent information
 
-Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat. I've worked on the following repositories:
+Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat.
 
-- [First Challenge - NodeJS concepts](https://github.com/gabrielbmoro/ignite-nodejs-concepts)
-
-- [Second Challenge - Middlewares](https://github.com/gabrielbmoro/ignite-nodejs-middlewares)
-
-- [Third Challenge - Working against bugs](https://github.com/gabrielbmoro/ignite-working-against-bugs)
-
-- [Fourth Challenge - Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles)
-
-- [Fifth Challenge - Data Base Queries](https://github.com/gabrielbmoro/ignite-database-queries)
-
-- [Sixth Challenge- Unit Tests](https://github.com/gabrielbmoro/ignite-unit-tests)
+- [NodeJS concepts](https://github.com/gabrielbmoro/ignite-nodejs-concepts), [Middlewares](https://github.com/gabrielbmoro/ignite-nodejs-middlewares), [Working against bugs](https://github.com/gabrielbmoro/ignite-working-against-bugs), [Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles), [Data Base Queries](https://github.com/gabrielbmoro/ignite-database-queries), and [Unit Tests](https://github.com/gabrielbmoro/ignite-unit-tests)
