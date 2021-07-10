@@ -8,18 +8,6 @@ Hi, My name's Gabriel, you can call me just Moro.
 
 - [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
 
-- [MovieDB - Flutter](https://github.com/gabrielbmoro/MovieDB-Flutter)
+- [Crazy Math - Android](https://github.com/gabrielbmoro/CrazyMath-Android)
 
-- [MovieDB - ReactNative](https://github.com/gabrielbmoro/MovieDB-ReactNative)
-
-- [CrazyMath](https://gitlab.com/gabrielbmoro/CrazyMath)
-
-CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
-
-- [Knowledge Transfer Sessions](https://github.com/gabrielbmoro/knowledge-transfer-gbmoro)
-
-## Recent information
-
-Currently, I'm learning **NodeJS** in Ignite Course made by Rocketseat.
-
-- [NodeJS concepts](https://github.com/gabrielbmoro/ignite-nodejs-concepts), [Middlewares](https://github.com/gabrielbmoro/ignite-nodejs-middlewares), [Working against bugs](https://github.com/gabrielbmoro/ignite-working-against-bugs), [Solid Principles](https://github.com/gabrielbmoro/ignite-nodejs-solid-principles), [Data Base Queries](https://github.com/gabrielbmoro/ignite-database-queries), and [Unit Tests](https://github.com/gabrielbmoro/ignite-unit-tests)
+  CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
