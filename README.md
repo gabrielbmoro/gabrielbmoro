@@ -8,6 +8,12 @@ Hi, My name's Gabriel, you can call me just Moro.
 
 - [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
 
+  [MovieDBIcon](img/movie-db-android-icon.png)
+
+  ---
+
 - [Crazy Math - Android](https://github.com/gabrielbmoro/CrazyMath-Android)
+
+  [CrazyMathIcon](img/crazy-math-android-icon.png)
 
   CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
