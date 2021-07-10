@@ -6,14 +6,12 @@ Hi, My name's Gabriel, you can call me just Moro.
 
 ## Personal Repositories
 
-- [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android)
-
   ![MovieDBIcon](img/movie-db-android-icon.png)
+
+  * [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android) provides an Android project that uses the library Movie DB AP
 
   ---
 
-- [Crazy Math - Android](https://github.com/gabrielbmoro/CrazyMath-Android)
-
   ![CrazyMathIcon](img/crazy-math-android-icon.png)
 
-  CrazyMath is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+  * [Crazy Math - Android](https://github.com/gabrielbmoro/CrazyMath-Android) is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
