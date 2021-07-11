@@ -13,10 +13,10 @@ I'm Android Developer 🤖 and I'm also skilled in back-end development with Nod
 
 ## Personal Repos
 
-<table>
+<table style="overflow-x:auto;">
   <tr>
     <td>
-      <img src="img/movie-db-android-icon.png" width="80" height="60">
+      <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
     </td>
     <td>
       <p>
@@ -26,7 +26,7 @@ I'm Android Developer 🤖 and I'm also skilled in back-end development with Nod
   </tr>
     <tr>
       <td>
-        <img src="img/crazy-math-android-icon.png" width="80" height="60" />
+        <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
       </td>
       <td>
         <p>
