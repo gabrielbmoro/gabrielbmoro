@@ -1,17 +1,37 @@
-# Gabriel Bronzatti Moro
+# Hi, I'm Moro 👏👨‍💻
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/gabrielbronzattimoro15031994/)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:gabrielbronzattimoro.es@gmail.com)[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
 
-Hi, My name's Gabriel, you can call me just Moro.
+### About Me
 
-## Personal Repositories
+I am a Catholic Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have three beautiful guinea pigs 🐷.
+I live in Porto Alegre 🇧🇷, where I've worked in the software industry since 2017.
 
-  ![MovieDBIcon](img/movie-db-android-icon.png)
+I'm Android Developer 🤖 and I'm also skilled in back-end development with NodeJS.
 
-  * [MovieDB - Android](https://github.com/gabrielbmoro/MovieDB-Android) provides an Android project that uses the library Movie DB AP
+![Android Badge](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)![Kotlin](https://img.shields.io/badge/Kotlin-0095D5?&style=for-the-badge&logo=kotlin&logoColor=white)![Java](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white)![NodeJS](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)![Typescript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-  ---
+## Personal Repos
 
-  ![CrazyMathIcon](img/crazy-math-android-icon.png)
-
-  * [CrazyMath - Android](https://github.com/gabrielbmoro/CrazyMath-Android) is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+<table>
+  <tr>
+    <td>
+      <img src="img/movie-db-android-icon.png" width="80" height="60">
+    </td>
+    <td>
+      <p>
+        <a href=https://github.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
+      </p>
+    </td>
+  </tr>
+    <tr>
+      <td>
+        <img src="img/crazy-math-android-icon.png" width="80" height="60" />
+      </td>
+      <td>
+        <p>
+          <a href="https://github.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+        </p>
+      </td>
+    </tr>
+</table>
