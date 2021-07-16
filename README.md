@@ -4,7 +4,7 @@
 
 ### About Me
 
-I am a Catholic Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have three beautiful guinea pigs 🐷.
+I am a Catholic Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have four beautiful guinea pigs 🐷.
 I live in Porto Alegre 🇧🇷, where I've worked in the software industry since 2017.
 
 Primary, I'm 🤖 Android Developer 💚, but I'm also skilled in back-end development with NodeJS.
