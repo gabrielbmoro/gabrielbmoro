@@ -16,7 +16,9 @@ Primary, I'm 🤖 Android Developer 💚, but I'm also skilled in back-end devel
 <table style="overflow-x:auto;">
   <tr>
     <td>
-      <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
+      <a href="https://github.com/gabrielbmoro/MovieDB-Android">
+        <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
+      </a>
     </td>
     <td>
       <p>
@@ -26,7 +28,9 @@ Primary, I'm 🤖 Android Developer 💚, but I'm also skilled in back-end devel
   </tr>
     <tr>
       <td>
-        <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
+        <a href="https://github.com/gabrielbmoro/CrazyMath-Android">
+          <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
+        </a>
       </td>
       <td>
         <p>
