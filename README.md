@@ -41,7 +41,7 @@ I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer �
 
 ----
 
-# Olá, sou o Moro 🇧🇷🇧
+# Olá, sou o Moro 🇧🇷
 
 ### Sobre mim
 
