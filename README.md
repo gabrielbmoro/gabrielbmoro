@@ -12,38 +12,40 @@ I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer �
 ## Personal Projects
 
 <table style="overflow-x:auto;">
-  <tr>
-    <td>
-      <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
-        <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
-      </a>
-    </td>
-    <td>
-      <p>
-        <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
-      </p>
-    </td>
-  </tr>
-    <tr>
+   <tr>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
-          <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
-        </a>
+         <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
+         <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
+         </a>
       </td>
       <td>
-        <p>
-          <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
-        </p>
+         <p>
+            <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
+         <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
+         </a>
       </td>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
-          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
-        </a>
+         <p>
+            <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+         <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
+         </a>
       </td>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
+         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
       </td>
-    </tr>
+   </tr>
 </table>
 
 ---
@@ -58,36 +60,38 @@ Eu moro em Porto Alegre 🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 
 ## Projetos Pessoais
 
 <table style="overflow-x:auto;">
-  <tr>
-    <td>
-      <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
-        <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
-      </a>
-    </td>
-    <td>
-      <p>
-        <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> utiliza como serviço a API Movie DB AP
-      </p>
-    </td>
-  </tr>
-    <tr>
+   <tr>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
-          <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
-        </a>
+         <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
+         <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
+         </a>
       </td>
       <td>
-        <p>
-          <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
-        </p>
+         <p>
+            <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> utiliza como serviço a API Movie DB AP
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
+         <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
+         </a>
       </td>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
-          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
-        </a>
+         <p>
+            <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
+         </p>
+      </td>
+   </tr>
+   <tr>
+      <td>
+         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+         <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
+         </a>
       </td>
       <td>
-        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
+         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
       </td>
-    </tr>
+   </tr>
 </table>
