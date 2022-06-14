@@ -14,11 +14,6 @@ I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer �
 <table style="overflow-x:auto;">
   <tr>
     <td>
-      <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
-        <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
-      </a>
-    </td>
-    <td>
       <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
         <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
       </a>
@@ -41,6 +36,11 @@ I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer �
         </p>
       </td>
       <td>
+        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
+        </a>
+      </td>
+      <td>
         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
       </td>
     </tr>
@@ -59,11 +59,6 @@ Eu moro em Porto Alegre 🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 
 
 <table style="overflow-x:auto;">
   <tr>
-    <td>
-      <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
-        <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
-      </a>
-    </td>
     <td>
       <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
         <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
@@ -85,6 +80,11 @@ Eu moro em Porto Alegre 🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 
         <p>
           <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
         </p>
+      </td>
+      <td>
+        <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
+        </a>
       </td>
       <td>
         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
