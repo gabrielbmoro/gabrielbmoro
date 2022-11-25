@@ -7,7 +7,7 @@
 ### About Me
 
 I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have eight beautiful guinea pigs 🐷.
-I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer 💚 since 2017.
+I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 2017.
 
 ## Personal Projects
 
@@ -55,7 +55,7 @@ I live in Porto Alegre 🇧🇷, where I've worked as 🤖 Android Developer �
 ### Sobre mim
 
 Eu sou Cristão ✝️. Toco violão 🎸 e viola caipira🎻. Tenho oito porquinhos da índia lindos 🐷.
-Eu moro em Porto Alegre 🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 2017.
+Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 2017.
 
 ## Projetos Pessoais
 
