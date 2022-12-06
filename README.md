@@ -14,7 +14,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 <table style="overflow-x:auto;">
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
+         <a href="https://github.com/gabrielbmoro/MovieDB-Android">
          <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
          </a>
       </td>
@@ -62,7 +62,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
 <table style="overflow-x:auto;">
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/MovieDB-Android">
+         <a href="https://github.com/gabrielbmoro/MovieDB-Android">
          <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
          </a>
       </td>
