@@ -26,13 +26,13 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
    </tr>
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
+         <a href="https://github.com/gabrielbmoro/CrazyMath-Android">
          <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
          </a>
       </td>
       <td>
          <p>
-            <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+            <a href="https://github.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
          </p>
       </td>
    </tr>
@@ -74,13 +74,13 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
    </tr>
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">
+         <a href="https://github.com/gabrielbmoro/CrazyMath-Android">
          <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
          </a>
       </td>
       <td>
          <p>
-            <a href="https://gitlab.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
+            <a href="https://github.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
          </p>
       </td>
    </tr>
