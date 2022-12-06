@@ -20,7 +20,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
       </td>
       <td>
          <p>
-            <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
+            <a href=https://github.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
          </p>
       </td>
    </tr>
@@ -38,7 +38,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
    </tr>
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+         <a href="https://github.com/gabrielbmoro/slides-about-android-development">
          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
          </a>
       </td>
@@ -68,7 +68,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
       </td>
       <td>
          <p>
-            <a href=https://gitlab.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> utiliza como serviço a API Movie DB AP
+            <a href=https://github.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> utiliza como serviço a API Movie DB AP
          </p>
       </td>
    </tr>
@@ -86,7 +86,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
    </tr>
    <tr>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">
+         <a href="https://github.com/gabrielbmoro/slides-about-android-development">
          <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
          </a>
       </td>
