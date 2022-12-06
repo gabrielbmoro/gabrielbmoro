@@ -43,7 +43,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
          </a>
       </td>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
+         <a href="https://github.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
       </td>
    </tr>
 </table>
@@ -91,7 +91,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
          </a>
       </td>
       <td>
-         <a href="https://gitlab.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
+         <a href="https://github.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
       </td>
    </tr>
 </table>
