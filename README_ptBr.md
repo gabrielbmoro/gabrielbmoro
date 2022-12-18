@@ -2,16 +2,14 @@
 
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
-# Hi, I'm Moro
+# Olá, sou o Moro 🇧🇷
 
-README in Portuguese 🇧🇷 [here](README_ptBr.md). 
+### Sobre mim
 
-### About Me
+Eu sou Cristão ✝️. Toco violão 🎸 e viola caipira🎻. Tenho oito porquinhos da índia lindos 🐷.
+Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 2017.
 
-I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have eight beautiful guinea pigs 🐷.
-I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 2017.
-
-## Personal Projects
+## Projetos Pessoais
 
 <table style="overflow-x:auto;">
    <tr>
@@ -22,7 +20,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
       </td>
       <td>
          <p>
-            <a href=https://github.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> provides an Android project that uses the library Movie DB AP
+            <a href=https://github.com/gabrielbmoro/MovieDB-Android>Movie DB - Android</a> utiliza como serviço a API Movie DB AP
          </p>
       </td>
    </tr>
@@ -34,7 +32,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
       </td>
       <td>
          <p>
-            <a href="https://github.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> is a project for children to practice mathematics as the game. I thought this Idea when I remember of Cross-words, but I change it to be a kind of Cross-numbers game.
+            <a href="https://github.com/gabrielbmoro/CrazyMath-Android">CrazyMath - Android</a> é um projeto para crianças aprenderem matemática através de jogos. A ideia é baseada no jogo de caça-palavras, um tipo de caça-números.
          </p>
       </td>
    </tr>
@@ -45,7 +43,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
          </a>
       </td>
       <td>
-         <a href="https://github.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> is a project to share knowledge with the community in a fun way using characters from movies and tv shows to explain subjects related to Android development.
+         <a href="https://github.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
       </td>
    </tr>
 </table>
