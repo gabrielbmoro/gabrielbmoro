@@ -15,7 +15,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
    <tr>
       <td>
          <a href="https://github.com/gabrielbmoro/MovieDB-Android">
-         <img style="width: 100%;height: auto;" src="img/movie-db-android-icon.png">
+         <img style="width: 80px;height: auto;" src="img/movie-db-android-icon.png">
          </a>
       </td>
       <td>
@@ -27,7 +27,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
    <tr>
       <td>
          <a href="https://github.com/gabrielbmoro/CrazyMath-Android">
-         <img style="width: 100%;height: auto;" src="img/crazy-math-android-icon.png" />
+         <img style="width: 80px;height: auto;" src="img/crazy-math-android-icon.png" />
          </a>
       </td>
       <td>
@@ -39,7 +39,7 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
    <tr>
       <td>
          <a href="https://github.com/gabrielbmoro/slides-about-android-development">
-         <img style="width: 100%;height: auto;" src="img/android-dev-rs.png">
+         <img style="width: 80px;height: auto;" src="img/android-dev-rs.png">
          </a>
       </td>
       <td>
