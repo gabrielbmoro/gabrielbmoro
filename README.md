@@ -49,3 +49,8 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
       </td>
    </tr>
 </table>
+
+
+---
+
+[![Moro's GitHub stats](https://github-readme-stats.vercel.app/api?username=gabrielbmoro)](https://github.com/gabrielbmoro/gabrielbmoro)
