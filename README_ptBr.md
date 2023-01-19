@@ -46,4 +46,14 @@ Eu moro em Viamão🇧🇷, trabalho como 🤖 Desenvolvedor Android 💚 desde 
          <a href="https://github.com/gabrielbmoro/slides-about-android-development">Slides about Android Development</a> é um projeto para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
       </td>
    </tr>
+   <tr>
+      <td>
+         <a href="https://github.com/gabrielbmoro/record-demo">
+         <img style="width: 80px;height: auto;" src="img/record-demo-icon.png">
+         </a>
+      </td>
+      <td>
+         <a href="https://github.com/gabrielbmoro/record-demo">Record-demo</a> é um projeto para conhecer os recursos nativos do Android para gravar e executar audios.
+      </td>
+   </tr>
 </table>
