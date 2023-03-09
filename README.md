@@ -2,7 +2,9 @@
 
 README in Portuguese 🇧🇷 [here](README_ptBr.md)
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+- [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
+
+- [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 --
 
@@ -15,10 +17,10 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 
 ## Personal Projects
 
-| Project                          | Repo                                                                     |
-|:---------------------------------|:-------------------------------------------------------------------------|
-| MovieDB-Android                  | [link](https://github.com/gabrielbmoro/MovieDB-Android)                  |
-| CrazyMath-Android                | [link](https://github.com/gabrielbmoro/CrazyMath-Android)                |
-| Slides about Android Development | [link](https://github.com/gabrielbmoro/slides-about-android-development) |
-| Record demo                      | [link](https://github.com/gabrielbmoro/record-demo)                      |
-| HTTP Guinea pigs code            | [link](https://github.com/gabrielbmoro/httpguineapigscode)               |
+| Repo                                                                                     | Description                                                                  |
+|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
+| [MovieDB-Android](https://github.com/gabrielbmoro/MovieDB-Android)                       | This repository provides an Android project that uses the Movie DB API.      |
+| [CrazyMath-Androi](https://github.com/gabrielbmoro/CrazyMath-Android)                    | App for children to practice mathematics as the game.                        |
+| [Slides about Android](https://github.com/gabrielbmoro/slides-about-android-development) | Slides about Android using characters of TV Shows + Movies.                  |
+| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Record audio project using different audio enconders provided by Android OS. |
+| [HTTP Guinea pigs code](https://github.com/gabrielbmoro/httpguineapigscode)              | HTTP codes + Guinea pigs = fun.                                              |
