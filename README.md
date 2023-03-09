@@ -58,6 +58,17 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
          <a href="https://github.com/gabrielbmoro/record-demo">Record-demo</a> is a project to explore the Android native resources to record and play audios.
       </td>
    </tr>
+   <tr>
+      <td>
+         <a href="https://github.com/gabrielbmoro/httpguineapigscode">
+         <img style="width: 80px;height: auto;" src="img/guinea-pig-http-codes.png">
+         </a>
+      </td>
+      <td>
+         <p>
+            <a href=https://github.com/gabrielbmoro/httpguineapigscode>Guinea pigs HTTP Codes</a> provides a fun perspective of HTTP Codes.
+      </td>
+   </tr>
 </table>
 
 
