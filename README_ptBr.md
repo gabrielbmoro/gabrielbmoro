@@ -2,9 +2,9 @@
 
 README em inglês [aqui](README.md)
 
-- [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
 
-- [![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 --
 
@@ -24,3 +24,4 @@ Moro em Viamão 🇧🇷. Trabalho como 🤖 Desenvolvedor Android 💚 desde 20
 | [Slides about Android](https://github.com/gabrielbmoro/slides-about-android-development) | Slides sobre Android com personagens de filmes e desenhos animados.          |
 | [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Gravador de audio usando diferentes audio encoders providos pelo Android OS. |
 | [HTTP Guinea pigs code](https://github.com/gabrielbmoro/httpguineapigscode)              | HTTP códigos + Guinea pigs = alegria.                                        |
+
