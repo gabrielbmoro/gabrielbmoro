@@ -25,4 +25,4 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 | [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Record audio project using different audio enconders provided by Android OS. |
 | [HTTP Guinea pigs code](https://github.com/gabrielbmoro/httpguineapigscode)              | HTTP codes + Guinea pigs = fun.                                              |
 | [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | My personal assistent app.                                                   |  
-| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Screen recorder sample                                                       |
+| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Screen recorder sample.                                                      |
