@@ -21,7 +21,7 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 |:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
 | [MovieDB-Android](https://github.com/gabrielbmoro/MovieDB-Android)                       | This repository provides an Android project that uses the Movie DB API.      |
 | [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                   | App for children to practice mathematics as the game.                        |
-| [Slides about Android](https://github.com/gabrielbmoro/slides-about-android-development) | Slides about Android using characters of TV Shows + Movies.                  |
+| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development)  | Slides about Android using characters of TV Shows + Movies.                  |
 | [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Record audio project using different audio enconders provided by Android OS. |
 | [HTTP Guinea pigs code](https://github.com/gabrielbmoro/httpguineapigscode)              | HTTP codes + Guinea pigs = fun.                                              |
 | [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | My personal assistent app.                                                   |  
