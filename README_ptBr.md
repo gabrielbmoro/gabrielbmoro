@@ -19,7 +19,7 @@ Moro em Viamão 🇧🇷. Trabalho como 🤖 Desenvolvedor Android 💚 desde 20
 
 | Repo                                                                                     | Descrição                                                                    |
 |:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
-| [MovieDB-Android](https://github.com/gabrielbmoro/MovieDB-Android)                       | Projeto Android que utiliza a API Movie DB.                                  |
+| [MovieDB-Android](https://gabrielbmoro.github.io/MovieDB-Android)                        | Projeto Android que utiliza a API Movie DB.                                  |
 | [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                    | App para crianças aprenderem matemática como jogo.                           |
 | [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development) | Slides sobre Android com personagens de filmes e desenhos animados.          |
 | [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Gravador de audio usando diferentes audio encoders providos pelo Android OS. |
