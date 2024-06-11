@@ -26,3 +26,4 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 | [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)               | HTTP codes + Guinea pigs = fun.                                              |
 | [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | My personal assistent app.                                                   |  
 | [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Screen recorder sample.                                                      |
+| [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG)                                   | Friendly library to handle SVG files on Android                              |
