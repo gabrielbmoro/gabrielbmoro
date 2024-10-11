@@ -17,13 +17,14 @@ I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 201
 
 ## Personal Projects
 
-| Repo                                                                                     | Description                                                                  |
-|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
-| [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App)                                | A Compose Multiplatform project that uses the Movie DB API.                  |
-| [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                   | App for children to practice mathematics as the game.                        |
-| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development)  | Slides about Android using characters of TV Shows + Movies.                  |
-| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Record audio project using different audio enconders provided by Android OS. |
-| [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)               | HTTP codes + Guinea pigs = fun.                                              |
-| [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | My personal assistent app.                                                   |  
-| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Screen recorder sample.                                                      |
-| [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG)                                   | Friendly library to handle SVG files on Android                              |
+| Repo                                                                                     | Description                                                                         |
+|:-----------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
+| [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App)                                | A Compose Multiplatform project that uses the Movie DB API.                         |
+| [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                   | App for children to practice mathematics as the game.                               |
+| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development)  | Slides about Android using characters of TV Shows + Movies.                         |
+| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Record audio project using different audio enconders provided by Android OS.        |
+| [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)               | HTTP codes + Guinea pigs = fun.                                                     |
+| [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | My personal assistent app.                                                          |  
+| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Screen recorder sample.                                                             |
+| [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG)                                   | Friendly library to handle SVG files on Android                                     |
+| [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)                     | A lightweight Gradle plugin to enforce architectural rule in multi-module projects  |
