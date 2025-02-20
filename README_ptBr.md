@@ -10,18 +10,25 @@ README em inglês [aqui](README.md)
 
 ## Sobre mim
 
-Cristão ✝️, toco violão 🎸 e viola caipira 🎻. Tenho oito lindos porquinhos da índia 🐷.
+Cristão ✝️, toco violão 🎸 e viola caipira 🎻. Tenho cinco lindos porquinhos da índia 🐷 e 3 cachorros felizes 🐶.
 Moro em Viamão 🇧🇷. Trabalho como 🤖 Desenvolvedor Android 💚 desde 2017.
 
 --
 
 ## Projetos Pessoais
 
-| Repo                                                                                     | Descrição                                                                    |
-|:-----------------------------------------------------------------------------------------|:-----------------------------------------------------------------------------|
-| [MovieDB-Android](https://gabrielbmoro.github.io/MovieDB-Android)                        | Projeto Android que utiliza a API Movie DB.                                  |
-| [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                    | App para crianças aprenderem matemática como jogo.                           |
-| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development) | Slides sobre Android com personagens de filmes e desenhos animados.          |
-| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Gravador de audio usando diferentes audio encoders providos pelo Android OS. |
-| [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)              | HTTP códigos + Guinea pigs = alegria.                                        |
+--
 
+## Personal Projects
+
+| Repo                                                                                     | Description                                                                         |
+|:-----------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
+| [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App)                                | Projeto Compose Multiplatform que usa a API MovieDB.                         |
+| [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                   | Aplicativo para crianças praticar matemática.                               |
+| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development)  | Slides sobre Android utilizando personagens de Filmes + Séries.                         |
+| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Gravador de audio utilizando diferente audio encoders.        |
+| [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)               | Código de estados HTTP + Porquinhos da índia = alegria.                                                     |
+| [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | Meu assistente pessoal.                                                          |  
+| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Amostra de gravador de tela.                                                             |
+| [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG)                                   | Biblioteca amigável para manipular SVG no Android.                                     |
+| [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)                     | Uma biblioteca leve Gradle para forçar regras de arquitetura em projetos multi-modulo.  |
