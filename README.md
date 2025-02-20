@@ -10,15 +10,8 @@ README in Portuguese 🇧🇷 [here](README_ptBr.md)
 
 ## About Me
 
-I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have seven beautiful guinea pigs 🐷.
+I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have five beautiful guinea pigs 🐷, and three happy dogs 🐶.
 I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 2017.
-
-### My stats ⭐
-
-<div align="center">
-<img alt="Moro's GitHub stats" src="https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=transparent"/>
-<img alt="Top langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&&langs_count=8"/>
-</div>
 
 --
 
