@@ -10,8 +10,8 @@ README in Portuguese 🇧🇷 [here](README_ptBr.md)
 
 ## About Me
 
-I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I have five beautiful guinea pigs 🐷, and three happy dogs 🐶.
-I live in Viamão 🇧🇷. I've worked as 🤖 Android Developer 💚 since 2017.
+I am a Christian ✝️. I play the acoustic guitar 🎸 and brazilian viola🎻. I love my beautiful guinea pigs 🐷, my dogs 🐶, and my cat 🐱.
+I live in Viamão 🇧🇷. I've worked as 🤖 Mobile Developer 💚 since 2017.
 
 --
 
