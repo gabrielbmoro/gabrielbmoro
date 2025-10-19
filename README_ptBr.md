@@ -2,33 +2,24 @@
 
 README em inglês [aqui](README.md)
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)
-
-[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 --
 
 ## Sobre mim
 
-Cristão ✝️, toco violão 🎸 e viola caipira 🎻. Tenho cinco lindos porquinhos da índia 🐷 e 3 cachorros felizes 🐶.
-Moro em Viamão 🇧🇷. Trabalho como 🤖 Desenvolvedor Android 💚 desde 2017.
+Como Desenvolvedor Mobile e líder de equipe, atuo mentorando desenvolvedores, conduzindo provas de conceito para funcionalidades complexas e trabalhando diretamente com APIs modernas. Desde 2017, faço parte da indústria de software, colaborando com diversas empresas e tecnologias dentro do ecossistema de desenvolvimento mobile, com forte foco em Android, Flutter e Kotlin Multiplatform.
+
+Sou apaixonado por compartilhar conhecimento e contribuir com a comunidade. Escrevi artigos sobre temas relacionados ao desenvolvimento mobile — incluindo code review, navegação e testes. Também sou membro ativo e criador de conteúdo na comunidade CodandoTV, onde produzo vídeos sobre desenvolvimento mobile. Além disso, tive a oportunidade de palestrar em eventos locais, como GDG Groups e GDG DevFest, compartilhando experiências e aprendizados com outros desenvolvedores.
 
 --
 
-## Projetos Pessoais
+## Projetos públicos
 
---
+- [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG): Biblioteca para manipular arquivos SVG no Android e aplicações Flutter;
 
-## Personal Projects
+- [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig): Plugin Gradle para forçar regras arquiteturais em projetos multi-modulares;
 
-| Repo                                                                                     | Description                                                                         |
-|:-----------------------------------------------------------------------------------------|:------------------------------------------------------------------------------------|
-| [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App)                                | Projeto Compose Multiplatform que usa a API MovieDB.                         |
-| [CrazyMath-Android](https://github.com/gabrielbmoro/CrazyMath-Android)                   | Aplicativo para crianças praticar matemática.                               |
-| [Slides about Android](https://gabrielbmoro.github.io/slides-about-android-development)  | Slides sobre Android utilizando personagens de Filmes + Séries.                         |
-| [Record-demo](https://github.com/gabrielbmoro/record-demo)                               | Gravador de audio utilizando diferente audio encoders.        |
-| [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode)               | Código de estados HTTP + Porquinhos da índia = alegria.                                                     |
-| [PocketNote](https://github.com/gabrielbmoro/pocketNote)                                 | Meu assistente pessoal.                                                          |  
-| [Screen recorder App](https://github.com/gabrielbmoro/screen-share-recorder)             | Amostra de gravador de tela.                                                             |
-| [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG)                                   | Biblioteca amigável para manipular SVG no Android.                                     |
-| [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)                     | Uma biblioteca leve Gradle para forçar regras de arquitetura em projetos multi-modulo.  |
+- [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App): Aplicativo Compose Multiplatform para listar filmes/series;
+  
+- [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode): HTTP codes + Porquinhos da índia = alegria.
