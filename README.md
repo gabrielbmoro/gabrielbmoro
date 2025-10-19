@@ -16,7 +16,7 @@ I’m passionate about sharing knowledge and giving back to the community. I’v
 
 ## Open source projects
 
-- [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG): Friendly library to handle SVG files on Android;
+- [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG): Friendly library to handle SVG files on Android, and Flutter apps;
 
 - [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig): A lightweight Gradle plugin to enforce architectural rule in multi-module projects;
 
