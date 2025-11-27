@@ -1,25 +1,58 @@
-# Hi, I'm Moro
+# Hello, I'm Moro
 
-README in Portuguese 🇧🇷 [here](README_ptBr.md)
+README in Português [here](README_ptBr.md)
 
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/) [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
---
+# Hello, I'm Gabriel Bronzatti Moro 👋🚀
+
+I'm also known as **Moro** or **gabrielbmoro**.
 
 ## About Me
 
-As a Mobile Engineer and team leader, I mentor developers, lead proof of concepts for complex features, and work hands-on with modern APIs. Since 2017, I’ve been part of the software industry, collaborating with various companies and technologies within the mobile development ecosystem, with a strong focus on Android, Flutter, and Kotlin Multiplatform.
+I am a **Mobile Application Developer**. Since **2017**, I’ve been working in the software industry, collaborating with multiple companies and technologies across the mobile development ecosystem.
 
-I’m passionate about sharing knowledge and giving back to the community. I’ve written articles on Mobile development topics — including code reviews, navigation, and testing. I’m also an active member and content creator at CodandoTV, a tech community where I produce video content about Mobile development. Additionally, I’ve had the opportunity to speak at local tech events, including GDG Groups and GDG DevFest, sharing insights and experiences with fellow developers.
+I’m currently a **Senior Mobile Application Developer** at Ambush.
 
---
+My responsibilities include **mentoring developers**, **leading proof of concept (POC) initiatives** for complex features, and working directly with modern APIs. My technical focus spans **Android** 🤖, **Flutter** 💙, and **Kotlin Multiplatform**.
 
-## Open source projects
+Recently, I’ve dedicated my studies to **Flutter**, aiming to sharpen my skills by contributing to open-source projects such as the [TodoApp](https://github.com/CodandoTV/todoapp_flutter), [JujubaSVG](https://github.com/CodandoTV/jujubaSVG), and [Eagle Eye](https://github.com/CodandoTV/eagle-eye).
 
-- [JujubaSVG](https://github.com/gabrielbmoro/jujubaSVG): Friendly library to handle SVG files on Android, and Flutter apps;
+## Community & Content 🎤
 
-- [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig): A lightweight Gradle plugin to enforce architectural rule in multi-module projects;
+I’m passionate about **sharing knowledge** and giving back to the community.
 
-- [MovieDB-App](https://gabrielbmoro.github.io/MovieDB-App): A Compose Multiplatform project that uses the Movie DB API;
-  
-- [HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode): HTTP codes + Guinea pigs = fun.
+- I'm an **active member and content creator at [CodandoTV](https://www.youtube.com/@CodandoTV)**, a tech community where I produce **video content on mobile development**.
+
+- I’m also an **article author**, writing about mobile development topics such as code review, navigation, and testing.
+
+- I’ve had the opportunity to speak at local tech events like **GDG Groups** and **GDG DevFest**, where I shared insights and experiences with other developers.
+
+## My Open Source Projects 💻
+
+I’m a contributor/author of several open-source projects, many of them under the [CodandoTV](https://github.com/CodandoTV) organization.
+
+### 🎬 [MovieDB-App](https://github.com/gabrielbmoro/MovieDB-App)
+
+I’m the maintainer of this project. It's an app that lists movies using the Movie DB API, allowing users to browse the most popular and top-rated movies.
+
+- **Technology:** A **Compose Multiplatform** project with 99.5% of the code written in **Kotlin**.
+- **Stack:** Uses Koin for dependency injection, Ktor for network requests, and the Popcorn Guineapig plugin for module analysis.
+
+### 🍿🐹 [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)
+
+This is a Gradle plugin provided by CodandoTV, and I’m one of its four contributors. It's designed to **enforce architectural rules** in multi-module projects in a simple way. It supports **Kotlin Multiplatform (KMP)**, **Java Projects**, and **Android Projects**.
+
+### 🎨 [JujubaSVG](https://github.com/CodandoTV/jujubaSVG)
+
+A friendly library from CodandoTV that I use to **manipulate SVG files** in **Android** and **Flutter** apps. It allows accessing any SVG element by its ID to modify properties such as background color or stroke.
+
+### 🦅 [EagleEye](https://github.com/CodandoTV/eagle-eye)
+
+I’m one of the two listed contributors to this tool. **EagleEye** is a **Dart CLI tool** designed to **detect architectural violations** and enforce rules in Flutter/Dart projects. It identifies forbidden dependencies based on patterns configured in an `eagle_eye_config.json` file.
+
+### Other Projects
+
+- **[HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode/):** A fun project mapping HTTP codes to guinea pigs.
+
+- **[TodoApp](https://github.com/CodandoTV/todoapp_flutter):** A sample **Flutter** project and CodandoTV template, serving as a playground for experimenting with different features and implementations. Its stack includes Freezed for data classes, `get_it` for dependency injection, and AutoRoute for navigation.
