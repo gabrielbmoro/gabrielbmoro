@@ -8,6 +8,8 @@
 <img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
 </div>
 
+--
+
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
 README em Português 🇧🇷 [aqui](README_ptBr.md)
