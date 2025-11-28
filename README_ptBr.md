@@ -34,27 +34,25 @@ Sou colaborador/autor em diversos projetos de código aberto, muitos deles sob a
 
 ### [MovieDB-App](https://github.com/gabrielbmoro/MovieDB-App) 🎬
 
-Eu sou o mantenedor deste projeto. É um aplicativo que lista filmes usando a API Movie DB. Ele permite o acesso aos filmes mais populares e mais bem avaliados.
+É um aplicativo **Compose Multiplatform** que lista filmes usando a API Movie DB. Ele permite o acesso aos filmes mais populares e mais bem avaliados.
 
-*   **Tecnologia:** É um projeto **Compose Multiplatform**, com 99.5% do código escrito em **Kotlin**.
-
-*   **Stack:** Utiliza Koin para injeção de dependência, Ktor para requisições de rede, e o plugin Popcorn Guineapig para análise de módulos.
+- **Stack:** Utiliza Koin para injeção de dependência, Ktor para requisições de rede, e o plugin Popcorn Guineapig para análise de módulos.
 
 ### [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig) 🍿🐹
 
-Este é um plugin Gradle, fornecido pela CodandoTV, e sou um dos quatro colaboradores. Ele é projetado para **impor regras arquiteturais** em projetos multi-módulo de forma simples. Ele suporta **Projetos Multiplataforma Kotlin (KMP)**, **Projetos Java** e **Projetos Android**.
+Este é um biblioteca Gradle projetada para **impor regras arquiteturais** em projetos multi-módulo de forma simples. Ele suporta **Projetos Multiplataforma Kotlin (KMP)**, **Projetos Java** e **Projetos Android**.
 
 ### [JujubaSVG](https://github.com/CodandoTV/jujubaSVG) 🎨
 
-É uma biblioteca amigável, fornecida pela CodandoTV, que utilizo para **manipular arquivos SVG** em aplicativos **Android** e **Flutter**. Com ela, é possível acessar qualquer elemento SVG pelo seu ID para modificar propriedades como cor de fundo e traço.
+É uma biblioteca amigável para **manipular arquivos SVG** em aplicativos **Android** e **Flutter**. Com ela, é possível acessar qualquer elemento SVG pelo seu ID para modificar propriedades como cor de fundo e traço.
 
 ### [EagleEye](https://github.com/CodandoTV/eagle-eye) 🦅
 
-Sou um dos dois colaboradores listados nesta ferramenta. O **EagleEye** é uma ferramenta CLI **Dart** projetada para **detectar violações arquiteturais** e impor regras em projetos Flutter/Dart. Ela detecta dependências proibidas baseadas em padrões configuráveis em um arquivo `eagle_eye_config.json`.
+É uma ferramenta CLI **Dart** projetada para **detectar violações arquiteturais** e impor regras em projetos Flutter/Dart. Ela detecta dependências proibidas baseadas em padrões configuráveis em um arquivo `eagle_eye_config.json`.
 
 ### Outros Projetos
 
-*   **[HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode/):** Um projeto divertido que relaciona códigos HTTP com porquinhos-da-índia (guinea pigs).
+- **[HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode/):** Um projeto divertido que relaciona códigos HTTP com porquinhos-da-índia (guinea pigs).
 
-*   **[TodoApp](https://github.com/CodandoTV/todoapp_flutter):** Este é um projeto **Flutter** de exemplo, template da CodandoTV, que serve como um ambiente de testes (*playground*) para experimentar várias funcionalidades e implementações. Sua *stack* inclui Freezed para *data classes*, `get_it` para injeção de dependência e AutoRoute para navegação.
+- **[TodoApp](https://github.com/CodandoTV/todoapp_flutter):** Este é um projeto **Flutter** de exemplo, template da CodandoTV, que serve como um ambiente de testes (*playground*) para experimentar várias funcionalidades e implementações. Sua *stack* inclui Freezed para *data classes*, `get_it` para injeção de dependência e AutoRoute para navegação.
 ```
