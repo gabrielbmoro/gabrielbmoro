@@ -2,6 +2,12 @@
 
 [![trophy](https://github-profile-trophy.vercel.app/?username=gabrielbmoro&theme=onedark)](https://github-profile-trophy.vercel.app/?username=gabrielbmoro&theme=onedark)
 
+<div>
+<a href="https://github.com/gabrielbmoro">
+<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&langs_count=7&theme=dracula"/>
+<img loading="lazy" height="180em" src="https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true"/>
+</div>
+
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
 README em Português 🇧🇷 [aqui](README_ptBr.md)
