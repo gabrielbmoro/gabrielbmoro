@@ -4,7 +4,7 @@
 
 [![top-langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&langs_count=7&theme=dracula)](https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&langs_count=7&theme=dracula)
 
-[![icons]](https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)(https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)
+[![icons](https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)](https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)
 
 --
 
