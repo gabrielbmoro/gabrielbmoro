@@ -34,22 +34,21 @@ I’m a contributor/author of several open-source projects, many of them under t
 
 ### 🎬 [MovieDB-App](https://github.com/gabrielbmoro/MovieDB-App)
 
-I’m the maintainer of this project. It's an app that lists movies using the Movie DB API, allowing users to browse the most popular and top-rated movies.
+An **Compose Multiplatform** app that lists movies using the Movie DB API, allowing users to browse the most popular and top-rated movies.
 
-- **Technology:** A **Compose Multiplatform** project with 99.5% of the code written in **Kotlin**.
 - **Stack:** Uses Koin for dependency injection, Ktor for network requests, and the Popcorn Guineapig plugin for module analysis.
 
 ### 🍿🐹 [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)
 
-This is a Gradle plugin provided by CodandoTV, and I’m one of its four contributors. It's designed to **enforce architectural rules** in multi-module projects in a simple way. It supports **Kotlin Multiplatform (KMP)**, **Java Projects**, and **Android Projects**.
+A gradle library designed to **enforce architectural rules** in multi-module projects in a simple way. It supports **Kotlin Multiplatform (KMP)**, **Java Projects**, and **Android Projects**.
 
 ### 🎨 [JujubaSVG](https://github.com/CodandoTV/jujubaSVG)
 
-A friendly library from CodandoTV that I use to **manipulate SVG files** in **Android** and **Flutter** apps. It allows accessing any SVG element by its ID to modify properties such as background color or stroke.
+A friendly library to **manipulate SVG files** in **Android** and **Flutter** apps. It allows accessing any SVG element by its ID to modify properties such as background color or stroke.
 
 ### 🦅 [EagleEye](https://github.com/CodandoTV/eagle-eye)
 
-I’m one of the two listed contributors to this tool. **EagleEye** is a **Dart CLI tool** designed to **detect architectural violations** and enforce rules in Flutter/Dart projects. It identifies forbidden dependencies based on patterns configured in an `eagle_eye_config.json` file.
+A **Dart CLI tool** designed to **detect architectural violations** and enforce rules in Flutter/Dart projects. It identifies forbidden dependencies based on patterns configured in an `eagle_eye_config.json` file.
 
 ### Other Projects
 
