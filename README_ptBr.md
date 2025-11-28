@@ -1,10 +1,8 @@
-# Olá, eu sou o Moro
-
-README em inglês [aqui](README.md)
-
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)[![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 # Olá, eu sou Gabriel Bronzatti Moro 👋🚀
+
+README in English 🇺🇸 [here](README.md)
 
 Sou conhecido como **Moro** ou **gabrielbmoro**.
 
