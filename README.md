@@ -1,9 +1,5 @@
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/) [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=gabrielbmoro&theme=onedark)](https://github-profile-trophy.vercel.app/?username=gabrielbmoro&theme=onedark)
-
-[![top-langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&langs_count=7&theme=dracula)](https://github-readme-stats.vercel.app/api/top-langs/?username=gabrielbmoro&layout=compact&langs_count=7&theme=dracula)[![stats](https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)](https://github-readme-stats.vercel.app/api?username=gabrielbmoro&show_icons=true&theme=dracula&include_all_commits=true&count_private=true)
-
 --
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
