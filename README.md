@@ -12,7 +12,7 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 As a **Mobile Engineer** and team leader, I mentor developers, lead proof of concepts for complex features, and work hands-on with modern APIs. Since **2017**, I’ve been part of the software industry, collaborating with various companies and technologies within the mobile development ecosystem, with a strong focus on **Android**, and **Kotlin Multiplatform**.
 
-I am deeply committed to the developer community as an active member and content creator at CodandoTV, where I produce technical videos, open-source libraries, podcasts, and articles. I also serve as a Koin Community Lead in the Koin Champions Program, leveraging my 7+ years of experience using Koin in production to educate others through technical content and real-world use cases.
+I am deeply committed to the developer community as an active member and content creator at **CodandoTV**, where I produce technical videos, open-source libraries, podcasts, and articles. I also serve as a **Koin Community Lead** in the Koin Champions Program, leveraging my 7+ years of experience using Koin in production to educate others through technical content and real-world use cases.
 
 ## Community & Content 🎤
 
