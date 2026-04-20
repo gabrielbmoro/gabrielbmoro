@@ -10,11 +10,9 @@ Sou conhecido como **Moro** ou **gabrielbmoro**.
 
 ## Sobre Mim
 
-Eu sou um **Desenvolvedor de Aplicativos Móveis**. Desde **2017**, atuo na indústria de software, colaborando com várias empresas e tecnologias no ecossistema de desenvolvimento móvel.
+Sou **Desenvolvedor de Aplicativos Móveis**, com uma trajetória na indústria de software desde **2017**. Meu trabalho é movido pela paixão em construir experiências de alta qualidade e ajudar outros desenvolvedores a crescerem por meio de mentoria e do compartilhamento de conhecimento prático. Ao longo da minha jornada, colaborei com diversas empresas do ecossistema de desenvolvimento de aplicativos, focando profundamente em **Android** e **Kotlin Multiplatform (KMP)**. Aprecio uma abordagem "mão na massa", liderando provas de conceito para funcionalidades complexas e trabalhando próximo a APIs modernas.
 
-Atualmente sou **Desenvolvedor de Aplicativos Móveis Sênior** na Ambush.
-
-Minhas responsabilidades incluem **orientar desenvolvedores**, **liderar provas de conceito (POCs)** para funcionalidades complexas, e trabalhar diretamente com APIs modernas. Meu foco técnico abrange **Android** 🤖, **Flutter** 💙, e **Kotlin Multiplatform**.
+Além disso, sou profundamente comprometido com a comunidade de desenvolvedores como membro ativo e criador de conteúdo no **CodandoTV**, onde produzo vídeos técnicos, bibliotecas open-source, podcasts e artigos. Também atuo como **Koin Community Lead** no programa Koin Champions, aproveitando meus mais de 7 anos de experiência utilizando Koin em produção para educar outros por meio de conteúdo técnico e casos de uso do mundo real.
 
 ## Comunidade e Conteúdo 🎤
 
