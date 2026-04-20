@@ -16,8 +16,6 @@ I’m currently a **Senior Mobile Application Developer** at Ambush.
 
 My responsibilities include **mentoring developers**, **leading proof of concept (POC) initiatives** for complex features, and working directly with modern APIs. My technical focus spans **Android** 🤖, **Flutter** 💙, and **Kotlin Multiplatform**.
 
-Recently, I’ve dedicated my studies to **Flutter**, aiming to sharpen my skills by contributing to open-source projects such as the [TodoApp](https://github.com/CodandoTV/todoapp_flutter), [JujubaSVG](https://github.com/CodandoTV/jujubaSVG), and [Eagle Eye](https://github.com/CodandoTV/eagle-eye).
-
 ## Community & Content 🎤
 
 I’m passionate about **sharing knowledge** and giving back to the community.
