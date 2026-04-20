@@ -16,8 +16,6 @@ Atualmente sou **Desenvolvedor de Aplicativos Móveis Sênior** na Ambush.
 
 Minhas responsabilidades incluem **orientar desenvolvedores**, **liderar provas de conceito (POCs)** para funcionalidades complexas, e trabalhar diretamente com APIs modernas. Meu foco técnico abrange **Android** 🤖, **Flutter** 💙, e **Kotlin Multiplatform**.
 
-Ultimamente tenho focado meus estudos em **Flutter**, e busco me aperfeiçoar nesta tecnologia, utilizando-a em projetos de código aberto como o [TodoApp](https://github.com/CodandoTV/todoapp_flutter), [JujubaSVG](https://github.com/CodandoTV/jujubaSVG) e [Eagle Eye](https://github.com/CodandoTV/eagle-eye).
-
 ## Comunidade e Conteúdo 🎤
 
 Sou apaixonado por **compartilhar conhecimento** e retribuir à comunidade.
