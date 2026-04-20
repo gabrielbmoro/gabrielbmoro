@@ -10,11 +10,9 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ## About Me
 
-I am a **Mobile Application Developer**. Since **2017**, I’ve been working in the software industry, collaborating with multiple companies and technologies across the mobile development ecosystem.
+As a **Mobile Engineer** and team leader, I mentor developers, lead proof of concepts for complex features, and work hands-on with modern APIs. Since **2017**, I’ve been part of the software industry, collaborating with various companies and technologies within the mobile development ecosystem, with a strong focus on **Android**, and **Kotlin Multiplatform**.
 
-I’m currently a **Senior Mobile Application Developer** at Ambush.
-
-My responsibilities include **mentoring developers**, **leading proof of concept (POC) initiatives** for complex features, and working directly with modern APIs. My technical focus spans **Android** 🤖, **Flutter** 💙, and **Kotlin Multiplatform**.
+I am deeply committed to the developer community as an active member and content creator at CodandoTV, where I produce technical videos, open-source libraries, podcasts, and articles. I also serve as a Koin Community Lead in the Koin Champions Program, leveraging my 7+ years of experience using Koin in production to educate others through technical content and real-world use cases.
 
 ## Community & Content 🎤
 
