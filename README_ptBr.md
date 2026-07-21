@@ -108,12 +108,12 @@ Dart CLI para validar violações arquiteturais em projetos Flutter [here](https
 
 - Selecionada como [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
-## Community Leadership & Recognition
+## Comunidade Tech
 
 ### CodandoTV Content Creator
 
 - Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile [here](https://codandotv.com/#creators).
 
-### Koin Champion / Content Contributor
+### Koin Champion
 
 - Reconhecido pela Kotzilla por produzir conteúdo especializado sobre Koin (dependency injection library) usando exemplos do mundo real [here](https://koinchampion.kotzilla.io/apply-now).
