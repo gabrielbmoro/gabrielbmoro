@@ -22,17 +22,17 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 - Experiência na entrega de aplicações seguras, escaláveis e de alta qualidade para ambientes de produção.
 
-- Contribuidor ativo de projetos Open Source.
+- Contribuidor ativo de projetos Open-Source.
 
 - Educador e criador de conteúdo técnico para a comunidade de desenvolvimento.
 
-- Promotor de boas práticas de engenharia, arquitetura de software e desenvolvimento mobile moderno.
+- Defensor de boas práticas de engenharia, arquitetura de software e desenvolvimento mobile moderno.
 
 ## Experiência Profissional (Últimos 5 anos)
 
 ### Senior Mobile Engineer | Ambush | Nov, 2023 – Atual
 
-- Liderança técnica em desenvolvimento mobile, mentorando desenvolvedores que estão iniciando com Kotlin Multiplatform (Compose Multiplatform), promovendo boas práticas e consistência arquitetural.
+- Liderança técnica em desenvolvimento Mobile, mentorando desenvolvedores que estão iniciando com Kotlin Multiplatform (Compose Multiplatform), promovendo boas práticas e consistência arquitetural.
 
 - Condução de Provas de Conceito (POCs) envolvendo integrações em Kotlin Multiplatform com bibliotecas específicas das plataformas iOS e Android.
 
@@ -60,7 +60,7 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 - Desenvolvimento utilizando APIs e tecnologias modernas do ecossistema Android, incluindo Dagger, Jetpack Components, WebRTC e outras.
 
-## Core Technical Skills
+## Habilidades Técnicas
 
 - Frameworks & Interface: Compose Multiplatform, Jetpack Compose, Android SDK e Flutter.
 
@@ -87,14 +87,14 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 [![Popcorn Guinea Pig - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig)[![Popcorn Guinea Pig Detekt - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig-detekt-rule)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig-detekt-rule)
 
 
-Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Andriod [here](https://github.com/CodandoTV/popcorn-guineapig) and [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
+Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Android [here](https://github.com/CodandoTV/popcorn-guineapig) + [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
 ### JujubaSVG
 
 [![JujubaSVG - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
-Uma biblioteca para habilitar a manipulação granular de elementos SVG. Disponível para Compose Multiplatform, Android e Fluter [here](https://github.com/CodandoTV/jujubaSVG).
+Uma biblioteca para habilitar a manipulação granular de elementos SVG. Disponível para Compose Multiplatform, Android e Flutter [here](https://github.com/CodandoTV/jujubaSVG).
 
 ### EagleEye
 
