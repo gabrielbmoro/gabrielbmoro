@@ -10,44 +10,96 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ## About Me
 
-As a **Mobile Engineer** and team leader, I mentor developers, lead proof of concepts for complex features, and work hands-on with modern APIs. Since **2017**, I’ve been part of the software industry, collaborating with various companies and technologies within the mobile development ecosystem, with a strong focus on **Android**, and **Kotlin Multiplatform**.
+- 7+ years of experience as a Senior Mobile Engineer and Technical Team Lead, architecting and delivering high-performance mobile applications.
 
-I am deeply committed to the developer community as an active member and content creator at **CodandoTV**, where I produce technical videos, open-source libraries, podcasts, and articles. I also serve as a **Koin Community Lead** in the Koin Champions Program, leveraging my 7+ years of experience using Koin in production to educate others through technical content and real-world use cases.
+- Specialized in Android, Kotlin Multiplatform (KMP), and Flutter.
 
-## Community & Content 🎤
+- Experienced in designing and building scalable cross-platform architectures and modern APIs.
 
-I’m passionate about **sharing knowledge** and giving back to the community.
+- Proven track record of leading engineering teams, mentoring developers, and driving technical excellence.
 
-- I'm an **active member and content creator at [CodandoTV](https://www.youtube.com/@CodandoTV)**, a tech community where I produce **video content on mobile development**.
+- Led complex Proof of Concepts (POCs), transforming innovative ideas into production-ready solutions.
 
-- I’m also an **article author**, writing about mobile development topics such as code review, navigation, and testing.
+- Active Open Source contributor and community educator, creating technical content and sharing knowledge with the developer community.
 
-- I’ve had the opportunity to speak at local tech events like **GDG Groups** and **GDG DevFest**, where I shared insights and experiences with other developers.
+- Passionate about software architecture, engineering best practices, and maintaining high code quality through architectural standards
 
-## My Open Source Projects 💻
+## Professional Experience (Last 5 years)
 
-I’m a contributor/author of several open-source projects, many of them under the [CodandoTV](https://github.com/CodandoTV) organization.
+### Senior Mobile Engineer | Ambush | Nov, 2023 – Present
 
-### 🎬 [MovieDB-App](https://github.com/gabrielbmoro/MovieDB-App)
+- Mobile leadership, mentoring other mobile developers who are starting to work with Kotlin Multiplatform (Compose Multiplatform), fostering best practices and architectural consistency;
 
-An **Compose Multiplatform** app that lists movies using the Movie DB API, allowing users to browse the most popular and top-rated movies.
+- Conduct proofs of concept involving Kotlin Multiplatform integrations with platform-specific libraries for iOS and Android;
 
-- **Stack:** Uses Koin for dependency injection, Ktor for network requests, and the Popcorn Guineapig plugin for module analysis.
+- Design and implement controlled experiments using feature flags to test, measure, and validate new features;
 
-### 🍿🐹 [Popcorn Guinea pig](https://github.com/CodandoTV/popcorn-guineapig)
+- Design and optimize CI/CD pipelines, including linting, unit tests, and automated UI tests using the Maestro test framework, enforcing architecture standards and improving the efficiency and quality of the code review process;
 
-A gradle library designed to **enforce architectural rules** in multi-module projects in a simple way. It supports **Kotlin Multiplatform (KMP)**, **Java Projects**, and **Android Projects**.
+- Lead initiatives focused on knowledge transfer and team skill development, including Flutter knowledge sharing, cross-platform best practices, internal workshops, and technical talks across the company.
 
-### 🎨 [JujubaSVG](https://github.com/CodandoTV/jujubaSVG)
+### Senior Android Engineer | TELUS Digital | Jul, 2023 – Nov, 2023
 
-A friendly library to **manipulate SVG files** in **Android** and **Flutter** apps. It allows accessing any SVG element by its ID to modify properties such as background color or stroke.
+- Android leadership mentoring other Android developers;
 
-### 🦅 [EagleEye](https://github.com/CodandoTV/eagle-eye)
+- Perform proof of concepts to complex features related to custom map implementation;
 
-A **Dart CLI tool** designed to **detect architectural violations** and enforce rules in Flutter/Dart projects. It identifies forbidden dependencies based on patterns configured in an `eagle_eye_config.json` file.
+- Work with modern Android APIs: Hilt, Jetpack Compose, and multi-module projects.
 
-### Other Projects
+### Senior Android Engineer | Socialive | Jul, 2021 – Jun, 2023
 
-- **[HTTP Guinea pigs code](https://gabrielbmoro.github.io/httpguineapigscode/):** A fun project mapping HTTP codes to guinea pigs.
+- Work with product and mobile leadership to maintain current feature set and app stability;
 
-- **[TodoApp](https://github.com/CodandoTV/todoapp_flutter):** A sample **Flutter** project and CodandoTV template, serving as a playground for experimenting with different features and implementations. Its stack includes Freezed for data classes, `get_it` for dependency injection, and AutoRoute for navigation.
+- Created cutting edge dynamic display system for one to many live video display;
+
+- Conduct research and perform proof of concepts for innovative new features;
+
+- Work with modern Android APIs: Dagger, Jetpack Components, WebRTC, and others.
+
+## Core Technical Skills
+
+- Frameworks & UI: Compose Multiplatform, Jetpack Compose, Android SDK, Flutter
+
+- Architecture & Patterns: MVVM, MVI, Multi-module Architecture, Dependency Inversion (SOLID), Reactive Programming, Kotlin Multiplatform (KMP)
+
+- Libraries & Backend: Koin, Ktor, Coroutines, Room Database, Coil, GetX, Sqflite, MobX, and others
+
+- Testing & Quality: Unit Testing, UI Testing (Maestro), Snapshot Testing (Paparazzi), Detekt, Architecture Validation
+
+- AI Code Assistants: Claude Code, Open Code, AI-assisted development workflows, prompt-driven feature planning, and agentic software development
+
+- Tooling & CI/CD: Gradle, Gradle Plugin Development, GitHub Actions, Fastlane, Danger, CLI Development, BuildKonfig
+
+## Education
+
+- M.Sc. in Computer Science | UFRGS (Universidade Federal do Rio Grande do Sul)
+
+- B.Sc. in Software Engineering | UNIPAMPA (Universidade Federal do Pampa)
+
+## Notable Open Source Contributions
+
+### Popcorn Guineapig & Detekt Rule
+
+A lightweight toolset designed to automate and enforce architectural guidelines in multi-module Kotlin and Android projects [here, here].
+
+### JujubaSVG
+
+A user-friendly library enabling granular manipulation of SVG elements (including property modification by ID) for both Compose Multiplatform, Android and Flutter applications [here].
+
+### EagleEye
+
+A specialized Dart CLI tool engineered to detect architectural violations and forbidden dependency patterns in Flutter and Dart projects [here].
+
+### MovieDB-App
+
+A robust sample application showcasing modern development patterns, integrating Compose Multiplatform and Kotlin Multiplatform (KMP) [here].
+
+## Community Leadership & Recognition
+
+### CodandoTV Content Creator
+
+- Educating the Brazilian developer community via video content focused on Kotlin, Flutter, and advanced mobile development infrastructure [here].
+
+### Koin Champion / Content Contributor
+
+- Recognized by Kotzilla for producing expert technical articles and sharing real-world use cases for dependency injection and Koin fundamentals [here].
