@@ -1,4 +1,4 @@
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/) [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
@@ -20,7 +20,7 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 - Active Open Source contributor and community educator, creating technical content and sharing knowledge with the developer community.
 
-- Passionate about software architecture, engineering best practices, and maintaining high code quality through architectural standards
+- Passionate about software architecture, engineering best practices, and maintaining high code quality through architectural standards.
 
 ## Professional Experience (Last 5 years)
 
@@ -74,12 +74,11 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 - B.Sc. in Software Engineering | UNIPAMPA (Universidade Federal do Pampa)
 
-## Notable Open Source Contributions
+## Open Source
 
 ### Popcorn Guineapig & Detekt Rule
 
 [![Popcorn Guinea Pig - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig)[![Popcorn Guinea Pig Detekt - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig-detekt-rule)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig-detekt-rule)
-
 
 A lightweight toolset designed to automate and enforce architectural guidelines in multi-module Kotlin and Android projects [here](https://github.com/CodandoTV/popcorn-guineapig) and [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
@@ -102,7 +101,7 @@ A specialized Dart CLI tool engineered to detect architectural violations and fo
 
 - Selected as [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
-## Community Leadership & Recognition
+## Community
 
 ### CodandoTV Content Creator
 

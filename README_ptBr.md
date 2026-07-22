@@ -1,4 +1,4 @@
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/) [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
@@ -74,46 +74,45 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 - Ferramentas & CI/CD: Gradle, Desenvolvimento de Plugins Gradle, GitHub Actions, Fastlane, Danger, Desenvolvimento de Ferramentas de Linha de Comando (CLI) e BuildKonfig.
 
-## Education
+## Educação
 
 - Mestrado em Ciência da Computação | UFRGS (Universidade Federal do Rio Grande do Sul)
 
 - Bacharel em Engenharia de Software | UNIPAMPA (Universidade Federal do Pampa)
 
-## Open-Source
+## Open Source
 
 ### Popcorn Guineapig & Detekt Rule
 
 [![Popcorn Guinea Pig - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig)[![Popcorn Guinea Pig Detekt - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig-detekt-rule)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig-detekt-rule)
 
-
-Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Android [here](https://github.com/CodandoTV/popcorn-guineapig) + [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
+Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Android [aqui](https://github.com/CodandoTV/popcorn-guineapig) + [aqui](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
 ### JujubaSVG
 
 [![JujubaSVG - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
-Uma biblioteca para habilitar a manipulação granular de elementos SVG. Disponível para Compose Multiplatform, Android e Flutter [here](https://github.com/CodandoTV/jujubaSVG).
+Uma biblioteca para habilitar a manipulação granular de elementos SVG. Disponível para Compose Multiplatform, Android e Flutter [aqui](https://github.com/CodandoTV/jujubaSVG).
 
 ### EagleEye
 
 [![Eagle Eye - Pub Version](https://img.shields.io/pub/v/eagle_eye?style=flat)](https://pub.dev/packages/eagle_eye)
 
-Dart CLI para validar violações arquiteturais em projetos Flutter [here](https://github.com/CodandoTV/eagle-eye).
+Dart CLI para validar violações arquiteturais em projetos Flutter [aqui](https://github.com/CodandoTV/eagle-eye).
 
 ### MovieDB-App
 
-- Aplicação robusta que demonstra padrões modernos de desenvolvimento integrando Compose Multiplatform e Kotlin Mutiplatform [here](https://github.com/gabrielbmoro/MovieDB-App).
+- Aplicação robusta que demonstra padrões modernos de desenvolvimento integrando Compose Multiplatform e Kotlin Mutiplatform [aqui](https://github.com/gabrielbmoro/MovieDB-App).
 
 - Selecionada como [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
-## Comunidade Tech
+## Comunidade
 
 ### CodandoTV Content Creator
 
-- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile [here](https://codandotv.com/#creators).
+- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile [aqui](https://codandotv.com/#creators).
 
 ### Koin Champion
 
-- Reconhecido pela Kotzilla por produzir conteúdo especializado sobre Koin (dependency injection library) usando exemplos do mundo real [here](https://koinchampion.kotzilla.io/apply-now).
+- Reconhecido pela Kotzilla por produzir conteúdo especializado sobre Koin (dependency injection library) usando exemplos do mundo real [aqui](https://koinchampion.kotzilla.io/apply-now).
