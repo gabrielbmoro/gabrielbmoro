@@ -88,6 +88,8 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Android [aqui](https://github.com/CodandoTV/popcorn-guineapig) + [aqui](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
+Criador original & principal mantenedor.
+
 ### JujubaSVG
 
 [![JujubaSVG - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
@@ -95,15 +97,21 @@ Ferramenta projetada para automatizar e validar regras arquiteturais em projetos
 
 Uma biblioteca para habilitar a manipulação granular de elementos SVG. Disponível para Compose Multiplatform, Android e Flutter [aqui](https://github.com/CodandoTV/jujubaSVG).
 
+Criador original & principal mantenedor.
+
 ### EagleEye
 
 [![Eagle Eye - Pub Version](https://img.shields.io/pub/v/eagle_eye?style=flat)](https://pub.dev/packages/eagle_eye)
 
 Dart CLI para validar violações arquiteturais em projetos Flutter [aqui](https://github.com/CodandoTV/eagle-eye).
 
+Criador original & principal mantenedor.
+
 ### MovieDB-App
 
 - Aplicação robusta que demonstra padrões modernos de desenvolvimento integrando Compose Multiplatform e Kotlin Mutiplatform [aqui](https://github.com/gabrielbmoro/MovieDB-App).
+
+Criador original & principal mantenedor.
 
 - Selecionada como [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
