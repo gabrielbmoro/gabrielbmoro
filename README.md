@@ -80,32 +80,32 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 [![Popcorn Guinea Pig - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig)[![Popcorn Guinea Pig Detekt - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig-detekt-rule)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig-detekt-rule)
 
-A lightweight toolset designed to automate and enforce architectural guidelines in multi-module Kotlin and Android projects [here](https://github.com/CodandoTV/popcorn-guineapig) and [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
+- A lightweight toolset designed to automate and enforce architectural guidelines in multi-module Kotlin and Android projects [here](https://github.com/CodandoTV/popcorn-guineapig) and [here](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
-Original creator & main maintainer.
+- Original creator & main maintainer.
 
 ### JujubaSVG
 
 [![JujubaSVG - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/jujubaSVG)](https://central.sonatype.com/artifact/io.github.codandotv/jujubaSVG)
 [![Pub Version](https://img.shields.io/pub/v/jujuba_svg?style=flat)](https://pub.dev/packages/jujuba_svg)
 
-A user-friendly library enabling granular manipulation of SVG elements (including property modification by ID) for both Compose Multiplatform, Android and Flutter applications [here](https://github.com/CodandoTV/jujubaSVG).
+- A user-friendly library enabling granular manipulation of SVG elements (including property modification by ID) for both Compose Multiplatform, Android and Flutter applications [here](https://github.com/CodandoTV/jujubaSVG).
 
-Original creator & main maintainer.
+- Original creator & main maintainer.
 
 ### EagleEye
 
 [![Eagle Eye - Pub Version](https://img.shields.io/pub/v/eagle_eye?style=flat)](https://pub.dev/packages/eagle_eye)
 
-A specialized Dart CLI tool engineered to detect architectural violations and forbidden dependency patterns in Flutter and Dart projects [here](https://github.com/CodandoTV/eagle-eye).
+- A specialized Dart CLI tool engineered to detect architectural violations and forbidden dependency patterns in Flutter and Dart projects [here](https://github.com/CodandoTV/eagle-eye).
 
-Original creator & main maintainer.
+- Original creator & main maintainer.
 
 ### MovieDB-App
 
 - A robust sample application showcasing modern development patterns, integrating Compose Multiplatform and Kotlin Multiplatform (KMP) [here](https://github.com/gabrielbmoro/MovieDB-App).
 
-Original creator & main maintainer.
+- Original creator & main maintainer.
 
 - Selected as [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
