@@ -32,6 +32,8 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 ### Senior Mobile Engineer | Ambush | Nov, 2023 – Atual
 
+- Liderou o desenvolvimento de funcionalidades primordiais para um aplicativo de cashback líder de mercado com mais de 35 milhões de usuários, garantindo alta disponibilidade e um alto desempenho de interface em milhões de transações diárias.
+
 - Liderança técnica em desenvolvimento Mobile, mentorando desenvolvedores que estão iniciando com Kotlin Multiplatform (Compose Multiplatform), promovendo boas práticas e consistência arquitetural.
 
 - Condução de Provas de Conceito (POCs) envolvendo integrações em Kotlin Multiplatform com bibliotecas específicas das plataformas iOS e Android.
@@ -44,6 +46,8 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 ### Senior Android Engineer | TELUS Digital | Jul, 2023 – Nov, 2023
 
+- Projetou e entregou funcionalidades de alto impacto em Android para um aplicativo principal de operadora que atende de 25M a 35M + de usuários ativos no Android (com mais de 100M de downloads na Play Store).
+
 - Liderança técnica em Android, mentorando outros desenvolvedores Android.
 
 - Condução de Provas de Conceito (POCs) para funcionalidades complexas relacionadas à implementação de mapas customizados.
@@ -51,6 +55,8 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 - Desenvolvimento utilizando APIs e tecnologias modernas do ecossistema Android, incluindo Hilt, Jetpack Compose e arquiteturas multi-módulo.
 
 ### Senior Android Engineer | Socialive | Jul, 2021 – Jun, 2023
+
+- Projetou e desenvolveu funcionalidades centrais em Android para um aplicativo corporativo de gravação de vídeo remoto e transmissão ao vivo, implementando gravação local em alta definição, captura de transmissão de baixa latência e processamento de mídia em segundo plano.
 
 - Colaboração com as equipes de Produto e liderança de Mobile para manter a estabilidade da aplicação e evoluir o conjunto de funcionalidades existentes.
 

@@ -26,6 +26,8 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ### Senior Mobile Engineer | Ambush | Nov, 2023 – Present
 
+- Scaled High-Traffic Mobile Infrastructure: Spearheaded core feature development for a market-leading cash-back application serving 35M+ users, ensuring high availability and seamless UI performance across millions of daily transactions.
+
 - Mobile leadership, mentoring other mobile developers who are starting to work with Kotlin Multiplatform (Compose Multiplatform), fostering best practices and architectural consistency;
 
 - Conduct proofs of concept involving Kotlin Multiplatform integrations with platform-specific libraries for iOS and Android;
@@ -38,6 +40,8 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ### Senior Android Engineer | TELUS Digital | Jul, 2023 – Nov, 2023
 
+- Engineered and delivered high-impact Android features for a flagship carrier app serving 25M–35M+ active Android users (100M+ Play Store downloads).
+
 - Android leadership mentoring other Android developers;
 
 - Perform proof of concepts to complex features related to custom map implementation;
@@ -45,6 +49,8 @@ I'm also known as **Moro** or **gabrielbmoro**.
 - Work with modern Android APIs: Hilt, Jetpack Compose, and multi-module projects.
 
 ### Senior Android Engineer | Socialive | Jul, 2021 – Jun, 2023
+
+- Engineered core Android features for an enterprise remote video recording and livestreaming app, implementing high-definition local video recording, low-latency stream capture, and background media processing.
 
 - Work with product and mobile leadership to maintain current feature set and app stability;
 
