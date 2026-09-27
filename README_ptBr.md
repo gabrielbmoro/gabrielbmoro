@@ -32,7 +32,13 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 ### Senior Mobile Engineer | Kobe | Sep, 2026 – Present
 
-- : )
+- Desenvolvimento e evolução de aplicações mobile de e-commerce utilizando Flutter e Dart, atuando em todo o ciclo de vida do produto.
+
+- Definição e evolução de arquitetura de software, boas práticas de engenharia e testes automatizados para entregar aplicações escaláveis e de alta qualidade.
+
+- Desenvolvimento de soluções mobile integradas ao ecossistema VTEX, criando experiências personalizadas para diferentes negócios e marcas.
+
+- Atuação em liderança técnica, code reviews, mentoria e processos ágeis, contribuindo para a qualidade e o compartilhamento de conhecimento no time.
 
 ### Senior Mobile Engineer | Ambush | Nov, 2023 – Aug, 2026
 
