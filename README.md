@@ -26,7 +26,13 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ### Senior Mobile Engineer | Kobe | Sep, 2026 – Present
 
-- : )
+- Develop and evolve mobile e-commerce applications using Flutter and Dart, contributing across the full product lifecycle.
+
+- Design and improve software architecture, engineering practices, and automated testing to deliver scalable and high-quality applications.
+
+- Build mobile solutions integrated with the VTEX ecosystem, delivering customized experiences for different businesses and brands.
+
+- Contribute to technical leadership, code reviews, mentoring, and Agile processes, helping improve team quality and knowledge sharing.
 
 ### Senior Mobile Engineer | Ambush | Nov, 2023 – Aug, 2026
 
