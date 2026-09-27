@@ -24,7 +24,11 @@ I'm also known as **Moro** or **gabrielbmoro**.
 
 ## Professional Experience (Last 5 years)
 
-### Senior Mobile Engineer | Ambush | Nov, 2023 – Present
+### Senior Mobile Engineer | Kobe | Sep, 2026 – Present
+
+- : )
+
+### Senior Mobile Engineer | Ambush | Nov, 2023 – Aug, 2026
 
 - Scaled High-Traffic Mobile Infrastructure: Spearheaded core feature development for a market-leading cash-back application serving 35M+ users, ensuring high availability and seamless UI performance across millions of daily transactions.
 
