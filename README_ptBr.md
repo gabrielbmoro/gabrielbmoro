@@ -30,7 +30,11 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 ## Experiência Profissional (Últimos 5 anos)
 
-### Senior Mobile Engineer | Ambush | Nov, 2023 – Atual
+### Senior Mobile Engineer | Kobe | Sep, 2026 – Present
+
+- : )
+
+### Senior Mobile Engineer | Ambush | Nov, 2023 – Aug, 2026
 
 - Liderou o desenvolvimento de funcionalidades primordiais para um aplicativo de cashback líder de mercado com mais de 35 milhões de usuários, garantindo alta disponibilidade e um alto desempenho de interface em milhões de transações diárias.
 
