@@ -560,38 +560,6 @@ html[lang="pt-BR"] .hero h1 {
   font-size: 12px;
 }
 
-.companies {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px 32px;
-  margin-top: 72px;
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
-}
-
-.companies-label {
-  color: var(--faint);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.companies-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 38px;
-}
-
-.companies-list li {
-  color: var(--ink-soft);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  opacity: 0.72;
-}
-
 /* Sections ---------------------------------------------------------------- */
 
 .section {
@@ -1313,10 +1281,6 @@ h2 {
     text-align: left;
   }
 
-  .companies {
-    margin-top: 52px;
-  }
-
   .mentor-grid {
     grid-template-columns: 1fr;
   }
@@ -1444,10 +1408,6 @@ h2 {
 
   .portrait {
     width: min(260px, 70vw);
-  }
-
-  .companies-list {
-    gap: 10px 22px;
   }
 
   .cta-band {

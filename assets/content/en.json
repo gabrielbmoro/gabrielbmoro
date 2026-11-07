@@ -73,14 +73,7 @@
     ],
     "portraitAlt": "Portrait of Gabriel Moro, smiling and wearing glasses.",
     "portraitRole": "Senior Mobile Engineer at Kobe",
-    "portraitEducation": "M.Sc. in Computer Science · UFRGS",
-    "companiesLabel": "Shipped with",
-    "companies": [
-      "Ambush",
-      "TELUS Digital",
-      "Socialive",
-      "Kobe"
-    ]
+    "portraitEducation": "M.Sc. in Computer Science · UFRGS"
   },
   "about": {
     "eyebrow": "About",

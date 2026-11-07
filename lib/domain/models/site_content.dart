@@ -36,8 +36,6 @@ class HeroContent {
     required this.portraitAlt,
     required this.portraitRole,
     required this.portraitEducation,
-    required this.companiesLabel,
-    required this.companies,
   });
 
   final String kicker;
@@ -53,8 +51,6 @@ class HeroContent {
   final String portraitAlt;
   final String portraitRole;
   final String portraitEducation;
-  final String companiesLabel;
-  final List<String> companies;
 }
 
 class AboutContent {
