@@ -2,9 +2,9 @@
 
 🌐 **[Visite o site →](https://gabrielbmoro.github.io/gabrielbmoro/)** · [Português](https://gabrielbmoro.github.io/gabrielbmoro/) · [English](https://gabrielbmoro.github.io/gabrielbmoro/en/)
 
-# Hello, I'm Gabriel Bronzatti Moro 👋🚀
+# Olá, eu sou Gabriel Bronzatti Moro 👋🚀
 
-README in English [here](README.md)
+README em inglês [aqui](README.md)
 
 Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
@@ -19,7 +19,7 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 Sou engenheiro mobile **desde 2017**. Construí e liderei produtos em escala — apps com **35M+ de usuários** e **100M+ downloads** — como engenheiro sênior e líder técnico, trabalhando com Android, Kotlin Multiplatform (Compose Multiplatform) e Flutter.
 
-Ensinar sempre fez parte do trabalho, não era um extra. Mentorar desenvolvedores, conduzir workshops internos e levar conteúdo para a comunidade é o que mais me deu energia na carreira — e é o que essa mentoria existe para fazer.
+Ensinar sempre fez parte do trabalho — não era um extra. Mentorar desenvolvedores, conduzir workshops internos e levar conteúdo para a comunidade é o que mais me deu energia na carreira — e é o que essa mentoria existe para fazer.
 
 Gosto de uma abordagem **mão na massa**: menos teoria solta, mais código, decisão de arquitetura e próximo passo concreto. É esse jeito que levo para a mentoria.
 
@@ -35,7 +35,7 @@ Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais r�
 
 - Mentor de desenvolvedores em times de Android e Kotlin Multiplatform.
 
-- Palestrante em **GDG Groups** e **GDG DevFest**.
+- Palestrante em **GDGs** e **DevFests**.
 
 - Autor de artigos sobre code review, navegação e testes no [Medium](https://medium.com/@gabrielbronzattimoro.es).
 
@@ -49,7 +49,7 @@ Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais r�
 
 - Desenvolvedores plenos que querem chegar ao nível sênior.
 
-- Seniores que estão assumindo liderança técnica e precisam de repertório para conduzir times.
+- Sêniores que estão assumindo liderança técnica e precisam de repertório para conduzir times.
 
 - Desenvolvedores Android e Flutter que estão migrando para Kotlin Multiplatform.
 
@@ -59,7 +59,7 @@ Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais r�
 
 - **Carreira:** transição para sênior e liderança técnica, plano de evolução, posicionamento profissional e portfólio.
 
-- **Android & KMP:** Compose Multiplatform, arquitetura multi-módulo, integração com bibliotecas específicas de iOS e Android e decisões de arquitetura.
+- **Android & KMP:** Compose Multiplatform, arquitetura multimódulo, integração com bibliotecas específicas de iOS e Android e decisões de arquitetura.
 
 - **Arquitetura & qualidade:** MVVM/MVI, modularização, estratégias de teste (unitário, UI e snapshot), Detekt e automação de regras arquiteturais.
 
@@ -67,7 +67,7 @@ Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais r�
 
 - **IA no dia a dia:** Claude Code, agentes e fluxos de desenvolvimento assistido por IA, com revisão crítica do que é gerado.
 
-- **Open Source & conteúdo:** publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico.
+- **Open source & conteúdo:** publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico.
 
 ### Como eu trabalho
 
@@ -99,9 +99,9 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 **[Quero marcar minha conversa gratuita →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
 
-## Experiência Profissional (Últimos 5 anos)
+## Experiência profissional (últimos 5 anos)
 
-### Senior Mobile Engineer | Kobe | Sep, 2026 – Present
+### Engenheiro mobile sênior | Kobe | set. 2026 – atual
 
 - Desenvolvimento e evolução de aplicações mobile de e-commerce utilizando Flutter e Dart, atuando em todo o ciclo de vida do produto.
 
@@ -111,11 +111,11 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Atuação em liderança técnica, code reviews, mentoria e processos ágeis, contribuindo para a qualidade e o compartilhamento de conhecimento no time.
 
-### Senior Mobile Engineer | Ambush | Nov, 2023 – Aug, 2026
+### Engenheiro mobile sênior | Ambush | nov. 2023 – ago. 2026
 
 - Liderou o desenvolvimento de funcionalidades primordiais para um aplicativo de cashback líder de mercado com mais de 35 milhões de usuários, garantindo alta disponibilidade e um alto desempenho de interface em milhões de transações diárias.
 
-- Liderança técnica em desenvolvimento Mobile, mentorando desenvolvedores que estão iniciando com Kotlin Multiplatform (Compose Multiplatform), promovendo boas práticas e consistência arquitetural.
+- Liderança técnica em desenvolvimento mobile, mentorando desenvolvedores que estão iniciando com Kotlin Multiplatform (Compose Multiplatform), promovendo boas práticas e consistência arquitetural.
 
 - Condução de Provas de Conceito (POCs) envolvendo integrações em Kotlin Multiplatform com bibliotecas específicas das plataformas iOS e Android.
 
@@ -125,21 +125,21 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Liderança de iniciativas de compartilhamento de conhecimento e desenvolvimento técnico da equipe, incluindo disseminação de conhecimento em Flutter, boas práticas de desenvolvimento multiplataforma, workshops internos e palestras técnicas para diferentes equipes da empresa.
 
-### Senior Android Engineer | TELUS Digital | Jul, 2023 – Nov, 2023
+### Engenheiro Android sênior | TELUS Digital | jul. 2023 – nov. 2023
 
-- Projetou e entregou funcionalidades de alto impacto em Android para um aplicativo principal de operadora que atende de 25M a 35M + de usuários ativos no Android (com mais de 100M de downloads na Play Store).
+- Projetou e entregou funcionalidades de alto impacto em Android para um aplicativo principal de operadora que atende de 25M a 35M+ de usuários ativos no Android (com mais de 100M de downloads na Play Store).
 
 - Liderança técnica em Android, mentorando outros desenvolvedores Android.
 
 - Condução de Provas de Conceito (POCs) para funcionalidades complexas relacionadas à implementação de mapas customizados.
 
-- Desenvolvimento utilizando APIs e tecnologias modernas do ecossistema Android, incluindo Hilt, Jetpack Compose e arquiteturas multi-módulo.
+- Desenvolvimento utilizando APIs e tecnologias modernas do ecossistema Android, incluindo Hilt, Jetpack Compose e arquiteturas multimódulo.
 
-### Senior Android Engineer | Socialive | Jul, 2021 – Jun, 2023
+### Engenheiro Android sênior | Socialive | jul. 2021 – jun. 2023
 
 - Projetou e desenvolveu funcionalidades centrais em Android para um aplicativo corporativo de gravação de vídeo remoto e transmissão ao vivo, implementando gravação local em alta definição, captura de transmissão de baixa latência e processamento de mídia em segundo plano.
 
-- Colaboração com as equipes de Produto e liderança de Mobile para manter a estabilidade da aplicação e evoluir o conjunto de funcionalidades existentes.
+- Colaboração com as equipes de Produto e liderança de mobile para manter a estabilidade da aplicação e evoluir o conjunto de funcionalidades existentes.
 
 - Desenvolvimento de um sistema dinâmico de exibição de vídeo ao vivo para transmissões um-para-muitos (one-to-many).
 
@@ -147,11 +147,11 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Desenvolvimento utilizando APIs e tecnologias modernas do ecossistema Android, incluindo Dagger, Jetpack Components, WebRTC e outras.
 
-## Habilidades Técnicas
+## Habilidades técnicas
 
 - Frameworks & Interface: Compose Multiplatform, Jetpack Compose, Android SDK e Flutter.
 
-- Arquitetura & Padrões: MVVM, MVI, Arquitetura Multi-módulo, Inversão de Dependência (SOLID), Programação Reativa e Kotlin Multiplatform (KMP).
+- Arquitetura & Padrões: MVVM, MVI, Arquitetura multimódulo, Inversão de Dependência (SOLID), Programação Reativa e Kotlin Multiplatform (KMP).
 
 - Bibliotecas & Backend: Koin, Ktor, Coroutines, Room Database, Coil, GetX, Sqflite, MobX e outras.
 
@@ -167,13 +167,13 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Bacharel em Engenharia de Software | UNIPAMPA (Universidade Federal do Pampa)
 
-## Open Source
+## Open source
 
 ### Popcorn Guineapig & Detekt Rule
 
 [![Popcorn Guinea Pig - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig)[![Popcorn Guinea Pig Detekt - Maven Central Version](https://img.shields.io/maven-central/v/io.github.codandotv/popcornguineapig-detekt-rule)](https://central.sonatype.com/artifact/io.github.codandotv/popcornguineapig-detekt-rule)
 
-- Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multi-módulos Kotlin e Android [aqui](https://github.com/CodandoTV/popcorn-guineapig) + [aqui](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
+- Ferramenta projetada para automatizar e validar regras arquiteturais em projetos multimódulo Kotlin e Android [aqui](https://github.com/CodandoTV/popcorn-guineapig) + [aqui](https://github.com/CodandoTV/popcornguineapig-detekt-rule).
 
 - Criador original & principal mantenedor.
 
@@ -190,13 +190,13 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 [![Eagle Eye - Pub Version](https://img.shields.io/pub/v/eagle_eye?style=flat)](https://pub.dev/packages/eagle_eye)
 
-- Dart CLI para validar violações arquiteturais em projetos Flutter [aqui](https://github.com/CodandoTV/eagle-eye).
+- Dart CLI para detectar violações arquiteturais em projetos Flutter [aqui](https://github.com/CodandoTV/eagle-eye).
 
 - Criador original & principal mantenedor.
 
 ### MovieDB-App
 
-- Aplicação robusta que demonstra padrões modernos de desenvolvimento integrando Compose Multiplatform e Kotlin Mutiplatform [aqui](https://github.com/gabrielbmoro/MovieDB-App).
+- Aplicação robusta que demonstra padrões modernos de desenvolvimento integrando Compose Multiplatform e Kotlin Multiplatform [aqui](https://github.com/gabrielbmoro/MovieDB-App).
 
 - Criador original & principal mantenedor.
 
@@ -206,15 +206,15 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 ### Palestras
 
-- **GDG Groups** e **GDG DevFest**: palestras sobre desenvolvimento mobile, arquitetura e Kotlin para a comunidade.
+- **GDGs** e **DevFests**: palestras sobre desenvolvimento mobile, arquitetura e Kotlin para a comunidade.
 
 ### Artigos
 
 - Escrevo no [Medium](https://medium.com/@gabrielbronzattimoro.es) sobre temas de desenvolvimento mobile, incluindo code review, navegação e testes.
 
-### CodandoTV Content Creator
+### Criador de conteúdo na CodandoTV
 
-- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile — vídeos técnicos, bibliotecas open source e podcast [aqui](https://www.youtube.com/@CodandoTV) e [aqui](https://codandotv.com/#creators).
+- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento mobile — vídeos técnicos, bibliotecas open source e podcast [aqui](https://www.youtube.com/@CodandoTV) e [aqui](https://codandotv.com/#creators).
 
 ### Koin Champion
 
