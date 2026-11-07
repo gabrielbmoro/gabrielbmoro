@@ -3,11 +3,12 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 import 'app.dart';
-import 'content/site_content.dart';
+import 'data/repository_impl.dart';
+import 'domain/models/site_links.dart';
 import 'main.server.options.dart';
 
 /// Person + profile structured data shared by both locales.
-const _personJsonLd =
+String _personJsonLd(SiteLinks links) =>
     '''
 {
   "@context": "https://schema.org",
@@ -16,18 +17,18 @@ const _personJsonLd =
   "alternateName": "gabrielbmoro",
   "jobTitle": "Senior Mobile Engineer",
   "description": "Senior mobile engineer and tech lead working with Android, Kotlin Multiplatform and Flutter. 1:1 mentor for developers growing into senior and lead roles.",
-  "url": "$siteUrl",
-  "image": "${siteUrl}assets/avatar-800.jpg",
+  "url": "${links.siteUrl}",
+  "image": "${links.siteUrl}assets/avatar-800.jpg",
   "worksFor": { "@type": "Organization", "name": "Kobe" },
   "alumniOf": [
     { "@type": "CollegeOrUniversity", "name": "UFRGS" },
     { "@type": "CollegeOrUniversity", "name": "UNIPAMPA" }
   ],
   "sameAs": [
-    "$linkedInUrl",
-    "$gitHubUrl",
-    "$mediumUrl",
-    "$youTubeUrl"
+    "${links.linkedInUrl}",
+    "${links.gitHubUrl}",
+    "${links.mediumUrl}",
+    "${links.youTubeUrl}"
   ],
   "knowsAbout": [
     "Android",
@@ -43,10 +44,13 @@ const _personJsonLd =
 void main() {
   Jaspr.initializeApp(options: defaultServerOptions);
 
+  const repository = SiteContentRepositoryImpl();
+  final content = repository.contentFor('en');
+
   runApp(
     Document(
-      title: SiteContent.en.metaTitle,
-      lang: 'en',
+      title: content.metaTitle,
+      lang: content.lang,
       // No <base> element: every asset and link is page-relative.
       base: null,
       meta: {
@@ -57,11 +61,11 @@ void main() {
       head: [
         meta(name: 'robots', content: 'index, follow'),
         script(
-          content: _personJsonLd,
+          content: _personJsonLd(content.links),
           attributes: const {'type': 'application/ld+json'},
         ),
       ],
-      body: const App(),
+      body: App(repository: repository),
     ),
   );
 }

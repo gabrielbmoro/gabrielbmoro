@@ -2,7 +2,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/ui.dart';
-import '../content/site_content.dart';
+import '../domain/models/site_content.dart';
 
 class MentoringSection extends StatelessComponent {
   const MentoringSection({required this.content, super.key});

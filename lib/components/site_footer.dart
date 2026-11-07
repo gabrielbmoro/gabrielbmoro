@@ -1,7 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../content/site_content.dart';
+import '../domain/models/site_content.dart';
 import 'ui.dart';
 
 class SiteFooter extends StatelessComponent {
@@ -30,7 +30,7 @@ class SiteFooter extends StatelessComponent {
             variant: ActionVariant.light,
             icon: ActionIcon.right,
           ),
-          a(href: 'mailto:$emailAddress', classes: 'footer-email', [.text(emailAddress)]),
+          a(href: 'mailto:${content.links.email}', classes: 'footer-email', [.text(content.links.email)]),
         ]),
       ]),
       div(classes: 'container footer-bottom', [

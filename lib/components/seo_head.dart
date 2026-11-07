@@ -1,19 +1,23 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
-import '../content/site_content.dart';
+import '../domain/models/site_content.dart';
 
 /// Per-route document metadata and head assets.
 ///
 /// Asset URLs are page-relative so the site works both at the root during
 /// local development and under the repository path on GitHub Pages.
 class SeoHead extends StatelessComponent {
-  const SeoHead({required this.content, super.key});
+  const SeoHead({required this.content, required this.locales, super.key});
 
   final SiteContent content;
 
+  /// Every published locale, in site order; the first one is the default.
+  final List<SiteContent> locales;
+
   @override
   Component build(BuildContext context) {
+    final siteUrl = content.links.siteUrl;
     final image = '${siteUrl}assets/avatar-800.jpg';
     final c = content;
 
@@ -36,9 +40,9 @@ class SeoHead extends StatelessComponent {
           attributes: const {'as': 'font', 'type': 'font/woff2', 'crossorigin': 'anonymous'},
         ),
         link(rel: 'canonical', href: c.canonicalUrl),
-        link(rel: 'alternate', href: siteUrl, attributes: const {'hreflang': 'en'}),
-        link(rel: 'alternate', href: '${siteUrl}pt-br/', attributes: const {'hreflang': 'pt-BR'}),
-        link(rel: 'alternate', href: siteUrl, attributes: const {'hreflang': 'x-default'}),
+        for (final locale in locales)
+          link(rel: 'alternate', href: locale.canonicalUrl, attributes: {'hreflang': locale.lang}),
+        link(rel: 'alternate', href: locales.first.canonicalUrl, attributes: const {'hreflang': 'x-default'}),
         meta(content: c.metaTitle, attributes: const {'property': 'og:title'}),
         meta(content: c.metaDescription, attributes: const {'property': 'og:description'}),
         meta(content: c.canonicalUrl, attributes: const {'property': 'og:url'}),

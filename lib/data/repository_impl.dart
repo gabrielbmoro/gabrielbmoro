@@ -1,344 +1,32 @@
-/// Copy for the site, in English and Brazilian Portuguese.
-///
-/// All visible text lives here so the two locales stay in sync and the
-/// section widgets stay focused on layout.
-library;
+import '../domain/models/site_content.dart';
+import '../domain/models/site_links.dart';
+import '../domain/repository.dart';
 
-const emailAddress = 'gabrielbronzattimoro.es@gmail.com';
-const linkedInUrl = 'https://www.linkedin.com/in/gabrielbronzattimoro15031994/';
-const gitHubUrl = 'https://github.com/gabrielbmoro';
-const mediumUrl = 'https://medium.com/@gabrielbronzattimoro.es';
-const youTubeUrl = 'https://www.youtube.com/@CodandoTV';
-const codandoTvUrl = 'https://codandotv.com/#creators';
-const koinChampionUrl = 'https://koinchampion.kotzilla.io/apply-now';
-const siteUrl = 'https://gabrielbmoro.github.io/gabrielbmoro/';
+const _siteUrl = 'https://gabrielbmoro.github.io/gabrielbmoro/';
+const _emailAddress = 'gabrielbronzattimoro.es@gmail.com';
+const _linkedInUrl = 'https://www.linkedin.com/in/gabrielbronzattimoro15031994/';
+const _gitHubUrl = 'https://github.com/gabrielbmoro';
+const _mediumUrl = 'https://medium.com/@gabrielbronzattimoro.es';
+const _youTubeUrl = 'https://www.youtube.com/@CodandoTV';
+const _codandoTvUrl = 'https://codandotv.com/#creators';
+const _koinChampionUrl = 'https://koinchampion.kotzilla.io/apply-now';
 
-class NavItem {
-  const NavItem(this.label, this.href);
+const _links = SiteLinks(
+  siteUrl: _siteUrl,
+  email: _emailAddress,
+  linkedInUrl: _linkedInUrl,
+  gitHubUrl: _gitHubUrl,
+  mediumUrl: _mediumUrl,
+  youTubeUrl: _youTubeUrl,
+  codandoTvUrl: _codandoTvUrl,
+  koinChampionUrl: _koinChampionUrl,
+);
 
-  final String label;
-  final String href;
-}
+/// Content repository backed by the copy versioned in this file.
+final class SiteContentRepositoryImpl implements SiteContentRepository {
+  const SiteContentRepositoryImpl();
 
-class HeroStat {
-  const HeroStat(this.value, this.label);
-
-  final String value;
-  final String label;
-}
-
-class HeroContent {
-  const HeroContent({
-    required this.kicker,
-    required this.availability,
-    required this.availabilityNote,
-    required this.title,
-    required this.titleEmphasis,
-    required this.lede,
-    required this.primaryCta,
-    required this.secondaryCta,
-    required this.note,
-    required this.stats,
-    required this.portraitAlt,
-    required this.portraitRole,
-    required this.portraitEducation,
-    required this.companiesLabel,
-    required this.companies,
-  });
-
-  final String kicker;
-  final String availability;
-  final String availabilityNote;
-  final String title;
-  final String titleEmphasis;
-  final String lede;
-  final String primaryCta;
-  final String secondaryCta;
-  final String note;
-  final List<HeroStat> stats;
-  final String portraitAlt;
-  final String portraitRole;
-  final String portraitEducation;
-  final String companiesLabel;
-  final List<String> companies;
-}
-
-class AboutContent {
-  const AboutContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.paragraphs,
-    required this.currentlyLabel,
-    required this.currentlyRole,
-    required this.currentlyCompany,
-    required this.currentlyPeriod,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final List<String> paragraphs;
-  final String currentlyLabel;
-  final String currentlyRole;
-  final String currentlyCompany;
-  final String currentlyPeriod;
-}
-
-class FocusArea {
-  const FocusArea(this.title, this.description);
-
-  final String title;
-  final String description;
-}
-
-class MentorStep {
-  const MentorStep(this.title, this.description);
-
-  final String title;
-  final String description;
-}
-
-class MentoringContent {
-  const MentoringContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.lede,
-    required this.forYouTitle,
-    required this.forYou,
-    required this.forYouNote,
-    required this.forYouNoteCta,
-    required this.focusTitle,
-    required this.focusAreas,
-    required this.stepsTitle,
-    required this.steps,
-    required this.stepsNote,
-    required this.getTitle,
-    required this.getItems,
-    required this.ctaTitle,
-    required this.ctaText,
-    required this.ctaButton,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final String lede;
-  final String forYouTitle;
-  final List<String> forYou;
-  final String forYouNote;
-  final String forYouNoteCta;
-  final String focusTitle;
-  final List<FocusArea> focusAreas;
-  final String stepsTitle;
-  final List<MentorStep> steps;
-  final String stepsNote;
-  final String getTitle;
-  final List<String> getItems;
-  final String ctaTitle;
-  final String ctaText;
-  final String ctaButton;
-}
-
-class Role {
-  const Role({
-    required this.company,
-    required this.title,
-    required this.period,
-    required this.bullets,
-  });
-
-  final String company;
-  final String title;
-  final String period;
-  final List<String> bullets;
-}
-
-class ExperienceContent {
-  const ExperienceContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.lede,
-    required this.roles,
-    required this.linkLabel,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final String lede;
-  final List<Role> roles;
-  final String linkLabel;
-}
-
-class SkillGroup {
-  const SkillGroup(this.label, this.value);
-
-  final String label;
-  final String value;
-}
-
-class ToolkitContent {
-  const ToolkitContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.groups,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final List<SkillGroup> groups;
-}
-
-class Project {
-  const Project({
-    required this.name,
-    required this.description,
-    required this.tags,
-    required this.url,
-    required this.linkLabel,
-  });
-
-  final String name;
-  final String description;
-  final List<String> tags;
-  final String url;
-  final String linkLabel;
-}
-
-class WorkContent {
-  const WorkContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.lede,
-    required this.projects,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final String lede;
-  final List<Project> projects;
-}
-
-class LinkRef {
-  const LinkRef(this.label, this.url);
-
-  final String label;
-  final String url;
-}
-
-class CommunityItem {
-  const CommunityItem({
-    required this.label,
-    required this.description,
-    this.links = const [],
-  });
-
-  final String label;
-  final String description;
-  final List<LinkRef> links;
-}
-
-class CommunityContent {
-  const CommunityContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.items,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final List<CommunityItem> items;
-}
-
-class FooterContent {
-  const FooterContent({
-    required this.heading,
-    required this.text,
-    required this.cta,
-    required this.availability,
-    required this.copyright,
-    required this.builtWith,
-    required this.links,
-  });
-
-  final String heading;
-  final String text;
-  final String cta;
-  final String availability;
-  final String copyright;
-  final String builtWith;
-  final List<LinkRef> links;
-}
-
-class SiteContent {
-  const SiteContent({
-    required this.lang,
-    required this.route,
-    required this.switchHref,
-    required this.switchHrefLang,
-    required this.switchLabel,
-    required this.switchAriaLabel,
-    required this.assetPrefix,
-    required this.homeHref,
-    required this.skipLink,
-    required this.metaTitle,
-    required this.metaDescription,
-    required this.canonicalUrl,
-    required this.ogLocale,
-    required this.ogImageAlt,
-    required this.brandRole,
-    required this.homeLabel,
-    required this.navAriaLabel,
-    required this.socialAriaLabel,
-    required this.nav,
-    required this.navCta,
-    required this.mailto,
-    required this.hero,
-    required this.about,
-    required this.mentoring,
-    required this.experience,
-    required this.toolkit,
-    required this.work,
-    required this.community,
-    required this.footer,
-  });
-
-  final String lang;
-
-  /// Route path used by the router.
-  final String route;
-
-  /// Link to the other locale.
-  final String switchHref;
-  final String switchHrefLang;
-  final String switchLabel;
-  final String switchAriaLabel;
-
-  /// Prefix for assets, relative to the page ('' at the root, '../' below it).
-  final String assetPrefix;
-
-  /// Link back to the home page, relative to the current page.
-  final String homeHref;
-  final String skipLink;
-  final String metaTitle;
-  final String metaDescription;
-  final String canonicalUrl;
-  final String ogLocale;
-  final String ogImageAlt;
-  final String brandRole;
-  final String homeLabel;
-  final String navAriaLabel;
-  final String socialAriaLabel;
-  final List<NavItem> nav;
-  final String navCta;
-  final String mailto;
-  final HeroContent hero;
-  final AboutContent about;
-  final MentoringContent mentoring;
-  final ExperienceContent experience;
-  final ToolkitContent toolkit;
-  final WorkContent work;
-  final CommunityContent community;
-  final FooterContent footer;
-
-  static const en = SiteContent(
+  static const _en = SiteContent(
     lang: 'en',
     route: '/',
     switchHref: 'pt-br/',
@@ -352,7 +40,7 @@ class SiteContent {
     metaDescription:
         'Senior mobile engineer and tech lead working with Android, Kotlin Multiplatform and Flutter. '
         '1:1 mentoring for developers moving into senior and lead roles. The first call is free.',
-    canonicalUrl: siteUrl,
+    canonicalUrl: _siteUrl,
     ogLocale: 'en_US',
     ogImageAlt: 'Gabriel Moro',
     brandRole: 'Mobile engineer & mentor',
@@ -366,7 +54,8 @@ class SiteContent {
       NavItem('Work', '#work'),
     ],
     navCta: 'Book a call',
-    mailto: 'mailto:$emailAddress?subject=1%3A1%20Mentoring%20-%20free%20intro%20call',
+    mailto: 'mailto:$_emailAddress?subject=1%3A1%20Mentoring%20-%20free%20intro%20call',
+    links: _links,
     hero: HeroContent(
       kicker: 'Senior mobile engineer & tech lead',
       availability: 'Open for 1:1 mentoring',
@@ -588,20 +277,20 @@ class SiteContent {
         CommunityItem(
           label: 'Articles',
           description: 'Code review, navigation and testing on Medium.',
-          links: [LinkRef('Read on Medium', mediumUrl)],
+          links: [LinkRef('Read on Medium', _mediumUrl)],
         ),
         CommunityItem(
           label: 'CodandoTV',
           description: 'Technical videos, open source libraries and a podcast for the Brazilian developer community.',
           links: [
-            LinkRef('Watch on YouTube', youTubeUrl),
-            LinkRef('codandotv.com', codandoTvUrl),
+            LinkRef('Watch on YouTube', _youTubeUrl),
+            LinkRef('codandotv.com', _codandoTvUrl),
           ],
         ),
         CommunityItem(
           label: 'Koin Champion',
           description: 'Recognized by Kotzilla for expert articles and real-world Koin use cases.',
-          links: [LinkRef('Kotzilla', koinChampionUrl)],
+          links: [LinkRef('Kotzilla', _koinChampionUrl)],
         ),
       ],
     ),
@@ -615,15 +304,15 @@ class SiteContent {
       copyright: '© 2026 Gabriel Bronzatti Moro',
       builtWith: 'Built with Jaspr · Hosted on GitHub Pages',
       links: [
-        LinkRef('LinkedIn', linkedInUrl),
-        LinkRef('GitHub', gitHubUrl),
-        LinkRef('Medium', mediumUrl),
-        LinkRef('YouTube', youTubeUrl),
+        LinkRef('LinkedIn', _linkedInUrl),
+        LinkRef('GitHub', _gitHubUrl),
+        LinkRef('Medium', _mediumUrl),
+        LinkRef('YouTube', _youTubeUrl),
       ],
     ),
   );
 
-  static const ptBr = SiteContent(
+  static const _ptBr = SiteContent(
     lang: 'pt-BR',
     route: '/pt-br',
     switchHref: '../',
@@ -637,7 +326,7 @@ class SiteContent {
     metaDescription:
         'Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. '
         'Mentoria 1:1 para desenvolvedores que querem chegar a papéis sênior e de liderança. A primeira conversa é grátis.',
-    canonicalUrl: '${siteUrl}pt-br/',
+    canonicalUrl: '${_siteUrl}pt-br/',
     ogLocale: 'pt_BR',
     ogImageAlt: 'Gabriel Moro',
     brandRole: 'Engenheiro mobile & mentor',
@@ -651,7 +340,8 @@ class SiteContent {
       NavItem('Projetos', '#work'),
     ],
     navCta: 'Agendar conversa',
-    mailto: 'mailto:$emailAddress?subject=Mentoria%201%3A1%20-%20conversa%20gratuita',
+    mailto: 'mailto:$_emailAddress?subject=Mentoria%201%3A1%20-%20conversa%20gratuita',
+    links: _links,
     hero: HeroContent(
       kicker: 'Engenheiro mobile sênior & tech lead',
       availability: 'Aberto para mentorias 1:1',
@@ -878,20 +568,20 @@ class SiteContent {
         CommunityItem(
           label: 'Artigos',
           description: 'Code review, navegação e testes no Medium.',
-          links: [LinkRef('Ler no Medium', mediumUrl)],
+          links: [LinkRef('Ler no Medium', _mediumUrl)],
         ),
         CommunityItem(
           label: 'CodandoTV',
           description: 'Vídeos técnicos, bibliotecas open source e um podcast para a comunidade brasileira.',
           links: [
-            LinkRef('Assistir no YouTube', youTubeUrl),
-            LinkRef('codandotv.com', codandoTvUrl),
+            LinkRef('Assistir no YouTube', _youTubeUrl),
+            LinkRef('codandotv.com', _codandoTvUrl),
           ],
         ),
         CommunityItem(
           label: 'Koin Champion',
           description: 'Reconhecido pela Kotzilla por artigos técnicos e casos reais de uso do Koin.',
-          links: [LinkRef('Kotzilla', koinChampionUrl)],
+          links: [LinkRef('Kotzilla', _koinChampionUrl)],
         ),
       ],
     ),
@@ -905,11 +595,21 @@ class SiteContent {
       copyright: '© 2026 Gabriel Bronzatti Moro',
       builtWith: 'Feito com Jaspr · Hospedado no GitHub Pages',
       links: [
-        LinkRef('LinkedIn', linkedInUrl),
-        LinkRef('GitHub', gitHubUrl),
-        LinkRef('Medium', mediumUrl),
-        LinkRef('YouTube', youTubeUrl),
+        LinkRef('LinkedIn', _linkedInUrl),
+        LinkRef('GitHub', _gitHubUrl),
+        LinkRef('Medium', _mediumUrl),
+        LinkRef('YouTube', _youTubeUrl),
       ],
     ),
   );
+
+  @override
+  List<SiteContent> get contents => const [_en, _ptBr];
+
+  @override
+  SiteContent contentFor(String lang) => switch (lang) {
+    'en' => _en,
+    'pt-BR' => _ptBr,
+    _ => throw ArgumentError.value(lang, 'lang', 'Unknown site locale'),
+  };
 }

@@ -2,7 +2,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import '../components/ui.dart';
-import '../content/site_content.dart';
+import '../domain/models/site_content.dart';
 
 class ExperienceSection extends StatelessComponent {
   const ExperienceSection({required this.content, super.key});
@@ -34,7 +34,7 @@ class ExperienceSection extends StatelessComponent {
             ]),
         ]),
         p(classes: 'section-foot', [
-          TextLink(experience.linkLabel, href: linkedInUrl),
+          TextLink(experience.linkLabel, href: content.links.linkedInUrl),
         ]),
       ]),
     ]);
