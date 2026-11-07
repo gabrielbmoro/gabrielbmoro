@@ -1,7 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/ui.dart';
+import '../components/section_heading.dart';
 import '../../domain/models/site_content.dart';
 
 class AboutSection extends StatelessComponent {
