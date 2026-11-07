@@ -1,4 +1,4 @@
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)  [![Mentoria 1:1](https://img.shields.io/badge/-Mentoria%201%3A1-EA4AAA?style=flat-square&logo=gmail&logoColor=white)](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
@@ -6,27 +6,96 @@ README in English [here](README.md)
 
 Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
+**Engenheiro mobile sênior, líder técnico e mentor** — Android · Kotlin Multiplatform · Flutter.
+
+> ### 🎯 Mentoria individual 1:1
+> Passei os últimos anos liderando times e entregando apps usados por milhões de pessoas. Ensinar sempre fez parte do trabalho: mentorei desenvolvedores, conduzi workshops, palestrei em GDGs e escrevo sobre mobile. **A primeira conversa é gratuita.**
+>
+> **[Quero agendar minha conversa →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
+
 ## Sobre mim
 
-- Engenheiro Mobile Sênior e Líder Técnico com mais de 7 anos de experiência no desenvolvimento de aplicações mobile.
+Sou engenheiro mobile **desde 2017**. Construí e liderei produtos em escala — apps com **35M+ de usuários** e **100M+ downloads** — como engenheiro sênior e líder técnico, trabalhando com Android, Kotlin Multiplatform (Compose Multiplatform) e Flutter.
 
-- Especialista em Android, Flutter e Kotlin Multiplatform (KMP).
+Ensinar sempre fez parte do trabalho, não era um extra. Mentorar desenvolvedores, conduzir workshops internos e levar conteúdo para a comunidade é o que mais me deu energia na carreira — e é o que essa mentoria existe para fazer.
 
-- Experiência em projetar arquiteturas escaláveis e desenvolver soluções mobile de alta performance.
+Gosto de uma abordagem **mão na massa**: menos teoria solta, mais código, decisão de arquitetura e próximo passo concreto. É esse jeito que levo para a mentoria.
 
-- Forte atuação na construção de infraestruturas multiplataforma e APIs modernas.
+## Mentoria individual 1:1
 
-- Liderança técnica, mentoria de equipes e definição de soluções arquiteturais.
+**Acelere sua carreira em engenharia mobile com orientação direta de quem já percorreu o caminho.**
 
-- Condução de Provas de Conceito (POCs) complexas, transformando inovação em soluções prontas para produção.
+Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais rápido do que conseguiriam sozinhos — juntando quase uma década de mobile em produção com a prática de mentorar devs em times de Android e Kotlin Multiplatform.
 
-- Experiência na entrega de aplicações seguras, escaláveis e de alta qualidade para ambientes de produção.
+### Quem vai te acompanhar
 
-- Contribuidor ativo de projetos Open-Source.
+- Engenheiro sênior e líder técnico em produtos de escala (Ambush, TELUS Digital e Socialive).
 
-- Educador e criador de conteúdo técnico para a comunidade de desenvolvimento.
+- Mentor de desenvolvedores em times de Android e Kotlin Multiplatform.
 
-- Defensor de boas práticas de engenharia, arquitetura de software e desenvolvimento mobile moderno.
+- Palestrante em **GDG Groups** e **GDG DevFest**.
+
+- Autor de artigos sobre code review, navegação e testes no [Medium](https://medium.com/@gabrielbronzattimoro.es).
+
+- Criador de conteúdo no [CodandoTV](https://www.youtube.com/@CodandoTV): vídeos técnicos, bibliotecas open source e podcast.
+
+- Criador e mantenedor de bibliotecas usadas por outros devs: [Popcorn Guineapig](https://github.com/CodandoTV/popcorn-guineapig), [JujubaSVG](https://github.com/CodandoTV/jujubaSVG) e [EagleEye](https://github.com/CodandoTV/eagle-eye).
+
+- Mestre em Ciência da Computação pela UFRGS.
+
+### Para quem é
+
+- Desenvolvedores plenos que querem chegar ao nível sênior.
+
+- Seniores que estão assumindo liderança técnica e precisam de repertório para conduzir times.
+
+- Desenvolvedores Android e Flutter que estão migrando para Kotlin Multiplatform.
+
+- Quem está se preparando para processos seletivos internacionais.
+
+### O que podemos trabalhar juntos
+
+- **Carreira:** transição para sênior e liderança técnica, plano de evolução, posicionamento profissional e portfólio.
+
+- **Android & KMP:** Compose Multiplatform, arquitetura multi-módulo, integração com bibliotecas específicas de iOS e Android e decisões de arquitetura.
+
+- **Arquitetura & qualidade:** MVVM/MVI, modularização, estratégias de teste (unitário, UI e snapshot), Detekt e automação de regras arquiteturais.
+
+- **Entrevistas internacionais:** preparação técnica, mobile system design e inglês técnico.
+
+- **IA no dia a dia:** Claude Code, agentes e fluxos de desenvolvimento assistido por IA, com revisão crítica do que é gerado.
+
+- **Open Source & conteúdo:** publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico.
+
+### Como eu trabalho
+
+- **Partimos do seu contexto:** seu código, seu projeto e o problema que você está tentando resolver — não um currículo genérico.
+
+- **Explico o porquê, não só o como:** a ideia é que você saia sabendo decidir sozinho, não que dependa de mim.
+
+- **Sempre com ação concreta:** cada encontro termina com algo claro para fazer até a próxima sessão.
+
+### Na prática
+
+1. **Você escreve** — um e-mail curto contando seu objetivo e o contexto em que está hoje.
+
+2. **Conversa inicial gratuita (30 min)** — alinhamos expectativas, avaliamos o encaixe e definimos o foco do trabalho.
+
+3. **Sessões individuais (1h)** — online, em português ou inglês, com plano de ação claro entre os encontros.
+
+Investimento e formato são combinados na conversa inicial, de acordo com o seu objetivo.
+
+### O que você leva
+
+- Plano de desenvolvimento personalizado, com próximos passos concretos.
+
+- Revisão de código e de arquitetura dos seus projetos.
+
+- Materiais, referências e exercícios direcionados ao seu objetivo.
+
+- Apoio assíncrono por e-mail entre as sessões.
+
+**[Quero marcar minha conversa gratuita →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
 
 ## Experiência Profissional (Últimos 5 anos)
 
@@ -131,11 +200,19 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
 - Selecionada como [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
-## Comunidade
+## Comunidade e conteúdo
+
+### Palestras
+
+- **GDG Groups** e **GDG DevFest**: palestras sobre desenvolvimento mobile, arquitetura e Kotlin para a comunidade.
+
+### Artigos
+
+- Escrevo no [Medium](https://medium.com/@gabrielbronzattimoro.es) sobre temas de desenvolvimento mobile, incluindo code review, navegação e testes.
 
 ### CodandoTV Content Creator
 
-- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile [aqui](https://codandotv.com/#creators).
+- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile — vídeos técnicos, bibliotecas open source e podcast [aqui](https://www.youtube.com/@CodandoTV) e [aqui](https://codandotv.com/#creators).
 
 ### Koin Champion
 
