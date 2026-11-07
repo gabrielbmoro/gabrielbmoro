@@ -1,2 +1,16 @@
-
+# OS
 .DS_Store
+
+# Dart / Jaspr
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.mason-cache/
+.dart-home/
+
+# Editors
+.idea/
+*.iml
+.vscode/
+.chrome-*/

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gabrielbmoro.github.io/gabrielbmoro/sitemap.xml

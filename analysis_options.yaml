@@ -1,0 +1,13 @@
+include: package:lints/recommended.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - .dart_tool/**
+    - .pub-cache/**
+    - .dart-home/**
+    - .mason-cache/**
+
+formatter:
+  page_width: 120
+  trailing_commas: preserve
