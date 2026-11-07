@@ -6,38 +6,42 @@ README in English [here](README.md)
 
 Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 
+**Engenheiro mobile sênior, líder técnico e mentor** — Android · Kotlin Multiplatform · Flutter.
+
 > ### 🎯 Mentoria individual 1:1
-> Carreira, arquitetura mobile e Kotlin Multiplatform com quem já liderou times e entregou apps em escala. **A primeira conversa é gratuita.**
+> Passei os últimos anos liderando times e entregando apps usados por milhões de pessoas. Ensinar sempre fez parte do trabalho: mentorei desenvolvedores, conduzi workshops, palestrei em GDGs e escrevo sobre mobile. **A primeira conversa é gratuita.**
 >
 > **[Quero agendar minha conversa →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
 
 ## Sobre mim
 
-- Engenheiro Mobile Sênior e Líder Técnico com mais de 7 anos de experiência no desenvolvimento de aplicações mobile.
+Sou engenheiro mobile **desde 2017**. Construí e liderei produtos em escala — apps com **35M+ de usuários** e **100M+ downloads** — como engenheiro sênior e líder técnico, trabalhando com Android, Kotlin Multiplatform (Compose Multiplatform) e Flutter.
 
-- Especialista em Android, Flutter e Kotlin Multiplatform (KMP).
+Ensinar sempre fez parte do trabalho, não era um extra. Mentorar desenvolvedores, conduzir workshops internos e levar conteúdo para a comunidade é o que mais me deu energia na carreira — e é o que essa mentoria existe para fazer.
 
-- Experiência em projetar arquiteturas escaláveis e desenvolver soluções mobile de alta performance.
-
-- Forte atuação na construção de infraestruturas multiplataforma e APIs modernas.
-
-- Liderança técnica, mentoria de equipes e definição de soluções arquiteturais.
-
-- Condução de Provas de Conceito (POCs) complexas, transformando inovação em soluções prontas para produção.
-
-- Experiência na entrega de aplicações seguras, escaláveis e de alta qualidade para ambientes de produção.
-
-- Contribuidor ativo de projetos Open-Source.
-
-- Educador e criador de conteúdo técnico para a comunidade de desenvolvimento.
-
-- Defensor de boas práticas de engenharia, arquitetura de software e desenvolvimento mobile moderno.
+Gosto de uma abordagem **mão na massa**: menos teoria solta, mais código, decisão de arquitetura e próximo passo concreto. É esse jeito que levo para a mentoria.
 
 ## Mentoria individual 1:1
 
 **Acelere sua carreira em engenharia mobile com orientação direta de quem já percorreu o caminho.**
 
-São mais de 7 anos entregando e liderando mobile em escala: apps com 35M+ de usuários, 100M+ downloads, adoção de Kotlin Multiplatform e mentoria de desenvolvedores nos times da Ambush e da TELUS Digital. Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais rápido do que conseguiriam sozinhos.
+Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais rápido do que conseguiriam sozinhos — juntando quase uma década de mobile em produção com a prática de mentorar devs em times de Android e Kotlin Multiplatform.
+
+### Quem vai te acompanhar
+
+- Engenheiro sênior e líder técnico em produtos de escala (Ambush, TELUS Digital e Socialive).
+
+- Mentor de desenvolvedores em times de Android e Kotlin Multiplatform.
+
+- Palestrante em **GDG Groups** e **GDG DevFest**.
+
+- Autor de artigos sobre code review, navegação e testes no [Medium](https://medium.com/@gabrielbronzattimoro.es).
+
+- Criador de conteúdo no [CodandoTV](https://www.youtube.com/@CodandoTV): vídeos técnicos, bibliotecas open source e podcast.
+
+- Criador e mantenedor de bibliotecas usadas por outros devs: [Popcorn Guineapig](https://github.com/CodandoTV/popcorn-guineapig), [JujubaSVG](https://github.com/CodandoTV/jujubaSVG) e [EagleEye](https://github.com/CodandoTV/eagle-eye).
+
+- Mestre em Ciência da Computação pela UFRGS.
 
 ### Para quem é
 
@@ -63,7 +67,15 @@ São mais de 7 anos entregando e liderando mobile em escala: apps com 35M+ de us
 
 - **Open Source & conteúdo:** publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico.
 
-### Como funciona
+### Como eu trabalho
+
+- **Partimos do seu contexto:** seu código, seu projeto e o problema que você está tentando resolver — não um currículo genérico.
+
+- **Explico o porquê, não só o como:** a ideia é que você saia sabendo decidir sozinho, não que dependa de mim.
+
+- **Sempre com ação concreta:** cada encontro termina com algo claro para fazer até a próxima sessão.
+
+### Na prática
 
 1. **Você escreve** — um e-mail curto contando seu objetivo e o contexto em que está hoje.
 
@@ -178,11 +190,23 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Selecionada como [Google Dev Library repository](https://devlibrary.withgoogle.com/products/android/repos/gabrielbmoro-MovieDB-Android)
 
-## Comunidade
+## Comunidade e conteúdo
+
+### Palestras
+
+- **GDG Groups** e **GDG DevFest**: palestras sobre desenvolvimento mobile, arquitetura e Kotlin para a comunidade.
+
+### Artigos
+
+- Escrevo no [Medium](https://medium.com/@gabrielbronzattimoro.es) sobre temas de desenvolvimento mobile, incluindo code review, navegação e testes.
 
 ### CodandoTV Content Creator
 
-- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile [aqui](https://codandotv.com/#creators).
+- Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile — vídeos técnicos, bibliotecas open source e podcast [aqui](https://www.youtube.com/@CodandoTV) e [aqui](https://codandotv.com/#creators).
+
+### Material de estudo
+
+- [Slides about Android Development](https://github.com/gabrielbmoro/slides-about-android-development): material para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
 
 ### Koin Champion
 
