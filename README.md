@@ -1,10 +1,15 @@
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)  [![1:1 Mentoring](https://img.shields.io/badge/-1%3A1%20Mentoring-EA4AAA?style=flat-square&logo=gmail&logoColor=white)](mailto:gabrielbronzattimoro.es@gmail.com?subject=1%3A1%20Mentoring%20-%20free%20intro%20call%20request)
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
 README em Português 🇧🇷 [aqui](README_ptBr.md)
 
 I'm also known as **Moro** or **gabrielbmoro**.
+
+> ### 🎯 1:1 Mentoring
+> Career, mobile architecture and Kotlin Multiplatform guidance from someone who has led teams and shipped apps at scale. **The first call is free.**
+>
+> **[Book my intro call →](mailto:gabrielbronzattimoro.es@gmail.com?subject=1%3A1%20Mentoring%20-%20free%20intro%20call%20request)**
 
 ## About Me
 
@@ -21,6 +26,58 @@ I'm also known as **Moro** or **gabrielbmoro**.
 - Active Open Source contributor and community educator, creating technical content and sharing knowledge with the developer community.
 
 - Passionate about software architecture, engineering best practices, and maintaining high code quality through architectural standards.
+
+## 1:1 Mentoring
+
+**Accelerate your mobile engineering career with direct, hands-on guidance from someone who has already walked the path.**
+
+That's 7+ years shipping and leading mobile at scale: apps with 35M+ users, 100M+ downloads, Kotlin Multiplatform adoption, and mentoring developers on teams at Ambush and TELUS Digital. I keep a few 1:1 slots open to help developers grow faster than they could on their own.
+
+### Who it's for
+
+- Mid-level developers aiming for a senior role.
+
+- Senior developers stepping into technical leadership and looking for a framework to lead teams.
+
+- Android and Flutter developers moving into Kotlin Multiplatform.
+
+- Anyone preparing for international hiring processes.
+
+### What we can work on
+
+- **Career:** the senior and tech-lead transition, growth plans, positioning and portfolio.
+
+- **Android & KMP:** Compose Multiplatform, multi-module architecture, platform-specific integrations for iOS and Android, and architecture decisions.
+
+- **Architecture & quality:** MVVM/MVI, modularization, testing strategy (unit, UI and snapshot), Detekt and automated architectural rules.
+
+- **International interviews:** technical prep, mobile system design and technical English.
+
+- **AI in the workflow:** Claude Code, agents and AI-assisted development, with critical review of what gets generated.
+
+- **Open Source & content:** shipping and maintaining libraries, building a public portfolio and creating technical content.
+
+### How it works
+
+1. **You write** — a short email with your goal and the context you're in today.
+
+2. **Free intro call (30 min)** — we align expectations, check the fit and define the focus.
+
+3. **1:1 sessions (1h)** — online, in Portuguese or English, with a clear action plan between meetings.
+
+Investment and format are agreed on the intro call, based on your goal.
+
+### What you get
+
+- A personalized development plan with concrete next steps.
+
+- Code and architecture review of your projects.
+
+- Materials, references and exercises targeted at your goal.
+
+- Async support by email between sessions.
+
+**[Book my free intro call →](mailto:gabrielbronzattimoro.es@gmail.com?subject=1%3A1%20Mentoring%20-%20free%20intro%20call%20request)**
 
 ## Professional Experience (Last 5 years)
 

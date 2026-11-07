@@ -1,10 +1,15 @@
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)  [![Mentoria 1:1](https://img.shields.io/badge/-Mentoria%201%3A1-EA4AAA?style=flat-square&logo=gmail&logoColor=white)](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)
 
 # Hello, I'm Gabriel Bronzatti Moro 👋🚀
 
 README in English [here](README.md)
 
 Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
+
+> ### 🎯 Mentoria individual 1:1
+> Carreira, arquitetura mobile e Kotlin Multiplatform com quem já liderou times e entregou apps em escala. **A primeira conversa é gratuita.**
+>
+> **[Quero agendar minha conversa →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
 
 ## Sobre mim
 
@@ -27,6 +32,58 @@ Meu nome é Gabriel Bronzatti Moro, mas sou conhecido como **Moro**.
 - Educador e criador de conteúdo técnico para a comunidade de desenvolvimento.
 
 - Defensor de boas práticas de engenharia, arquitetura de software e desenvolvimento mobile moderno.
+
+## Mentoria individual 1:1
+
+**Acelere sua carreira em engenharia mobile com orientação direta de quem já percorreu o caminho.**
+
+São mais de 7 anos entregando e liderando mobile em escala: apps com 35M+ de usuários, 100M+ downloads, adoção de Kotlin Multiplatform e mentoria de desenvolvedores nos times da Ambush e da TELUS Digital. Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais rápido do que conseguiriam sozinhos.
+
+### Para quem é
+
+- Desenvolvedores plenos que querem chegar ao nível sênior.
+
+- Seniores que estão assumindo liderança técnica e precisam de repertório para conduzir times.
+
+- Desenvolvedores Android e Flutter que estão migrando para Kotlin Multiplatform.
+
+- Quem está se preparando para processos seletivos internacionais.
+
+### O que podemos trabalhar juntos
+
+- **Carreira:** transição para sênior e liderança técnica, plano de evolução, posicionamento profissional e portfólio.
+
+- **Android & KMP:** Compose Multiplatform, arquitetura multi-módulo, integração com bibliotecas específicas de iOS e Android e decisões de arquitetura.
+
+- **Arquitetura & qualidade:** MVVM/MVI, modularização, estratégias de teste (unitário, UI e snapshot), Detekt e automação de regras arquiteturais.
+
+- **Entrevistas internacionais:** preparação técnica, mobile system design e inglês técnico.
+
+- **IA no dia a dia:** Claude Code, agentes e fluxos de desenvolvimento assistido por IA, com revisão crítica do que é gerado.
+
+- **Open Source & conteúdo:** publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico.
+
+### Como funciona
+
+1. **Você escreve** — um e-mail curto contando seu objetivo e o contexto em que está hoje.
+
+2. **Conversa inicial gratuita (30 min)** — alinhamos expectativas, avaliamos o encaixe e definimos o foco do trabalho.
+
+3. **Sessões individuais (1h)** — online, em português ou inglês, com plano de ação claro entre os encontros.
+
+Investimento e formato são combinados na conversa inicial, de acordo com o seu objetivo.
+
+### O que você leva
+
+- Plano de desenvolvimento personalizado, com próximos passos concretos.
+
+- Revisão de código e de arquitetura dos seus projetos.
+
+- Materiais, referências e exercícios direcionados ao seu objetivo.
+
+- Apoio assíncrono por e-mail entre as sessões.
+
+**[Quero marcar minha conversa gratuita →](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)**
 
 ## Experiência Profissional (Últimos 5 anos)
 
