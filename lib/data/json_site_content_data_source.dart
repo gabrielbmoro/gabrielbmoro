@@ -149,8 +149,6 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     portraitAlt: _string(json, 'portraitAlt', path),
     portraitRole: _string(json, 'portraitRole', path),
     portraitEducation: _string(json, 'portraitEducation', path),
-    companiesLabel: _string(json, 'companiesLabel', path),
-    companies: _strings(json, 'companies', path),
   );
 
   AboutContent _about(Map<String, dynamic> json, String path) => AboutContent(

@@ -56,7 +56,7 @@
     "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e oriento desenvolvedores que querem chegar a papéis sênior e de liderança.",
     "primaryCta": "Agendar conversa gratuita",
     "secondaryCta": "Como funciona a mentoria",
-    "note": "30 minutos · Online · Português ou inglês",
+    "note": "15 minutos · Online · Português ou inglês",
     "stats": [
       {
         "value": "35M+",
@@ -72,15 +72,8 @@
       }
     ],
     "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
-    "portraitRole": "Senior Mobile Engineer na Kobe",
-    "portraitEducation": "Mestrado em Ciência da Computação · UFRGS",
-    "companiesLabel": "Experiência em",
-    "companies": [
-      "Ambush",
-      "TELUS Digital",
-      "Socialive",
-      "Kobe"
-    ]
+    "portraitRole": "Senior Mobile Engineer",
+    "portraitEducation": "Mestrado em Ciência da Computação · UFRGS"
   },
   "about": {
     "eyebrow": "Sobre",
@@ -141,7 +134,7 @@
         "description": "Um e-mail curto com seu objetivo e o contexto em que você está hoje."
       },
       {
-        "title": "Conversa de introdução · 30 min",
+        "title": "Conversa de introdução · 15 min",
         "description": "Alinhamos expectativas, verificamos o fit e definimos o foco."
       },
       {

@@ -81,7 +81,7 @@ Abro algumas vagas de mentoria 1:1 para ajudar desenvolvedores a evoluir mais r�
 
 1. **Você escreve** — um e-mail curto contando seu objetivo e o contexto em que está hoje.
 
-2. **Conversa inicial gratuita (30 min)** — alinhamos expectativas, avaliamos o encaixe e definimos o foco do trabalho.
+2. **Conversa inicial gratuita (15 min)** — alinhamos expectativas, avaliamos o encaixe e definimos o foco do trabalho.
 
 3. **Sessões individuais (1h)** — online, em português ou inglês, com plano de ação claro entre os encontros.
 

@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
    Gabriel Moro — personal site
-   Warm paper, ink, and a single pine accent. System-first, self-hosted fonts.
+   Sage paper, forest ink, and a botanical green accent. Self-hosted fonts.
    --------------------------------------------------------------------------- */
 
 @font-face {
@@ -12,41 +12,47 @@
 }
 
 @font-face {
-  font-family: "Instrument Serif";
+  font-family: "Bricolage Grotesque";
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400 800;
+  font-stretch: 100%;
   font-display: swap;
-  src: url("fonts/instrument-serif-latin.woff2") format("woff2");
-}
-
-@font-face {
-  font-family: "Instrument Serif";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("fonts/instrument-serif-italic-latin.woff2") format("woff2");
+  src: url("fonts/bricolage-grotesque-latin.woff2") format("woff2");
 }
 
 :root {
-  --paper: #f7f5f0;
-  --paper-deep: #f0ece4;
-  --surface: #fffdf9;
-  --ink: #191917;
-  --ink-soft: #3c3934;
-  --muted: #625d55;
-  --faint: #6b655b;
-  --line: #e2ddd3;
-  --line-strong: #d2cbbe;
-  --accent: #1f5c4a;
-  --accent-ink: #f2f7f3;
-  --accent-soft: #e4ece5;
-  --radius: 16px;
-  --radius-sm: 10px;
+  --paper: #f2f7ee;
+  --paper-lift: #f7fbf2;
+  --paper-deep: #e6efe0;
+  --surface: #fbfdf8;
+  --ink: #14261b;
+  --ink-soft: #2f4436;
+  --muted: #4b6152;
+  --faint: #566c5e;
+  --line: #d4e0cd;
+  --line-strong: #b9cdb0;
+  --accent: #2f6b4f;
+  --accent-strong: #245840;
+  --accent-ink: #f2f8f1;
+  --accent-soft: #dfeada;
+  --accent-bright: #3f8f66;
+  --accent-line: rgba(47, 107, 79, 0.3);
+  --forest: #14301f;
+  --on-forest: #edf5ec;
+  --on-forest-muted: rgba(237, 245, 236, 0.7);
+  --on-forest-faint: rgba(237, 245, 236, 0.58);
+  --on-forest-line: rgba(237, 245, 236, 0.16);
+  --header-bg: rgba(242, 247, 238, 0.88);
+  --glass: rgba(251, 253, 248, 0.72);
+  --hero-glow: rgba(47, 107, 79, 0.12);
+  --radius: 18px;
+  --radius-sm: 12px;
   --container: 1120px;
   --gutter: 28px;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --font-serif: "Instrument Serif", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --shadow: 0 18px 50px rgba(25, 25, 23, 0.07);
+  --font-display: "Bricolage Grotesque", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --shadow: 0 18px 50px rgba(20, 38, 27, 0.08);
+  --shadow-card: 0 16px 40px rgba(20, 38, 27, 0.07);
 }
 
 /* Reset ------------------------------------------------------------------- */
@@ -93,7 +99,8 @@ h3,
 h4 {
   margin: 0;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 600;
+  font-optical-sizing: auto;
 }
 
 p {
@@ -155,7 +162,7 @@ dd {
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(247, 245, 240, 0.9);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
@@ -186,10 +193,11 @@ dd {
   width: 38px;
   height: 38px;
   border-radius: 9px;
-  background: var(--ink);
-  color: var(--paper);
-  font-family: var(--font-serif);
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: var(--font-display);
   font-size: 19px;
+  font-weight: 700;
   line-height: 1;
 }
 
@@ -200,9 +208,10 @@ dd {
 }
 
 .brand-name {
-  font-family: var(--font-serif);
-  font-size: 20px;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 21px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .brand-role {
@@ -305,12 +314,12 @@ dd {
 }
 
 .btn--primary {
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--accent);
+  color: var(--accent-ink);
 }
 
 .btn--primary:hover {
-  background: var(--accent);
+  background: var(--accent-strong);
   color: var(--accent-ink);
   transform: translateY(-1px);
 }
@@ -322,8 +331,9 @@ dd {
 }
 
 .btn--ghost:hover {
-  border-color: var(--ink);
-  background: rgba(255, 255, 255, 0.5);
+  border-color: var(--accent);
+  background: var(--glass);
+  color: var(--accent-strong);
 }
 
 .btn--light {
@@ -351,7 +361,7 @@ dd {
   align-items: center;
   gap: 6px;
   padding-bottom: 1px;
-  border-bottom: 1px solid rgba(31, 92, 74, 0.32);
+  border-bottom: 1px solid var(--accent-line);
   color: var(--accent);
   font-size: 13.5px;
   font-weight: 600;
@@ -360,8 +370,8 @@ dd {
 }
 
 .text-link:hover {
-  border-color: var(--ink);
-  color: var(--ink);
+  border-color: var(--accent-strong);
+  color: var(--accent-strong);
 }
 
 .text-link-icon {
@@ -375,7 +385,7 @@ dd {
   position: relative;
   overflow: hidden;
   padding: 76px 0 0;
-  background: linear-gradient(180deg, #faf8f3 0%, var(--paper) 100%);
+  background: linear-gradient(180deg, var(--paper-lift) 0%, var(--paper) 100%);
 }
 
 .hero::before {
@@ -384,7 +394,7 @@ dd {
   right: -160px;
   width: 640px;
   height: 640px;
-  background: radial-gradient(circle, rgba(31, 92, 74, 0.1), transparent 64%);
+  background: radial-gradient(circle, var(--hero-glow), transparent 64%);
   content: "";
   pointer-events: none;
 }
@@ -416,7 +426,7 @@ dd {
   padding: 7px 14px 7px 11px;
   border: 1px solid var(--line);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.65);
+  background: var(--glass);
   color: var(--ink-soft);
   font-size: 12.5px;
   font-weight: 500;
@@ -426,8 +436,8 @@ dd {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #2f7d5f;
-  box-shadow: 0 0 0 4px rgba(47, 125, 95, 0.14);
+  background: var(--accent-bright);
+  box-shadow: 0 0 0 4px rgba(63, 143, 102, 0.16);
 }
 
 .availability-divider {
@@ -440,23 +450,25 @@ dd {
 
 .hero h1 {
   max-width: 15ch;
-  font-family: var(--font-serif);
-  font-size: clamp(3rem, 6vw, 4.6rem);
-  letter-spacing: -0.018em;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: clamp(2.9rem, 5.6vw, 4.3rem);
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.02;
   text-wrap: balance;
 }
 
 .hero h1 em {
   color: var(--accent);
-  font-style: italic;
+  font-style: normal;
+  font-weight: 700;
 }
 
 /* Portuguese headlines run longer; give them a wider measure and slightly
-   smaller type so both locales keep a three-line hero. */
+   smaller type so both locales keep a balanced hero. */
 html[lang="pt-BR"] .hero h1 {
   max-width: 20ch;
-  font-size: clamp(2.7rem, 5.2vw, 4rem);
+  font-size: clamp(2.55rem, 5vw, 3.75rem);
 }
 
 .hero-lede {
@@ -492,8 +504,10 @@ html[lang="pt-BR"] .hero h1 {
 
 .stat dt {
   color: var(--ink);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
   line-height: 1;
 }
 
@@ -546,38 +560,6 @@ html[lang="pt-BR"] .hero h1 {
   font-size: 12px;
 }
 
-.companies {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 14px 32px;
-  margin-top: 72px;
-  padding: 26px 0;
-  border-top: 1px solid var(--line);
-}
-
-.companies-label {
-  color: var(--faint);
-  font-size: 10.5px;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-}
-
-.companies-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px 38px;
-}
-
-.companies-list li {
-  color: var(--ink-soft);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  opacity: 0.72;
-}
-
 /* Sections ---------------------------------------------------------------- */
 
 .section {
@@ -621,10 +603,11 @@ html[lang="pt-BR"] .hero h1 {
 
 h2 {
   max-width: 21ch;
-  font-family: var(--font-serif);
-  font-size: clamp(2.1rem, 3.8vw, 3.05rem);
-  letter-spacing: -0.015em;
-  line-height: 1.06;
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.6vw, 2.9rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
   text-wrap: balance;
 }
 
@@ -720,9 +703,11 @@ h2 {
 
 .panel > h3 {
   margin-bottom: 22px;
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .bullet-list {
@@ -813,9 +798,11 @@ h2 {
 .steps-block > h3,
 .get-block > h3 {
   margin-bottom: 26px;
-  font-family: var(--font-serif);
-  font-size: 1.65rem;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 1.55rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .steps {
@@ -833,9 +820,10 @@ h2 {
 
 .step-index {
   color: var(--accent);
-  font-family: var(--font-serif);
+  font-family: var(--font-display);
   font-size: 15px;
-  letter-spacing: 0.04em;
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .step-body h4 {
@@ -887,32 +875,34 @@ h2 {
   margin-top: 64px;
   padding: 40px clamp(28px, 5vw, 56px);
   border-radius: var(--radius);
-  background: var(--ink);
+  background: var(--forest);
 }
 
 .cta-title {
-  color: #ffffff;
-  font-family: var(--font-serif);
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
-  line-height: 1.1;
+  color: var(--on-forest);
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.08;
 }
 
 .cta-text {
   max-width: 46ch;
   margin-top: 10px;
-  color: rgba(247, 245, 240, 0.72);
+  color: var(--on-forest-muted);
   font-size: 14.5px;
 }
 
 .cta-band .btn--primary {
   flex-shrink: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--on-forest);
+  color: var(--forest);
 }
 
 .cta-band .btn--primary:hover {
   background: #ffffff;
-  color: var(--accent);
+  color: var(--accent-strong);
 }
 
 /* Experience -------------------------------------------------------------- */
@@ -1017,14 +1007,16 @@ h2 {
 
 .work-card:hover {
   border-color: var(--line-strong);
-  box-shadow: 0 16px 40px rgba(25, 25, 23, 0.06);
+  box-shadow: var(--shadow-card);
   transform: translateY(-2px);
 }
 
 .work-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.55rem;
-  letter-spacing: -0.01em;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 .work-description {
@@ -1042,12 +1034,12 @@ h2 {
 
 .tag {
   padding: 4px 9px;
-  border: 1px solid var(--line);
+  border: 1px solid transparent;
   border-radius: 999px;
-  background: var(--paper);
-  color: var(--muted);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
   font-size: 10.5px;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 0.07em;
   text-transform: uppercase;
 }
@@ -1093,8 +1085,8 @@ h2 {
 
 .site-footer {
   padding: 88px 0 32px;
-  background: var(--ink);
-  color: rgba(247, 245, 240, 0.72);
+  background: var(--forest);
+  color: var(--on-forest-muted);
 }
 
 .footer-top {
@@ -1103,7 +1095,7 @@ h2 {
   justify-content: space-between;
   gap: 48px;
   padding-bottom: 64px;
-  border-bottom: 1px solid rgba(247, 245, 240, 0.14);
+  border-bottom: 1px solid var(--on-forest-line);
 }
 
 .footer-meta {
@@ -1113,16 +1105,18 @@ h2 {
 .footer-copy h2 {
   max-width: 17ch;
   margin-top: 18px;
-  color: var(--paper);
-  font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 4.4vw, 3.4rem);
-  line-height: 1.05;
+  color: var(--on-forest);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4.2vw, 3.15rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.06;
 }
 
 .footer-text {
   max-width: 50ch;
   margin-top: 20px;
-  color: rgba(247, 245, 240, 0.65);
+  color: var(--on-forest-muted);
   font-size: 15px;
   line-height: 1.7;
 }
@@ -1137,21 +1131,21 @@ h2 {
 
 .footer-email {
   padding-bottom: 2px;
-  border-bottom: 1px solid rgba(247, 245, 240, 0.25);
-  color: rgba(247, 245, 240, 0.65);
+  border-bottom: 1px solid var(--on-forest-line);
+  color: var(--on-forest-muted);
   font-size: 13px;
   text-decoration: none;
 }
 
 .footer-email:hover {
-  border-color: var(--paper);
-  color: var(--paper);
+  border-color: var(--on-forest);
+  color: var(--on-forest);
 }
 
 .availability--footer {
-  border-color: rgba(247, 245, 240, 0.16);
-  background: rgba(247, 245, 240, 0.06);
-  color: rgba(247, 245, 240, 0.8);
+  border-color: var(--on-forest-line);
+  background: rgba(237, 245, 236, 0.07);
+  color: var(--on-forest);
 }
 
 .footer-bottom {
@@ -1167,7 +1161,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px 20px;
-  color: rgba(247, 245, 240, 0.58);
+  color: var(--on-forest-faint);
   font-size: 12px;
 }
 
@@ -1178,23 +1172,28 @@ h2 {
 }
 
 .footer-links a {
-  color: rgba(247, 245, 240, 0.7);
+  color: var(--on-forest-muted);
   font-size: 12.5px;
   text-decoration: none;
 }
 
 .footer-links a:hover {
-  color: var(--paper);
+  color: var(--on-forest);
 }
 
 .lang-switch--footer {
-  border-color: rgba(247, 245, 240, 0.16);
-  color: rgba(247, 245, 240, 0.7);
+  border-color: var(--on-forest-line);
+  color: var(--on-forest-muted);
 }
 
 .lang-switch--footer:hover {
-  border-color: var(--paper);
-  color: var(--paper);
+  border-color: var(--on-forest);
+  color: var(--on-forest);
+}
+
+.site-footer :focus-visible,
+.cta-band :focus-visible {
+  outline-color: var(--on-forest);
 }
 
 /* Responsive -------------------------------------------------------------- */
@@ -1280,10 +1279,6 @@ h2 {
 
   .portrait-caption {
     text-align: left;
-  }
-
-  .companies {
-    margin-top: 52px;
   }
 
   .mentor-grid {
@@ -1413,10 +1408,6 @@ h2 {
 
   .portrait {
     width: min(260px, 70vw);
-  }
-
-  .companies-list {
-    gap: 10px 22px;
   }
 
   .cta-band {

@@ -81,7 +81,7 @@ I keep a few 1:1 slots open to help developers grow faster than they could on th
 
 1. **You write** — a short email with your goal and the context you're in today.
 
-2. **Free intro call (30 min)** — we align expectations, check the fit and define the focus.
+2. **Free intro call (15 min)** — we align expectations, check the fit and define the focus.
 
 3. **1:1 sessions (1h)** — online, in Portuguese or English, with a clear action plan between meetings.
 

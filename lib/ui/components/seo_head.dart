@@ -36,7 +36,7 @@ class SeoHead extends StatelessComponent {
         ),
         link(
           rel: 'preload',
-          href: '${c.assetPrefix}fonts/instrument-serif-latin.woff2',
+          href: '${c.assetPrefix}fonts/bricolage-grotesque-latin.woff2',
           attributes: const {'as': 'font', 'type': 'font/woff2', 'crossorigin': 'anonymous'},
         ),
         link(rel: 'canonical', href: c.canonicalUrl),

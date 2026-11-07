@@ -69,12 +69,6 @@ class Hero extends StatelessComponent {
           ]),
         ]),
       ]),
-      div(classes: 'container companies', [
-        p(classes: 'companies-label', [.text(hero.companiesLabel)]),
-        ul(classes: 'companies-list', [
-          for (final company in hero.companies) li([.text(company)]),
-        ]),
-      ]),
     ]);
   }
 }
