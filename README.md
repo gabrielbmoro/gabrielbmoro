@@ -204,10 +204,6 @@ Investment and format are agreed on the intro call, based on your goal.
 
 - Educating the Brazilian developer community with technical videos, open source libraries and a podcast, focused on Kotlin, Flutter, and advanced mobile development infrastructure [here](https://www.youtube.com/@CodandoTV) and [here](https://codandotv.com/#creators).
 
-### Study material
-
-- [Slides about Android Development](https://github.com/gabrielbmoro/slides-about-android-development): material for sharing Android development content using characters from TV shows and movies.
-
 ### Koin Champion / Content Contributor
 
 - Recognized by Kotzilla for producing expert technical articles and sharing real-world use cases for dependency injection and Koin fundamentals [here](https://koinchampion.kotzilla.io/apply-now).

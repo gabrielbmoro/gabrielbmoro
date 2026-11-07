@@ -204,10 +204,6 @@ Investimento e formato são combinados na conversa inicial, de acordo com o seu 
 
 - Criação de conteúdo tech focado em Kotlin, Flutter, e demais tópicos avançados de desenvolvimento Mobile — vídeos técnicos, bibliotecas open source e podcast [aqui](https://www.youtube.com/@CodandoTV) e [aqui](https://codandotv.com/#creators).
 
-### Material de estudo
-
-- [Slides about Android Development](https://github.com/gabrielbmoro/slides-about-android-development): material para compartilhar conteúdo sobre desenvolvimento Android utilizando personagens de séries e filmes.
-
 ### Koin Champion
 
 - Reconhecido pela Kotzilla por produzir conteúdo especializado sobre Koin (dependency injection library) usando exemplos do mundo real [aqui](https://koinchampion.kotzilla.io/apply-now).
