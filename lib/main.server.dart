@@ -3,6 +3,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 import 'app.dart';
+import 'data/json_site_content_data_source.dart';
 import 'data/repository_impl.dart';
 import 'domain/models/site_links.dart';
 import 'main.server.options.dart';
@@ -44,7 +45,7 @@ String _personJsonLd(SiteLinks links) =>
 void main() {
   Jaspr.initializeApp(options: defaultServerOptions);
 
-  const repository = SiteContentRepositoryImpl();
+  final repository = SiteContentRepositoryImpl(JsonSiteContentDataSource());
   final content = repository.contentFor('en');
 
   runApp(

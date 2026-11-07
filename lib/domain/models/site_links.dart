@@ -1,8 +1,9 @@
 /// Canonical URLs and contact details shared by every locale.
 ///
-/// Page copy, footer/community links, SEO alternates and structured data all
-/// read from the same [SiteLinks] instance, so a domain or handle change only
-/// has to happen once.
+/// The `links` block is duplicated in each content asset so the locale files
+/// stay self-contained; the data source rejects mismatches and shares one
+/// instance with every content object, so the site only ever reads these
+/// values once.
 library;
 
 class SiteLinks {
