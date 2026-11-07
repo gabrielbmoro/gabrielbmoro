@@ -12,7 +12,8 @@ class SeoHead extends StatelessComponent {
 
   final SiteContent content;
 
-  /// Every published locale, in site order; the first one is the default.
+  /// Every published locale, in site order; the first one is the default
+  /// (the locale served at the site root).
   final List<SiteContent> locales;
 
   @override

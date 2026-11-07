@@ -1,16 +1,16 @@
 {
   "lang": "pt-BR",
-  "route": "/pt-br",
-  "switchHref": "../",
+  "route": "/",
+  "switchHref": "en/",
   "switchHrefLang": "en",
   "switchLabel": "EN",
   "switchAriaLabel": "View this page in English",
-  "assetPrefix": "../",
-  "homeHref": "../",
+  "assetPrefix": "",
+  "homeHref": "./",
   "skipLink": "Ir para o conteúdo",
-  "metaTitle": "Gabriel Moro — Engenheiro Mobile Sênior & Mentor 1:1",
-  "metaDescription": "Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. Mentoria 1:1 para desenvolvedores que querem chegar a papéis sênior e de liderança. A primeira conversa é grátis.",
-  "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/pt-br/",
+  "metaTitle": "Gabriel Moro — Engenheiro mobile sênior & mentor 1:1",
+  "metaDescription": "Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. Mentoria 1:1 para desenvolvedores que querem chegar a papéis sêniores e de liderança. A primeira conversa é gratuita.",
+  "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
   "ogLocale": "pt_BR",
   "ogImageAlt": "Gabriel Moro",
   "brandRole": "Engenheiro mobile & mentor",
@@ -50,10 +50,10 @@
   "hero": {
     "kicker": "Engenheiro mobile sênior & tech lead",
     "availability": "Aberto para mentorias 1:1",
-    "availabilityNote": "Primeira conversa grátis",
-    "title": "Se torne o engenheiro mobile ",
+    "availabilityNote": "Primeira conversa gratuita",
+    "title": "Torne-se um engenheiro mobile ",
     "titleEmphasis": "em quem os times confiam para liderar.",
-    "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e oriento desenvolvedores que querem chegar a papéis sênior e de liderança.",
+    "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e oriento desenvolvedores que querem chegar a papéis sêniores e de liderança.",
     "primaryCta": "Agendar conversa gratuita",
     "secondaryCta": "Como funciona a mentoria",
     "note": "15 minutos · Online · Português ou inglês",
@@ -72,7 +72,7 @@
       }
     ],
     "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
-    "portraitRole": "Senior Mobile Engineer",
+    "portraitRole": "Engenheiro mobile sênior",
     "portraitEducation": "Mestrado em Ciência da Computação · UFRGS"
   },
   "about": {
@@ -80,21 +80,21 @@
     "heading": "Engenharia prática, mentoria humana.",
     "paragraphs": [
       "Sou engenheiro mobile desde 2017, construindo e liderando produtos em escala — apps com 35M+ usuários e 100M+ downloads — como engenheiro sênior e tech lead. Hoje trabalho com Flutter e o ecossistema VTEX na Kobe.",
-      "Ensinar sempre fez parte do trabalho, não é um extra. Orientei desenvolvedores, conduzi workshops internos, palestrei em GDGs e escrevo sobre mobile há anos. Minha abordagem é simples: menos teoria abstrata, mais código, decisões de arquitetura e um próximo passo concreto."
+      "Ensinar sempre fez parte do trabalho — não é um extra. Orientei desenvolvedores, conduzi workshops internos, palestrei em GDGs e escrevo sobre mobile há anos. Minha abordagem é simples: menos teoria abstrata, mais código, decisões de arquitetura e um próximo passo concreto."
     ],
     "currentlyLabel": "Hoje",
-    "currentlyRole": "Engenheiro Mobile Sênior",
+    "currentlyRole": "Engenheiro mobile sênior",
     "currentlyCompany": "Kobe",
     "currentlyPeriod": "Set 2026 — Atual"
   },
   "mentoring": {
     "eyebrow": "Mentoria 1:1",
     "heading": "Orientação de quem já percorreu o caminho.",
-    "lede": "Algumas vagas 1:1 abertas para desenvolvedores que querem crescer mais rápido do que conseguiriam sozinhos — unindo quase uma década de mobile em produção e mentoria prática de times Android e Kotlin Multiplatform.",
+    "lede": "Algumas vagas 1:1 estão abertas para desenvolvedores que querem crescer mais rápido do que conseguiriam sozinhos, com quase uma década de mobile em produção e mentoria prática de times Android e Kotlin Multiplatform.",
     "forYouTitle": "Para quem é",
     "forYou": [
-      "Desenvolvedores plenos que buscam o próximo nível, o sênior.",
-      "Sêniores assumindo liderança técnica e querendo um framework para liderar times.",
+      "Desenvolvedores plenos que querem chegar ao nível sênior.",
+      "Sêniores que assumem liderança técnica e querem um framework para liderar times.",
       "Desenvolvedores Android e Flutter migrando para Kotlin Multiplatform.",
       "Quem está se preparando para processos seletivos internacionais."
     ],
@@ -108,7 +108,7 @@
       },
       {
         "title": "Android & KMP",
-        "description": "Compose Multiplatform, arquitetura multi-módulo e integrações específicas para iOS e Android."
+        "description": "Compose Multiplatform, arquitetura multimódulo e integrações específicas para iOS e Android."
       },
       {
         "title": "Arquitetura & qualidade",
@@ -135,7 +135,7 @@
       },
       {
         "title": "Conversa de introdução · 15 min",
-        "description": "Alinhamos expectativas, verificamos o fit e definimos o foco."
+        "description": "Alinhamos expectativas, verificamos se faz sentido e definimos o foco."
       },
       {
         "title": "Sessões 1:1 · 1h",
@@ -161,36 +161,36 @@
     "roles": [
       {
         "company": "Kobe",
-        "title": "Engenheiro Mobile Sênior",
+        "title": "Engenheiro mobile sênior",
         "period": "Set 2026 — Atual",
         "bullets": [
-          "Construção e evolução de apps de e-commerce com Flutter e Dart, em todo o ciclo do produto.",
-          "Arquitetura, práticas de engenharia e testes automatizados para uma entrega escalável e com qualidade.",
-          "Integração com o ecossistema VTEX e apoio à liderança técnica, code reviews e mentoria."
+          "Construção e evolução de apps de e-commerce com Flutter e Dart, em todo o ciclo de vida do produto.",
+          "Arquitetura, práticas de engenharia e testes automatizados para uma entrega escalável e de qualidade.",
+          "Integração com o ecossistema VTEX e apoio à liderança técnica, com code reviews e mentoria."
         ]
       },
       {
         "company": "Ambush",
-        "title": "Engenheiro Mobile Sênior",
+        "title": "Engenheiro mobile sênior",
         "period": "Nov 2023 — Ago 2026",
         "bullets": [
           "Features centrais de um app de cashback com 35M+ usuários e milhões de transações diárias.",
           "Liderança na adoção de Kotlin Multiplatform (Compose Multiplatform) e mentoria de desenvolvedores mobile.",
-          "Feature flags, CI/CD com lint e testes de UI em Maestro, e padrões de arquitetura para o time."
+          "Feature flags, CI/CD com lint, testes de UI com Maestro e padrões de arquitetura para o time."
         ]
       },
       {
         "company": "TELUS Digital",
-        "title": "Engenheiro Android Sênior",
+        "title": "Engenheiro Android sênior",
         "period": "Jul 2023 — Nov 2023",
         "bullets": [
           "Features Android para um app de operadora com 25M–35M+ usuários ativos e 100M+ downloads.",
-          "Mentoria de desenvolvedores Android e features complexas com Hilt, Jetpack Compose e projetos multi-módulo."
+          "Mentoria de desenvolvedores Android e construção de features complexas com Hilt e Jetpack Compose em projetos multimódulo."
         ]
       },
       {
         "company": "Socialive",
-        "title": "Engenheiro Android Sênior",
+        "title": "Engenheiro Android sênior",
         "period": "Jul 2021 — Jun 2023",
         "bullets": [
           "Features centrais de um app corporativo de gravação e transmissão de vídeo ao vivo.",
@@ -211,7 +211,7 @@
       },
       {
         "label": "Arquitetura",
-        "value": "MVVM, MVI, arquitetura multi-módulo, SOLID, programação reativa"
+        "value": "MVVM, MVI, arquitetura multimódulo, SOLID, programação reativa"
       },
       {
         "label": "Bibliotecas",
@@ -238,7 +238,7 @@
     "projects": [
       {
         "name": "Popcorn Guineapig",
-        "description": "Um conjunto leve de ferramentas que automatiza e aplica diretrizes de arquitetura em projetos Kotlin e Android multi-módulo.",
+        "description": "Um conjunto leve de ferramentas que automatiza e aplica diretrizes de arquitetura em projetos Kotlin e Android multimódulo.",
         "tags": [
           "Kotlin",
           "Detekt",
@@ -249,7 +249,7 @@
       },
       {
         "name": "JujubaSVG",
-        "description": "Manipulação granular de SVG — incluindo propriedades por ID — para Compose Multiplatform, Android e Flutter.",
+        "description": "Manipulação granular de SVG — incluindo a edição de propriedades por ID — para Compose Multiplatform, Android e Flutter.",
         "tags": [
           "Kotlin",
           "Dart",
@@ -289,7 +289,7 @@
     "items": [
       {
         "label": "Palestras",
-        "description": "GDG Groups e GDG DevFest — desenvolvimento mobile, arquitetura e Kotlin para a comunidade.",
+        "description": "GDGs e DevFests — desenvolvimento mobile, arquitetura e Kotlin para a comunidade.",
         "links": []
       },
       {
