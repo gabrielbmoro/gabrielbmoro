@@ -22,9 +22,13 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 
 ```
 lib/
-  main.server.dart              # Document: <head>, metadata, JSON-LD, <body>
-  app.dart                      # Router with the two locales
-  content/site_content.dart     # ALL visible copy (EN + PT-BR) and links
+  main.server.dart              # composition root: repository, Document <head>, JSON-LD, <body>
+  app.dart                      # Router derived from the repository's locales
+  domain/
+    models/site_content.dart    # immutable content data classes (no copy)
+    models/site_links.dart      # canonical URLs and contact email
+    repository.dart             # SiteContentRepository abstraction
+  data/repository_impl.dart     # ALL visible copy (EN + PT-BR) and links
   components/                   # header, footer, SEO head, shared UI
   sections/                     # hero, about, mentoring, experience, toolkit, work, community
   pages/home_page.dart          # composes the page for a locale
@@ -64,15 +68,20 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - All site URLs are page-relative (`site.css`, `../site.css`, `pt-br/`, `../`), so the site works
   under the `/gabrielbmoro/` project path without a `<base>` element or a build-time base flag.
   Keep new asset links relative; if you add a `<base>` tag, anchors will break.
-- Canonical and Open Graph URLs live in `lib/content/site_content.dart`; update them if the
+- Canonical and Open Graph URLs live in `lib/domain/models/site_links.dart`; update them if the
   domain or repository name changes.
 
 ## Content conventions
 
-- Change copy in `lib/content/site_content.dart`, never in the section widgets.
-- Every user-facing string exists in both `SiteContent.en` and `SiteContent.ptBr`. Keep the two
-  locales in sync and natural — Portuguese is not a literal word-for-word translation.
-- Sections are `lib/sections/*.dart`; each takes `SiteContent` and reads its own slice.
+- Change copy in `lib/data/repository_impl.dart`, never in the section widgets.
+- Every user-facing string exists in both the English and the PT-BR `SiteContent` instances in
+  `SiteContentRepositoryImpl`. Keep the two locales in sync and natural — Portuguese is not a
+  literal word-for-word translation.
+- `lib/domain/` holds plain data classes and the `SiteContentRepository` abstraction; it must not
+  import `lib/data/`, Jaspr, or DOM code.
+- Sections are `lib/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
+  discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
+  follow the repository.
 - Keep the design quiet: paper/ink palette, one pine accent, serif display + Inter body.
   Avoid adding a UI framework or a JavaScript dependency for presentation.
 - `README.md` and `README_ptBr.md` must stay in sync (see `README.md` conventions):
