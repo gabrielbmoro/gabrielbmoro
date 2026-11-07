@@ -47,7 +47,8 @@ void main() {
   configureDependencies();
 
   final repository = getIt<SiteContentRepository>();
-  final content = repository.contentFor('en');
+  // The root locale is Brazilian Portuguese; English lives under /en.
+  final content = repository.defaultContent;
 
   runApp(
     Document(

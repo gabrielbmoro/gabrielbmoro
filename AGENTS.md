@@ -13,7 +13,7 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 
 ## Stack
 
-- Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for the `/` and `/pt-br` routes.
+- Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for the `/` (PT-BR, default) and `/en` routes.
 - Static mode: `jaspr build` pre-renders both routes to HTML.
 - `get_it` wires the JSON data source and repository at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Bricolage Grotesque in `web/fonts/`.
@@ -74,7 +74,7 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Pages source **must** be set to **GitHub Actions** in the repository settings, not a branch.
 - The workflow `.github/workflows/deploy-site.yml` publishes on pushes to `master`, builds on
   pull requests, and can be run manually.
-- All site URLs are page-relative (`site.css`, `../site.css`, `pt-br/`, `../`), so the site works
+- All site URLs are page-relative (`site.css`, `../site.css`, `en/`, `../`), so the site works
   under the `/gabrielbmoro/` project path without a `<base>` element or a build-time base flag.
   Keep new asset links relative; if you add a `<base>` tag, anchors will break.
 - Canonical and Open Graph URLs live in the `links` and `canonicalUrl` fields of both JSON
@@ -84,6 +84,9 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 
 - Change copy in `assets/content/en.json` and `assets/content/pt-br.json`, never in the section
   widgets.
+- Brazilian Portuguese is the default locale: it is published at `/`, English at `/en`. The
+  locale whose `route` is `/` is served at the site root, used for the document language and as
+  the `x-default` / Open Graph target; `SiteContentRepository.defaultContent` exposes it.
 - Every user-facing string exists in both JSON assets. Keep the two locales in sync and natural —
   Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
   identical; the data source fails the build otherwise.
