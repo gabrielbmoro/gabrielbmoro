@@ -1,7 +1,8 @@
 /// Immutable content models rendered by the site.
 ///
-/// These are plain data classes: the actual copy and URLs live in the
-/// repository implementation, and the abstraction is `domain/repository.dart`.
+/// These are plain data classes: the actual copy and URLs are loaded from the
+/// JSON assets in `assets/content/` by the data layer, and the abstraction is
+/// `domain/repository.dart`.
 library;
 
 import 'site_links.dart';

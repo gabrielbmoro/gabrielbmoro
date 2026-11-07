@@ -1,8 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../domain/models/site_content.dart';
-import 'ui.dart';
+import '../../domain/models/site_content.dart';
+import 'action_link.dart';
 
 class SiteFooter extends StatelessComponent {
   const SiteFooter({required this.content, super.key});

@@ -1,8 +1,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/ui.dart';
-import '../domain/models/site_content.dart';
+import '../components/section_heading.dart';
+import '../components/text_link.dart';
+import '../../domain/models/site_content.dart';
 
 class ExperienceSection extends StatelessComponent {
   const ExperienceSection({required this.content, super.key});

@@ -3,8 +3,9 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
 import 'app.dart';
-import 'data/repository_impl.dart';
+import 'di/service_locator.dart';
 import 'domain/models/site_links.dart';
+import 'domain/repository.dart';
 import 'main.server.options.dart';
 
 /// Person + profile structured data shared by both locales.
@@ -43,8 +44,9 @@ String _personJsonLd(SiteLinks links) =>
 
 void main() {
   Jaspr.initializeApp(options: defaultServerOptions);
+  configureDependencies();
 
-  const repository = SiteContentRepositoryImpl();
+  final repository = getIt<SiteContentRepository>();
   final content = repository.contentFor('en');
 
   runApp(

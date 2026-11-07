@@ -15,6 +15,7 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 
 - Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for the `/` and `/pt-br` routes.
 - Static mode: `jaspr build` pre-renders both routes to HTML.
+- `get_it` wires the JSON data source and repository at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Instrument Serif in `web/fonts/`.
 - No client-side JavaScript is shipped: the site is entirely pre-rendered.
 
@@ -28,10 +29,18 @@ lib/
     models/site_content.dart    # immutable content data classes (no copy)
     models/site_links.dart      # canonical URLs and contact email
     repository.dart             # SiteContentRepository abstraction
-  data/repository_impl.dart     # ALL visible copy (EN + PT-BR) and links
-  components/                   # header, footer, SEO head, shared UI
-  sections/                     # hero, about, mentoring, experience, toolkit, work, community
-  pages/home_page.dart          # composes the page for a locale
+  data/
+    repository_impl.dart        # SiteContentRepository implementation
+    site_content_data_source.dart # data-source contract
+    json_site_content_data_source.dart # reads assets/content/*.json
+  di/service_locator.dart       # GetIt registrations (data source + repository)
+  ui/
+    components/                 # header, footer, SEO head, shared UI
+    pages/home_page.dart        # composes the page for a locale
+    sections/                   # hero, about, mentoring, experience, toolkit, work, community
+assets/content/
+  en.json                       # ALL visible English copy, links and SEO data
+  pt-br.json                    # ALL visible PT-BR copy, links and SEO data
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
@@ -68,18 +77,21 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - All site URLs are page-relative (`site.css`, `../site.css`, `pt-br/`, `../`), so the site works
   under the `/gabrielbmoro/` project path without a `<base>` element or a build-time base flag.
   Keep new asset links relative; if you add a `<base>` tag, anchors will break.
-- Canonical and Open Graph URLs live in `lib/domain/models/site_links.dart`; update them if the
-  domain or repository name changes.
+- Canonical and Open Graph URLs live in the `links` and `canonicalUrl` fields of both JSON
+  content assets; update both if the domain or repository name changes.
 
 ## Content conventions
 
-- Change copy in `lib/data/repository_impl.dart`, never in the section widgets.
-- Every user-facing string exists in both the English and the PT-BR `SiteContent` instances in
-  `SiteContentRepositoryImpl`. Keep the two locales in sync and natural — Portuguese is not a
-  literal word-for-word translation.
+- Change copy in `assets/content/en.json` and `assets/content/pt-br.json`, never in the section
+  widgets.
+- Every user-facing string exists in both JSON assets. Keep the two locales in sync and natural —
+  Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
+  identical; the data source fails the build otherwise.
 - `lib/domain/` holds plain data classes and the `SiteContentRepository` abstraction; it must not
   import `lib/data/`, Jaspr, or DOM code.
-- Sections are `lib/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
+- Register infrastructure dependencies in `lib/di/service_locator.dart`; UI widgets keep receiving
+  their dependencies through constructors instead of resolving them from GetIt.
+- Sections are `lib/ui/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
   discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
   follow the repository.
 - Keep the design quiet: paper/ink palette, one pine accent, serif display + Inter body.
