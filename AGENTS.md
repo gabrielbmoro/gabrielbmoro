@@ -29,8 +29,8 @@ lib/
     models/site_links.dart      # canonical URLs and contact email
     repository.dart             # SiteContentRepository abstraction
   data/repository_impl.dart     # ALL visible copy (EN + PT-BR) and links
-  components/                   # header, footer, SEO head, shared UI
   ui/
+    components/                 # header, footer, SEO head, shared UI
     pages/home_page.dart        # composes the page for a locale
     sections/                   # hero, about, mentoring, experience, toolkit, work, community
 web/

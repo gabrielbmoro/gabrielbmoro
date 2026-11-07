@@ -1,7 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../domain/models/site_content.dart';
+import '../../domain/models/site_content.dart';
 import 'ui.dart';
 
 class SiteFooter extends StatelessComponent {

@@ -1,7 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
-import '../domain/models/site_content.dart';
+import '../../domain/models/site_content.dart';
 
 /// Per-route document metadata and head assets.
 ///
