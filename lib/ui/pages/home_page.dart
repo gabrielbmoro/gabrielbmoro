@@ -1,10 +1,10 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
-import '../components/seo_head.dart';
-import '../components/site_footer.dart';
-import '../components/site_header.dart';
-import '../domain/models/site_content.dart';
+import '../../components/seo_head.dart';
+import '../../components/site_footer.dart';
+import '../../components/site_header.dart';
+import '../../domain/models/site_content.dart';
 import '../sections/about.dart';
 import '../sections/community.dart';
 import '../sections/experience.dart';

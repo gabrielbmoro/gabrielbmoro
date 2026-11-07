@@ -2,7 +2,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'domain/repository.dart';
-import 'pages/home_page.dart';
+import 'ui/pages/home_page.dart';
 
 /// Static routes. Both locales are pre-rendered at build time.
 class App extends StatelessComponent {

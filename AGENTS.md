@@ -30,8 +30,9 @@ lib/
     repository.dart             # SiteContentRepository abstraction
   data/repository_impl.dart     # ALL visible copy (EN + PT-BR) and links
   components/                   # header, footer, SEO head, shared UI
-  sections/                     # hero, about, mentoring, experience, toolkit, work, community
-  pages/home_page.dart          # composes the page for a locale
+  ui/
+    pages/home_page.dart        # composes the page for a locale
+    sections/                   # hero, about, mentoring, experience, toolkit, work, community
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
@@ -79,7 +80,7 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
   literal word-for-word translation.
 - `lib/domain/` holds plain data classes and the `SiteContentRepository` abstraction; it must not
   import `lib/data/`, Jaspr, or DOM code.
-- Sections are `lib/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
+- Sections are `lib/ui/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
   discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
   follow the repository.
 - Keep the design quiet: paper/ink palette, one pine accent, serif display + Inter body.

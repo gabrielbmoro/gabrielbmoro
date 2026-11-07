@@ -1,8 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/ui.dart';
-import '../domain/models/site_content.dart';
+import '../../components/ui.dart';
+import '../../domain/models/site_content.dart';
 
 class CommunitySection extends StatelessComponent {
   const CommunitySection({required this.content, super.key});
