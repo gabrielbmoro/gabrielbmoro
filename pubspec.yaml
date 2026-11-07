@@ -1,0 +1,21 @@
+name: gabriel_moro_site
+description: Personal site for Gabriel Moro — senior mobile engineer and 1:1 mentor.
+publish_to: none
+version: 1.0.0
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  jaspr: ^0.23.5
+  jaspr_router: ^0.9.0
+
+dev_dependencies:
+  build_runner: ^2.15.1
+  build_web_compilers: ^4.8.0
+  jaspr_builder: ^0.23.5
+  lints: ^5.0.0
+
+jaspr:
+  mode: static
+  port: 8080
