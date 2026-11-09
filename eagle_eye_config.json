@@ -1,0 +1,17 @@
+[
+  {
+    "filePattern": "*/domain/*",
+    "exclusiveDependencies": ["*/domain/*"],
+    "name": "domain-depends-only-on-domain"
+  },
+  {
+    "filePattern": "*/data/*",
+    "forbiddenDependencies": ["*/ui/*", "*/di/*"],
+    "name": "data-no-ui-or-di"
+  },
+  {
+    "filePattern": "*/ui/*",
+    "forbiddenDependencies": ["*/data/*", "*/di/*"],
+    "name": "ui-no-data-or-di"
+  }
+]

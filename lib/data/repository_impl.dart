@@ -1,6 +1,6 @@
-import '../domain/models/site_content.dart';
-import '../domain/repository.dart';
-import 'site_content_data_source.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
+import 'package:gabriel_moro_site/domain/repository.dart';
+import 'package:gabriel_moro_site/data/site_content_data_source.dart';
 
 /// Content repository backed by the localized assets.
 final class SiteContentRepositoryImpl implements SiteContentRepository {

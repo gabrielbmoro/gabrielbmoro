@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.pub-cache
-          key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock') }}
+          key: pub-${{ runner.os }}-${{ hashFiles('pubspec.lock', 'tool/eagle_eye/pubspec.lock') }}
           restore-keys: pub-${{ runner.os }}-
 
       - name: Install dependencies
@@ -46,6 +46,11 @@ jobs:
 
       - name: Analyze
         run: dart analyze
+
+      - name: Check architecture rules
+        run: |
+          dart pub get --directory tool/eagle_eye
+          dart run --packages=tool/eagle_eye/.dart_tool/package_config.json tool/eagle_eye/bin/run.dart
 
       - name: Configure GitHub Pages
         if: github.event_name != 'pull_request'

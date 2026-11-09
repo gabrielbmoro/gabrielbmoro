@@ -5,7 +5,7 @@
 /// `domain/repository.dart`.
 library;
 
-import 'site_links.dart';
+import 'package:gabriel_moro_site/domain/models/site_links.dart';
 
 class NavItem {
   const NavItem(this.label, this.href);

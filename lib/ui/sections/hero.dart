@@ -1,8 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/action_link.dart';
-import '../../domain/models/site_content.dart';
+import 'package:gabriel_moro_site/ui/components/action_link.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class Hero extends StatelessComponent {
   const Hero({required this.content, super.key});

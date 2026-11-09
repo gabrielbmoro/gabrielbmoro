@@ -1,9 +1,9 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/action_link.dart';
-import '../components/section_heading.dart';
-import '../../domain/models/site_content.dart';
+import 'package:gabriel_moro_site/ui/components/action_link.dart';
+import 'package:gabriel_moro_site/ui/components/section_heading.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class MentoringSection extends StatelessComponent {
   const MentoringSection({required this.content, super.key});

@@ -1,8 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../../domain/models/site_content.dart';
-import 'action_link.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
+import 'package:gabriel_moro_site/ui/components/action_link.dart';
 
 class SiteHeader extends StatelessComponent {
   const SiteHeader({required this.content, super.key});
