@@ -57,8 +57,8 @@ void main() {
       // No <base> element: every asset and link is page-relative.
       base: null,
       meta: {
-        'theme-color': '#F2F7EE',
-        'color-scheme': 'light',
+        'theme-color': '#0B1510',
+        'color-scheme': 'dark',
         'author': 'Gabriel Bronzatti Moro',
       },
       head: [

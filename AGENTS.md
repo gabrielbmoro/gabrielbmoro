@@ -103,7 +103,7 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Sections are `lib/ui/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
   discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
   follow the repository.
-- Keep the design quiet: sage/forest palette, green accent, Bricolage display + Inter body.
+- Keep the design quiet: deep forest canvas, sage ink, green accent, Bricolage display + Inter body.
   Avoid adding a UI framework or a JavaScript dependency for presentation.
 - `README.md` and `README_ptBr.md` must stay in sync (see `README.md` conventions):
   the user is **Moro** / **gabrielbmoro**.
