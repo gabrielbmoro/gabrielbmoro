@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
    Gabriel Moro — personal site
-   Sage paper, forest ink, and a botanical green accent. Self-hosted fonts.
+   Deep forest canvas, sage ink, and a botanical green accent. Self-hosted fonts.
    --------------------------------------------------------------------------- */
 
 @font-face {
@@ -21,38 +21,41 @@
 }
 
 :root {
-  --paper: #f2f7ee;
-  --paper-lift: #f7fbf2;
-  --paper-deep: #e6efe0;
-  --surface: #fbfdf8;
-  --ink: #14261b;
-  --ink-soft: #2f4436;
-  --muted: #4b6152;
-  --faint: #566c5e;
-  --line: #d4e0cd;
-  --line-strong: #b9cdb0;
-  --accent: #2f6b4f;
-  --accent-strong: #245840;
-  --accent-ink: #f2f8f1;
-  --accent-soft: #dfeada;
-  --accent-bright: #3f8f66;
-  --accent-line: rgba(47, 107, 79, 0.3);
+  color-scheme: dark;
+  --paper: #0b1510;
+  --paper-lift: #0f1d15;
+  --paper-tint: #0e1b14;
+  --surface: #13231a;
+  --ink: #e9f3e7;
+  --ink-soft: #c5d4c8;
+  --muted: #98ad9c;
+  --faint: #7d937f;
+  --line: #20382a;
+  --line-strong: #34503d;
+  --accent: #6fca9b;
+  --accent-strong: #9fe3c1;
+  --accent-ink: #06110b;
+  --accent-soft: #173826;
+  --accent-bright: #82d9ad;
+  --accent-glow: rgba(111, 202, 155, 0.18);
+  --accent-line: rgba(111, 202, 155, 0.34);
   --forest: #14301f;
   --on-forest: #edf5ec;
   --on-forest-muted: rgba(237, 245, 236, 0.7);
   --on-forest-faint: rgba(237, 245, 236, 0.58);
   --on-forest-line: rgba(237, 245, 236, 0.16);
-  --header-bg: rgba(242, 247, 238, 0.88);
-  --glass: rgba(251, 253, 248, 0.72);
-  --hero-glow: rgba(47, 107, 79, 0.12);
+  --on-forest-glass: rgba(237, 245, 236, 0.06);
+  --header-bg: rgba(11, 21, 16, 0.88);
+  --glass: rgba(19, 35, 26, 0.72);
+  --hero-glow: rgba(111, 202, 155, 0.12);
   --radius: 18px;
   --radius-sm: 12px;
   --container: 1120px;
   --gutter: 28px;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   --font-display: "Bricolage Grotesque", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  --shadow: 0 18px 50px rgba(20, 38, 27, 0.08);
-  --shadow-card: 0 16px 40px rgba(20, 38, 27, 0.07);
+  --shadow: 0 18px 50px rgba(0, 0, 0, 0.55);
+  --shadow-card: 0 16px 40px rgba(0, 0, 0, 0.45);
 }
 
 /* Reset ------------------------------------------------------------------- */
@@ -64,6 +67,7 @@
 }
 
 html {
+  background: var(--paper);
   scroll-behavior: smooth;
   scroll-padding-top: 96px;
   -webkit-text-size-adjust: 100%;
@@ -337,12 +341,13 @@ dd {
 }
 
 .btn--light {
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--on-forest);
+  color: var(--forest);
 }
 
 .btn--light:hover {
   background: #ffffff;
+  color: var(--forest);
   transform: translateY(-1px);
 }
 
@@ -437,7 +442,7 @@ dd {
   height: 7px;
   border-radius: 50%;
   background: var(--accent-bright);
-  box-shadow: 0 0 0 4px rgba(63, 143, 102, 0.16);
+  box-shadow: 0 0 0 4px var(--accent-glow);
 }
 
 .availability-divider {
@@ -573,7 +578,7 @@ html[lang="pt-BR"] .hero h1 {
 .section--tint {
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
-  background: var(--paper-deep);
+  background: var(--paper-tint);
 }
 
 .section-head {
@@ -902,7 +907,7 @@ h2 {
 
 .cta-band .btn--primary:hover {
   background: #ffffff;
-  color: var(--accent-strong);
+  color: var(--forest);
 }
 
 /* Experience -------------------------------------------------------------- */
@@ -1144,7 +1149,7 @@ h2 {
 
 .availability--footer {
   border-color: var(--on-forest-line);
-  background: rgba(237, 245, 236, 0.07);
+  background: var(--on-forest-glass);
   color: var(--on-forest);
 }
 
