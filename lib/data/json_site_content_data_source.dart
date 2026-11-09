@@ -1,9 +1,9 @@
 import 'dart:convert';
 import 'dart:io';
 
-import '../domain/models/site_content.dart';
-import '../domain/models/site_links.dart';
-import 'site_content_data_source.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
+import 'package:gabriel_moro_site/domain/models/site_links.dart';
+import 'package:gabriel_moro_site/data/site_content_data_source.dart';
 
 /// Reads the localized content assets from [contentDirectory].
 ///

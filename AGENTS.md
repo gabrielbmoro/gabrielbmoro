@@ -59,13 +59,19 @@ jaspr serve                 # local dev server on http://localhost:8080
 jaspr build                 # static output in build/jaspr
 dart format lib
 dart analyze
+
+# Architecture checks. Eagle Eye lives in an isolated tool package because it
+# pins analyzer 8 while Jaspr 0.23 pins analyzer 12.
+dart pub get --directory tool/eagle_eye
+dart run --packages=tool/eagle_eye/.dart_tool/package_config.json tool/eagle_eye/bin/run.dart
 ```
 
 `jaspr serve` prints a warning about a missing `main.client.dart`; that is expected — the site
 intentionally has no client entrypoint and ships zero JavaScript.
 
 The GitHub Actions workflow runs `dart format --output=none --set-exit-if-changed lib`,
-`dart analyze`, and `jaspr build`, prunes compiler caches (`build/jaspr/packages`,
+`dart analyze`, the Eagle Eye architecture check, and `jaspr build`, prunes compiler caches
+(`build/jaspr/packages`,
 `build/jaspr/.dart_tool`, `build/jaspr/.build.manifest`) from the artifact, then deploys
 `build/jaspr`.
 

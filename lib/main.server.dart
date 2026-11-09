@@ -2,11 +2,11 @@ import 'package:jaspr/dom.dart';
 // Server-specific Jaspr import.
 import 'package:jaspr/server.dart';
 
-import 'app.dart';
-import 'di/service_locator.dart';
-import 'domain/models/site_links.dart';
-import 'domain/repository.dart';
-import 'main.server.options.dart';
+import 'package:gabriel_moro_site/app.dart';
+import 'package:gabriel_moro_site/di/service_locator.dart';
+import 'package:gabriel_moro_site/domain/models/site_links.dart';
+import 'package:gabriel_moro_site/domain/repository.dart';
+import 'package:gabriel_moro_site/main.server.options.dart';
 
 /// Person + profile structured data shared by both locales.
 String _personJsonLd(SiteLinks links) =>

@@ -1,17 +1,17 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/server.dart';
 
-import '../components/seo_head.dart';
-import '../components/site_footer.dart';
-import '../components/site_header.dart';
-import '../../domain/models/site_content.dart';
-import '../sections/about.dart';
-import '../sections/community.dart';
-import '../sections/experience.dart';
-import '../sections/hero.dart';
-import '../sections/mentoring.dart';
-import '../sections/toolkit.dart';
-import '../sections/work.dart';
+import 'package:gabriel_moro_site/ui/components/seo_head.dart';
+import 'package:gabriel_moro_site/ui/components/site_footer.dart';
+import 'package:gabriel_moro_site/ui/components/site_header.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
+import 'package:gabriel_moro_site/ui/sections/about.dart';
+import 'package:gabriel_moro_site/ui/sections/community.dart';
+import 'package:gabriel_moro_site/ui/sections/experience.dart';
+import 'package:gabriel_moro_site/ui/sections/hero.dart';
+import 'package:gabriel_moro_site/ui/sections/mentoring.dart';
+import 'package:gabriel_moro_site/ui/sections/toolkit.dart';
+import 'package:gabriel_moro_site/ui/sections/work.dart';
 
 /// The single long-form page, rendered for each locale.
 class HomePage extends StatelessComponent {

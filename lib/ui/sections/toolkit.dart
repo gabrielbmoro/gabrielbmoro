@@ -1,8 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
-import '../components/section_heading.dart';
-import '../../domain/models/site_content.dart';
+import 'package:gabriel_moro_site/ui/components/section_heading.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class ToolkitSection extends StatelessComponent {
   const ToolkitSection({required this.content, super.key});

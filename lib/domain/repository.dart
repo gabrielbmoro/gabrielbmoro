@@ -1,4 +1,4 @@
-import 'models/site_content.dart';
+import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 /// Provides the localized content the site renders.
 ///

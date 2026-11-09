@@ -1,0 +1,9 @@
+name: eagle_eye_tool
+description: Isolated runner for Eagle Eye architecture checks.
+publish_to: none
+
+environment:
+  sdk: ^3.10.0
+
+dependencies:
+  eagle_eye: ^2.1.0
