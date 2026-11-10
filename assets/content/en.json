@@ -51,10 +51,10 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Hello World! I'm Gabriel",
+    "kicker": "Hello World! I'm Moro",
     "availability": "Sharing what I learn",
     "availabilityNote": "Articles · videos · talks",
-    "lede": "I'm Gabriel Moro. I write, record and speak about what I learn building Android, Kotlin Multiplatform and Flutter apps — and about what music taught me to see in code: rhythm, harmony and a lot of practice. Less abstract theory, more real decisions for your project.",
+    "lede": "I'm Gabriel Bronzatti Moro. I write, record and speak about what I learn building Android, Kotlin Multiplatform and Flutter apps — and about what music taught me to see in code: rhythm, harmony and a lot of practice. Less abstract theory, more real decisions for your project.",
     "primaryCta": "Read the articles",
     "primaryCtaHref": "#articles",
     "secondaryCta": "How I learn",
@@ -77,7 +77,7 @@
   },
   "about": {
     "eyebrow": "About",
-    "heading": "Hello World! I'm Gabriel 👋",
+    "heading": "Hello World! I'm Moro 👋",
     "currentlyLabel": "In the community",
     "currentRoles": [
       {

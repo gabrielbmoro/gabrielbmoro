@@ -8,11 +8,11 @@
   "assetPrefix": "",
   "homeHref": "./",
   "skipLink": "Ir para o conteúdo",
-  "metaTitle": "Gabriel Moro — aprender mobile, arquitetura e open source",
+  "metaTitle": "Gabriel B. Moro — aprender mobile, arquitetura e open source",
   "metaDescription": "Artigos, vídeos e palestras sobre Android, Kotlin Multiplatform, Flutter e arquitetura — decisões reais de engenharia e exemplos para aplicar no seu projeto.",
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
   "ogLocale": "pt_BR",
-  "ogImageAlt": "Gabriel Moro",
+  "ogImageAlt": "Gabriel B. Moro",
   "siteTitle": "gabrielbmoro.dev",
   "tagline": "aprender compartilhando conhecimento",
   "coverImage": "assets/masthead-cover.jpg",
@@ -51,10 +51,10 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Olá, mundo! Sou o Gabriel",
+    "kicker": "Olá, mundo! Sou o Moro",
     "availability": "Compartilhando o que aprendo",
     "availabilityNote": "Artigos · vídeos · palestras",
-    "lede": "Sou o Gabriel Moro. Escrevo, gravo e palestro sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter — e sobre o que a música me ensinou a ver no código: ritmo, harmonia e muita prática. Menos teoria solta, mais decisões reais para o seu projeto.",
+    "lede": "Sou o Gabriel Bronzatti Moro. Escrevo, gravo e palestro sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter — e sobre o que a música me ensinou a ver no código: ritmo, harmonia e muita prática. Menos teoria solta, mais decisões reais para o seu projeto.",
     "primaryCta": "Ler os artigos",
     "primaryCtaHref": "#articles",
     "secondaryCta": "Como eu aprendo",
@@ -77,7 +77,7 @@
   },
   "about": {
     "eyebrow": "Sobre",
-    "heading": "Olá, mundo! Sou o Gabriel 👋",
+    "heading": "Olá, mundo! Sou o Moro 👋",
     "currentlyLabel": "Na comunidade",
     "currentRoles": [
       {
