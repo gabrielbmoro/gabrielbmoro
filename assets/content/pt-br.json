@@ -13,8 +13,10 @@
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
   "ogLocale": "pt_BR",
   "ogImageAlt": "Gabriel Moro",
-  "brandRole": "Aprendendo e ensinando mobile",
-  "homeLabel": "Gabriel Moro — início",
+  "siteTitle": "gabrielbmoro.dev",
+  "tagline": "aprender compartilhando conhecimento",
+  "coverImage": "assets/masthead-cover.jpg",
+  "homeLabel": "gabrielbmoro.dev — início",
   "navAriaLabel": "Navegação principal",
   "socialAriaLabel": "Links sociais",
   "nav": [
@@ -27,12 +29,12 @@
       "href": "#articles"
     },
     {
-      "label": "Experiência",
-      "href": "#experience"
-    },
-    {
       "label": "Open Source",
       "href": "#work"
+    },
+    {
+      "label": "Experiência",
+      "href": "#experience"
     }
   ],
   "navCta": "Seguir no Medium",
@@ -49,12 +51,10 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Aprendendo e ensinando mobile",
+    "kicker": "Olá, mundo! Sou o Gabriel",
     "availability": "Compartilhando o que aprendo",
     "availabilityNote": "Artigos · vídeos · palestras",
-    "title": "Aprenda mobile ",
-    "titleEmphasis": "um projeto de cada vez.",
-    "lede": "Sou o Gabriel Moro. Escrevo, gravo e palestro sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter — menos teoria solta, mais decisões reais e exemplos para aplicar no seu projeto.",
+    "lede": "Sou o Gabriel Moro. Escrevo, gravo e palestro sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter — e sobre o que a música me ensinou a ver no código: ritmo, harmonia e muita prática. Menos teoria solta, mais decisões reais para o seu projeto.",
     "primaryCta": "Ler os artigos",
     "primaryCtaHref": "#articles",
     "secondaryCta": "Como eu aprendo",
@@ -73,19 +73,12 @@
         "value": "Ensinar",
         "label": "em artigos, vídeos e palestras"
       }
-    ],
-    "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
-    "portraitRole": "Aprendendo em público desde 2017",
-    "portraitEducation": "Mestrado em Ciência da Computação · UFRGS"
+    ]
   },
   "about": {
     "eyebrow": "Sobre",
-    "heading": "O que aprendo no código, compartilho aqui.",
-    "paragraphs": [
-      "Trabalho com mobile desde 2017 — hoje com Flutter e o ecossistema VTEX na Kobe. No caminho, aprendi que as lições mais úteis vêm de projetos reais: arquitetura, testes, Kotlin Multiplatform e a rotina de manter código vivo.",
-      "Escrevo, gravo e palestro para devolver o que aprendi. A ideia é simples: menos teoria solta, mais contexto de engenharia, exemplos e trade-offs que você pode adaptar ao seu projeto — sem atalhos mágicos."
-    ],
-    "currentlyLabel": "Atuação na comunidade",
+    "heading": "Olá, mundo! Sou o Gabriel 👋",
+    "currentlyLabel": "Na comunidade",
     "currentRoles": [
       {
         "role": "Content Creator",
@@ -99,7 +92,36 @@
         "period": "2026 - Atual",
         "url": "https://koinchampion.kotzilla.io/apply-now"
       }
-    ]
+    ],
+    "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
+    "portraitRole": "Aprendendo em público desde 2017",
+    "portraitEducation": "Mestrado em Ciência da Computação · UFRGS",
+    "intro": "Sou engenheiro mobile desde 2017 — hoje trabalho com Flutter e o ecossistema VTEX na Kobe. Também escrevo, gravo e palestro sobre o que aprendo no caminho. Gosto de código, de música e de explicar as coisas de um jeito simples, sem enrolação.",
+    "sections": [
+      {
+        "title": "O que eu faço",
+        "paragraphs": [
+          "No dia a dia, construo apps mobile com Flutter, Android e Kotlin Multiplatform. Já passei por arquitetura, testes, performance e por aquela parte que ninguém vê: manter o código vivo e fácil de mudar.",
+          "Também compartilho o que aprendo em artigos, vídeos e palestras — sempre com contexto de engenharia e exemplos que dá para aplicar no seu projeto."
+        ]
+      },
+      {
+        "title": "De onde venho",
+        "paragraphs": [
+          "Comecei a tocar violão na igreja com 12 anos e nunca mais larguei a música. Ela me ensinou a ouvir antes de tocar, a repetir até ficar natural e a perceber quando alguma coisa está fora de harmonia.",
+          "De lá para cá, a música continuou presente — e virou uma lente para enxergar outras coisas, inclusive software."
+        ]
+      },
+      {
+        "title": "Código também é arte",
+        "paragraphs": [
+          "Gosto de pensar que programar é uma forma de arte: tem ritmo, composição, escolhas de harmonia e muita prática escondida atrás do resultado.",
+          "É por isso que gosto de código simples, bem organizado e com contexto. Menos teoria solta, mais exemplos e trade-offs que você pode adaptar ao seu projeto."
+        ]
+      }
+    ],
+    "contactLabel": "Contato",
+    "contactText": "Quer trocar uma ideia sobre mobile, música ou código? Me chama no e-mail ou no LinkedIn — respondo pessoalmente."
   },
   "content": {
     "eyebrow": "Artigos",

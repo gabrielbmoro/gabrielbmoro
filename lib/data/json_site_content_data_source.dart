@@ -89,7 +89,9 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
       canonicalUrl: _string(json, 'canonicalUrl', path),
       ogLocale: _string(json, 'ogLocale', path),
       ogImageAlt: _string(json, 'ogImageAlt', path),
-      brandRole: _string(json, 'brandRole', path),
+      siteTitle: _string(json, 'siteTitle', path),
+      tagline: _string(json, 'tagline', path),
+      coverImage: _optionalString(json, 'coverImage', path),
       homeLabel: _string(json, 'homeLabel', path),
       navAriaLabel: _string(json, 'navAriaLabel', path),
       socialAriaLabel: _string(json, 'socialAriaLabel', path),
@@ -131,8 +133,6 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     kicker: _string(json, 'kicker', path),
     availability: _string(json, 'availability', path),
     availabilityNote: _string(json, 'availabilityNote', path),
-    title: _string(json, 'title', path),
-    titleEmphasis: _string(json, 'titleEmphasis', path),
     lede: _string(json, 'lede', path),
     primaryCta: _string(json, 'primaryCta', path),
     primaryCtaHref: _string(json, 'primaryCtaHref', path),
@@ -148,15 +148,21 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
         _string(stat, 'label', statPath),
       ),
     ),
-    portraitAlt: _string(json, 'portraitAlt', path),
-    portraitRole: _string(json, 'portraitRole', path),
-    portraitEducation: _string(json, 'portraitEducation', path),
   );
 
   AboutContent _about(Map<String, dynamic> json, String path) => AboutContent(
     eyebrow: _string(json, 'eyebrow', path),
     heading: _string(json, 'heading', path),
-    paragraphs: _strings(json, 'paragraphs', path),
+    intro: _string(json, 'intro', path),
+    sections: _mapList(
+      json,
+      'sections',
+      path,
+      (section, sectionPath) => AboutTopic(
+        title: _string(section, 'title', sectionPath),
+        paragraphs: _strings(section, 'paragraphs', sectionPath),
+      ),
+    ),
     currentlyLabel: _string(json, 'currentlyLabel', path),
     currentRoles: _mapList(
       json,
@@ -169,6 +175,11 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
         url: _optionalString(role, 'url', rolePath),
       ),
     ),
+    contactLabel: _string(json, 'contactLabel', path),
+    contactText: _string(json, 'contactText', path),
+    portraitAlt: _string(json, 'portraitAlt', path),
+    portraitRole: _string(json, 'portraitRole', path),
+    portraitEducation: _string(json, 'portraitEducation', path),
   );
 
   ContentHub _contentHub(Map<String, dynamic> json, String path) => ContentHub(

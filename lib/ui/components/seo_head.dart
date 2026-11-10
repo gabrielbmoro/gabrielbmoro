@@ -40,6 +40,12 @@ class SeoHead extends StatelessComponent {
           href: '${c.assetPrefix}fonts/bricolage-grotesque-latin.woff2',
           attributes: const {'as': 'font', 'type': 'font/woff2', 'crossorigin': 'anonymous'},
         ),
+        if (c.coverImage case final cover?)
+          link(
+            rel: 'preload',
+            href: '${c.assetPrefix}$cover',
+            attributes: const {'as': 'image', 'fetchpriority': 'high'},
+          ),
         link(rel: 'canonical', href: c.canonicalUrl),
         for (final locale in locales)
           link(rel: 'alternate', href: locale.canonicalUrl, attributes: {'hreflang': locale.lang}),
@@ -48,7 +54,7 @@ class SeoHead extends StatelessComponent {
         meta(content: c.metaDescription, attributes: const {'property': 'og:description'}),
         meta(content: c.canonicalUrl, attributes: const {'property': 'og:url'}),
         meta(content: 'website', attributes: const {'property': 'og:type'}),
-        meta(content: 'Gabriel Moro', attributes: const {'property': 'og:site_name'}),
+        meta(content: c.siteTitle, attributes: const {'property': 'og:site_name'}),
         meta(content: c.ogLocale, attributes: const {'property': 'og:locale'}),
         meta(content: image, attributes: const {'property': 'og:image'}),
         meta(content: '800', attributes: const {'property': 'og:image:width'}),

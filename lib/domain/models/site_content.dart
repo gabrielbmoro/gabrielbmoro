@@ -26,8 +26,6 @@ class HeroContent {
     required this.kicker,
     required this.availability,
     required this.availabilityNote,
-    required this.title,
-    required this.titleEmphasis,
     required this.lede,
     required this.primaryCta,
     required this.primaryCtaHref,
@@ -35,16 +33,11 @@ class HeroContent {
     required this.secondaryCtaHref,
     required this.note,
     required this.stats,
-    required this.portraitAlt,
-    required this.portraitRole,
-    required this.portraitEducation,
   });
 
   final String kicker;
   final String availability;
   final String availabilityNote;
-  final String title;
-  final String titleEmphasis;
   final String lede;
   final String primaryCta;
   final String primaryCtaHref;
@@ -52,9 +45,6 @@ class HeroContent {
   final String secondaryCtaHref;
   final String note;
   final List<HeroStat> stats;
-  final String portraitAlt;
-  final String portraitRole;
-  final String portraitEducation;
 }
 
 class CurrentRole {
@@ -71,20 +61,39 @@ class CurrentRole {
   final String? url;
 }
 
+class AboutTopic {
+  const AboutTopic({required this.title, required this.paragraphs});
+
+  final String title;
+  final List<String> paragraphs;
+}
+
 class AboutContent {
   const AboutContent({
     required this.eyebrow,
     required this.heading,
-    required this.paragraphs,
+    required this.intro,
+    required this.sections,
     required this.currentlyLabel,
     required this.currentRoles,
+    required this.contactLabel,
+    required this.contactText,
+    required this.portraitAlt,
+    required this.portraitRole,
+    required this.portraitEducation,
   });
 
   final String eyebrow;
   final String heading;
-  final List<String> paragraphs;
+  final String intro;
+  final List<AboutTopic> sections;
   final String currentlyLabel;
   final List<CurrentRole> currentRoles;
+  final String contactLabel;
+  final String contactText;
+  final String portraitAlt;
+  final String portraitRole;
+  final String portraitEducation;
 }
 
 class Article {
@@ -292,7 +301,9 @@ class SiteContent {
     required this.canonicalUrl,
     required this.ogLocale,
     required this.ogImageAlt,
-    required this.brandRole,
+    required this.siteTitle,
+    required this.tagline,
+    required this.coverImage,
     required this.homeLabel,
     required this.navAriaLabel,
     required this.socialAriaLabel,
@@ -332,7 +343,16 @@ class SiteContent {
   final String canonicalUrl;
   final String ogLocale;
   final String ogImageAlt;
-  final String brandRole;
+
+  /// Site wordmark shown in the masthead.
+  final String siteTitle;
+
+  /// Short phrase rendered under [siteTitle].
+  final String tagline;
+
+  /// Decorative cover image path relative to the site root, without the
+  /// locale's `assetPrefix`. Null falls back to the CSS-only cover.
+  final String? coverImage;
   final String homeLabel;
   final String navAriaLabel;
   final String socialAriaLabel;

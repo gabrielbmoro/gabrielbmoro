@@ -4,6 +4,7 @@ import 'package:jaspr/jaspr.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/ui/components/action_link.dart';
 
+/// Full-bleed masthead: cover artwork, site wordmark, tagline and the tab bar.
 class SiteHeader extends StatelessComponent {
   const SiteHeader({required this.content, super.key});
 
@@ -11,46 +12,65 @@ class SiteHeader extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return header(classes: 'site-header', [
-      div(classes: 'container header-inner', [
-        a(
-          href: content.homeHref,
-          classes: 'brand',
-          attributes: {'aria-label': content.homeLabel},
-          [
-            span(classes: 'brand-mark', attributes: const {'aria-hidden': 'true'}, [.text('GM')]),
-            span(classes: 'brand-copy', [
-              span(classes: 'brand-name', [.text('Gabriel Moro')]),
-              span(classes: 'brand-role', [.text(content.brandRole)]),
-            ]),
-          ],
+    return header(classes: 'masthead', [
+      div(
+        classes: 'masthead-cover',
+        attributes: const {'aria-hidden': 'true'},
+        [
+          if (content.coverImage case final cover?)
+            img(
+              src: '${content.assetPrefix}$cover',
+              alt: '',
+              loading: MediaLoading.eager,
+              attributes: const {'fetchpriority': 'high', 'decoding': 'async'},
+            ),
+        ],
+      ),
+      div(classes: 'container masthead-inner', [
+        img(
+          src: '${content.assetPrefix}assets/logo-mark.png',
+          alt: '',
+          width: 216,
+          height: 320,
+          classes: 'masthead-mark',
+          loading: MediaLoading.eager,
+          attributes: const {'decoding': 'async'},
         ),
-        nav(
-          classes: 'site-nav',
-          attributes: {'aria-label': content.navAriaLabel},
-          [
-            for (final item in content.nav) a(href: item.href, classes: 'site-nav-link', [.text(item.label)]),
-          ],
-        ),
-        div(classes: 'header-actions', [
+        h1(classes: 'masthead-title', [
           a(
-            href: content.switchHref,
-            classes: 'lang-switch',
-            attributes: {
-              'aria-label': content.switchAriaLabel,
-              'hreflang': content.switchHrefLang,
-              'lang': content.switchHrefLang,
-            },
-            [.text(content.switchLabel)],
-          ),
-          ActionLink(
-            href: content.navCtaHref,
-            label: content.navCta,
-            external: content.navCtaHref.startsWith('http'),
-            small: true,
+            href: content.homeHref,
+            attributes: {'aria-label': content.homeLabel},
+            [.text(content.siteTitle)],
           ),
         ]),
+        p(classes: 'masthead-tagline', [.text(content.tagline)]),
       ]),
+      nav(
+        classes: 'masthead-tabs',
+        attributes: {'aria-label': content.navAriaLabel},
+        [
+          div(classes: 'container masthead-tabs-inner', [
+            for (final item in content.nav) a(href: item.href, classes: 'tab', [.text(item.label)]),
+            ActionLink(
+              href: content.navCtaHref,
+              label: content.navCta,
+              variant: ActionVariant.light,
+              small: true,
+              external: content.navCtaHref.startsWith('http'),
+            ),
+            a(
+              href: content.switchHref,
+              classes: 'tab tab--lang',
+              attributes: {
+                'aria-label': content.switchAriaLabel,
+                'hreflang': content.switchHrefLang,
+                'lang': content.switchHrefLang,
+              },
+              [.text(content.switchLabel)],
+            ),
+          ]),
+        ],
+      ),
     ]);
   }
 }

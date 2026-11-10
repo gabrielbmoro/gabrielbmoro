@@ -18,7 +18,7 @@ class ContentHubSection extends StatelessComponent {
 
     return a(
       href: article.url,
-      classes: thumbnail == null ? 'article-link' : 'article-link article-link--with-thumb',
+      classes: 'article-link',
       target: Target.blank,
       attributes: const {'rel': 'noopener noreferrer'},
       [
@@ -41,7 +41,6 @@ class ContentHubSection extends StatelessComponent {
           span(classes: 'article-meta', [.text('${article.publication} · ${article.published}')]),
           span(classes: 'article-title', [.text(article.title)]),
         ]),
-        span(classes: 'article-arrow', attributes: const {'aria-hidden': 'true'}, [.text('↗')]),
       ],
     );
   }

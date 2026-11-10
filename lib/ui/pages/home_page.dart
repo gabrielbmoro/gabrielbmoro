@@ -32,9 +32,9 @@ class HomePage extends StatelessComponent {
         Hero(content: content),
         AboutSection(content: content),
         ContentHubSection(content: content),
+        WorkSection(content: content),
         ExperienceSection(content: content),
         ToolkitSection(content: content),
-        WorkSection(content: content),
       ]),
       SiteFooter(content: content),
     ]);
