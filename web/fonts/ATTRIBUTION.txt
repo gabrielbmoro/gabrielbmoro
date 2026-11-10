@@ -2,6 +2,6 @@ Inter
 Copyright 2016 The Inter Project Authors (https://github.com/rsms/inter)
 Licensed under the SIL Open Font License, Version 1.1 (see OFL.txt).
 
-Bricolage Grotesque
-Copyright 2022 The Bricolage Grotesque Project Authors (https://github.com/ateliertriay/bricolage)
+Montaga
+Copyright (c) 2011, Alejandra Rodriguez (ale_guez@yahoo.com.ar), with Reserved Font Name "Montaga".
 Licensed under the SIL Open Font License, Version 1.1 (see OFL.txt).
