@@ -185,6 +185,7 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
         publication: _string(article, 'publication', articlePath),
         published: _string(article, 'published', articlePath),
         url: _string(article, 'url', articlePath),
+        thumbnail: _optionalString(article, 'thumbnail', articlePath),
       ),
     ),
     allArticlesLabel: _string(json, 'allArticlesLabel', path),

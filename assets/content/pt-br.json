@@ -116,25 +116,29 @@
         "title": "Setting Up Koin in real project: A Step-by-Step Guide",
         "publication": "Koin Developers",
         "published": "Set 2026",
-        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239"
+        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239",
+        "thumbnail": "assets/articles/setting-up-koin-in-real-project.jpg"
       },
       {
         "title": "Getting Started with Spec-Driven Development",
         "publication": "CodandoTV",
         "published": "Jul 2026",
-        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5"
+        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5",
+        "thumbnail": "assets/articles/getting-started-with-spec-driven-development.jpg"
       },
       {
         "title": "Let Koin Shape your Application Architecture",
         "publication": "Koin Developers",
         "published": "Jul 2026",
-        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0"
+        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0",
+        "thumbnail": "assets/articles/let-koin-shape-your-application-architecture.jpg"
       },
       {
         "title": "Como usar Compilador do Koin em um projeto multi-módulo?",
         "publication": "CodandoTV",
         "published": "Jul 2026",
-        "url": "https://medium.com/codandotv/como-usar-compilador-do-koin-em-um-projeto-multi-m%C3%B3dulo-8e9dda634cf9"
+        "url": "https://medium.com/codandotv/como-usar-compilador-do-koin-em-um-projeto-multi-m%C3%B3dulo-8e9dda634cf9",
+        "thumbnail": "assets/articles/como-usar-compilador-do-koin-multimodulo.jpg"
       }
     ],
     "allArticlesLabel": "Ver todos no Medium",

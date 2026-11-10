@@ -13,6 +13,39 @@ class ContentHubSection extends StatelessComponent {
 
   final SiteContent content;
 
+  Component _articleLink(Article article) {
+    final thumbnail = article.thumbnail;
+
+    return a(
+      href: article.url,
+      classes: thumbnail == null ? 'article-link' : 'article-link article-link--with-thumb',
+      target: Target.blank,
+      attributes: const {'rel': 'noopener noreferrer'},
+      [
+        if (thumbnail != null)
+          span(
+            classes: 'article-thumb',
+            attributes: const {'aria-hidden': 'true'},
+            [
+              img(
+                src: '${content.assetPrefix}$thumbnail',
+                alt: '',
+                width: 480,
+                height: 270,
+                loading: MediaLoading.lazy,
+                attributes: const {'decoding': 'async'},
+              ),
+            ],
+          ),
+        span(classes: 'article-body', [
+          span(classes: 'article-meta', [.text('${article.publication} · ${article.published}')]),
+          span(classes: 'article-title', [.text(article.title)]),
+        ]),
+        span(classes: 'article-arrow', attributes: const {'aria-hidden': 'true'}, [.text('↗')]),
+      ],
+    );
+  }
+
   @override
   Component build(BuildContext context) {
     final hub = content.contentHub;
@@ -24,20 +57,7 @@ class ContentHubSection extends StatelessComponent {
         div(classes: 'articles-block', [
           h3([.text(hub.latestTitle)]),
           ol(classes: 'article-list', [
-            for (final article in hub.articles)
-              li(classes: 'article-item', [
-                a(
-                  href: article.url,
-                  classes: 'article-link',
-                  target: Target.blank,
-                  attributes: const {'rel': 'noopener noreferrer'},
-                  [
-                    span(classes: 'article-meta', [.text('${article.publication} · ${article.published}')]),
-                    span(classes: 'article-title', [.text(article.title)]),
-                    span(classes: 'article-arrow', attributes: const {'aria-hidden': 'true'}, [.text('↗')]),
-                  ],
-                ),
-              ]),
+            for (final article in hub.articles) li(classes: 'article-item', [_articleLink(article)]),
           ]),
           div(classes: 'articles-all', [
             TextLink(hub.allArticlesLabel, href: hub.allArticlesHref),

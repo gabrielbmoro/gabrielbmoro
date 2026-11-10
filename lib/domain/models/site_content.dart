@@ -93,12 +93,17 @@ class Article {
     required this.publication,
     required this.published,
     required this.url,
+    this.thumbnail,
   });
 
   final String title;
   final String publication;
   final String published;
   final String url;
+
+  /// Cover image path relative to the site root, without the locale's
+  /// `assetPrefix`. Null when the article has no local thumbnail.
+  final String? thumbnail;
 }
 
 class ContentChannel {

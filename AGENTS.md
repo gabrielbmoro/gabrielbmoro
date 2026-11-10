@@ -44,7 +44,7 @@ assets/content/
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
-  assets/                       # optimized avatar and icons
+  assets/                       # optimized avatar, icons and article covers
   favicon.svg, robots.txt
 ```
 
@@ -113,6 +113,10 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - `web/assets/avatar-400.jpg` and `avatar-800.jpg` are tight crops of
   `assets/img/avatar.png`; regenerate both if the photo changes. Keep the 800px file under
   ~100 KB and the 400px under ~30 KB.
+- `web/assets/articles/*.jpg` are 480×270 16:9 covers for the article list, cropped centrally from
+  each article's `og:image` (progressive JPEG, target under ~45 KB). Point an article at one with
+  `content.articles[].thumbnail`, using a path relative to the site root; localized article lists
+  may link to different posts, so the thumbnail may differ per locale too.
 - `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share the "GM"
   monogram.
 - Font licenses: SIL OFL 1.1; see `web/fonts/ATTRIBUTION.txt` and `web/fonts/OFL.txt`.

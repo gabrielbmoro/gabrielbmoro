@@ -116,25 +116,29 @@
         "title": "Setting Up Koin in real project: A Step-by-Step Guide",
         "publication": "Koin Developers",
         "published": "Sep 2026",
-        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239"
+        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239",
+        "thumbnail": "assets/articles/setting-up-koin-in-real-project.jpg"
       },
       {
         "title": "Getting Started with Spec-Driven Development",
         "publication": "CodandoTV",
         "published": "Jul 2026",
-        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5"
+        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5",
+        "thumbnail": "assets/articles/getting-started-with-spec-driven-development.jpg"
       },
       {
         "title": "Let Koin Shape your Application Architecture",
         "publication": "Koin Developers",
         "published": "Jul 2026",
-        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0"
+        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0",
+        "thumbnail": "assets/articles/let-koin-shape-your-application-architecture.jpg"
       },
       {
         "title": "How to use Koin Compiler in a Multimodule Project?",
         "publication": "Koin Developers",
         "published": "Jun 2026",
-        "url": "https://blog.insert-koin.io/how-to-use-koin-compiler-in-a-multimodule-project-6bd8e57d5e4b"
+        "url": "https://blog.insert-koin.io/how-to-use-koin-compiler-in-a-multimodule-project-6bd8e57d5e4b",
+        "thumbnail": "assets/articles/how-to-use-koin-compiler-in-a-multimodule-project.jpg"
       }
     ],
     "allArticlesLabel": "Read all on Medium",
