@@ -8,12 +8,12 @@
   "assetPrefix": "../",
   "homeHref": "../",
   "skipLink": "Skip to content",
-  "metaTitle": "Gabriel Moro — Senior Mobile Engineer & Content Creator",
-  "metaDescription": "Senior mobile engineer and tech lead working with Android, Kotlin Multiplatform and Flutter. Articles, videos, podcast and talks on mobile engineering, architecture and open source.",
+  "metaTitle": "Gabriel Moro — learning mobile, architecture and open source",
+  "metaDescription": "Articles, videos and talks on Android, Kotlin Multiplatform, Flutter and architecture — real engineering decisions and examples you can apply to your own project.",
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/en/",
   "ogLocale": "en_US",
   "ogImageAlt": "Gabriel Moro",
-  "brandRole": "Mobile engineer & content creator",
+  "brandRole": "Learning and teaching mobile",
   "homeLabel": "Gabriel Moro — home",
   "navAriaLabel": "Primary navigation",
   "socialAriaLabel": "Social links",
@@ -49,59 +49,54 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Senior mobile engineer & content creator",
+    "kicker": "Learning and teaching mobile",
     "availability": "Sharing what I learn",
     "availabilityNote": "Articles · videos · talks",
     "title": "Learn mobile ",
-    "titleEmphasis": "from someone who ships every day.",
-    "lede": "I’m Gabriel Moro. For almost a decade I’ve built Android, Kotlin Multiplatform and Flutter products used by millions — and I turn those decisions into articles, videos and talks for the community.",
+    "titleEmphasis": "one project at a time.",
+    "lede": "I’m Gabriel Moro. I write, record and speak about what I learn while building Android, Kotlin Multiplatform and Flutter apps — less abstract theory, more real decisions and examples you can apply to your own project.",
     "primaryCta": "Read the articles",
     "primaryCtaHref": "#articles",
-    "secondaryCta": "About me",
+    "secondaryCta": "How I learn",
     "secondaryCtaHref": "#about",
     "note": "Articles · Videos · Podcast · Talks",
     "stats": [
       {
-        "value": "35M+",
-        "label": "users on products I’ve shipped"
+        "value": "Learn",
+        "label": "in public, through real projects"
       },
       {
-        "value": "100M+",
-        "label": "app downloads"
+        "value": "Build",
+        "label": "examples you can apply"
       },
       {
-        "value": "2017",
-        "label": "building mobile since"
+        "value": "Teach",
+        "label": "articles, videos and talks"
       }
     ],
     "portraitAlt": "Portrait of Gabriel Moro, smiling and wearing glasses.",
-    "portraitRole": "Senior Mobile Engineer",
+    "portraitRole": "Learning in public since 2017",
     "portraitEducation": "M.Sc. in Computer Science · UFRGS"
   },
   "about": {
     "eyebrow": "About",
-    "heading": "Engineering in production, knowledge in public.",
+    "heading": "What I learn in code, I share here.",
     "paragraphs": [
-      "I’ve been a mobile engineer since 2017, building and leading products at scale — apps with 35M+ users and 100M+ downloads — as a senior engineer and tech lead. Today I work with Flutter and the VTEX ecosystem at Kobe.",
-      "Sharing what I learn has always been part of the job. I write about architecture, testing and Kotlin Multiplatform, make videos at CodandoTV and speak at GDGs and DevFests. My approach is simple: less abstract theory, more real engineering decisions and examples you can apply to your own project."
+      "I’ve worked in mobile since 2017 — today with Flutter and the VTEX ecosystem at Kobe. Along the way I learned that the most useful lessons come from real projects: architecture, testing, Kotlin Multiplatform and the routine of keeping code alive.",
+      "I write, record and speak to give back what I learn. The idea is simple: less abstract theory, more engineering context, examples and trade-offs you can adapt to your own project — no magic shortcuts."
     ],
-    "currentlyLabel": "Current roles",
+    "currentlyLabel": "Tech Community",
     "currentRoles": [
-      {
-        "role": "Senior Mobile Engineer",
-        "company": "Kobe",
-        "period": "Sep 2026 — Present"
-      },
       {
         "role": "Content Creator",
         "company": "CodandoTV",
-        "period": "Present",
+        "period": "2023 - Present",
         "url": "https://www.youtube.com/@CodandoTV"
       },
       {
-        "role": "Koin Champion",
+        "role": "Koin Content Contributor",
         "company": "Kotzilla",
-        "period": "Present",
+        "period": "2026 - Present",
         "url": "https://koinchampion.kotzilla.io/apply-now"
       }
     ]
@@ -109,7 +104,7 @@
   "content": {
     "eyebrow": "Articles",
     "heading": "What I learn, I write down.",
-    "lede": "Technical writing on Android, Kotlin Multiplatform, architecture and mobile careers — grounded in real engineering decisions, not abstract theory.",
+    "lede": "Technical writing on Android, Kotlin Multiplatform, architecture and mobile careers — written from real decisions, not abstract theory.",
     "latestTitle": "Latest articles",
     "articles": [
       {
@@ -191,8 +186,8 @@
       "Open source"
     ],
     "recognition": {
-      "label": "Koin Champion",
-      "description": "Recognized by Kotzilla for expert technical articles and real-world Koin use cases.",
+      "label": "Koin content",
+      "description": "I contribute Koin articles and real-world examples to the community, supported by Kotzilla.",
       "linkLabel": "Explore the program",
       "url": "https://koinchampion.kotzilla.io/apply-now"
     },
@@ -203,17 +198,17 @@
   },
   "experience": {
     "eyebrow": "Experience",
-    "heading": "Almost a decade shipping mobile products.",
-    "lede": "Recent roles. Earlier history on LinkedIn.",
+    "heading": "Where I learned what I share.",
+    "lede": "Projects and teams that shaped how I work. Full history on LinkedIn.",
     "roles": [
       {
         "company": "Kobe",
         "title": "Senior Mobile Engineer",
         "period": "Sep 2026 — Present",
         "bullets": [
-          "Building and evolving mobile e-commerce apps with Flutter and Dart, across the full product lifecycle.",
-          "Improving architecture, engineering practices and automated testing for scalable, high-quality delivery.",
-          "Integrating with the VTEX ecosystem and supporting technical leadership, code reviews and knowledge sharing across the team."
+          "Building and evolving mobile e-commerce apps with Flutter and Dart, from discovery to delivery.",
+          "Architecture, automated tests and engineering practices so the team can ship with confidence.",
+          "VTEX ecosystem integration, code reviews and knowledge sharing across the team."
         ]
       },
       {
@@ -221,9 +216,9 @@
         "title": "Senior Mobile Engineer",
         "period": "Nov 2023 — Aug 2026",
         "bullets": [
-          "Core features for a cash-back app with 35M+ users, handling millions of daily transactions.",
-          "Led Kotlin Multiplatform (Compose Multiplatform) adoption and supported mobile developers technically.",
-          "Feature flags, CI/CD with linting and Maestro UI tests, and architecture standards across the team."
+          "Core features for a cash-back app with millions of users and daily transactions.",
+          "Took part in adopting Kotlin Multiplatform (Compose Multiplatform) and supported developers through the transition.",
+          "Feature flags, CI/CD with linting, Maestro UI tests and architecture standards."
         ]
       },
       {
@@ -231,8 +226,8 @@
         "title": "Senior Android Engineer",
         "period": "Jul 2023 — Nov 2023",
         "bullets": [
-          "Delivered Android features for a carrier app with 25M–35M+ active users and 100M+ downloads.",
-          "Worked closely with Android developers and built complex features with Hilt, Jetpack Compose and multi-module projects."
+          "Android features for a carrier app used by millions of people.",
+          "Hilt, Jetpack Compose and multi-module projects in a large-scale product."
         ]
       },
       {
@@ -240,9 +235,9 @@
         "title": "Senior Android Engineer",
         "period": "Jul 2021 — Jun 2023",
         "bullets": [
-          "Built core Android features for an enterprise video recording and livestreaming app.",
-          "Implemented HD local recording, low-latency capture and a dynamic multi-participant video display.",
-          "Worked with WebRTC, Dagger and Jetpack Components on a live production product."
+          "Android features for an enterprise recording and livestreaming app.",
+          "HD local recording, low-latency capture and a dynamic multi-participant display.",
+          "WebRTC, Dagger and Jetpack Components in a live production product."
         ]
       }
     ],
@@ -280,8 +275,8 @@
   },
   "work": {
     "eyebrow": "Open Source",
-    "heading": "Open source developers depend on.",
-    "lede": "Libraries and tools I created and maintain.",
+    "heading": "Open source I use and maintain.",
+    "lede": "Tools born from real problems — kept open so we can learn together.",
     "projects": [
       {
         "name": "Popcorn Guineapig",
@@ -319,7 +314,7 @@
       },
       {
         "name": "MovieDB-App",
-        "description": "A reference app for modern Compose Multiplatform and Kotlin Multiplatform, selected for Google Dev Library.",
+        "description": "A sample app for modern Compose Multiplatform and Kotlin Multiplatform, selected for Google Dev Library.",
         "tags": [
           "KMP",
           "Compose",

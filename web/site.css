@@ -1424,11 +1424,11 @@ h2 {
   .stats {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    gap: 20px 16px;
   }
 
   .stat dt {
-    font-size: 31px;
+    font-size: clamp(20px, 6vw, 31px);
   }
 
   .stat dd {

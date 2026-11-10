@@ -8,12 +8,12 @@
   "assetPrefix": "",
   "homeHref": "./",
   "skipLink": "Ir para o conteúdo",
-  "metaTitle": "Gabriel Moro — Engenheiro mobile sênior & criador de conteúdo",
-  "metaDescription": "Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. Artigos, vídeos, podcast e palestras sobre engenharia mobile, arquitetura e open source.",
+  "metaTitle": "Gabriel Moro — aprender mobile, arquitetura e open source",
+  "metaDescription": "Artigos, vídeos e palestras sobre Android, Kotlin Multiplatform, Flutter e arquitetura — decisões reais de engenharia e exemplos para aplicar no seu projeto.",
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
   "ogLocale": "pt_BR",
   "ogImageAlt": "Gabriel Moro",
-  "brandRole": "Engenheiro mobile & criador de conteúdo",
+  "brandRole": "Aprendendo e ensinando mobile",
   "homeLabel": "Gabriel Moro — início",
   "navAriaLabel": "Navegação principal",
   "socialAriaLabel": "Links sociais",
@@ -49,59 +49,54 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Engenheiro mobile sênior & criador de conteúdo",
+    "kicker": "Aprendendo e ensinando mobile",
     "availability": "Compartilhando o que aprendo",
     "availabilityNote": "Artigos · vídeos · palestras",
     "title": "Aprenda mobile ",
-    "titleEmphasis": "com quem constrói todos os dias.",
-    "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e transformo essas decisões em artigos, vídeos e palestras para a comunidade.",
+    "titleEmphasis": "um projeto de cada vez.",
+    "lede": "Sou o Gabriel Moro. Escrevo, gravo e palestro sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter — menos teoria solta, mais decisões reais e exemplos para aplicar no seu projeto.",
     "primaryCta": "Ler os artigos",
     "primaryCtaHref": "#articles",
-    "secondaryCta": "Sobre mim",
+    "secondaryCta": "Como eu aprendo",
     "secondaryCtaHref": "#about",
     "note": "Artigos · Vídeos · Podcast · Palestras",
     "stats": [
       {
-        "value": "35M+",
-        "label": "usuários em produtos que ajudei a construir"
+        "value": "Aprender",
+        "label": "em público, com projetos reais"
       },
       {
-        "value": "100M+",
-        "label": "downloads nos apps"
+        "value": "Fazer",
+        "label": "exemplos que você pode aplicar"
       },
       {
-        "value": "2017",
-        "label": "construindo mobile desde"
+        "value": "Ensinar",
+        "label": "em artigos, vídeos e palestras"
       }
     ],
     "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
-    "portraitRole": "Engenheiro mobile sênior",
+    "portraitRole": "Aprendendo em público desde 2017",
     "portraitEducation": "Mestrado em Ciência da Computação · UFRGS"
   },
   "about": {
     "eyebrow": "Sobre",
-    "heading": "Engenharia em produção, conhecimento em público.",
+    "heading": "O que aprendo no código, compartilho aqui.",
     "paragraphs": [
-      "Sou engenheiro mobile desde 2017, construindo e liderando produtos em escala — apps com 35M+ usuários e 100M+ downloads — como engenheiro sênior e tech lead. Hoje trabalho com Flutter e o ecossistema VTEX na Kobe.",
-      "Compartilhar o que aprendo sempre fez parte do trabalho. Escrevo sobre arquitetura, testes e Kotlin Multiplatform, gravo vídeos no CodandoTV e palestro em GDGs e DevFests. Minha abordagem é simples: menos teoria solta, mais decisões reais de engenharia e exemplos que você pode aplicar no seu projeto."
+      "Trabalho com mobile desde 2017 — hoje com Flutter e o ecossistema VTEX na Kobe. No caminho, aprendi que as lições mais úteis vêm de projetos reais: arquitetura, testes, Kotlin Multiplatform e a rotina de manter código vivo.",
+      "Escrevo, gravo e palestro para devolver o que aprendi. A ideia é simples: menos teoria solta, mais contexto de engenharia, exemplos e trade-offs que você pode adaptar ao seu projeto — sem atalhos mágicos."
     ],
-    "currentlyLabel": "Atuação",
+    "currentlyLabel": "Atuação na comunidade",
     "currentRoles": [
-      {
-        "role": "Engenheiro mobile sênior",
-        "company": "Kobe",
-        "period": "Set 2026 — Atual"
-      },
       {
         "role": "Content Creator",
         "company": "CodandoTV",
-        "period": "Atual",
+        "period": "2023 - Atual",
         "url": "https://www.youtube.com/@CodandoTV"
       },
       {
-        "role": "Koin Champion",
+        "role": "Koin Content Contributor",
         "company": "Kotzilla",
-        "period": "Atual",
+        "period": "2026 - Atual",
         "url": "https://koinchampion.kotzilla.io/apply-now"
       }
     ]
@@ -109,7 +104,7 @@
   "content": {
     "eyebrow": "Artigos",
     "heading": "O que aprendo, eu escrevo.",
-    "lede": "Textos técnicos sobre Android, Kotlin Multiplatform, arquitetura e carreira em mobile — a partir de decisões reais de engenharia, não de teoria solta.",
+    "lede": "Textos técnicos sobre Android, Kotlin Multiplatform, arquitetura e carreira em mobile — escritos a partir de decisões reais, não de teoria solta.",
     "latestTitle": "Últimos artigos",
     "articles": [
       {
@@ -191,8 +186,8 @@
       "Open source"
     ],
     "recognition": {
-      "label": "Koin Champion",
-      "description": "Reconhecido pela Kotzilla por artigos técnicos e casos reais de uso do Koin.",
+      "label": "Conteúdo Koin",
+      "description": "Contribuo com artigos e exemplos reais de uso do Koin na comunidade, com apoio da Kotzilla.",
       "linkLabel": "Conhecer o programa",
       "url": "https://koinchampion.kotzilla.io/apply-now"
     },
@@ -203,17 +198,17 @@
   },
   "experience": {
     "eyebrow": "Experiência",
-    "heading": "Quase uma década construindo produtos mobile.",
-    "lede": "Experiências recentes. Histórico completo no LinkedIn.",
+    "heading": "Onde aprendi o que compartilho.",
+    "lede": "Projetos e equipes que formaram minha prática. Histórico completo no LinkedIn.",
     "roles": [
       {
         "company": "Kobe",
         "title": "Engenheiro mobile sênior",
         "period": "Set 2026 — Atual",
         "bullets": [
-          "Construção e evolução de apps de e-commerce com Flutter e Dart, em todo o ciclo de vida do produto.",
-          "Arquitetura, práticas de engenharia e testes automatizados para uma entrega escalável e de qualidade.",
-          "Integração com o ecossistema VTEX e apoio à liderança técnica, com code reviews e compartilhamento de conhecimento no time."
+          "Construo e evoluo apps de e-commerce com Flutter e Dart, do discovery à entrega.",
+          "Arquitetura, testes automatizados e práticas de engenharia para o time entregar com segurança.",
+          "Integração com o ecossistema VTEX, code reviews e troca de conhecimento com o time."
         ]
       },
       {
@@ -221,9 +216,9 @@
         "title": "Engenheiro mobile sênior",
         "period": "Nov 2023 — Ago 2026",
         "bullets": [
-          "Features centrais de um app de cashback com 35M+ usuários e milhões de transações diárias.",
-          "Liderança na adoção de Kotlin Multiplatform (Compose Multiplatform) e apoio técnico a desenvolvedores mobile.",
-          "Feature flags, CI/CD com lint, testes de UI com Maestro e padrões de arquitetura para o time."
+          "Features centrais de um app de cashback com milhões de usuários e transações diárias.",
+          "Participei da adoção de Kotlin Multiplatform (Compose Multiplatform) e apoiei desenvolvedores na transição.",
+          "Feature flags, CI/CD com lint, testes de UI com Maestro e padrões de arquitetura."
         ]
       },
       {
@@ -231,8 +226,8 @@
         "title": "Engenheiro Android sênior",
         "period": "Jul 2023 — Nov 2023",
         "bullets": [
-          "Features Android para um app de operadora com 25M–35M+ usuários ativos e 100M+ downloads.",
-          "Colaboração próxima com desenvolvedores Android e construção de features complexas com Hilt e Jetpack Compose em projetos multimódulo."
+          "Features Android para um app de operadora usado por milhões de pessoas.",
+          "Hilt, Jetpack Compose e projetos multimódulo em um produto de grande escala."
         ]
       },
       {
@@ -240,8 +235,8 @@
         "title": "Engenheiro Android sênior",
         "period": "Jul 2021 — Jun 2023",
         "bullets": [
-          "Features centrais de um app corporativo de gravação e transmissão de vídeo ao vivo.",
-          "Gravação local em HD, captura de baixa latência e um display dinâmico com vários participantes.",
+          "Features Android para um app corporativo de gravação e transmissão ao vivo.",
+          "Gravação local em HD, captura de baixa latência e exibição de múltiplos participantes.",
           "WebRTC, Dagger e Jetpack Components em um produto em produção."
         ]
       }
@@ -280,8 +275,8 @@
   },
   "work": {
     "eyebrow": "Open Source",
-    "heading": "Open source em que desenvolvedores confiam.",
-    "lede": "Bibliotecas e ferramentas que criei e mantenho.",
+    "heading": "Open source que uso e mantenho.",
+    "lede": "Ferramentas que nasceram de problemas reais — e continuam abertas para aprender junto.",
     "projects": [
       {
         "name": "Popcorn Guineapig",
@@ -319,7 +314,7 @@
       },
       {
         "name": "MovieDB-App",
-        "description": "App de referência em Compose Multiplatform e Kotlin Multiplatform, selecionado para o Google Dev Library.",
+        "description": "App de exemplo em Compose Multiplatform e Kotlin Multiplatform, selecionado para o Google Dev Library.",
         "tags": [
           "KMP",
           "Compose",
@@ -334,7 +329,7 @@
     "heading": "Vamos trocar uma ideia.",
     "text": "Tem uma dúvida, uma sugestão de conteúdo ou só quer conversar sobre mobile? Me escreve — respondo pessoalmente.",
     "cta": "Enviar um e-mail",
-    "availability": "Compartilhando conteúdo com a comunidade",
+    "availability": "Compartilhando o que aprendo com a comunidade",
     "copyright": "© 2026 Gabriel Bronzatti Moro",
     "builtWith": "Feito com Jaspr · Hospedado no GitHub Pages",
     "links": [
