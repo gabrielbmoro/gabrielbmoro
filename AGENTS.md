@@ -129,7 +129,9 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
   each article's `og:image` (progressive JPEG, target under ~45 KB). Point an article at one with
   `content.articles[].thumbnail`, using a path relative to the site root; localized article lists
   may link to different posts, so the thumbnail may differ per locale too.
-- `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share the flat
-  bugdroid-with-cuia emblem on a forest rounded-square: the SVG is the source, the ICO carries
-  16/32/48 px renders, and the touch icon is a full-bleed 180 px square.
+- `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share a tab-first
+  bugdroid-with-cuia emblem on a forest rounded-square. The SVG is the source and is drawn for
+  16 px legibility, not as a miniature of `logo-mark.png`; the ICO carries 16/32/48 px renders,
+  and the touch icon is a full-bleed 180 px square. The icon links in `seo_head.dart` carry a
+  `?v=` cache-buster — bump `_faviconVersion` whenever the artwork changes.
 - Font licenses: SIL OFL 1.1; see `web/fonts/ATTRIBUTION.txt` and `web/fonts/OFL.txt`.

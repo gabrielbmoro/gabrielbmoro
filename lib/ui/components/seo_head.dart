@@ -3,6 +3,10 @@ import 'package:jaspr/server.dart';
 
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
+/// Bump this when the favicon artwork changes: browsers and GitHub Pages cache
+/// tab icons aggressively, even across a redeploy.
+const _faviconVersion = '2';
+
 /// Per-route document metadata and head assets.
 ///
 /// Asset URLs are page-relative so the site works both at the root during
@@ -27,9 +31,23 @@ class SeoHead extends StatelessComponent {
       meta: {'description': c.metaDescription},
       children: [
         link(rel: 'stylesheet', href: '${c.assetPrefix}site.css'),
-        link(rel: 'icon', href: '${c.assetPrefix}favicon.svg', type: 'image/svg+xml'),
-        link(rel: 'icon', href: '${c.assetPrefix}favicon.ico', type: 'image/x-icon'),
-        link(rel: 'apple-touch-icon', href: '${c.assetPrefix}assets/apple-touch-icon.png'),
+        link(
+          rel: 'icon',
+          href: '${c.assetPrefix}favicon.svg?v=$_faviconVersion',
+          type: 'image/svg+xml',
+          attributes: const {'sizes': 'any'},
+        ),
+        link(
+          rel: 'icon',
+          href: '${c.assetPrefix}favicon.ico?v=$_faviconVersion',
+          type: 'image/x-icon',
+          attributes: const {'sizes': '16x16 32x32 48x48'},
+        ),
+        link(
+          rel: 'apple-touch-icon',
+          href: '${c.assetPrefix}assets/apple-touch-icon.png?v=$_faviconVersion',
+          attributes: const {'sizes': '180x180'},
+        ),
         link(
           rel: 'preload',
           href: '${c.assetPrefix}fonts/inter-latin.woff2',
