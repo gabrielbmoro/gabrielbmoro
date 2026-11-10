@@ -37,14 +37,14 @@ lib/
   ui/
     components/                 # header, footer, SEO head, shared UI
     pages/home_page.dart        # composes the page for a locale
-    sections/                   # hero, about, mentoring, experience, toolkit, work, community
+    sections/                   # hero, about, content hub, experience, toolkit, work
 assets/content/
   en.json                       # ALL visible English copy, links and SEO data
   pt-br.json                    # ALL visible PT-BR copy, links and SEO data
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
-  assets/                       # optimized avatar and icons
+  assets/                       # optimized avatar, icons, masthead cover and article covers
   favicon.svg, robots.txt
 ```
 
@@ -103,6 +103,11 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Sections are `lib/ui/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
   discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
   follow the repository.
+- The masthead is the site identity: the bugdroid-with-cuia emblem, `siteTitle` (the wordmark) and
+  `tagline` are top-level fields in each JSON asset, followed by a tab bar built from `nav`,
+  `navCta` and the locale switch.
+- The page is a single column. Sections, article cards, projects, channels, toolkit rows and the
+  footer stack vertically; do not reintroduce side-by-side column layouts.
 - Keep the design quiet: deep forest canvas, sage ink, green accent, Bricolage display + Inter body.
   Avoid adding a UI framework or a JavaScript dependency for presentation.
 - `README.md` and `README_ptBr.md` must stay in sync (see `README.md` conventions):
@@ -113,6 +118,20 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - `web/assets/avatar-400.jpg` and `avatar-800.jpg` are tight crops of
   `assets/img/avatar.png`; regenerate both if the photo changes. Keep the 800px file under
   ~100 KB and the 400px under ~30 KB.
-- `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share the "GM"
-  monogram.
+- `web/assets/masthead-cover.jpg` is the decorative masthead banner (1376×768, progressive JPEG,
+  target under ~150 KB). It is a deep-forest pattern of the bugdroid-with-cuia mark; it is
+  referenced by the top-level `coverImage` field in both JSON assets, using a path relative to the
+  site root; `null` falls back to the CSS-only cover.
+- `web/assets/logo-mark.png` is the transparent bugdroid-with-cuia mark extracted from the banner.
+  It is the masthead emblem (`.masthead-mark`, a small framed tile above the wordmark); keep the
+  transparent background so it sits on the masthead tile.
+- `web/assets/articles/*.jpg` are 480×270 16:9 covers for the article list, cropped centrally from
+  each article's `og:image` (progressive JPEG, target under ~45 KB). Point an article at one with
+  `content.articles[].thumbnail`, using a path relative to the site root; localized article lists
+  may link to different posts, so the thumbnail may differ per locale too.
+- `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share a tab-first
+  bugdroid-with-cuia emblem on a forest rounded-square. The SVG is the source and is drawn for
+  16 px legibility, not as a miniature of `logo-mark.png`; the ICO carries 16/32/48 px renders,
+  and the touch icon is a full-bleed 180 px square. The icon links in `seo_head.dart` carry a
+  `?v=` cache-buster — bump `_faviconVersion` whenever the artwork changes.
 - Font licenses: SIL OFL 1.1; see `web/fonts/ATTRIBUTION.txt` and `web/fonts/OFL.txt`.

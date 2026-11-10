@@ -26,105 +26,157 @@ class HeroContent {
     required this.kicker,
     required this.availability,
     required this.availabilityNote,
-    required this.title,
-    required this.titleEmphasis,
     required this.lede,
     required this.primaryCta,
+    required this.primaryCtaHref,
     required this.secondaryCta,
+    required this.secondaryCtaHref,
     required this.note,
     required this.stats,
-    required this.portraitAlt,
-    required this.portraitRole,
-    required this.portraitEducation,
   });
 
   final String kicker;
   final String availability;
   final String availabilityNote;
-  final String title;
-  final String titleEmphasis;
   final String lede;
   final String primaryCta;
+  final String primaryCtaHref;
   final String secondaryCta;
+  final String secondaryCtaHref;
   final String note;
   final List<HeroStat> stats;
-  final String portraitAlt;
-  final String portraitRole;
-  final String portraitEducation;
+}
+
+class CurrentRole {
+  const CurrentRole({
+    required this.role,
+    required this.company,
+    required this.period,
+    this.url,
+  });
+
+  final String role;
+  final String company;
+  final String period;
+  final String? url;
+}
+
+class AboutTopic {
+  const AboutTopic({required this.title, required this.paragraphs});
+
+  final String title;
+  final List<String> paragraphs;
 }
 
 class AboutContent {
   const AboutContent({
     required this.eyebrow,
     required this.heading,
-    required this.paragraphs,
+    required this.intro,
+    required this.sections,
     required this.currentlyLabel,
-    required this.currentlyRole,
-    required this.currentlyCompany,
-    required this.currentlyPeriod,
+    required this.currentRoles,
+    required this.contactLabel,
+    required this.contactText,
+    required this.portraitAlt,
+    required this.portraitRole,
+    required this.portraitEducation,
   });
 
   final String eyebrow;
   final String heading;
-  final List<String> paragraphs;
+  final String intro;
+  final List<AboutTopic> sections;
   final String currentlyLabel;
-  final String currentlyRole;
-  final String currentlyCompany;
-  final String currentlyPeriod;
+  final List<CurrentRole> currentRoles;
+  final String contactLabel;
+  final String contactText;
+  final String portraitAlt;
+  final String portraitRole;
+  final String portraitEducation;
 }
 
-class FocusArea {
-  const FocusArea(this.title, this.description);
+class Article {
+  const Article({
+    required this.title,
+    required this.publication,
+    required this.published,
+    required this.url,
+    this.thumbnail,
+  });
 
   final String title;
-  final String description;
+  final String publication;
+  final String published;
+  final String url;
+
+  /// Cover image path relative to the site root, without the locale's
+  /// `assetPrefix`. Null when the article has no local thumbnail.
+  final String? thumbnail;
 }
 
-class MentorStep {
-  const MentorStep(this.title, this.description);
+class ContentChannel {
+  const ContentChannel({
+    required this.label,
+    required this.description,
+    this.links = const [],
+  });
 
-  final String title;
+  final String label;
   final String description;
+  final List<LinkRef> links;
 }
 
-class MentoringContent {
-  const MentoringContent({
+class ContentRecognition {
+  const ContentRecognition({
+    required this.label,
+    required this.description,
+    required this.linkLabel,
+    required this.url,
+  });
+
+  final String label;
+  final String description;
+  final String linkLabel;
+  final String url;
+}
+
+class ContentHub {
+  const ContentHub({
     required this.eyebrow,
     required this.heading,
     required this.lede,
-    required this.forYouTitle,
-    required this.forYou,
-    required this.forYouNote,
-    required this.forYouNoteCta,
-    required this.focusTitle,
-    required this.focusAreas,
-    required this.stepsTitle,
-    required this.steps,
-    required this.stepsNote,
-    required this.getTitle,
-    required this.getItems,
+    required this.latestTitle,
+    required this.articles,
+    required this.allArticlesLabel,
+    required this.allArticlesHref,
+    required this.channelsTitle,
+    required this.channels,
+    required this.topicsTitle,
+    required this.topics,
+    required this.recognition,
     required this.ctaTitle,
     required this.ctaText,
     required this.ctaButton,
+    required this.ctaHref,
   });
 
   final String eyebrow;
   final String heading;
   final String lede;
-  final String forYouTitle;
-  final List<String> forYou;
-  final String forYouNote;
-  final String forYouNoteCta;
-  final String focusTitle;
-  final List<FocusArea> focusAreas;
-  final String stepsTitle;
-  final List<MentorStep> steps;
-  final String stepsNote;
-  final String getTitle;
-  final List<String> getItems;
+  final String latestTitle;
+  final List<Article> articles;
+  final String allArticlesLabel;
+  final String allArticlesHref;
+  final String channelsTitle;
+  final List<ContentChannel> channels;
+  final String topicsTitle;
+  final List<String> topics;
+  final ContentRecognition recognition;
   final String ctaTitle;
   final String ctaText;
   final String ctaButton;
+  final String ctaHref;
 }
 
 class Role {
@@ -213,30 +265,6 @@ class LinkRef {
   final String url;
 }
 
-class CommunityItem {
-  const CommunityItem({
-    required this.label,
-    required this.description,
-    this.links = const [],
-  });
-
-  final String label;
-  final String description;
-  final List<LinkRef> links;
-}
-
-class CommunityContent {
-  const CommunityContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.items,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final List<CommunityItem> items;
-}
-
 class FooterContent {
   const FooterContent({
     required this.heading,
@@ -273,21 +301,23 @@ class SiteContent {
     required this.canonicalUrl,
     required this.ogLocale,
     required this.ogImageAlt,
-    required this.brandRole,
+    required this.siteTitle,
+    required this.tagline,
+    required this.coverImage,
     required this.homeLabel,
     required this.navAriaLabel,
     required this.socialAriaLabel,
     required this.nav,
     required this.navCta,
+    required this.navCtaHref,
     required this.mailto,
     required this.links,
     required this.hero,
     required this.about,
-    required this.mentoring,
+    required this.contentHub,
     required this.experience,
     required this.toolkit,
     required this.work,
-    required this.community,
     required this.footer,
   });
 
@@ -313,20 +343,29 @@ class SiteContent {
   final String canonicalUrl;
   final String ogLocale;
   final String ogImageAlt;
-  final String brandRole;
+
+  /// Site wordmark shown in the masthead.
+  final String siteTitle;
+
+  /// Short phrase rendered under [siteTitle].
+  final String tagline;
+
+  /// Decorative cover image path relative to the site root, without the
+  /// locale's `assetPrefix`. Null falls back to the CSS-only cover.
+  final String? coverImage;
   final String homeLabel;
   final String navAriaLabel;
   final String socialAriaLabel;
   final List<NavItem> nav;
   final String navCta;
+  final String navCtaHref;
   final String mailto;
   final SiteLinks links;
   final HeroContent hero;
   final AboutContent about;
-  final MentoringContent mentoring;
+  final ContentHub contentHub;
   final ExperienceContent experience;
   final ToolkitContent toolkit;
   final WorkContent work;
-  final CommunityContent community;
   final FooterContent footer;
 }
