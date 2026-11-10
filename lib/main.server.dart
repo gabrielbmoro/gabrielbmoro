@@ -17,7 +17,7 @@ String _personJsonLd(SiteLinks links) =>
   "name": "Gabriel Bronzatti Moro",
   "alternateName": "gabrielbmoro",
   "jobTitle": "Senior Mobile Engineer",
-  "description": "Senior mobile engineer and tech lead working with Android, Kotlin Multiplatform and Flutter. 1:1 mentor for developers growing into senior and lead roles.",
+  "description": "Senior mobile engineer and tech lead working with Android, Kotlin Multiplatform and Flutter. Writes, records and speaks about mobile engineering, architecture and open source.",
   "url": "${links.siteUrl}",
   "image": "${links.siteUrl}assets/avatar-800.jpg",
   "worksFor": { "@type": "Organization", "name": "Kobe" },

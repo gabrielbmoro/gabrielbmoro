@@ -8,12 +8,12 @@
   "assetPrefix": "",
   "homeHref": "./",
   "skipLink": "Ir para o conteúdo",
-  "metaTitle": "Gabriel Moro — Engenheiro mobile sênior & mentor 1:1",
-  "metaDescription": "Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. Mentoria 1:1 para desenvolvedores que querem chegar a papéis sêniores e de liderança. A primeira conversa é gratuita.",
+  "metaTitle": "Gabriel Moro — Engenheiro mobile sênior & criador de conteúdo",
+  "metaDescription": "Engenheiro mobile sênior e tech lead com Android, Kotlin Multiplatform e Flutter. Artigos, vídeos, podcast e palestras sobre engenharia mobile, arquitetura e open source.",
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
   "ogLocale": "pt_BR",
   "ogImageAlt": "Gabriel Moro",
-  "brandRole": "Engenheiro mobile & mentor",
+  "brandRole": "Engenheiro mobile & criador de conteúdo",
   "homeLabel": "Gabriel Moro — início",
   "navAriaLabel": "Navegação principal",
   "socialAriaLabel": "Links sociais",
@@ -23,20 +23,21 @@
       "href": "#about"
     },
     {
-      "label": "Mentoria",
-      "href": "#mentoring"
+      "label": "Artigos",
+      "href": "#articles"
     },
     {
       "label": "Experiência",
       "href": "#experience"
     },
     {
-      "label": "Projetos",
+      "label": "Open Source",
       "href": "#work"
     }
   ],
-  "navCta": "Agendar conversa",
-  "mailto": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20conversa%20gratuita",
+  "navCta": "Seguir no Medium",
+  "navCtaHref": "https://medium.com/@gabrielbronzattimoro.es",
+  "mailto": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Contato%20pelo%20site",
   "links": {
     "siteUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
     "email": "gabrielbronzattimoro.es@gmail.com",
@@ -48,15 +49,17 @@
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
   "hero": {
-    "kicker": "Engenheiro mobile sênior & tech lead",
-    "availability": "Aberto para mentorias 1:1",
-    "availabilityNote": "Primeira conversa gratuita",
-    "title": "Torne-se um engenheiro mobile ",
-    "titleEmphasis": "em quem os times confiam para liderar.",
-    "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e oriento desenvolvedores que querem chegar a papéis sêniores e de liderança.",
-    "primaryCta": "Agendar conversa gratuita",
-    "secondaryCta": "Como funciona a mentoria",
-    "note": "15 minutos · Online · Português ou inglês",
+    "kicker": "Engenheiro mobile sênior & criador de conteúdo",
+    "availability": "Compartilhando o que aprendo",
+    "availabilityNote": "Artigos · vídeos · palestras",
+    "title": "Aprenda mobile ",
+    "titleEmphasis": "com quem constrói todos os dias.",
+    "lede": "Sou o Gabriel Moro. Há quase uma década construo produtos Android, Kotlin Multiplatform e Flutter usados por milhões de pessoas — e transformo essas decisões em artigos, vídeos e palestras para a comunidade.",
+    "primaryCta": "Ler os artigos",
+    "primaryCtaHref": "#articles",
+    "secondaryCta": "Sobre mim",
+    "secondaryCtaHref": "#about",
+    "note": "Artigos · Vídeos · Podcast · Palestras",
     "stats": [
       {
         "value": "35M+",
@@ -77,82 +80,122 @@
   },
   "about": {
     "eyebrow": "Sobre",
-    "heading": "Engenharia prática, mentoria humana.",
+    "heading": "Engenharia em produção, conhecimento em público.",
     "paragraphs": [
       "Sou engenheiro mobile desde 2017, construindo e liderando produtos em escala — apps com 35M+ usuários e 100M+ downloads — como engenheiro sênior e tech lead. Hoje trabalho com Flutter e o ecossistema VTEX na Kobe.",
-      "Ensinar sempre fez parte do trabalho — não é um extra. Orientei desenvolvedores, conduzi workshops internos, palestrei em GDGs e escrevo sobre mobile há anos. Minha abordagem é simples: menos teoria abstrata, mais código, decisões de arquitetura e um próximo passo concreto."
+      "Compartilhar o que aprendo sempre fez parte do trabalho. Escrevo sobre arquitetura, testes e Kotlin Multiplatform, gravo vídeos no CodandoTV e palestro em GDGs e DevFests. Minha abordagem é simples: menos teoria solta, mais decisões reais de engenharia e exemplos que você pode aplicar no seu projeto."
     ],
-    "currentlyLabel": "Hoje",
-    "currentlyRole": "Engenheiro mobile sênior",
-    "currentlyCompany": "Kobe",
-    "currentlyPeriod": "Set 2026 — Atual"
+    "currentlyLabel": "Atuação",
+    "currentRoles": [
+      {
+        "role": "Engenheiro mobile sênior",
+        "company": "Kobe",
+        "period": "Set 2026 — Atual"
+      },
+      {
+        "role": "Content Creator",
+        "company": "CodandoTV",
+        "period": "Atual",
+        "url": "https://www.youtube.com/@CodandoTV"
+      },
+      {
+        "role": "Koin Champion",
+        "company": "Kotzilla",
+        "period": "Atual",
+        "url": "https://koinchampion.kotzilla.io/apply-now"
+      }
+    ]
   },
-  "mentoring": {
-    "eyebrow": "Mentoria 1:1",
-    "heading": "Orientação de quem já percorreu o caminho.",
-    "lede": "Algumas vagas 1:1 estão abertas para desenvolvedores que querem crescer mais rápido do que conseguiriam sozinhos, com quase uma década de mobile em produção e mentoria prática de times Android e Kotlin Multiplatform.",
-    "forYouTitle": "Para quem é",
-    "forYou": [
-      "Desenvolvedores plenos que querem chegar ao nível sênior.",
-      "Sêniores que assumem liderança técnica e querem um framework para liderar times.",
-      "Desenvolvedores Android e Flutter migrando para Kotlin Multiplatform.",
-      "Quem está se preparando para processos seletivos internacionais."
-    ],
-    "forYouNote": "Não sabe se é para você?",
-    "forYouNoteCta": "Comece pela conversa gratuita",
-    "focusTitle": "No que podemos trabalhar",
-    "focusAreas": [
+  "content": {
+    "eyebrow": "Artigos",
+    "heading": "O que aprendo, eu escrevo.",
+    "lede": "Textos técnicos sobre Android, Kotlin Multiplatform, arquitetura e carreira em mobile — a partir de decisões reais de engenharia, não de teoria solta.",
+    "latestTitle": "Últimos artigos",
+    "articles": [
       {
-        "title": "Carreira",
-        "description": "A transição para sênior e tech lead, planos de crescimento, posicionamento e portfólio."
+        "title": "Setting Up Koin in real project: A Step-by-Step Guide",
+        "publication": "Koin Developers",
+        "published": "Set 2026",
+        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239"
       },
       {
-        "title": "Android & KMP",
-        "description": "Compose Multiplatform, arquitetura multimódulo e integrações específicas para iOS e Android."
+        "title": "Getting Started with Spec-Driven Development",
+        "publication": "CodandoTV",
+        "published": "Jul 2026",
+        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5"
       },
       {
-        "title": "Arquitetura & qualidade",
-        "description": "MVVM/MVI, modularização, estratégia de testes, Detekt e regras de arquitetura."
+        "title": "Let Koin Shape your Application Architecture",
+        "publication": "Koin Developers",
+        "published": "Jul 2026",
+        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0"
       },
       {
-        "title": "Entrevistas internacionais",
-        "description": "Preparação técnica, mobile system design e inglês técnico."
-      },
-      {
-        "title": "IA no fluxo de trabalho",
-        "description": "Claude Code, agentes e desenvolvimento assistido por IA, com revisão crítica do que é gerado."
-      },
-      {
-        "title": "Open source & conteúdo",
-        "description": "Publicar e manter bibliotecas, construir um portfólio público e criar conteúdo técnico."
+        "title": "Como usar Compilador do Koin em um projeto multi-módulo?",
+        "publication": "CodandoTV",
+        "published": "Jul 2026",
+        "url": "https://medium.com/codandotv/como-usar-compilador-do-koin-em-um-projeto-multi-m%C3%B3dulo-8e9dda634cf9"
       }
     ],
-    "stepsTitle": "Como funciona",
-    "steps": [
+    "allArticlesLabel": "Ver todos no Medium",
+    "allArticlesHref": "https://medium.com/@gabrielbronzattimoro.es",
+    "channelsTitle": "Também compartilho",
+    "channels": [
       {
-        "title": "Você escreve",
-        "description": "Um e-mail curto com seu objetivo e o contexto em que você está hoje."
+        "label": "Vídeos",
+        "description": "Tutoriais, lives e bastidores de código no CodandoTV, com exemplos que você pode aplicar no seu projeto.",
+        "links": [
+          {
+            "label": "Assistir no YouTube",
+            "url": "https://www.youtube.com/@CodandoTV"
+          },
+          {
+            "label": "codandotv.com",
+            "url": "https://codandotv.com/#creators"
+          }
+        ]
       },
       {
-        "title": "Conversa de introdução · 15 min",
-        "description": "Alinhamos expectativas, verificamos se faz sentido e definimos o foco."
+        "label": "Podcast",
+        "description": "Conversas com desenvolvedores sobre carreira, arquitetura e o dia a dia de quem constrói mobile.",
+        "links": [
+          {
+            "label": "Ouvir o podcast",
+            "url": "https://codandotv.com/#creators"
+          }
+        ]
       },
       {
-        "title": "Sessões 1:1 · 1h",
-        "description": "Online, em português ou inglês, com um plano de ação claro entre os encontros."
+        "label": "Palestras",
+        "description": "GDGs e DevFests, levando mobile, arquitetura e Kotlin para a comunidade.",
+        "links": [
+          {
+            "label": "Acompanhar no LinkedIn",
+            "url": "https://www.linkedin.com/in/gabrielbronzattimoro15031994/"
+          }
+        ]
       }
     ],
-    "stepsNote": "Investimento e formato são combinados na conversa de introdução, de acordo com o seu objetivo.",
-    "getTitle": "O que você leva",
-    "getItems": [
-      "Um plano de desenvolvimento personalizado, com próximos passos concretos.",
-      "Revisão de código e de arquitetura dos seus projetos.",
-      "Materiais, referências e exercícios direcionados ao seu objetivo.",
-      "Suporte assíncrono por e-mail entre as sessões."
+    "topicsTitle": "Temas que você vai encontrar",
+    "topics": [
+      "Android & Jetpack Compose",
+      "Kotlin Multiplatform",
+      "Arquitetura multimódulo",
+      "Testes e qualidade",
+      "Koin",
+      "IA no fluxo de trabalho",
+      "Open source"
     ],
-    "ctaTitle": "A primeira conversa é gratuita.",
-    "ctaText": "Me conte onde você está e onde quer chegar. Vamos definir o próximo passo juntos.",
-    "ctaButton": "Agendar minha conversa"
+    "recognition": {
+      "label": "Koin Champion",
+      "description": "Reconhecido pela Kotzilla por artigos técnicos e casos reais de uso do Koin.",
+      "linkLabel": "Conhecer o programa",
+      "url": "https://koinchampion.kotzilla.io/apply-now"
+    },
+    "ctaTitle": "Acompanhe os próximos artigos.",
+    "ctaText": "Os artigos saem no Medium; os vídeos e o podcast, no CodandoTV. Escolha seu canal e me acompanhe por lá.",
+    "ctaButton": "Seguir no Medium",
+    "ctaHref": "https://medium.com/@gabrielbronzattimoro.es"
   },
   "experience": {
     "eyebrow": "Experiência",
@@ -166,7 +209,7 @@
         "bullets": [
           "Construção e evolução de apps de e-commerce com Flutter e Dart, em todo o ciclo de vida do produto.",
           "Arquitetura, práticas de engenharia e testes automatizados para uma entrega escalável e de qualidade.",
-          "Integração com o ecossistema VTEX e apoio à liderança técnica, com code reviews e mentoria."
+          "Integração com o ecossistema VTEX e apoio à liderança técnica, com code reviews e compartilhamento de conhecimento no time."
         ]
       },
       {
@@ -175,7 +218,7 @@
         "period": "Nov 2023 — Ago 2026",
         "bullets": [
           "Features centrais de um app de cashback com 35M+ usuários e milhões de transações diárias.",
-          "Liderança na adoção de Kotlin Multiplatform (Compose Multiplatform) e mentoria de desenvolvedores mobile.",
+          "Liderança na adoção de Kotlin Multiplatform (Compose Multiplatform) e apoio técnico a desenvolvedores mobile.",
           "Feature flags, CI/CD com lint, testes de UI com Maestro e padrões de arquitetura para o time."
         ]
       },
@@ -185,7 +228,7 @@
         "period": "Jul 2023 — Nov 2023",
         "bullets": [
           "Features Android para um app de operadora com 25M–35M+ usuários ativos e 100M+ downloads.",
-          "Mentoria de desenvolvedores Android e construção de features complexas com Hilt e Jetpack Compose em projetos multimódulo."
+          "Colaboração próxima com desenvolvedores Android e construção de features complexas com Hilt e Jetpack Compose em projetos multimódulo."
         ]
       },
       {
@@ -232,7 +275,7 @@
     ]
   },
   "work": {
-    "eyebrow": "Projetos",
+    "eyebrow": "Open Source",
     "heading": "Open source em que desenvolvedores confiam.",
     "lede": "Bibliotecas e ferramentas que criei e mantenho.",
     "projects": [
@@ -283,56 +326,11 @@
       }
     ]
   },
-  "community": {
-    "eyebrow": "Comunidade",
-    "heading": "Compartilhando o que aprendo.",
-    "items": [
-      {
-        "label": "Palestras",
-        "description": "GDGs e DevFests — desenvolvimento mobile, arquitetura e Kotlin para a comunidade.",
-        "links": []
-      },
-      {
-        "label": "Artigos",
-        "description": "Code review, navegação e testes no Medium.",
-        "links": [
-          {
-            "label": "Ler no Medium",
-            "url": "https://medium.com/@gabrielbronzattimoro.es"
-          }
-        ]
-      },
-      {
-        "label": "CodandoTV",
-        "description": "Vídeos técnicos, bibliotecas open source e um podcast para a comunidade brasileira.",
-        "links": [
-          {
-            "label": "Assistir no YouTube",
-            "url": "https://www.youtube.com/@CodandoTV"
-          },
-          {
-            "label": "codandotv.com",
-            "url": "https://codandotv.com/#creators"
-          }
-        ]
-      },
-      {
-        "label": "Koin Champion",
-        "description": "Reconhecido pela Kotzilla por artigos técnicos e casos reais de uso do Koin.",
-        "links": [
-          {
-            "label": "Kotzilla",
-            "url": "https://koinchampion.kotzilla.io/apply-now"
-          }
-        ]
-      }
-    ]
-  },
   "footer": {
-    "heading": "Vamos encontrar o seu próximo passo.",
-    "text": "Se você está pronto para crescer para o próximo papel, quero ajudar. Me mande uma mensagem curta e começamos por aí.",
+    "heading": "Vamos trocar uma ideia.",
+    "text": "Tem uma dúvida, uma sugestão de conteúdo ou só quer conversar sobre mobile? Me escreve — respondo pessoalmente.",
     "cta": "Enviar um e-mail",
-    "availability": "Aberto para mentorias 1:1",
+    "availability": "Compartilhando conteúdo com a comunidade",
     "copyright": "© 2026 Gabriel Bronzatti Moro",
     "builtWith": "Feito com Jaspr · Hospedado no GitHub Pages",
     "links": [

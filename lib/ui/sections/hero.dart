@@ -29,9 +29,9 @@ class Hero extends StatelessComponent {
           ]),
           p(classes: 'hero-lede', [.text(hero.lede)]),
           div(classes: 'hero-actions', [
-            ActionLink(href: content.mailto, label: hero.primaryCta, icon: ActionIcon.right),
+            ActionLink(href: hero.primaryCtaHref, label: hero.primaryCta, icon: ActionIcon.right),
             ActionLink(
-              href: '#mentoring',
+              href: hero.secondaryCtaHref,
               label: hero.secondaryCta,
               variant: ActionVariant.ghost,
             ),

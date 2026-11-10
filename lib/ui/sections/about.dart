@@ -20,11 +20,22 @@ class AboutSection extends StatelessComponent {
           for (final paragraph in about.paragraphs) p(classes: 'body-large', [.text(paragraph)]),
           div(classes: 'currently', [
             p(classes: 'currently-label', [.text(about.currentlyLabel)]),
-            p(classes: 'currently-role', [
-              .text(about.currentlyRole),
-              span(classes: 'currently-company', [.text(' · ${about.currentlyCompany}')]),
-            ]),
-            p(classes: 'currently-period', [.text(about.currentlyPeriod)]),
+            for (final role in about.currentRoles)
+              div(classes: 'currently-item', [
+                p(classes: 'currently-role', [
+                  if (role.url case final url?)
+                    a(
+                      href: url,
+                      target: Target.blank,
+                      attributes: const {'rel': 'noopener noreferrer'},
+                      [.text(role.role)],
+                    )
+                  else
+                    .text(role.role),
+                  span(classes: 'currently-company', [.text(' · ${role.company}')]),
+                ]),
+                p(classes: 'currently-period', [.text(role.period)]),
+              ]),
           ]),
         ]),
       ]),

@@ -30,7 +30,9 @@ class HeroContent {
     required this.titleEmphasis,
     required this.lede,
     required this.primaryCta,
+    required this.primaryCtaHref,
     required this.secondaryCta,
+    required this.secondaryCtaHref,
     required this.note,
     required this.stats,
     required this.portraitAlt,
@@ -45,12 +47,28 @@ class HeroContent {
   final String titleEmphasis;
   final String lede;
   final String primaryCta;
+  final String primaryCtaHref;
   final String secondaryCta;
+  final String secondaryCtaHref;
   final String note;
   final List<HeroStat> stats;
   final String portraitAlt;
   final String portraitRole;
   final String portraitEducation;
+}
+
+class CurrentRole {
+  const CurrentRole({
+    required this.role,
+    required this.company,
+    required this.period,
+    this.url,
+  });
+
+  final String role;
+  final String company;
+  final String period;
+  final String? url;
 }
 
 class AboutContent {
@@ -59,72 +77,92 @@ class AboutContent {
     required this.heading,
     required this.paragraphs,
     required this.currentlyLabel,
-    required this.currentlyRole,
-    required this.currentlyCompany,
-    required this.currentlyPeriod,
+    required this.currentRoles,
   });
 
   final String eyebrow;
   final String heading;
   final List<String> paragraphs;
   final String currentlyLabel;
-  final String currentlyRole;
-  final String currentlyCompany;
-  final String currentlyPeriod;
+  final List<CurrentRole> currentRoles;
 }
 
-class FocusArea {
-  const FocusArea(this.title, this.description);
+class Article {
+  const Article({
+    required this.title,
+    required this.publication,
+    required this.published,
+    required this.url,
+  });
 
   final String title;
-  final String description;
+  final String publication;
+  final String published;
+  final String url;
 }
 
-class MentorStep {
-  const MentorStep(this.title, this.description);
+class ContentChannel {
+  const ContentChannel({
+    required this.label,
+    required this.description,
+    this.links = const [],
+  });
 
-  final String title;
+  final String label;
   final String description;
+  final List<LinkRef> links;
 }
 
-class MentoringContent {
-  const MentoringContent({
+class ContentRecognition {
+  const ContentRecognition({
+    required this.label,
+    required this.description,
+    required this.linkLabel,
+    required this.url,
+  });
+
+  final String label;
+  final String description;
+  final String linkLabel;
+  final String url;
+}
+
+class ContentHub {
+  const ContentHub({
     required this.eyebrow,
     required this.heading,
     required this.lede,
-    required this.forYouTitle,
-    required this.forYou,
-    required this.forYouNote,
-    required this.forYouNoteCta,
-    required this.focusTitle,
-    required this.focusAreas,
-    required this.stepsTitle,
-    required this.steps,
-    required this.stepsNote,
-    required this.getTitle,
-    required this.getItems,
+    required this.latestTitle,
+    required this.articles,
+    required this.allArticlesLabel,
+    required this.allArticlesHref,
+    required this.channelsTitle,
+    required this.channels,
+    required this.topicsTitle,
+    required this.topics,
+    required this.recognition,
     required this.ctaTitle,
     required this.ctaText,
     required this.ctaButton,
+    required this.ctaHref,
   });
 
   final String eyebrow;
   final String heading;
   final String lede;
-  final String forYouTitle;
-  final List<String> forYou;
-  final String forYouNote;
-  final String forYouNoteCta;
-  final String focusTitle;
-  final List<FocusArea> focusAreas;
-  final String stepsTitle;
-  final List<MentorStep> steps;
-  final String stepsNote;
-  final String getTitle;
-  final List<String> getItems;
+  final String latestTitle;
+  final List<Article> articles;
+  final String allArticlesLabel;
+  final String allArticlesHref;
+  final String channelsTitle;
+  final List<ContentChannel> channels;
+  final String topicsTitle;
+  final List<String> topics;
+  final ContentRecognition recognition;
   final String ctaTitle;
   final String ctaText;
   final String ctaButton;
+  final String ctaHref;
 }
 
 class Role {
@@ -213,30 +251,6 @@ class LinkRef {
   final String url;
 }
 
-class CommunityItem {
-  const CommunityItem({
-    required this.label,
-    required this.description,
-    this.links = const [],
-  });
-
-  final String label;
-  final String description;
-  final List<LinkRef> links;
-}
-
-class CommunityContent {
-  const CommunityContent({
-    required this.eyebrow,
-    required this.heading,
-    required this.items,
-  });
-
-  final String eyebrow;
-  final String heading;
-  final List<CommunityItem> items;
-}
-
 class FooterContent {
   const FooterContent({
     required this.heading,
@@ -279,15 +293,15 @@ class SiteContent {
     required this.socialAriaLabel,
     required this.nav,
     required this.navCta,
+    required this.navCtaHref,
     required this.mailto,
     required this.links,
     required this.hero,
     required this.about,
-    required this.mentoring,
+    required this.contentHub,
     required this.experience,
     required this.toolkit,
     required this.work,
-    required this.community,
     required this.footer,
   });
 
@@ -319,14 +333,14 @@ class SiteContent {
   final String socialAriaLabel;
   final List<NavItem> nav;
   final String navCta;
+  final String navCtaHref;
   final String mailto;
   final SiteLinks links;
   final HeroContent hero;
   final AboutContent about;
-  final MentoringContent mentoring;
+  final ContentHub contentHub;
   final ExperienceContent experience;
   final ToolkitContent toolkit;
   final WorkContent work;
-  final CommunityContent community;
   final FooterContent footer;
 }

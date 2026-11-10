@@ -37,7 +37,7 @@ lib/
   ui/
     components/                 # header, footer, SEO head, shared UI
     pages/home_page.dart        # composes the page for a locale
-    sections/                   # hero, about, mentoring, experience, toolkit, work, community
+    sections/                   # hero, about, content hub, experience, toolkit, work
 assets/content/
   en.json                       # ALL visible English copy, links and SEO data
   pt-br.json                    # ALL visible PT-BR copy, links and SEO data

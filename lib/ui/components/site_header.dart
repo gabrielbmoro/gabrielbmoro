@@ -43,7 +43,12 @@ class SiteHeader extends StatelessComponent {
             },
             [.text(content.switchLabel)],
           ),
-          ActionLink(href: content.mailto, label: content.navCta, small: true),
+          ActionLink(
+            href: content.navCtaHref,
+            label: content.navCta,
+            external: content.navCtaHref.startsWith('http'),
+            small: true,
+          ),
         ]),
       ]),
     ]);

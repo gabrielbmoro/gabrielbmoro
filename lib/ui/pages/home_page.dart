@@ -6,10 +6,9 @@ import 'package:gabriel_moro_site/ui/components/site_footer.dart';
 import 'package:gabriel_moro_site/ui/components/site_header.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/ui/sections/about.dart';
-import 'package:gabriel_moro_site/ui/sections/community.dart';
+import 'package:gabriel_moro_site/ui/sections/content_hub.dart';
 import 'package:gabriel_moro_site/ui/sections/experience.dart';
 import 'package:gabriel_moro_site/ui/sections/hero.dart';
-import 'package:gabriel_moro_site/ui/sections/mentoring.dart';
 import 'package:gabriel_moro_site/ui/sections/toolkit.dart';
 import 'package:gabriel_moro_site/ui/sections/work.dart';
 
@@ -32,11 +31,10 @@ class HomePage extends StatelessComponent {
       main_(id: 'main', [
         Hero(content: content),
         AboutSection(content: content),
-        MentoringSection(content: content),
+        ContentHubSection(content: content),
         ExperienceSection(content: content),
         ToolkitSection(content: content),
         WorkSection(content: content),
-        CommunitySection(content: content),
       ]),
       SiteFooter(content: content),
     ]);

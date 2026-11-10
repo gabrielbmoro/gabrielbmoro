@@ -103,15 +103,15 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
         ),
       ),
       navCta: _string(json, 'navCta', path),
+      navCtaHref: _string(json, 'navCtaHref', path),
       mailto: _string(json, 'mailto', path),
       links: links,
       hero: _hero(_object(json['hero'], '$path.hero'), '$path.hero'),
       about: _about(_object(json['about'], '$path.about'), '$path.about'),
-      mentoring: _mentoring(_object(json['mentoring'], '$path.mentoring'), '$path.mentoring'),
+      contentHub: _contentHub(_object(json['content'], '$path.content'), '$path.content'),
       experience: _experience(_object(json['experience'], '$path.experience'), '$path.experience'),
       toolkit: _toolkit(_object(json['toolkit'], '$path.toolkit'), '$path.toolkit'),
       work: _work(_object(json['work'], '$path.work'), '$path.work'),
-      community: _community(_object(json['community'], '$path.community'), '$path.community'),
       footer: _footer(_object(json['footer'], '$path.footer'), '$path.footer'),
     );
   }
@@ -135,7 +135,9 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     titleEmphasis: _string(json, 'titleEmphasis', path),
     lede: _string(json, 'lede', path),
     primaryCta: _string(json, 'primaryCta', path),
+    primaryCtaHref: _string(json, 'primaryCtaHref', path),
     secondaryCta: _string(json, 'secondaryCta', path),
+    secondaryCtaHref: _string(json, 'secondaryCtaHref', path),
     note: _string(json, 'note', path),
     stats: _mapList(
       json,
@@ -156,45 +158,62 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     heading: _string(json, 'heading', path),
     paragraphs: _strings(json, 'paragraphs', path),
     currentlyLabel: _string(json, 'currentlyLabel', path),
-    currentlyRole: _string(json, 'currentlyRole', path),
-    currentlyCompany: _string(json, 'currentlyCompany', path),
-    currentlyPeriod: _string(json, 'currentlyPeriod', path),
+    currentRoles: _mapList(
+      json,
+      'currentRoles',
+      path,
+      (role, rolePath) => CurrentRole(
+        role: _string(role, 'role', rolePath),
+        company: _string(role, 'company', rolePath),
+        period: _string(role, 'period', rolePath),
+        url: _optionalString(role, 'url', rolePath),
+      ),
+    ),
   );
 
-  MentoringContent _mentoring(Map<String, dynamic> json, String path) => MentoringContent(
+  ContentHub _contentHub(Map<String, dynamic> json, String path) => ContentHub(
     eyebrow: _string(json, 'eyebrow', path),
     heading: _string(json, 'heading', path),
     lede: _string(json, 'lede', path),
-    forYouTitle: _string(json, 'forYouTitle', path),
-    forYou: _strings(json, 'forYou', path),
-    forYouNote: _string(json, 'forYouNote', path),
-    forYouNoteCta: _string(json, 'forYouNoteCta', path),
-    focusTitle: _string(json, 'focusTitle', path),
-    focusAreas: _mapList(
+    latestTitle: _string(json, 'latestTitle', path),
+    articles: _mapList(
       json,
-      'focusAreas',
+      'articles',
       path,
-      (area, areaPath) => FocusArea(
-        _string(area, 'title', areaPath),
-        _string(area, 'description', areaPath),
+      (article, articlePath) => Article(
+        title: _string(article, 'title', articlePath),
+        publication: _string(article, 'publication', articlePath),
+        published: _string(article, 'published', articlePath),
+        url: _string(article, 'url', articlePath),
       ),
     ),
-    stepsTitle: _string(json, 'stepsTitle', path),
-    steps: _mapList(
+    allArticlesLabel: _string(json, 'allArticlesLabel', path),
+    allArticlesHref: _string(json, 'allArticlesHref', path),
+    channelsTitle: _string(json, 'channelsTitle', path),
+    channels: _mapList(
       json,
-      'steps',
+      'channels',
       path,
-      (step, stepPath) => MentorStep(
-        _string(step, 'title', stepPath),
-        _string(step, 'description', stepPath),
+      (channel, channelPath) => ContentChannel(
+        label: _string(channel, 'label', channelPath),
+        description: _string(channel, 'description', channelPath),
+        links: _linkRefs(channel, channelPath),
       ),
     ),
-    stepsNote: _string(json, 'stepsNote', path),
-    getTitle: _string(json, 'getTitle', path),
-    getItems: _strings(json, 'getItems', path),
+    topicsTitle: _string(json, 'topicsTitle', path),
+    topics: _strings(json, 'topics', path),
+    recognition: _recognition(_object(json['recognition'], '$path.recognition'), '$path.recognition'),
     ctaTitle: _string(json, 'ctaTitle', path),
     ctaText: _string(json, 'ctaText', path),
     ctaButton: _string(json, 'ctaButton', path),
+    ctaHref: _string(json, 'ctaHref', path),
+  );
+
+  ContentRecognition _recognition(Map<String, dynamic> json, String path) => ContentRecognition(
+    label: _string(json, 'label', path),
+    description: _string(json, 'description', path),
+    linkLabel: _string(json, 'linkLabel', path),
+    url: _string(json, 'url', path),
   );
 
   ExperienceContent _experience(Map<String, dynamic> json, String path) => ExperienceContent(
@@ -243,21 +262,6 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
         tags: _strings(project, 'tags', projectPath),
         url: _string(project, 'url', projectPath),
         linkLabel: _string(project, 'linkLabel', projectPath),
-      ),
-    ),
-  );
-
-  CommunityContent _community(Map<String, dynamic> json, String path) => CommunityContent(
-    eyebrow: _string(json, 'eyebrow', path),
-    heading: _string(json, 'heading', path),
-    items: _mapList(
-      json,
-      'items',
-      path,
-      (item, itemPath) => CommunityItem(
-        label: _string(item, 'label', itemPath),
-        description: _string(item, 'description', itemPath),
-        links: _linkRefs(item, itemPath),
       ),
     ),
   );
@@ -339,6 +343,14 @@ List<dynamic> _array(Object? value, String path) {
 }
 
 String _string(Map<String, dynamic> json, String key, String path) => _asString(json[key], '$path.$key');
+
+String? _optionalString(Map<String, dynamic> json, String key, String path) {
+  final value = json[key];
+  if (value == null) {
+    return null;
+  }
+  return _asString(value, '$path.$key');
+}
 
 String _nonEmptyString(Map<String, dynamic> json, String key, String path) {
   final value = _string(json, key, path);
