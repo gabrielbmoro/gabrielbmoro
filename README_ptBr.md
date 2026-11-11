@@ -1,6 +1,6 @@
 [![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/gabrielbronzattimoro15031994/)  [![Medium](https://img.shields.io/badge/Medium-12100E?style=flat-square&logo=medium&logoColor=white)](https://medium.com/@gabrielbronzattimoro.es)  [![Mentoria 1:1](https://img.shields.io/badge/-Mentoria%201%3A1-EA4AAA?style=flat-square&logo=gmail&logoColor=white)](mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita)
 
-🌐 **[Visite o site →](https://gabrielbmoro.github.io/gabrielbmoro/)** · [Português](https://gabrielbmoro.github.io/gabrielbmoro/) · [English](https://gabrielbmoro.github.io/gabrielbmoro/en/)
+🌐 **[Visite o site →](https://gabrielbmoro.dev/)** · [Português](https://gabrielbmoro.dev/) · [English](https://gabrielbmoro.dev/en/)
 
 # Olá, eu sou Gabriel Bronzatti Moro 👋🚀
 

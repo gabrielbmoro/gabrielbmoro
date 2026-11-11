@@ -10,7 +10,7 @@
   "skipLink": "Skip to content",
   "metaTitle": "Gabriel Moro — learning mobile, architecture and open source",
   "metaDescription": "Articles, videos and talks on Android, Kotlin Multiplatform, Flutter and architecture — real examples you can apply to your own project.",
-  "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/en/",
+  "canonicalUrl": "https://gabrielbmoro.dev/en/",
   "ogLocale": "en_US",
   "ogImageAlt": "Gabriel Moro",
   "siteTitle": "gabrielbmoro.dev",
@@ -41,7 +41,7 @@
   "navCtaHref": "https://medium.com/@gabrielbronzattimoro.es",
   "mailto": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Website%20contact",
   "links": {
-    "siteUrl": "https://gabrielbmoro.github.io/gabrielbmoro/",
+    "siteUrl": "https://gabrielbmoro.dev/",
     "email": "gabrielbronzattimoro.es@gmail.com",
     "linkedInUrl": "https://www.linkedin.com/in/gabrielbronzattimoro15031994/",
     "gitHubUrl": "https://github.com/gabrielbmoro",

@@ -4,7 +4,7 @@ This repository holds two things:
 
 1. **The personal site** — a bilingual (English / Brazilian Portuguese) landing page for
    Gabriel Moro, built with [Jaspr](https://jaspr.site/) in static mode, and published with
-   GitHub Pages at <https://gabrielbmoro.github.io/gabrielbmoro/>.
+   GitHub Pages at <https://gabrielbmoro.dev/>.
 2. **The GitHub profile READMEs** — `README.md` and `README_ptBr.md`, rendered on
    <https://github.com/gabrielbmoro>.
 
@@ -80,9 +80,14 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Pages source **must** be set to **GitHub Actions** in the repository settings, not a branch.
 - The workflow `.github/workflows/deploy-site.yml` publishes on pushes to `master`, builds on
   pull requests, and can be run manually.
+- The site is served at <https://gabrielbmoro.dev/> from a custom domain pinned in `web/CNAME`.
+  The workflow also writes `build/jaspr/CNAME` into the artifact, because Pages only publishes
+  the domain carried by the deployed files. Keep that name, `web/CNAME`, the `Sitemap:` line in
+  `web/robots.txt` and the JSON `canonicalUrl` / `links.siteUrl` fields in sync.
 - All site URLs are page-relative (`site.css`, `../site.css`, `en/`, `../`), so the site works
-  under the `/gabrielbmoro/` project path without a `<base>` element or a build-time base flag.
-  Keep new asset links relative; if you add a `<base>` tag, anchors will break.
+  both at the domain root and at `/` during local development, without a `<base>` element or a
+  build-time base flag. Keep new asset links relative; if you add a `<base>` tag, anchors will
+  break.
 - Canonical and Open Graph URLs live in the `links` and `canonicalUrl` fields of both JSON
   content assets; update both if the domain or repository name changes.
 
