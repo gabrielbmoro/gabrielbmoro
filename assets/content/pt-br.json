@@ -95,7 +95,19 @@
     ],
     "portraitAlt": "Retrato de Gabriel Moro sorrindo, de óculos.",
     "portraitRole": "Aprendendo em público desde 2017",
-    "portraitEducation": "Mestrado em Ciência da Computação · UFRGS",
+    "educationConnector": "pela",
+    "education": [
+      {
+        "degree": "Mestre em Ciência da Computação",
+        "institution": "UFRGS",
+        "url": "https://www.inf.ufrgs.br/"
+      },
+      {
+        "degree": "Bacharel em Engenharia de Software",
+        "institution": "UNIPAMPA",
+        "url": "https://cursos.unipampa.edu.br/cursos/engenhariadesoftware/"
+      }
+    ],
     "intro": "Atuo no desenvolvimento mobile desde 2017 — hoje trabalho na Kobe, em uma plataforma de e-commerce mobile com Flutter. Também escrevo, gravo e palestro sobre o que aprendo no caminho. Gosto de código, de música e de explicar as coisas de um jeito simples, sem enrolação.",
     "sections": [
       {

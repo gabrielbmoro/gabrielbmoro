@@ -179,7 +179,17 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     contactText: _string(json, 'contactText', path),
     portraitAlt: _string(json, 'portraitAlt', path),
     portraitRole: _string(json, 'portraitRole', path),
-    portraitEducation: _string(json, 'portraitEducation', path),
+    educationConnector: _string(json, 'educationConnector', path),
+    education: _mapList(
+      json,
+      'education',
+      path,
+      (entry, entryPath) => EducationEntry(
+        degree: _string(entry, 'degree', entryPath),
+        institution: _string(entry, 'institution', entryPath),
+        url: _string(entry, 'url', entryPath),
+      ),
+    ),
   );
 
   ContentHub _contentHub(Map<String, dynamic> json, String path) => ContentHub(

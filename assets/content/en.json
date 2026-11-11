@@ -95,7 +95,19 @@
     ],
     "portraitAlt": "Portrait of Gabriel Moro, smiling and wearing glasses.",
     "portraitRole": "Learning in public since 2017",
-    "portraitEducation": "M.Sc. in Computer Science · UFRGS",
+    "educationConnector": "from",
+    "education": [
+      {
+        "degree": "M.Sc. in Computer Science",
+        "institution": "UFRGS",
+        "url": "https://www.inf.ufrgs.br/"
+      },
+      {
+        "degree": "B.Sc. in Software Engineering",
+        "institution": "UNIPAMPA",
+        "url": "https://cursos.unipampa.edu.br/cursos/engenhariadesoftware/"
+      }
+    ],
     "intro": "I've worked in mobile development since 2017 — today I'm at Kobe, on a mobile e-commerce platform built with Flutter. I also write, record and speak about what I learn along the way. I like code, music, and explaining things in a simple way, without the fluff.",
     "sections": [
       {

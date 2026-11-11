@@ -36,7 +36,16 @@ class AboutSection extends StatelessComponent {
           ]),
           div(classes: 'portrait-caption', [
             p(classes: 'portrait-role', [.text(about.portraitRole)]),
-            p(classes: 'portrait-education', [.text(about.portraitEducation)]),
+            for (final entry in about.education)
+              p(classes: 'portrait-education', [
+                .text('${entry.degree} ${about.educationConnector} '),
+                a(
+                  href: entry.url,
+                  target: Target.blank,
+                  attributes: const {'rel': 'noopener noreferrer'},
+                  [.text(entry.institution)],
+                ),
+              ]),
           ]),
         ]),
         p(classes: 'body-large about-intro', [.text(about.intro)]),

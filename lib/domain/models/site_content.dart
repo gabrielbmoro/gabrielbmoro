@@ -61,6 +61,18 @@ class CurrentRole {
   final String? url;
 }
 
+class EducationEntry {
+  const EducationEntry({
+    required this.degree,
+    required this.institution,
+    required this.url,
+  });
+
+  final String degree;
+  final String institution;
+  final String url;
+}
+
 class AboutTopic {
   const AboutTopic({required this.title, required this.paragraphs});
 
@@ -80,7 +92,8 @@ class AboutContent {
     required this.contactText,
     required this.portraitAlt,
     required this.portraitRole,
-    required this.portraitEducation,
+    required this.educationConnector,
+    required this.education,
   });
 
   final String eyebrow;
@@ -93,7 +106,10 @@ class AboutContent {
   final String contactText;
   final String portraitAlt;
   final String portraitRole;
-  final String portraitEducation;
+
+  /// Preposition between a degree and its institution ("pela" / "from").
+  final String educationConnector;
+  final List<EducationEntry> education;
 }
 
 class Article {
