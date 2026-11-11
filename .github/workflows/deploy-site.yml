@@ -57,7 +57,13 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build site
-        run: jaspr build --sitemap-domain https://gabrielbmoro.github.io/gabrielbmoro
+        run: jaspr build --sitemap-domain https://gabrielbmoro.dev
+
+      - name: Pin custom domain
+        # upload-pages-artifact publishes the CNAME that ships inside the
+        # artifact, so write it explicitly instead of relying on jaspr copying
+        # web/ verbatim.
+        run: printf '%s\n' 'gabrielbmoro.dev' > build/jaspr/CNAME
 
       - name: Trim build output
         # Jaspr leaves compiler caches and DDC package assets that the
