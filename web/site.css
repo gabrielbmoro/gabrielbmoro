@@ -550,6 +550,21 @@ dd {
   font-size: 0.75rem;
 }
 
+.portrait-education + .portrait-education {
+  margin-top: 2px;
+}
+
+.portrait-education a {
+  border-bottom: 1px solid var(--line-strong);
+  color: inherit;
+  text-decoration: none;
+}
+
+.portrait-education a:hover {
+  border-color: currentColor;
+  color: var(--accent);
+}
+
 /* Sections ---------------------------------------------------------------- */
 
 .section {
