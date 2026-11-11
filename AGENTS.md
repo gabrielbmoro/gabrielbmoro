@@ -16,7 +16,7 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 - Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for the `/` (PT-BR, default) and `/en` routes.
 - Static mode: `jaspr build` pre-renders both routes to HTML.
 - `get_it` wires the JSON data source and repository at startup.
-- Plain CSS in `web/site.css`, self-hosted Inter + Bricolage Grotesque in `web/fonts/`.
+- Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
 - No client-side JavaScript is shipped: the site is entirely pre-rendered.
 
 ## Layout
@@ -108,7 +108,10 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
   `navCta` and the locale switch.
 - The page is a single column. Sections, article cards, projects, channels, toolkit rows and the
   footer stack vertically; do not reintroduce side-by-side column layouts.
-- Keep the design quiet: deep forest canvas, sage ink, green accent, Bricolage display + Inter body.
+- Keep the design quiet: deep forest canvas, sage ink, green accent, Montaga display + Inter body.
+  Montaga ships a single 400 weight, so headings express hierarchy through size and spacing, never
+  synthetic bold. Font sizes are expressed in `rem` on top of a `106.25%` root (17px), so legibility
+  is tuned in one place instead of dozens of pixel values.
   Avoid adding a UI framework or a JavaScript dependency for presentation.
 - `README.md` and `README_ptBr.md` must stay in sync (see `README.md` conventions):
   the user is **Moro** / **gabrielbmoro**.

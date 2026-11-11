@@ -9,7 +9,7 @@
   "homeHref": "../",
   "skipLink": "Skip to content",
   "metaTitle": "Gabriel Moro — learning mobile, architecture and open source",
-  "metaDescription": "Articles, videos and talks on Android, Kotlin Multiplatform, Flutter and architecture — real engineering decisions and examples you can apply to your own project.",
+  "metaDescription": "Articles, videos and talks on Android, Kotlin Multiplatform, Flutter and architecture — real examples you can apply to your own project.",
   "canonicalUrl": "https://gabrielbmoro.github.io/gabrielbmoro/en/",
   "ogLocale": "en_US",
   "ogImageAlt": "Gabriel Moro",
@@ -54,7 +54,7 @@
     "kicker": "Hello World! I'm Moro",
     "availability": "Sharing what I learn",
     "availabilityNote": "Articles · videos · talks",
-    "lede": "I'm Gabriel Bronzatti Moro. I write, record and speak about what I learn building Android, Kotlin Multiplatform and Flutter apps — and about what music taught me to see in code: rhythm, harmony and a lot of practice. Less abstract theory, more real decisions for your project.",
+    "lede": "I'm Gabriel Bronzatti Moro — people call me Moro! I create tech content at CodandoTV and I love talking about what I learn building Android, Kotlin Multiplatform and Flutter apps.",
     "primaryCta": "Read the articles",
     "primaryCtaHref": "#articles",
     "secondaryCta": "How I learn",
@@ -63,15 +63,15 @@
     "stats": [
       {
         "value": "Learn",
-        "label": "in public, through real projects"
+        "label": "through real projects or problems I face in my day-to-day"
       },
       {
         "value": "Build",
-        "label": "examples you can apply"
+        "label": "solve the problem, try, fail, try again..."
       },
       {
         "value": "Teach",
-        "label": "articles, videos and talks"
+        "label": "when I manage to learn something, I document it and share it with the community in articles, videos and talks"
       }
     ]
   },
@@ -83,20 +83,20 @@
       {
         "role": "Content Creator",
         "company": "CodandoTV",
-        "period": "2023 - Present",
+        "period": "2023 — Present",
         "url": "https://www.youtube.com/@CodandoTV"
       },
       {
         "role": "Koin Content Contributor",
         "company": "Kotzilla",
-        "period": "2026 - Present",
+        "period": "2026 — Present",
         "url": "https://koinchampion.kotzilla.io/apply-now"
       }
     ],
     "portraitAlt": "Portrait of Gabriel Moro, smiling and wearing glasses.",
     "portraitRole": "Learning in public since 2017",
     "portraitEducation": "M.Sc. in Computer Science · UFRGS",
-    "intro": "I'm a mobile engineer since 2017 — today I work with Flutter and the VTEX ecosystem at Kobe. I also write, record and speak about what I learn along the way. I like code, music, and explaining things in a simple way, without the fluff.",
+    "intro": "I've worked in mobile development since 2017 — today I'm at Kobe, on a mobile e-commerce platform built with Flutter. I also write, record and speak about what I learn along the way. I like code, music, and explaining things in a simple way, without the fluff.",
     "sections": [
       {
         "title": "What I do",
@@ -108,7 +108,7 @@
       {
         "title": "Where I come from",
         "paragraphs": [
-          "I started playing guitar at church when I was 12 and never really stopped. Music taught me to listen before playing, to repeat until it feels natural, and to notice when something is out of harmony.",
+          "I'm from Uruguaiana (Rio Grande do Sul), a city on the border between Brazil and Argentina. Since I was 12, I've always enjoyed learning guitar and playing at church. Music taught me to listen before playing, to repeat until it feels natural, and to notice when something is out of harmony.",
           "Since then, music has stayed with me — and became a lens for seeing other things, software included."
         ]
       },
@@ -121,7 +121,7 @@
       }
     ],
     "contactLabel": "Contact",
-    "contactText": "Want to chat about mobile, music or code? Reach me by email or LinkedIn — I answer personally."
+    "contactText": "Want to trade ideas about mobile or maybe book a mentoring session with me? Reach me by email or LinkedIn — I answer personally."
   },
   "content": {
     "eyebrow": "Articles",
@@ -349,7 +349,7 @@
   },
   "footer": {
     "heading": "Let’s trade notes.",
-    "text": "A question, a content idea or just want to talk mobile? Write to me — I answer personally.",
+    "text": "Got a question, want a mentoring session or have a content idea? Write to me — I answer personally.",
     "cta": "Send an email",
     "availability": "Sharing what I learn with the community",
     "copyright": "© 2026 Gabriel Bronzatti Moro",
