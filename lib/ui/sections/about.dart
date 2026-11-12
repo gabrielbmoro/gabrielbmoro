@@ -20,16 +20,16 @@ class AboutSection extends StatelessComponent {
         div(classes: 'about-media', [
           div(classes: 'portrait', [
             img(
-              src: '${content.assetPrefix}assets/avatar-800.jpg',
+              src: '${content.assetPrefix}assets/talk-800.jpg',
               alt: about.portraitAlt,
               width: 800,
-              height: 800,
+              height: 1200,
               loading: MediaLoading.lazy,
               attributes: {
                 'srcset':
-                    '${content.assetPrefix}assets/avatar-400.jpg 400w, '
-                    '${content.assetPrefix}assets/avatar-800.jpg 800w',
-                'sizes': '(max-width: 600px) 60vw, 220px',
+                    '${content.assetPrefix}assets/talk-400.jpg 400w, '
+                    '${content.assetPrefix}assets/talk-800.jpg 800w',
+                'sizes': '(max-width: 500px) 76vw, 320px',
                 'decoding': 'async',
               },
             ),
