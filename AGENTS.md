@@ -111,8 +111,10 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - The masthead is the site identity: the avatar emblem, `siteTitle` (the wordmark) and
   `tagline` are top-level fields in each JSON asset, followed by a tab bar built from `nav`,
   `navCta` and the locale switch.
-- The page is a single column. Sections, article cards, projects, channels, toolkit rows and the
-  footer stack vertically; do not reintroduce side-by-side column layouts.
+- The page is a single column, with one exception: the About intro grid places the talk photo
+  beside the running text on wide screens and stacks it above the text under 900 px. Sections,
+  article cards, projects, channels, toolkit rows and the footer stack vertically; do not
+  reintroduce other side-by-side column layouts.
 - Keep the design quiet: deep forest canvas, sage ink, green accent, Montaga display + Inter body.
   Montaga ships a single 400 weight, so headings express hierarchy through size and spacing, never
   synthetic bold. Font sizes are expressed in `rem` on top of a `106.25%` root (17px), so legibility

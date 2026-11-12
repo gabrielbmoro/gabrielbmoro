@@ -17,69 +17,73 @@ class AboutSection extends StatelessComponent {
     return section(classes: 'section', id: 'about', [
       div(classes: 'container about-content', [
         SectionHeading(eyebrow: about.eyebrow, title: about.heading),
-        div(classes: 'about-media', [
-          div(classes: 'portrait', [
-            img(
-              src: '${content.assetPrefix}assets/talk-800.jpg',
-              alt: about.portraitAlt,
-              width: 800,
-              height: 1200,
-              loading: MediaLoading.lazy,
-              attributes: {
-                'srcset':
-                    '${content.assetPrefix}assets/talk-400.jpg 400w, '
-                    '${content.assetPrefix}assets/talk-800.jpg 800w',
-                'sizes': '(max-width: 500px) 76vw, 320px',
-                'decoding': 'async',
-              },
-            ),
-          ]),
-          div(classes: 'portrait-caption', [
-            p(classes: 'portrait-role', [.text(about.portraitRole)]),
-            for (final entry in about.education)
-              p(classes: 'portrait-education', [
-                .text('${entry.degree} ${about.educationConnector} '),
-                a(
-                  href: entry.url,
-                  target: Target.blank,
-                  attributes: const {'rel': 'noopener noreferrer'},
-                  [.text(entry.institution)],
-                ),
-              ]),
-          ]),
-        ]),
-        p(classes: 'body-large about-intro', [.text(about.intro)]),
-        for (final topic in about.sections)
-          div(classes: 'about-topic', [
-            h3(classes: 'about-topic-title', [.text(topic.title)]),
-            for (final paragraph in topic.paragraphs) p(classes: 'body-large', [.text(paragraph)]),
-          ]),
-        div(classes: 'currently', [
-          p(classes: 'currently-label', [.text(about.currentlyLabel)]),
-          for (final role in about.currentRoles)
-            div(classes: 'currently-item', [
-              p(classes: 'currently-role', [
-                if (role.url case final url?)
+        div(classes: 'about-grid', [
+          div(classes: 'about-media', [
+            div(classes: 'portrait', [
+              img(
+                src: '${content.assetPrefix}assets/talk-800.jpg',
+                alt: about.portraitAlt,
+                width: 800,
+                height: 1200,
+                loading: MediaLoading.lazy,
+                attributes: {
+                  'srcset':
+                      '${content.assetPrefix}assets/talk-400.jpg 400w, '
+                      '${content.assetPrefix}assets/talk-800.jpg 800w',
+                  'sizes': '(max-width: 600px) 76vw, 320px',
+                  'decoding': 'async',
+                },
+              ),
+            ]),
+            div(classes: 'portrait-caption', [
+              p(classes: 'portrait-role', [.text(about.portraitRole)]),
+              for (final entry in about.education)
+                p(classes: 'portrait-education', [
+                  .text('${entry.degree} ${about.educationConnector} '),
                   a(
-                    href: url,
+                    href: entry.url,
                     target: Target.blank,
                     attributes: const {'rel': 'noopener noreferrer'},
-                    [.text(role.role)],
-                  )
-                else
-                  .text(role.role),
-                span(classes: 'currently-company', [.text(' · ${role.company}')]),
-              ]),
-              p(classes: 'currently-period', [.text(role.period)]),
+                    [.text(entry.institution)],
+                  ),
+                ]),
             ]),
-        ]),
-        div(classes: 'about-contact', [
-          h3(classes: 'about-topic-title', [.text(about.contactLabel)]),
-          p(classes: 'body-large', [.text(about.contactText)]),
-          div(classes: 'about-contact-links', [
-            TextLink(content.links.email, href: content.mailto, external: false),
-            TextLink('LinkedIn', href: content.links.linkedInUrl),
-            TextLink('GitHub', href: content.links.gitHubUrl),
+          ]),
+          div(classes: 'about-body', [
+            p(classes: 'body-large about-intro', [.text(about.intro)]),
+            for (final topic in about.sections)
+              div(classes: 'about-topic', [
+                h3(classes: 'about-topic-title', [.text(topic.title)]),
+                for (final paragraph in topic.paragraphs) p(classes: 'body-large', [.text(paragraph)]),
+              ]),
+            div(classes: 'currently', [
+              p(classes: 'currently-label', [.text(about.currentlyLabel)]),
+              for (final role in about.currentRoles)
+                div(classes: 'currently-item', [
+                  p(classes: 'currently-role', [
+                    if (role.url case final url?)
+                      a(
+                        href: url,
+                        target: Target.blank,
+                        attributes: const {'rel': 'noopener noreferrer'},
+                        [.text(role.role)],
+                      )
+                    else
+                      .text(role.role),
+                    span(classes: 'currently-company', [.text(' · ${role.company}')]),
+                  ]),
+                  p(classes: 'currently-period', [.text(role.period)]),
+                ]),
+            ]),
+            div(classes: 'about-contact', [
+              h3(classes: 'about-topic-title', [.text(about.contactLabel)]),
+              p(classes: 'body-large', [.text(about.contactText)]),
+              div(classes: 'about-contact-links', [
+                TextLink(content.links.email, href: content.mailto, external: false),
+                TextLink('LinkedIn', href: content.links.linkedInUrl),
+                TextLink('GitHub', href: content.links.gitHubUrl),
+              ]),
+            ]),
           ]),
         ]),
       ]),
