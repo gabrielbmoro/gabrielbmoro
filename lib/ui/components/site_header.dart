@@ -28,13 +28,19 @@ class SiteHeader extends StatelessComponent {
       ),
       div(classes: 'container masthead-inner', [
         img(
-          src: '${content.assetPrefix}assets/logo-mark.png',
+          src: '${content.assetPrefix}assets/avatar-800.jpg',
           alt: '',
-          width: 216,
-          height: 320,
+          width: 800,
+          height: 800,
           classes: 'masthead-mark',
           loading: MediaLoading.eager,
-          attributes: const {'decoding': 'async'},
+          attributes: {
+            'srcset':
+                '${content.assetPrefix}assets/avatar-400.jpg 400w, '
+                '${content.assetPrefix}assets/avatar-800.jpg 800w',
+            'sizes': '248px',
+            'decoding': 'async',
+          },
         ),
         h1(classes: 'masthead-title', [
           a(
