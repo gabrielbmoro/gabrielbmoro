@@ -5,7 +5,17 @@
     "name": "domain-depends-only-on-domain"
   },
   {
-    "filePattern": "*/data/*",
+    "filePattern": "^lib/data/models/.*\\.dart$",
+    "exclusiveDependencies": ["*/data/models/*"],
+    "name": "data-models-depend-only-on-data-models"
+  },
+  {
+    "filePattern": "^lib/data/(?!models/).*_source\\.dart$",
+    "exclusiveDependencies": ["*/data/models/*", "*/domain/*"],
+    "name": "data-sources-only-models-and-domain"
+  },
+  {
+    "filePattern": "^lib/data/(?!models/)(?!.*_source\\.dart$).*\\.dart$",
     "forbiddenDependencies": ["*/ui/*", "*/di/*"],
     "name": "data-no-ui-or-di"
   },

@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:gabriel_moro_site/data/site_content_data_source.dart';
+import 'package:gabriel_moro_site/domain/models/site_catalog.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/domain/models/site_links.dart';
 import 'package:gabriel_moro_site/domain/site_paths.dart';
@@ -16,12 +16,11 @@ import 'package:gabriel_moro_site/domain/site_paths.dart';
 ///
 /// This data source only knows the curated JSON content. It deliberately has
 /// no dependency on the Medium data source: the repository composes both.
-final class JsonSiteContentDataSource implements SiteContentDataSource {
+final class JsonSiteContentDataSource {
   JsonSiteContentDataSource({this.contentDirectory = 'assets/content'});
 
   final String contentDirectory;
 
-  @override
   SiteCatalog load() {
     final documents = _readDocuments();
 

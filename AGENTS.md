@@ -30,16 +30,18 @@ lib/
   main.server.dart              # composition root: repository, Document <head>, JSON-LD, <body>
   app.dart                      # Router built from the repository's pages
   domain/
+    models/site_catalog.dart    # localized content + pages returned by the data source
     models/site_content.dart    # immutable content models; copy lives in assets/content
     models/site_links.dart      # canonical URLs and contact email
     site_paths.dart             # page-relative hrefs and canonical URLs
     repository.dart             # SiteContentRepository abstraction
   data/
-    repository_impl.dart        # loads both data sources and attaches Medium articles to the pages
-    site_content_data_source.dart # data-source contract, returns content + pages
+    models/
+      article_source.dart       # source ids/labels shared by the Medium feeds and the CSS filter
+      medium_article.dart       # Medium feed/article models and fetcher typedefs
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
     medium_article_source.dart  # Medium data source: fetches and parses the Koin Developers + CodandoTV RSS feeds
-    article_source.dart         # source ids/labels shared by the Medium feeds and the CSS filter
+    repository_impl.dart        # loads both data sources and attaches Medium articles to the pages
   di/service_locator.dart       # GetIt registrations (two data sources + repository)
   ui/
     components/                 # header, footer, SEO head, shared UI
@@ -127,8 +129,8 @@ logs a warning and publishes an empty article list.
   `SITE_SKIP_MEDIUM_FEEDS=1` skips fetching entirely.
 - Filter chips are generated from the Medium list and their source ids
   (`koin-developers`, `codandotv`) are static CSS selectors in `web/site.css` — adding a source
-  means updating `article_source.dart` and the CSS rules. Article covers are absolute Medium
-  WebP URLs; there are no local article thumbnails to curate.
+  means updating `lib/data/models/article_source.dart` and the CSS rules. Article covers are
+  absolute Medium WebP URLs; there are no local article thumbnails to curate.
 - The article filter is CSS-only: radio inputs plus `:has()` hide non-matching cards. There is no
   JavaScript, no client entrypoint, and no URL state for the selected filter.
 - Each locale JSON declares a `pages` array in tab order. Every page carries an `id` (one of the
@@ -140,8 +142,15 @@ logs a warning and publishes an empty article list.
 - Adding a page means adding a `PageId` value, a `pages` entry in **both** locales, and its body
   composition in `SitePageView._sections` (`lib/ui/pages/site_page.dart`). The router picks it up
   from `SiteContentRepository.pages`, so there is no separate route list to edit.
-- `lib/domain/` holds plain data classes and the `SiteContentRepository` abstraction; it must not
-  import `lib/data/`, Jaspr, or DOM code.
+- `lib/domain/` holds plain data classes, the `SiteCatalog` read model, and the
+  `SiteContentRepository` abstraction; it must not import `lib/data/`, Jaspr, or DOM code.
+- The two data sources are concrete classes, not interfaces: `JsonSiteContentDataSource` and
+  `MediumArticleSource`. `SiteContentRepositoryImpl.load` receives those concrete instances and
+  GetIt registers the concrete types. `lib/data/models/` is domain-free: data models may import
+  only other data models. Data source implementations may import only `lib/data/models/` and
+  `lib/domain/`; they never import another data source or `repository_impl.dart`. The Eagle Eye
+  rules `data-models-depend-only-on-data-models` and
+  `data-sources-only-models-and-domain` enforce these boundaries.
 - Register infrastructure dependencies in `lib/di/service_locator.dart`; UI widgets keep receiving
   their dependencies through constructors instead of resolving them from GetIt.
 - Sections are `lib/ui/sections/*.dart`; each takes a `SitePage` and reads its slice from

@@ -1,39 +1,25 @@
 import 'package:gabriel_moro_site/data/json_site_content_data_source.dart';
 import 'package:gabriel_moro_site/data/medium_article_source.dart';
+import 'package:gabriel_moro_site/data/models/article_source.dart';
+import 'package:gabriel_moro_site/data/models/medium_article.dart';
 import 'package:gabriel_moro_site/data/repository_impl.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:test/test.dart';
 
-final class _FakeMediumArticles implements MediumArticleDataSource {
-  const _FakeMediumArticles(this.articles);
-
-  final List<MediumArticle> articles;
-
-  @override
-  Future<List<MediumArticle>> load() async => articles;
-}
+MediumArticleSource _mediumSource() => MediumArticleSource(
+  feeds: const [
+    MediumFeed(source: koinDevelopersSource, url: 'https://koin.test/feed'),
+    MediumFeed(source: codandoTvSource, url: 'https://codando.test/feed'),
+  ],
+  fetch: (uri) async => uri.host == 'koin.test' ? _koinFeedXml : _codandoFeedXml,
+  warn: (_) {},
+);
 
 void main() {
   test('publishes only the Medium articles, newest first, with localized dates', () async {
     final repository = await SiteContentRepositoryImpl.load(
       content: JsonSiteContentDataSource(),
-      mediumArticles: _FakeMediumArticles([
-        MediumArticle(
-          title: 'A CodandoTV article',
-          url: 'https://medium.com/codandotv/a-codandotv-article-xyz',
-          publishedAt: DateTime.utc(2026, 7, 30, 12),
-          publication: 'CodandoTV',
-          sourceId: 'codandotv',
-        ),
-        MediumArticle(
-          title: 'A newer Koin article',
-          url: 'https://blog.insert-koin.io/a-newer-koin-article-abc123',
-          publishedAt: DateTime.utc(2026, 11, 16, 13),
-          publication: 'Koin Developers',
-          sourceId: 'koin-developers',
-          imageUrl: 'https://miro.medium.com/v2/resize:fit:480/format:webp/1*cover.png',
-        ),
-      ]),
+      mediumArticles: _mediumSource(),
     );
 
     final en = repository.contentFor('en');
@@ -44,7 +30,10 @@ void main() {
     expect(pt.contentHub.articles, hasLength(2));
     expect(en.contentHub.articles.first.title, 'A newer Koin article');
     expect(en.contentHub.articles.first.published, 'Nov 2026');
-    expect(en.contentHub.articles.first.thumbnail, 'https://miro.medium.com/v2/resize:fit:480/format:webp/1*cover.png');
+    expect(
+      en.contentHub.articles.first.thumbnail,
+      'https://miro.medium.com/v2/resize:fit:480/format:webp/1*cover.png',
+    );
     expect(pt.contentHub.articles.first.published, 'Nov 2026');
     expect(en.contentHub.articles.last.title, 'A CodandoTV article');
     expect(en.contentHub.articles.last.published, 'Jul 2026');
@@ -63,7 +52,7 @@ void main() {
   test('publishes no articles when the Medium data source is empty', () async {
     final repository = await SiteContentRepositoryImpl.load(
       content: JsonSiteContentDataSource(),
-      mediumArticles: const _FakeMediumArticles([]),
+      mediumArticles: MediumArticleSource(feeds: const []),
     );
 
     final en = repository.contentFor('en');
@@ -78,3 +67,41 @@ void main() {
     expect(articlesPage.content.contentHub.articles, isEmpty);
   });
 }
+
+const _koinFeedXml = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     version="2.0">
+  <channel>
+    <title>Koin Developers - Medium</title>
+    <item>
+      <title><![CDATA[A newer Koin article]]></title>
+      <link>https://blog.insert-koin.io/a-newer-koin-article-abc123?source=rss----1---4</link>
+      <dc:creator><![CDATA[Gabriel Bronzatti Moro]]></dc:creator>
+      <pubDate>Mon, 16 Nov 2026 13:01:04 GMT</pubDate>
+      <content:encoded><![CDATA[
+        <figure><img src="https://cdn-images-1.medium.com/max/1024/1*cover.png" /></figure>
+      ]]></content:encoded>
+    </item>
+  </channel>
+</rss>
+''';
+
+const _codandoFeedXml = '''
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
+     version="2.0">
+  <channel>
+    <title>CodandoTV - Medium</title>
+    <item>
+      <title><![CDATA[A CodandoTV article]]></title>
+      <link>https://medium.com/codandotv/a-codandotv-article-xyz</link>
+      <dc:creator><![CDATA[Gabriel Bronzatti Moro]]></dc:creator>
+      <pubDate>Thu, 30 Jul 2026 12:00:00 GMT</pubDate>
+      <content:encoded><![CDATA[<p>Body</p>]]></content:encoded>
+    </item>
+  </channel>
+</rss>
+''';

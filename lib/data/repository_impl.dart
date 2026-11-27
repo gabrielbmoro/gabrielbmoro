@@ -1,7 +1,9 @@
 import 'dart:io';
 
+import 'package:gabriel_moro_site/data/json_site_content_data_source.dart';
 import 'package:gabriel_moro_site/data/medium_article_source.dart';
-import 'package:gabriel_moro_site/data/site_content_data_source.dart';
+import 'package:gabriel_moro_site/data/models/medium_article.dart';
+import 'package:gabriel_moro_site/domain/models/site_catalog.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/domain/repository.dart';
 
@@ -21,8 +23,8 @@ final class SiteContentRepositoryImpl implements SiteContentRepository {
   /// catalog. The article list is empty when the Medium data source has
   /// nothing to publish.
   static Future<SiteContentRepositoryImpl> load({
-    required SiteContentDataSource content,
-    required MediumArticleDataSource mediumArticles,
+    required JsonSiteContentDataSource content,
+    required MediumArticleSource mediumArticles,
   }) async {
     final catalog = content.load();
 

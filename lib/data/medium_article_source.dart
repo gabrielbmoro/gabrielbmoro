@@ -4,22 +4,8 @@ import 'dart:io';
 
 import 'package:xml/xml.dart';
 
-import 'package:gabriel_moro_site/data/article_source.dart';
-
-/// A Medium publication whose RSS feed contributes articles.
-final class MediumFeed {
-  const MediumFeed({required this.source, required this.url});
-
-  /// Publication identity shared with the curated content and the CSS filter.
-  final ArticleSource source;
-
-  final String url;
-
-  String get id => source.id;
-
-  /// Publication name rendered by the filter chips.
-  String get label => source.label;
-}
+import 'package:gabriel_moro_site/data/models/article_source.dart';
+import 'package:gabriel_moro_site/data/models/medium_article.dart';
 
 /// The author whose posts the site publishes.
 ///
@@ -39,49 +25,12 @@ const List<MediumFeed> mediumFeeds = [
   ),
 ];
 
-/// One article fetched from a Medium feed.
-final class MediumArticle {
-  const MediumArticle({
-    required this.title,
-    required this.url,
-    required this.publishedAt,
-    required this.publication,
-    required this.sourceId,
-    this.imageUrl,
-  });
-
-  final String title;
-
-  /// Canonical article URL, without the feed's tracking query.
-  final String url;
-
-  /// Publication instant, in UTC.
-  final DateTime publishedAt;
-
-  final String publication;
-
-  /// Stable filter key, matching the feed id.
-  final String sourceId;
-
-  /// Cover image from the article body, or null when it has none.
-  final String? imageUrl;
-}
-
-/// Data source for the articles published on Medium.
-abstract interface class MediumArticleDataSource {
-  Future<List<MediumArticle>> load();
-}
-
-typedef MediumFeedFetcher = Future<String> Function(Uri uri);
-typedef MediumFeedWarning = void Function(String message);
-
 /// Loads the configured Medium feeds and keeps the author's articles.
 ///
 /// Feeds are fetched concurrently. A feed that cannot be read only logs a
 /// warning and contributes no articles, so a transient outage never blocks a
-/// build: the repository falls back to the curated articles in the content
-/// assets.
-final class MediumArticleSource implements MediumArticleDataSource {
+/// build: the repository publishes an empty article list.
+final class MediumArticleSource {
   MediumArticleSource({
     List<MediumFeed> feeds = mediumFeeds,
     MediumFeedFetcher? fetch,
@@ -96,7 +45,6 @@ final class MediumArticleSource implements MediumArticleDataSource {
   final MediumFeedWarning _warn;
   final Duration timeout;
 
-  @override
   Future<List<MediumArticle>> load() async {
     if (Platform.environment['SITE_SKIP_MEDIUM_FEEDS'] == '1') {
       _warn('SITE_SKIP_MEDIUM_FEEDS=1, skipping the Medium article fetch.');

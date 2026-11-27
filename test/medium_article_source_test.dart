@@ -1,5 +1,6 @@
-import 'package:gabriel_moro_site/data/article_source.dart';
 import 'package:gabriel_moro_site/data/medium_article_source.dart';
+import 'package:gabriel_moro_site/data/models/article_source.dart';
+import 'package:gabriel_moro_site/data/models/medium_article.dart';
 import 'package:test/test.dart';
 
 const _feed = MediumFeed(
