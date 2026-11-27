@@ -1,22 +1,129 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:gabriel_moro_site/domain/models/site_catalog.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/domain/models/site_links.dart';
-import 'package:gabriel_moro_site/data/site_content_data_source.dart';
+import 'package:gabriel_moro_site/domain/site_paths.dart';
 
 /// Reads the localized content assets from [contentDirectory].
 ///
 /// Paths are resolved from the working directory, which is the repository
 /// root for `jaspr serve` and `jaspr build`. Assets are discovered by name so
-/// adding a locale only requires adding another JSON file.
-final class JsonSiteContentDataSource implements SiteContentDataSource {
+/// adding a locale only requires adding another JSON file. Every locale
+/// declares its pages; this data source resolves the page routes and turns
+/// them into page-relative links.
+///
+/// This data source only knows the curated JSON content. It deliberately has
+/// no dependency on the Medium data source: the repository composes both.
+final class JsonSiteContentDataSource {
   JsonSiteContentDataSource({this.contentDirectory = 'assets/content'});
 
   final String contentDirectory;
 
-  @override
-  List<SiteContent> load() {
+  SiteCatalog load() {
+    final documents = _readDocuments();
+
+    final links = _parseLinks(
+      _object(documents.first.json['links'], '${documents.first.path}.links'),
+      '${documents.first.path}.links',
+    );
+
+    for (final document in documents.skip(1)) {
+      final candidate = _parseLinks(
+        _object(document.json['links'], '${document.path}.links'),
+        '${document.path}.links',
+      );
+      _ensureSharedLinks(links, candidate, documents.first.path, document.path);
+    }
+
+    final pagesByDocument = {
+      for (final document in documents) document.path: _parsePages(document),
+    };
+    _ensureMatchingPages(documents, pagesByDocument);
+
+    final ordered = _defaultFirst(documents);
+    _ensureBilingual(ordered);
+
+    final routesByDocument = <String, Map<PageId, String>>{
+      for (final document in ordered)
+        document.path: {
+          for (final spec in pagesByDocument[document.path]!) spec.id: pageRoute(_localeRoute(document), spec.path),
+        },
+    };
+    _ensureUniquePageRoutes(ordered, routesByDocument);
+
+    final contents = <SiteContent>[];
+    for (final document in ordered) {
+      final routes = routesByDocument[document.path]!;
+      contents.add(
+        _parseContent(
+          document,
+          links,
+          (id) => relativeHref(_localeRoute(document), routes[id]!),
+        ),
+      );
+    }
+    _ensureUniqueLocales(contents);
+
+    final pages = <SitePage>[];
+    for (var index = 0; index < ordered.length; index++) {
+      final document = ordered[index];
+      final content = contents[index];
+      final specs = pagesByDocument[document.path]!;
+      final routes = routesByDocument[document.path]!;
+      final otherDocument = ordered[1 - index];
+      final otherRoutes = routesByDocument[otherDocument.path]!;
+
+      for (final spec in specs) {
+        final route = routes[spec.id]!;
+
+        pages.add(
+          SitePage(
+            content: content,
+            id: spec.id,
+            route: route,
+            navLabel: spec.navLabel,
+            summary: spec.summary,
+            title: spec.title,
+            description: spec.description,
+            canonicalUrl: canonicalUrl(content.links.siteUrl, route),
+            assetPrefix: relativeHref(route, '/'),
+            homeHref: relativeHref(route, content.route),
+            switchHref: relativeHref(route, otherRoutes[spec.id]!),
+            nav: List.unmodifiable([
+              for (final navSpec in specs)
+                if (navSpec.navLabel case final label?)
+                  NavItem(
+                    id: navSpec.id,
+                    label: label,
+                    summary: navSpec.summary!,
+                    href: relativeHref(route, routes[navSpec.id]!),
+                    current: navSpec.id == spec.id,
+                  ),
+            ]),
+            alternates: List.unmodifiable([
+              for (var localeIndex = 0; localeIndex < ordered.length; localeIndex++)
+                PageAlternate(
+                  hrefLang: contents[localeIndex].lang,
+                  url: canonicalUrl(
+                    content.links.siteUrl,
+                    routesByDocument[ordered[localeIndex].path]![spec.id]!,
+                  ),
+                ),
+            ]),
+          ),
+        );
+      }
+    }
+
+    return SiteCatalog(
+      contents: List.unmodifiable(contents),
+      pages: List.unmodifiable(pages),
+    );
+  }
+
+  List<_ContentDocument> _readDocuments() {
     final directory = Directory(contentDirectory);
     if (!directory.existsSync()) {
       throw StateError(
@@ -32,23 +139,7 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
       throw StateError('No content assets found in $contentDirectory.');
     }
 
-    final documents = [for (final file in files) _readDocument(file)];
-    final links = _parseLinks(
-      _object(documents.first.json['links'], '${documents.first.path}.links'),
-      '${documents.first.path}.links',
-    );
-
-    for (final document in documents.skip(1)) {
-      final candidate = _parseLinks(
-        _object(document.json['links'], '${document.path}.links'),
-        '${document.path}.links',
-      );
-      _ensureSharedLinks(links, candidate, documents.first.path, document.path);
-    }
-
-    final contents = [for (final document in documents) _parseContent(document, links)];
-    _ensureUniqueLocales(contents);
-    return List.unmodifiable(contents);
+    return [for (final file in files) _readDocument(file)];
   }
 
   _ContentDocument _readDocument(File file) {
@@ -70,23 +161,17 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     }
   }
 
-  SiteContent _parseContent(_ContentDocument document, SiteLinks links) {
+  SiteContent _parseContent(_ContentDocument document, SiteLinks links, String Function(PageId id) hrefFor) {
     final json = document.json;
     final path = document.path;
 
     return SiteContent(
       lang: _nonEmptyString(json, 'lang', path),
-      route: _nonEmptyString(json, 'route', path),
-      switchHref: _string(json, 'switchHref', path),
+      route: _localeRoute(document),
       switchHrefLang: _string(json, 'switchHrefLang', path),
       switchLabel: _string(json, 'switchLabel', path),
       switchAriaLabel: _string(json, 'switchAriaLabel', path),
-      assetPrefix: _string(json, 'assetPrefix', path),
-      homeHref: _string(json, 'homeHref', path),
       skipLink: _string(json, 'skipLink', path),
-      metaTitle: _string(json, 'metaTitle', path),
-      metaDescription: _string(json, 'metaDescription', path),
-      canonicalUrl: _string(json, 'canonicalUrl', path),
       ogLocale: _string(json, 'ogLocale', path),
       ogImageAlt: _string(json, 'ogImageAlt', path),
       siteTitle: _string(json, 'siteTitle', path),
@@ -95,27 +180,173 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
       homeLabel: _string(json, 'homeLabel', path),
       navAriaLabel: _string(json, 'navAriaLabel', path),
       socialAriaLabel: _string(json, 'socialAriaLabel', path),
-      nav: _mapList(
-        json,
-        'nav',
-        path,
-        (item, itemPath) => NavItem(
-          _string(item, 'label', itemPath),
-          _string(item, 'href', itemPath),
-        ),
-      ),
       navCta: _string(json, 'navCta', path),
       navCtaHref: _string(json, 'navCtaHref', path),
       mailto: _string(json, 'mailto', path),
       links: links,
-      hero: _hero(_object(json['hero'], '$path.hero'), '$path.hero'),
+      hero: _hero(_object(json['hero'], '$path.hero'), '$path.hero', hrefFor),
       about: _about(_object(json['about'], '$path.about'), '$path.about'),
       contentHub: _contentHub(_object(json['content'], '$path.content'), '$path.content'),
       experience: _experience(_object(json['experience'], '$path.experience'), '$path.experience'),
       toolkit: _toolkit(_object(json['toolkit'], '$path.toolkit'), '$path.toolkit'),
       work: _work(_object(json['work'], '$path.work'), '$path.work'),
+      explore: _explore(_object(json['explore'], '$path.explore'), '$path.explore'),
+      mentoring: _mentoring(_object(json['mentoring'], '$path.mentoring'), '$path.mentoring'),
       footer: _footer(_object(json['footer'], '$path.footer'), '$path.footer'),
     );
+  }
+
+  List<_PageSpec> _parsePages(_ContentDocument document) {
+    final path = document.path;
+    final specs = _mapList(
+      document.json,
+      'pages',
+      path,
+      (json, itemPath) => _PageSpec(
+        id: _pageId(_string(json, 'id', itemPath), '$itemPath.id'),
+        path: _string(json, 'path', itemPath),
+        navLabel: _optionalString(json, 'navLabel', itemPath),
+        summary: _optionalString(json, 'summary', itemPath),
+        title: _nonEmptyString(json, 'title', itemPath),
+        description: _nonEmptyString(json, 'description', itemPath),
+      ),
+    );
+
+    if (specs.isEmpty || specs.first.id != PageId.home) {
+      throw FormatException('$path.pages must start with the home page.');
+    }
+
+    final ids = <PageId>{};
+    for (final spec in specs) {
+      if (!ids.add(spec.id)) {
+        throw FormatException('Duplicate page "${spec.id.name}" in $path.pages.');
+      }
+      if ((spec.id == PageId.home) != (spec.path.isEmpty)) {
+        throw FormatException(
+          'Only the home page may have an empty path in $path.pages '
+          '("${spec.id.name}" has "${spec.path}").',
+        );
+      }
+      if (spec.path.isNotEmpty && !_slugPattern.hasMatch(spec.path)) {
+        throw FormatException(
+          'Invalid page path "${spec.path}" for "${spec.id.name}" in $path.pages. '
+          'Use lowercase letters, digits and dashes only.',
+        );
+      }
+      if (spec.id == PageId.home && spec.navLabel != null) {
+        throw FormatException('The home page must not appear in the tab bar in $path.pages.');
+      }
+      if (spec.navLabel != null) {
+        if (spec.navLabel!.isEmpty) {
+          throw FormatException('Page "${spec.id.name}" has an empty navLabel in $path.pages.');
+        }
+        if (spec.summary == null || spec.summary!.isEmpty) {
+          throw FormatException(
+            'Page "${spec.id.name}" is in the tab bar, so $path.pages needs a non-empty summary.',
+          );
+        }
+      }
+    }
+
+    return specs;
+  }
+
+  void _ensureMatchingPages(List<_ContentDocument> documents, Map<String, List<_PageSpec>> pagesByDocument) {
+    final reference = pagesByDocument[documents.first.path]!;
+
+    for (final document in documents.skip(1)) {
+      final candidate = pagesByDocument[document.path]!;
+
+      final sameOrder =
+          candidate.length == reference.length &&
+          Iterable.generate(reference.length).every((index) => candidate[index].id == reference[index].id);
+      if (!sameOrder) {
+        throw FormatException(
+          'Content assets must declare the same pages in the same order: '
+          '${documents.first.path} has ${reference.map((page) => page.id.name).join(', ')}, '
+          '${document.path} has ${candidate.map((page) => page.id.name).join(', ')}.',
+        );
+      }
+
+      for (var index = 0; index < reference.length; index++) {
+        if ((reference[index].navLabel == null) != (candidate[index].navLabel == null)) {
+          throw FormatException(
+            'Page "${reference[index].id.name}" must be in the tab bar in every locale '
+            'or in none: ${documents.first.path} and ${document.path} disagree.',
+          );
+        }
+      }
+    }
+  }
+
+  List<_ContentDocument> _defaultFirst(List<_ContentDocument> documents) {
+    for (final document in documents) {
+      final route = _localeRoute(document);
+      if (route != '/' && !_localeRoutePattern.hasMatch(route)) {
+        throw FormatException(
+          'Invalid locale route "$route" in ${document.path}. '
+          'Use "/" or a single path segment such as "/en".',
+        );
+      }
+    }
+
+    final roots = [
+      for (final document in documents)
+        if (_localeRoute(document) == '/') document,
+    ];
+
+    if (roots.length != 1) {
+      throw FormatException(
+        'Expected exactly one locale at route "/", found ${roots.length}. '
+        'The site root serves the default locale.',
+      );
+    }
+
+    final root = roots.single;
+    return [
+      root,
+      for (final document in documents)
+        if (document != root) document,
+    ];
+  }
+
+  /// The locale switch and the `hreflang` alternates point at the other
+  /// locale, so the assets must publish exactly two languages.
+  void _ensureBilingual(List<_ContentDocument> documents) {
+    if (documents.length != 2) {
+      throw FormatException(
+        'Expected exactly two locales in $contentDirectory, found ${documents.length}. '
+        'The locale switch points at the other locale.',
+      );
+    }
+  }
+
+  void _ensureUniquePageRoutes(
+    List<_ContentDocument> documents,
+    Map<String, Map<PageId, String>> routesByDocument,
+  ) {
+    final routes = <String>{};
+    for (final document in documents) {
+      for (final route in routesByDocument[document.path]!.values) {
+        if (!routes.add(route)) {
+          throw FormatException('Duplicate page route "$route" in $contentDirectory.');
+        }
+      }
+    }
+  }
+
+  void _ensureUniqueLocales(List<SiteContent> contents) {
+    final langs = <String>{};
+    final routes = <String>{};
+
+    for (final content in contents) {
+      if (!langs.add(content.lang)) {
+        throw FormatException('Duplicate locale "${content.lang}" in $contentDirectory.');
+      }
+      if (!routes.add(content.route)) {
+        throw FormatException('Duplicate locale route "${content.route}" in $contentDirectory.');
+      }
+    }
   }
 
   SiteLinks _parseLinks(Map<String, dynamic> json, String path) => SiteLinks(
@@ -129,15 +360,15 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     koinChampionUrl: _string(json, 'koinChampionUrl', path),
   );
 
-  HeroContent _hero(Map<String, dynamic> json, String path) => HeroContent(
+  HeroContent _hero(Map<String, dynamic> json, String path, String Function(PageId id) hrefFor) => HeroContent(
     kicker: _string(json, 'kicker', path),
     availability: _string(json, 'availability', path),
     availabilityNote: _string(json, 'availabilityNote', path),
     lede: _string(json, 'lede', path),
     primaryCta: _string(json, 'primaryCta', path),
-    primaryCtaHref: _string(json, 'primaryCtaHref', path),
+    primaryCtaHref: hrefFor(_pageId(_string(json, 'primaryCtaPage', path), '$path.primaryCtaPage')),
     secondaryCta: _string(json, 'secondaryCta', path),
-    secondaryCtaHref: _string(json, 'secondaryCtaHref', path),
+    secondaryCtaHref: hrefFor(_pageId(_string(json, 'secondaryCtaPage', path), '$path.secondaryCtaPage')),
     note: _string(json, 'note', path),
     stats: _mapList(
       json,
@@ -192,44 +423,50 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     ),
   );
 
-  ContentHub _contentHub(Map<String, dynamic> json, String path) => ContentHub(
-    eyebrow: _string(json, 'eyebrow', path),
-    heading: _string(json, 'heading', path),
-    lede: _string(json, 'lede', path),
-    latestTitle: _string(json, 'latestTitle', path),
-    articles: _mapList(
-      json,
-      'articles',
-      path,
-      (article, articlePath) => Article(
-        title: _string(article, 'title', articlePath),
-        publication: _string(article, 'publication', articlePath),
-        published: _string(article, 'published', articlePath),
-        url: _string(article, 'url', articlePath),
-        thumbnail: _optionalString(article, 'thumbnail', articlePath),
+  ContentHub _contentHub(Map<String, dynamic> json, String path) {
+    final months = _articleMonths(json, path);
+
+    return ContentHub(
+      eyebrow: _string(json, 'eyebrow', path),
+      heading: _string(json, 'heading', path),
+      lede: _string(json, 'lede', path),
+      latestTitle: _string(json, 'latestTitle', path),
+      filterAllLabel: _nonEmptyString(json, 'filterAllLabel', path),
+      filterAriaLabel: _nonEmptyString(json, 'filterAriaLabel', path),
+      articleMonths: months,
+      // The repository fills this from the Medium data source; the JSON only
+      // owns the section copy around the article list.
+      articles: const <Article>[],
+      allArticlesLabel: _string(json, 'allArticlesLabel', path),
+      allArticlesHref: _string(json, 'allArticlesHref', path),
+      channelsTitle: _string(json, 'channelsTitle', path),
+      channels: _mapList(
+        json,
+        'channels',
+        path,
+        (channel, channelPath) => ContentChannel(
+          label: _string(channel, 'label', channelPath),
+          description: _string(channel, 'description', channelPath),
+          links: _linkRefs(channel, channelPath),
+        ),
       ),
-    ),
-    allArticlesLabel: _string(json, 'allArticlesLabel', path),
-    allArticlesHref: _string(json, 'allArticlesHref', path),
-    channelsTitle: _string(json, 'channelsTitle', path),
-    channels: _mapList(
-      json,
-      'channels',
-      path,
-      (channel, channelPath) => ContentChannel(
-        label: _string(channel, 'label', channelPath),
-        description: _string(channel, 'description', channelPath),
-        links: _linkRefs(channel, channelPath),
-      ),
-    ),
-    topicsTitle: _string(json, 'topicsTitle', path),
-    topics: _strings(json, 'topics', path),
-    recognition: _recognition(_object(json['recognition'], '$path.recognition'), '$path.recognition'),
-    ctaTitle: _string(json, 'ctaTitle', path),
-    ctaText: _string(json, 'ctaText', path),
-    ctaButton: _string(json, 'ctaButton', path),
-    ctaHref: _string(json, 'ctaHref', path),
-  );
+      topicsTitle: _string(json, 'topicsTitle', path),
+      topics: _strings(json, 'topics', path),
+      recognition: _recognition(_object(json['recognition'], '$path.recognition'), '$path.recognition'),
+      ctaTitle: _string(json, 'ctaTitle', path),
+      ctaText: _string(json, 'ctaText', path),
+      ctaButton: _string(json, 'ctaButton', path),
+      ctaHref: _string(json, 'ctaHref', path),
+    );
+  }
+
+  List<String> _articleMonths(Map<String, dynamic> json, String path) {
+    final months = _strings(json, 'articleMonths', path);
+    if (months.length != 12 || months.any((month) => month.trim().isEmpty)) {
+      throw FormatException('$path.articleMonths must contain 12 non-empty month abbreviations.');
+    }
+    return months;
+  }
 
   ContentRecognition _recognition(Map<String, dynamic> json, String path) => ContentRecognition(
     label: _string(json, 'label', path),
@@ -288,6 +525,51 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     ),
   );
 
+  ExploreContent _explore(Map<String, dynamic> json, String path) => ExploreContent(
+    eyebrow: _string(json, 'eyebrow', path),
+    heading: _string(json, 'heading', path),
+    lede: _string(json, 'lede', path),
+  );
+
+  MentoringContent _mentoring(Map<String, dynamic> json, String path) => MentoringContent(
+    eyebrow: _string(json, 'eyebrow', path),
+    heading: _string(json, 'heading', path),
+    lede: _string(json, 'lede', path),
+    availability: _string(json, 'availability', path),
+    availabilityNote: _string(json, 'availabilityNote', path),
+    primaryCta: _string(json, 'primaryCta', path),
+    primaryCtaHref: _string(json, 'primaryCtaHref', path),
+    ctaNote: _string(json, 'ctaNote', path),
+    audienceTitle: _string(json, 'audienceTitle', path),
+    audience: _strings(json, 'audience', path),
+    topicsTitle: _string(json, 'topicsTitle', path),
+    topics: _mapList(
+      json,
+      'topics',
+      path,
+      (topic, topicPath) => MentoringTopic(
+        label: _string(topic, 'label', topicPath),
+        description: _string(topic, 'description', topicPath),
+      ),
+    ),
+    stepsTitle: _string(json, 'stepsTitle', path),
+    steps: _mapList(
+      json,
+      'steps',
+      path,
+      (step, stepPath) => MentoringStep(
+        title: _string(step, 'title', stepPath),
+        description: _string(step, 'description', stepPath),
+      ),
+    ),
+    outcomesTitle: _string(json, 'outcomesTitle', path),
+    outcomes: _strings(json, 'outcomes', path),
+    closingTitle: _string(json, 'closingTitle', path),
+    closingText: _string(json, 'closingText', path),
+    closingCta: _string(json, 'closingCta', path),
+    closingHref: _string(json, 'closingHref', path),
+  );
+
   FooterContent _footer(Map<String, dynamic> json, String path) => FooterContent(
     heading: _string(json, 'heading', path),
     text: _string(json, 'text', path),
@@ -327,20 +609,23 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
       );
     }
   }
+}
 
-  void _ensureUniqueLocales(List<SiteContent> contents) {
-    final langs = <String>{};
-    final routes = <String>{};
+final _slugPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
+final _localeRoutePattern = RegExp(r'^/[a-z0-9]+(?:-[a-z0-9]+)*$');
 
-    for (final content in contents) {
-      if (!langs.add(content.lang)) {
-        throw FormatException('Duplicate locale "${content.lang}" in $contentDirectory.');
-      }
-      if (!routes.add(content.route)) {
-        throw FormatException('Duplicate route "${content.route}" in $contentDirectory.');
-      }
+String _localeRoute(_ContentDocument document) => _nonEmptyString(document.json, 'route', document.path);
+
+PageId _pageId(String value, String path) {
+  for (final id in PageId.values) {
+    if (id.name == value) {
+      return id;
     }
   }
+  throw FormatException(
+    'Unknown page "$value" at $path. '
+    'Expected one of: ${PageId.values.map((id) => id.name).join(', ')}.',
+  );
 }
 
 final class _ContentDocument {
@@ -348,6 +633,24 @@ final class _ContentDocument {
 
   final String path;
   final Map<String, dynamic> json;
+}
+
+final class _PageSpec {
+  const _PageSpec({
+    required this.id,
+    required this.path,
+    required this.navLabel,
+    required this.summary,
+    required this.title,
+    required this.description,
+  });
+
+  final PageId id;
+  final String path;
+  final String? navLabel;
+  final String? summary;
+  final String title;
+  final String description;
 }
 
 Map<String, dynamic> _object(Object? value, String path) {

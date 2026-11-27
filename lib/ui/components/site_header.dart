@@ -6,12 +6,14 @@ import 'package:gabriel_moro_site/ui/components/action_link.dart';
 
 /// Full-bleed masthead: cover artwork, site wordmark, tagline and the tab bar.
 class SiteHeader extends StatelessComponent {
-  const SiteHeader({required this.content, super.key});
+  const SiteHeader({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
+
     return header(classes: 'masthead', [
       div(
         classes: 'masthead-cover',
@@ -19,7 +21,7 @@ class SiteHeader extends StatelessComponent {
         [
           if (content.coverImage case final cover?)
             img(
-              src: '${content.assetPrefix}$cover',
+              src: '${page.assetPrefix}$cover',
               alt: '',
               loading: MediaLoading.eager,
               attributes: const {'fetchpriority': 'high', 'decoding': 'async'},
@@ -28,7 +30,7 @@ class SiteHeader extends StatelessComponent {
       ),
       div(classes: 'container masthead-inner', [
         img(
-          src: '${content.assetPrefix}assets/avatar-800.jpg',
+          src: '${page.assetPrefix}assets/avatar-800.jpg',
           alt: '',
           width: 800,
           height: 800,
@@ -36,15 +38,15 @@ class SiteHeader extends StatelessComponent {
           loading: MediaLoading.eager,
           attributes: {
             'srcset':
-                '${content.assetPrefix}assets/avatar-400.jpg 400w, '
-                '${content.assetPrefix}assets/avatar-800.jpg 800w',
+                '${page.assetPrefix}assets/avatar-400.jpg 400w, '
+                '${page.assetPrefix}assets/avatar-800.jpg 800w',
             'sizes': '248px',
             'decoding': 'async',
           },
         ),
         h1(classes: 'masthead-title', [
           a(
-            href: content.homeHref,
+            href: page.homeHref,
             attributes: {'aria-label': content.homeLabel},
             [.text(content.siteTitle)],
           ),
@@ -56,7 +58,13 @@ class SiteHeader extends StatelessComponent {
         attributes: {'aria-label': content.navAriaLabel},
         [
           div(classes: 'container masthead-tabs-inner', [
-            for (final item in content.nav) a(href: item.href, classes: 'tab', [.text(item.label)]),
+            for (final item in page.nav)
+              a(
+                href: item.href,
+                classes: item.current ? 'tab tab--active' : 'tab',
+                attributes: item.current ? const {'aria-current': 'page'} : null,
+                [.text(item.label)],
+              ),
             ActionLink(
               href: content.navCtaHref,
               label: content.navCta,
@@ -65,7 +73,7 @@ class SiteHeader extends StatelessComponent {
               external: content.navCtaHref.startsWith('http'),
             ),
             a(
-              href: content.switchHref,
+              href: page.switchHref,
               classes: 'tab tab--lang',
               attributes: {
                 'aria-label': content.switchAriaLabel,

@@ -286,6 +286,11 @@ dd {
   color: var(--on-forest);
 }
 
+.tab--active {
+  background: var(--on-forest-glass);
+  color: var(--on-forest);
+}
+
 .masthead-tabs .btn {
   flex-shrink: 0;
   height: 36px;
@@ -516,6 +521,63 @@ dd {
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
+}
+
+/* Page index -------------------------------------------------------------- */
+
+.page-index {
+  display: grid;
+  gap: 12px;
+}
+
+.page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.page-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.page-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-card-label {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: -0.008em;
+  line-height: 1.15;
+}
+
+.page-card-icon {
+  color: var(--accent);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.page-card:hover .page-card-icon {
+  transform: translateX(3px);
+}
+
+.page-card-summary {
+  color: var(--muted);
+  font-size: 0.90625rem;
+  line-height: 1.6;
 }
 
 .portrait {
@@ -790,6 +852,94 @@ h2 {
   font-weight: 400;
   letter-spacing: -0.008em;
   line-height: 1.15;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* CSS-only article filter. Source ids must stay in sync with
+   lib/data/article_source.dart; adding a source needs a static rule below.
+   Browsers without :has() keep the unfiltered list and hide the chips. */
+.article-filter {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  margin: 0 0 22px;
+  padding: 0;
+  border: 0;
+}
+
+.article-filter-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+.article-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.article-filter-chip:hover {
+  border-color: var(--line-strong);
+  color: var(--ink);
+}
+
+.article-filter-input:checked + .article-filter-chip {
+  border-color: var(--accent-line);
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.article-filter-input:focus-visible + .article-filter-chip {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.articles-block:has(.article-filter-input[value="koin-developers"]:checked)
+  .article-item:not([data-source="koin-developers"]),
+.articles-block:has(.article-filter-input[value="codandotv"]:checked)
+  .article-item:not([data-source="codandotv"]) {
+  display: none;
+}
+
+@supports not selector(:has(*)) {
+  .article-filter {
+    display: none;
+  }
 }
 
 .article-list {
@@ -1148,6 +1298,75 @@ h2 {
   align-self: flex-start;
 }
 
+/* Mentoring --------------------------------------------------------------- */
+
+.mentoring-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mentoring-availability {
+  margin-bottom: 0;
+}
+
+.mentoring-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mentoring-cta-note {
+  color: var(--faint);
+  font-size: 0.78125rem;
+}
+
+.mentoring-block {
+  margin-top: 56px;
+}
+
+.mentoring-block h3 {
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  line-height: 1.15;
+}
+
+.mentoring-steps {
+  border-top: 1px solid var(--line-strong);
+}
+
+.mentoring-step {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.mentoring-step-label {
+  margin-bottom: 8px;
+  color: var(--faint);
+  font-size: 0.65625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.mentoring-step h4 {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+.mentoring-step p:last-child {
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: 0.90625rem;
+  line-height: 1.65;
+}
+
 /* Footer ------------------------------------------------------------------ */
 
 .site-footer {
@@ -1331,6 +1550,20 @@ h2 {
   }
 
   .hero-actions .btn {
+    width: 100%;
+  }
+
+  .page-card {
+    padding: 20px 22px;
+  }
+
+  .mentoring-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mentoring-actions .btn {
     width: 100%;
   }
 

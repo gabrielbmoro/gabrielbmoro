@@ -5,12 +5,13 @@ import 'package:gabriel_moro_site/ui/components/section_heading.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class ToolkitSection extends StatelessComponent {
-  const ToolkitSection({required this.content, super.key});
+  const ToolkitSection({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final toolkit = content.toolkit;
 
     return section(classes: 'section section--tight', id: 'toolkit', [

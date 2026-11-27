@@ -1,16 +1,10 @@
 {
   "lang": "pt-BR",
   "route": "/",
-  "switchHref": "en/",
   "switchHrefLang": "en",
   "switchLabel": "EN",
   "switchAriaLabel": "View this page in English",
-  "assetPrefix": "",
-  "homeHref": "./",
   "skipLink": "Ir para o conteúdo",
-  "metaTitle": "Gabriel B. Moro — aprender mobile, arquitetura e open source",
-  "metaDescription": "Artigos, vídeos e palestras sobre Android, Kotlin Multiplatform, Flutter e arquitetura — exemplos reais para aplicar no seu projeto.",
-  "canonicalUrl": "https://gabrielbmoro.dev/",
   "ogLocale": "pt_BR",
   "ogImageAlt": "Gabriel B. Moro",
   "siteTitle": "gabrielbmoro.dev",
@@ -19,24 +13,6 @@
   "homeLabel": "gabrielbmoro.dev — início",
   "navAriaLabel": "Navegação principal",
   "socialAriaLabel": "Links sociais",
-  "nav": [
-    {
-      "label": "Sobre",
-      "href": "#about"
-    },
-    {
-      "label": "Artigos",
-      "href": "#articles"
-    },
-    {
-      "label": "Open Source",
-      "href": "#work"
-    },
-    {
-      "label": "Experiência",
-      "href": "#experience"
-    }
-  ],
   "navCta": "Seguir no Medium",
   "navCtaHref": "https://medium.com/@gabrielbronzattimoro.es",
   "mailto": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Contato%20pelo%20site",
@@ -50,15 +26,65 @@
     "codandoTvUrl": "https://codandotv.com/#creators",
     "koinChampionUrl": "https://koinchampion.kotzilla.io/apply-now"
   },
+  "pages": [
+    {
+      "id": "home",
+      "path": "",
+      "navLabel": null,
+      "summary": null,
+      "title": "Gabriel B. Moro — aprender mobile, arquitetura e open source",
+      "description": "Artigos, vídeos e palestras sobre Android, Kotlin Multiplatform, Flutter e arquitetura — exemplos reais para aplicar no seu projeto."
+    },
+    {
+      "id": "about",
+      "path": "sobre",
+      "navLabel": "Sobre",
+      "summary": "Quem eu sou, de onde venho e como aprendo programando.",
+      "title": "Sobre — Gabriel B. Moro",
+      "description": "De onde venho, o que faço e como aprendo: música, código e quase uma década construindo apps mobile."
+    },
+    {
+      "id": "articles",
+      "path": "artigos",
+      "navLabel": "Artigos",
+      "summary": "Textos técnicos sobre Android, KMP, arquitetura e carreira.",
+      "title": "Artigos — Gabriel B. Moro",
+      "description": "Artigos sobre Android, Kotlin Multiplatform, Flutter, arquitetura e carreira mobile, escritos a partir de decisões reais."
+    },
+    {
+      "id": "work",
+      "path": "open-source",
+      "navLabel": "Open Source",
+      "summary": "Bibliotecas que criei e mantenho abertas para a comunidade.",
+      "title": "Open Source — Gabriel B. Moro",
+      "description": "Bibliotecas open source que nasceram de problemas reais: Popcorn Guineapig, JujubaSVG, EagleEye e MovieDB-App."
+    },
+    {
+      "id": "experience",
+      "path": "experiencia",
+      "navLabel": "Experiência",
+      "summary": "Times e produtos onde aprendi o que compartilho hoje.",
+      "title": "Experiência — Gabriel B. Moro",
+      "description": "Quase uma década de mobile em produção: Kobe, Ambush, TELUS Digital e Socialive."
+    },
+    {
+      "id": "mentoring",
+      "path": "mentoria",
+      "navLabel": "Mentoria",
+      "summary": "Acompanhamento 1:1 para devs que querem evoluir mais rápido.",
+      "title": "Mentoria 1:1 — Gabriel B. Moro",
+      "description": "Mentoria individual para desenvolvedores mobile: carreira, Android e Kotlin Multiplatform, arquitetura, entrevistas internacionais e IA no dia a dia. A primeira conversa é gratuita."
+    }
+  ],
   "hero": {
     "kicker": "Olá, mundo! Sou o Moro",
     "availability": "Compartilhando o que aprendo",
     "availabilityNote": "Artigos · vídeos · palestras",
     "lede": "Sou o Gabriel Bronzatti Moro, o pessoal me chama de Moro! Sou criador de conteúdo tech no CodandoTV e gosto muito de falar sobre o que aprendo construindo apps Android, Kotlin Multiplatform e Flutter.",
     "primaryCta": "Ler os artigos",
-    "primaryCtaHref": "#articles",
+    "primaryCtaPage": "articles",
     "secondaryCta": "Como eu aprendo",
-    "secondaryCtaHref": "#about",
+    "secondaryCtaPage": "about",
     "note": "Artigos · Vídeos · Podcast · Palestras",
     "stats": [
       {
@@ -140,36 +166,9 @@
     "heading": "O que aprendo, eu escrevo.",
     "lede": "Textos técnicos sobre Android, Kotlin Multiplatform, arquitetura e carreira em mobile — escritos a partir de decisões reais, não de teoria solta.",
     "latestTitle": "Últimos artigos",
-    "articles": [
-      {
-        "title": "Setting Up Koin in real project: A Step-by-Step Guide",
-        "publication": "Koin Developers",
-        "published": "Set 2026",
-        "url": "https://blog.insert-koin.io/setting-up-koin-in-real-project-a-step-by-step-guide-1575e2357239",
-        "thumbnail": "assets/articles/setting-up-koin-in-real-project.jpg"
-      },
-      {
-        "title": "Getting Started with Spec-Driven Development",
-        "publication": "CodandoTV",
-        "published": "Jul 2026",
-        "url": "https://medium.com/codandotv/getting-started-with-spec-driven-development-e72302868eb5",
-        "thumbnail": "assets/articles/getting-started-with-spec-driven-development.jpg"
-      },
-      {
-        "title": "Let Koin Shape your Application Architecture",
-        "publication": "Koin Developers",
-        "published": "Jul 2026",
-        "url": "https://blog.insert-koin.io/let-koin-shape-your-application-architecture-9cd60b1e02b0",
-        "thumbnail": "assets/articles/let-koin-shape-your-application-architecture.jpg"
-      },
-      {
-        "title": "Como usar Compilador do Koin em um projeto multi-módulo?",
-        "publication": "CodandoTV",
-        "published": "Jul 2026",
-        "url": "https://medium.com/codandotv/como-usar-compilador-do-koin-em-um-projeto-multi-m%C3%B3dulo-8e9dda634cf9",
-        "thumbnail": "assets/articles/como-usar-compilador-do-koin-multimodulo.jpg"
-      }
-    ],
+    "articleMonths": ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+    "filterAllLabel": "Todos",
+    "filterAriaLabel": "Filtrar artigos por publicação",
     "allArticlesLabel": "Ver todos no Medium",
     "allArticlesHref": "https://medium.com/@gabrielbronzattimoro.es",
     "channelsTitle": "Também compartilho",
@@ -358,6 +357,81 @@
         "linkLabel": "Ver no GitHub"
       }
     ]
+  },
+  "explore": {
+    "eyebrow": "Por aqui",
+    "heading": "Um site, vários caminhos.",
+    "lede": "Cada aba é uma página com o conteúdo completo. Escolha por onde começar."
+  },
+  "mentoring": {
+    "eyebrow": "Mentoria",
+    "heading": "Mentoria 1:1 para evoluir mais rápido.",
+    "lede": "Abro algumas vagas para acompanhar desenvolvedores de forma individual, juntando quase uma década de mobile em produção com a prática de mentorar times de Android e Kotlin Multiplatform.",
+    "availability": "Poucas vagas abertas",
+    "availabilityNote": "Online · português ou inglês",
+    "primaryCta": "Agendar conversa gratuita",
+    "primaryCtaHref": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita",
+    "ctaNote": "A primeira conversa é gratuita, sem compromisso.",
+    "audienceTitle": "Para quem é",
+    "audience": [
+      "Desenvolvedores plenos que querem chegar ao nível sênior.",
+      "Sêniores assumindo liderança técnica e precisando de repertório para conduzir times.",
+      "Desenvolvedores Android e Flutter migrando para Kotlin Multiplatform.",
+      "Quem está se preparando para processos seletivos internacionais."
+    ],
+    "topicsTitle": "O que podemos trabalhar juntos",
+    "topics": [
+      {
+        "label": "Carreira",
+        "description": "Transição para sênior e liderança técnica, plano de evolução, posicionamento e portfólio."
+      },
+      {
+        "label": "Android & KMP",
+        "description": "Compose Multiplatform, arquitetura multimódulo, integração com bibliotecas de iOS e Android e decisões de arquitetura."
+      },
+      {
+        "label": "Arquitetura & qualidade",
+        "description": "MVVM/MVI, modularização, estratégia de testes (unitário, UI e snapshot), Detekt e regras arquiteturais automatizadas."
+      },
+      {
+        "label": "Entrevistas internacionais",
+        "description": "Preparação técnica, mobile system design e inglês técnico."
+      },
+      {
+        "label": "IA no dia a dia",
+        "description": "Claude Code, agentes e desenvolvimento assistido por IA, com revisão crítica do que é gerado."
+      },
+      {
+        "label": "Open source & conteúdo",
+        "description": "Publicar e manter bibliotecas, construir portfólio público e criar conteúdo técnico."
+      }
+    ],
+    "stepsTitle": "Como funciona",
+    "steps": [
+      {
+        "title": "Você escreve",
+        "description": "Um e-mail curto contando seu objetivo e o contexto em que você está hoje."
+      },
+      {
+        "title": "Conversa inicial gratuita (15 min)",
+        "description": "Alinhamos expectativas, avaliamos o encaixe e definimos o foco do trabalho."
+      },
+      {
+        "title": "Sessões individuais (1h)",
+        "description": "Online, em português ou inglês, com plano de ação claro entre os encontros."
+      }
+    ],
+    "outcomesTitle": "O que você leva",
+    "outcomes": [
+      "Plano de desenvolvimento personalizado, com próximos passos concretos.",
+      "Revisão de código e de arquitetura dos seus projetos.",
+      "Materiais, referências e exercícios direcionados ao seu objetivo.",
+      "Apoio assíncrono por e-mail entre as sessões."
+    ],
+    "closingTitle": "Vamos começar pela sua conversa gratuita.",
+    "closingText": "Me conta seu objetivo e o momento atual. Eu respondo pessoalmente com os próximos passos.",
+    "closingCta": "Quero marcar minha conversa",
+    "closingHref": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Mentoria%201%3A1%20-%20quero%20agendar%20a%20conversa%20gratuita"
   },
   "footer": {
     "heading": "Vamos trocar uma ideia.",

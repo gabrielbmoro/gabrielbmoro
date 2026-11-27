@@ -7,12 +7,13 @@ import 'package:gabriel_moro_site/ui/components/text_link.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class WorkSection extends StatelessComponent {
-  const WorkSection({required this.content, super.key});
+  const WorkSection({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final work = content.work;
 
     return section(classes: 'section', id: 'work', [
