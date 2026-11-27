@@ -13,6 +13,9 @@ import 'package:gabriel_moro_site/domain/site_paths.dart';
 /// adding a locale only requires adding another JSON file. Every locale
 /// declares its pages; this data source resolves the page routes and turns
 /// them into page-relative links.
+///
+/// This data source only knows the curated JSON content. It deliberately has
+/// no dependency on the Medium data source: the repository composes both.
 final class JsonSiteContentDataSource implements SiteContentDataSource {
   JsonSiteContentDataSource({this.contentDirectory = 'assets/content'});
 
@@ -421,44 +424,50 @@ final class JsonSiteContentDataSource implements SiteContentDataSource {
     ),
   );
 
-  ContentHub _contentHub(Map<String, dynamic> json, String path) => ContentHub(
-    eyebrow: _string(json, 'eyebrow', path),
-    heading: _string(json, 'heading', path),
-    lede: _string(json, 'lede', path),
-    latestTitle: _string(json, 'latestTitle', path),
-    articles: _mapList(
-      json,
-      'articles',
-      path,
-      (article, articlePath) => Article(
-        title: _string(article, 'title', articlePath),
-        publication: _string(article, 'publication', articlePath),
-        published: _string(article, 'published', articlePath),
-        url: _string(article, 'url', articlePath),
-        thumbnail: _optionalString(article, 'thumbnail', articlePath),
+  ContentHub _contentHub(Map<String, dynamic> json, String path) {
+    final months = _articleMonths(json, path);
+
+    return ContentHub(
+      eyebrow: _string(json, 'eyebrow', path),
+      heading: _string(json, 'heading', path),
+      lede: _string(json, 'lede', path),
+      latestTitle: _string(json, 'latestTitle', path),
+      filterAllLabel: _nonEmptyString(json, 'filterAllLabel', path),
+      filterAriaLabel: _nonEmptyString(json, 'filterAriaLabel', path),
+      articleMonths: months,
+      // The repository fills this from the Medium data source; the JSON only
+      // owns the section copy around the article list.
+      articles: const <Article>[],
+      allArticlesLabel: _string(json, 'allArticlesLabel', path),
+      allArticlesHref: _string(json, 'allArticlesHref', path),
+      channelsTitle: _string(json, 'channelsTitle', path),
+      channels: _mapList(
+        json,
+        'channels',
+        path,
+        (channel, channelPath) => ContentChannel(
+          label: _string(channel, 'label', channelPath),
+          description: _string(channel, 'description', channelPath),
+          links: _linkRefs(channel, channelPath),
+        ),
       ),
-    ),
-    allArticlesLabel: _string(json, 'allArticlesLabel', path),
-    allArticlesHref: _string(json, 'allArticlesHref', path),
-    channelsTitle: _string(json, 'channelsTitle', path),
-    channels: _mapList(
-      json,
-      'channels',
-      path,
-      (channel, channelPath) => ContentChannel(
-        label: _string(channel, 'label', channelPath),
-        description: _string(channel, 'description', channelPath),
-        links: _linkRefs(channel, channelPath),
-      ),
-    ),
-    topicsTitle: _string(json, 'topicsTitle', path),
-    topics: _strings(json, 'topics', path),
-    recognition: _recognition(_object(json['recognition'], '$path.recognition'), '$path.recognition'),
-    ctaTitle: _string(json, 'ctaTitle', path),
-    ctaText: _string(json, 'ctaText', path),
-    ctaButton: _string(json, 'ctaButton', path),
-    ctaHref: _string(json, 'ctaHref', path),
-  );
+      topicsTitle: _string(json, 'topicsTitle', path),
+      topics: _strings(json, 'topics', path),
+      recognition: _recognition(_object(json['recognition'], '$path.recognition'), '$path.recognition'),
+      ctaTitle: _string(json, 'ctaTitle', path),
+      ctaText: _string(json, 'ctaText', path),
+      ctaButton: _string(json, 'ctaButton', path),
+      ctaHref: _string(json, 'ctaHref', path),
+    );
+  }
+
+  List<String> _articleMonths(Map<String, dynamic> json, String path) {
+    final months = _strings(json, 'articleMonths', path);
+    if (months.length != 12 || months.any((month) => month.trim().isEmpty)) {
+      throw FormatException('$path.articleMonths must contain 12 non-empty month abbreviations.');
+    }
+    return months;
+  }
 
   ContentRecognition _recognition(Map<String, dynamic> json, String path) => ContentRecognition(
     label: _string(json, 'label', path),

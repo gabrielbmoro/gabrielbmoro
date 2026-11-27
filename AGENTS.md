@@ -17,9 +17,11 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
   `/`, `/sobre`, `/artigos`, `/open-source`, `/experiencia`, `/mentoria`, and their
   `/en/...` counterparts.
 - Static mode: `jaspr build` pre-renders every declared page to HTML.
-- `get_it` wires the JSON data source and repository at startup.
+- `get_it` wires the two independent data sources (JSON content + Medium articles) and the
+  repository that composes them at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
-- No client-side JavaScript is shipped: the site is entirely pre-rendered.
+- No client-side JavaScript is shipped: the site is entirely pre-rendered and the article
+  filter is CSS-only (`:has()` + radio inputs).
 
 ## Layout
 
@@ -28,15 +30,17 @@ lib/
   main.server.dart              # composition root: repository, Document <head>, JSON-LD, <body>
   app.dart                      # Router built from the repository's pages
   domain/
-    models/site_content.dart    # immutable content + per-page metadata (no copy)
+    models/site_content.dart    # immutable content models; copy lives in assets/content
     models/site_links.dart      # canonical URLs and contact email
     site_paths.dart             # page-relative hrefs and canonical URLs
     repository.dart             # SiteContentRepository abstraction
   data/
-    repository_impl.dart        # SiteContentRepository implementation
+    repository_impl.dart        # loads both data sources and attaches Medium articles to the pages
     site_content_data_source.dart # data-source contract, returns content + pages
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
-  di/service_locator.dart       # GetIt registrations (data source + repository)
+    medium_article_source.dart  # Medium data source: fetches and parses the Koin Developers + CodandoTV RSS feeds
+    article_source.dart         # source ids/labels shared by the Medium feeds and the CSS filter
+  di/service_locator.dart       # GetIt registrations (two data sources + repository)
   ui/
     components/                 # header, footer, SEO head, shared UI
     pages/site_page.dart        # page shell: head, skip link, masthead, body, footer
@@ -44,10 +48,11 @@ lib/
 assets/content/
   en.json                       # ALL visible English copy, page routes/SEO data, links
   pt-br.json                    # ALL visible PT-BR copy, page routes/SEO data, links
+test/                           # Medium parser, content source and repository composition tests
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
-  assets/                       # optimized avatar, about talk photo, icons, masthead cover and article covers
+  assets/                       # optimized avatar, about talk photo, icons and masthead cover
   favicon.svg, robots.txt
 ```
 
@@ -60,8 +65,12 @@ dart pub global activate jaspr_cli 0.23.5
 dart pub get
 jaspr serve                 # local dev server on http://localhost:8080
 jaspr build                 # static output in build/jaspr
-dart format lib
+dart format lib test
 dart analyze
+dart test
+
+# Offline builds skip the Medium fetch; the article list stays empty.
+SITE_SKIP_MEDIUM_FEEDS=1 jaspr build
 
 # Architecture checks. Eagle Eye lives in an isolated tool package because it
 # pins analyzer 8 while Jaspr 0.23 pins analyzer 12.
@@ -72,11 +81,11 @@ dart run --packages=tool/eagle_eye/.dart_tool/package_config.json tool/eagle_eye
 `jaspr serve` prints a warning about a missing `main.client.dart`; that is expected — the site
 intentionally has no client entrypoint and ships zero JavaScript.
 
-The GitHub Actions workflow runs `dart format --output=none --set-exit-if-changed lib`,
-`dart analyze`, the Eagle Eye architecture check, and `jaspr build`, prunes compiler caches
-(`build/jaspr/packages`,
-`build/jaspr/.dart_tool`, `build/jaspr/.build.manifest`) from the artifact, then deploys
-`build/jaspr`.
+The GitHub Actions workflow runs `dart format --output=none --set-exit-if-changed lib test`,
+`dart analyze`, `dart test`, the Eagle Eye architecture check, and `jaspr build`, prunes compiler
+caches (`build/jaspr/packages`, `build/jaspr/.dart_tool`, `build/jaspr/.build.manifest`) from the
+artifact, then deploys `build/jaspr`. The build fetches the two Medium feeds; a feed outage only
+logs a warning and publishes an empty article list.
 
 ## Deployment
 
@@ -108,6 +117,20 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Every user-facing string exists in both JSON assets. Keep the two locales in sync and natural —
   Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
   identical; the data source fails the build otherwise.
+- Articles are not stored in the content assets. `content` in each JSON asset keeps only the
+  section copy, `articleMonths`, `filterAllLabel` and `filterAriaLabel`;
+  `JsonSiteContentDataSource` returns an empty article list. Gabriel's posts come exclusively
+  from the Koin Developers + CodandoTV RSS feeds through `MediumArticleSource`; the two data
+  sources never import each other. `SiteContentRepositoryImpl` loads both, keeps feed items only
+  for `mediumAuthorName`, sorts them newest first, and rebuilds the pages so they see the
+  Medium-derived list. A feed failure logs a warning and publishes an empty article list;
+  `SITE_SKIP_MEDIUM_FEEDS=1` skips fetching entirely.
+- Filter chips are generated from the Medium list and their source ids
+  (`koin-developers`, `codandotv`) are static CSS selectors in `web/site.css` — adding a source
+  means updating `article_source.dart` and the CSS rules. Article covers are absolute Medium
+  WebP URLs; there are no local article thumbnails to curate.
+- The article filter is CSS-only: radio inputs plus `:has()` hide non-matching cards. There is no
+  JavaScript, no client entrypoint, and no URL state for the selected filter.
 - Each locale JSON declares a `pages` array in tab order. Every page carries an `id` (one of the
   `PageId` values), a localized `path` below the locale root (`''` for the home page), a `title`
   and a `description`; pages in the tab bar also carry `navLabel` and a one-line `summary` for the
@@ -155,10 +178,10 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
   target under ~150 KB). It is a deep-forest pattern of the bugdroid-with-cuia mark; it is
   referenced by the top-level `coverImage` field in both JSON assets, using a path relative to the
   site root; `null` falls back to the CSS-only cover.
-- `web/assets/articles/*.jpg` are 480×270 16:9 covers for the article list, cropped centrally from
-  each article's `og:image` (progressive JPEG, target under ~45 KB). Point an article at one with
-  `content.articles[].thumbnail`, using a path relative to the site root; localized article lists
-  may link to different posts, so the thumbnail may differ per locale too.
+- Article covers are not stored in the repository: the Medium data source extracts the first
+  usable image and rewrites Medium CDN URLs to
+  `https://miro.medium.com/v2/resize:fit:480/format:webp/<asset>`. `Article.thumbnail` is that
+  absolute URL, or `null` when the post has no usable image.
 - `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share a tab-first
   bugdroid-with-cuia emblem on a forest rounded-square. The SVG is the source and is drawn for
   16 px legibility, not as a miniature of the masthead-cover mark; the ICO carries 16/32/48 px renders,

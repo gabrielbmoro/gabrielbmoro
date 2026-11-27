@@ -42,9 +42,9 @@ String _personJsonLd(SiteLinks links) =>
 }
 ''';
 
-void main() {
+Future<void> main() async {
   Jaspr.initializeApp(options: defaultServerOptions);
-  configureDependencies();
+  await configureDependencies();
 
   final repository = getIt<SiteContentRepository>();
   // The root locale is Brazilian Portuguese; English lives under /en.

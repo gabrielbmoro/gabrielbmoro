@@ -95,6 +95,24 @@ class SitePage {
 
   /// `hreflang` alternates for every published locale, default locale first.
   final List<PageAlternate> alternates;
+
+  /// Returns a page that points at merged [content] while keeping its own
+  /// route metadata. The repository uses this after merging feed articles.
+  SitePage withContent(SiteContent content) => SitePage(
+    content: content,
+    id: id,
+    route: route,
+    navLabel: navLabel,
+    summary: summary,
+    title: title,
+    description: description,
+    canonicalUrl: canonicalUrl,
+    assetPrefix: assetPrefix,
+    homeHref: homeHref,
+    switchHref: switchHref,
+    nav: nav,
+    alternates: alternates,
+  );
 }
 
 class HeroStat {
@@ -203,6 +221,7 @@ class Article {
   const Article({
     required this.title,
     required this.publication,
+    required this.sourceId,
     required this.published,
     required this.url,
     this.thumbnail,
@@ -210,11 +229,17 @@ class Article {
 
   final String title;
   final String publication;
+
+  /// Stable publication key used by the articles filter (`koin-developers`,
+  /// `codandotv`). It is not shown to readers.
+  final String sourceId;
+
+  /// Localized publication date, such as `Sep 2026` or `Set 2026`.
   final String published;
   final String url;
 
-  /// Cover image path relative to the site root, without the locale's
-  /// `assetPrefix`. Null when the article has no local thumbnail.
+  /// Absolute HTTPS cover URL from Medium, or null when the article has no
+  /// cover.
   final String? thumbnail;
 }
 
@@ -250,6 +275,9 @@ class ContentHub {
     required this.heading,
     required this.lede,
     required this.latestTitle,
+    required this.filterAllLabel,
+    required this.filterAriaLabel,
+    required this.articleMonths,
     required this.articles,
     required this.allArticlesLabel,
     required this.allArticlesHref,
@@ -268,6 +296,18 @@ class ContentHub {
   final String heading;
   final String lede;
   final String latestTitle;
+
+  /// Label of the filter chip that shows every article.
+  final String filterAllLabel;
+
+  /// Accessible name of the article filter group.
+  final String filterAriaLabel;
+
+  /// Localized month abbreviations used to format feed publication dates.
+  final List<String> articleMonths;
+
+  /// Articles rendered by the hub. The JSON data source leaves this empty;
+  /// the repository fills it from the Medium data source.
   final List<Article> articles;
   final String allArticlesLabel;
   final String allArticlesHref;
@@ -280,6 +320,30 @@ class ContentHub {
   final String ctaText;
   final String ctaButton;
   final String ctaHref;
+
+  /// Returns a copy with a different article list, keeping the rest of the
+  /// hub untouched. The repository uses this after merging feed articles.
+  ContentHub withArticles(List<Article> articles) => ContentHub(
+    eyebrow: eyebrow,
+    heading: heading,
+    lede: lede,
+    latestTitle: latestTitle,
+    filterAllLabel: filterAllLabel,
+    filterAriaLabel: filterAriaLabel,
+    articleMonths: articleMonths,
+    articles: articles,
+    allArticlesLabel: allArticlesLabel,
+    allArticlesHref: allArticlesHref,
+    channelsTitle: channelsTitle,
+    channels: channels,
+    topicsTitle: topicsTitle,
+    topics: topics,
+    recognition: recognition,
+    ctaTitle: ctaTitle,
+    ctaText: ctaText,
+    ctaButton: ctaButton,
+    ctaHref: ctaHref,
+  );
 }
 
 class Role {
@@ -532,4 +596,36 @@ class SiteContent {
   final ExploreContent explore;
   final MentoringContent mentoring;
   final FooterContent footer;
+
+  /// Returns a copy with a different content hub, keeping the rest of the
+  /// locale untouched. The repository uses this after merging feed articles.
+  SiteContent withContentHub(ContentHub contentHub) => SiteContent(
+    lang: lang,
+    route: route,
+    switchHrefLang: switchHrefLang,
+    switchLabel: switchLabel,
+    switchAriaLabel: switchAriaLabel,
+    skipLink: skipLink,
+    ogLocale: ogLocale,
+    ogImageAlt: ogImageAlt,
+    siteTitle: siteTitle,
+    tagline: tagline,
+    coverImage: coverImage,
+    homeLabel: homeLabel,
+    navAriaLabel: navAriaLabel,
+    socialAriaLabel: socialAriaLabel,
+    navCta: navCta,
+    navCtaHref: navCtaHref,
+    mailto: mailto,
+    links: links,
+    hero: hero,
+    about: about,
+    contentHub: contentHub,
+    experience: experience,
+    toolkit: toolkit,
+    work: work,
+    explore: explore,
+    mentoring: mentoring,
+    footer: footer,
+  );
 }
