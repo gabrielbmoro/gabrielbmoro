@@ -5,12 +5,13 @@ import 'package:gabriel_moro_site/domain/models/site_content.dart';
 import 'package:gabriel_moro_site/ui/components/action_link.dart';
 
 class SiteFooter extends StatelessComponent {
-  const SiteFooter({required this.content, super.key});
+  const SiteFooter({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final copy = content.footer;
 
     return footer(classes: 'site-footer', [
@@ -52,7 +53,7 @@ class SiteFooter extends StatelessComponent {
           ],
         ),
         a(
-          href: content.switchHref,
+          href: page.switchHref,
           classes: 'lang-switch lang-switch--footer',
           attributes: {
             'aria-label': content.switchAriaLabel,

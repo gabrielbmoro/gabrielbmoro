@@ -6,12 +6,13 @@ import 'package:gabriel_moro_site/ui/components/text_link.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class AboutSection extends StatelessComponent {
-  const AboutSection({required this.content, super.key});
+  const AboutSection({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final about = content.about;
 
     return section(classes: 'section', id: 'about', [
@@ -21,15 +22,15 @@ class AboutSection extends StatelessComponent {
           div(classes: 'about-media', [
             div(classes: 'portrait', [
               img(
-                src: '${content.assetPrefix}assets/talk-800.jpg',
+                src: '${page.assetPrefix}assets/talk-800.jpg',
                 alt: about.portraitAlt,
                 width: 800,
                 height: 1200,
                 loading: MediaLoading.lazy,
                 attributes: {
                   'srcset':
-                      '${content.assetPrefix}assets/talk-400.jpg 400w, '
-                      '${content.assetPrefix}assets/talk-800.jpg 800w',
+                      '${page.assetPrefix}assets/talk-400.jpg 400w, '
+                      '${page.assetPrefix}assets/talk-800.jpg 800w',
                   'sizes': '(max-width: 600px) 76vw, 320px',
                   'decoding': 'async',
                 },

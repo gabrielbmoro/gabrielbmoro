@@ -7,11 +7,94 @@ library;
 
 import 'package:gabriel_moro_site/domain/models/site_links.dart';
 
-class NavItem {
-  const NavItem(this.label, this.href);
+/// The pages every locale publishes.
+///
+/// The `id` is stable across locales; the localized URL slug lives in the
+/// content assets.
+enum PageId { home, about, articles, work, experience, mentoring }
 
+/// One `hreflang` alternate for a page.
+class PageAlternate {
+  const PageAlternate({required this.hrefLang, required this.url});
+
+  final String hrefLang;
+  final String url;
+}
+
+/// One entry in the masthead tab bar, already resolved for the current page.
+class NavItem {
+  const NavItem({
+    required this.id,
+    required this.label,
+    required this.summary,
+    required this.href,
+    required this.current,
+  });
+
+  final PageId id;
   final String label;
+
+  /// One-line description rendered by the home page's page index.
+  final String summary;
+
+  /// Href relative to the page rendering the tab bar.
   final String href;
+
+  /// Whether this entry is the page being rendered.
+  final bool current;
+}
+
+/// A localized page rendered at a concrete route.
+///
+/// A [SiteContent] carries the copy of a whole locale; a [SitePage] picks one
+/// page out of it and holds the links and metadata that change with the route.
+class SitePage {
+  const SitePage({
+    required this.content,
+    required this.id,
+    required this.route,
+    required this.navLabel,
+    required this.summary,
+    required this.title,
+    required this.description,
+    required this.canonicalUrl,
+    required this.assetPrefix,
+    required this.homeHref,
+    required this.switchHref,
+    required this.nav,
+    required this.alternates,
+  });
+
+  final SiteContent content;
+  final PageId id;
+
+  /// Site-root path of the page, e.g. `/`, `/sobre` or `/en/about`.
+  final String route;
+
+  /// Tab label; null keeps the page out of the tab bar (the home page).
+  final String? navLabel;
+
+  /// One-line description rendered by the home page's page index.
+  final String? summary;
+
+  final String title;
+  final String description;
+  final String canonicalUrl;
+
+  /// Prefix that climbs from this page to the site root (`./`, `../`, ...).
+  final String assetPrefix;
+
+  /// Link back to the locale's home page.
+  final String homeHref;
+
+  /// Link to this same page in the other locale.
+  final String switchHref;
+
+  /// Tab bar entries, already relative to this page.
+  final List<NavItem> nav;
+
+  /// `hreflang` alternates for every published locale, default locale first.
+  final List<PageAlternate> alternates;
 }
 
 class HeroStat {
@@ -40,8 +123,12 @@ class HeroContent {
   final String availabilityNote;
   final String lede;
   final String primaryCta;
+
+  /// Link relative to the locale's home page, where the hero is rendered.
   final String primaryCtaHref;
   final String secondaryCta;
+
+  /// Link relative to the locale's home page, where the hero is rendered.
   final String secondaryCtaHref;
   final String note;
   final List<HeroStat> stats;
@@ -274,6 +361,80 @@ class WorkContent {
   final List<Project> projects;
 }
 
+class ExploreContent {
+  const ExploreContent({
+    required this.eyebrow,
+    required this.heading,
+    required this.lede,
+  });
+
+  final String eyebrow;
+  final String heading;
+  final String lede;
+}
+
+class MentoringTopic {
+  const MentoringTopic({required this.label, required this.description});
+
+  final String label;
+  final String description;
+}
+
+class MentoringStep {
+  const MentoringStep({required this.title, required this.description});
+
+  final String title;
+  final String description;
+}
+
+class MentoringContent {
+  const MentoringContent({
+    required this.eyebrow,
+    required this.heading,
+    required this.lede,
+    required this.availability,
+    required this.availabilityNote,
+    required this.primaryCta,
+    required this.primaryCtaHref,
+    required this.ctaNote,
+    required this.audienceTitle,
+    required this.audience,
+    required this.topicsTitle,
+    required this.topics,
+    required this.stepsTitle,
+    required this.steps,
+    required this.outcomesTitle,
+    required this.outcomes,
+    required this.closingTitle,
+    required this.closingText,
+    required this.closingCta,
+    required this.closingHref,
+  });
+
+  final String eyebrow;
+  final String heading;
+  final String lede;
+  final String availability;
+  final String availabilityNote;
+  final String primaryCta;
+
+  /// Absolute or external URL, such as a `mailto:` link.
+  final String primaryCtaHref;
+  final String ctaNote;
+  final String audienceTitle;
+  final List<String> audience;
+  final String topicsTitle;
+  final List<MentoringTopic> topics;
+  final String stepsTitle;
+  final List<MentoringStep> steps;
+  final String outcomesTitle;
+  final List<String> outcomes;
+  final String closingTitle;
+  final String closingText;
+  final String closingCta;
+  final String closingHref;
+}
+
 class LinkRef {
   const LinkRef(this.label, this.url);
 
@@ -305,16 +466,10 @@ class SiteContent {
   const SiteContent({
     required this.lang,
     required this.route,
-    required this.switchHref,
     required this.switchHrefLang,
     required this.switchLabel,
     required this.switchAriaLabel,
-    required this.assetPrefix,
-    required this.homeHref,
     required this.skipLink,
-    required this.metaTitle,
-    required this.metaDescription,
-    required this.canonicalUrl,
     required this.ogLocale,
     required this.ogImageAlt,
     required this.siteTitle,
@@ -323,7 +478,6 @@ class SiteContent {
     required this.homeLabel,
     required this.navAriaLabel,
     required this.socialAriaLabel,
-    required this.nav,
     required this.navCta,
     required this.navCtaHref,
     required this.mailto,
@@ -334,29 +488,22 @@ class SiteContent {
     required this.experience,
     required this.toolkit,
     required this.work,
+    required this.explore,
+    required this.mentoring,
     required this.footer,
   });
 
   final String lang;
 
-  /// Route path used by the router.
+  /// Route of the locale's home page (`/` or `/en`).
   final String route;
 
-  /// Link to the other locale.
-  final String switchHref;
+  /// Language tag the locale switch points at.
   final String switchHrefLang;
   final String switchLabel;
   final String switchAriaLabel;
 
-  /// Prefix for assets, relative to the page ('' at the root, '../' below it).
-  final String assetPrefix;
-
-  /// Link back to the home page, relative to the current page.
-  final String homeHref;
   final String skipLink;
-  final String metaTitle;
-  final String metaDescription;
-  final String canonicalUrl;
   final String ogLocale;
   final String ogImageAlt;
 
@@ -367,12 +514,11 @@ class SiteContent {
   final String tagline;
 
   /// Decorative cover image path relative to the site root, without the
-  /// locale's `assetPrefix`. Null falls back to the CSS-only cover.
+  /// page's `assetPrefix`. Null falls back to the CSS-only cover.
   final String? coverImage;
   final String homeLabel;
   final String navAriaLabel;
   final String socialAriaLabel;
-  final List<NavItem> nav;
   final String navCta;
   final String navCtaHref;
   final String mailto;
@@ -383,5 +529,7 @@ class SiteContent {
   final ExperienceContent experience;
   final ToolkitContent toolkit;
   final WorkContent work;
+  final ExploreContent explore;
+  final MentoringContent mentoring;
   final FooterContent footer;
 }

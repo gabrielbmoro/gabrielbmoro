@@ -48,11 +48,13 @@ void main() {
 
   final repository = getIt<SiteContentRepository>();
   // The root locale is Brazilian Portuguese; English lives under /en.
-  final content = repository.defaultContent;
+  final page = repository.defaultPage;
+  final content = page.content;
 
   runApp(
     Document(
-      title: content.metaTitle,
+      // Every page overrides this title through its own SeoHead.
+      title: page.title,
       lang: content.lang,
       // No <base> element: every asset and link is page-relative.
       base: null,

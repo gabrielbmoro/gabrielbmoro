@@ -11,8 +11,16 @@ abstract interface class SiteContentRepository {
   /// gets at the site root and the `x-default` target.
   List<SiteContent> get contents;
 
+  /// Every page of every locale, with links already resolved per route.
+  ///
+  /// The default locale's pages come first and each page's home comes first.
+  List<SitePage> get pages;
+
   /// The locale served at the site root (`/`).
   SiteContent get defaultContent;
+
+  /// The page served at the site root (`/`).
+  SitePage get defaultPage;
 
   /// Content for a locale tag such as `en` or `pt-BR`.
   ///

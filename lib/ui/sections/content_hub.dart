@@ -9,9 +9,9 @@ import 'package:gabriel_moro_site/ui/components/text_link.dart';
 /// The articles hub: the latest posts, where else to follow along, and the
 /// topics covered.
 class ContentHubSection extends StatelessComponent {
-  const ContentHubSection({required this.content, super.key});
+  const ContentHubSection({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   Component _articleLink(Article article) {
     final thumbnail = article.thumbnail;
@@ -28,7 +28,7 @@ class ContentHubSection extends StatelessComponent {
             attributes: const {'aria-hidden': 'true'},
             [
               img(
-                src: '${content.assetPrefix}$thumbnail',
+                src: '${page.assetPrefix}$thumbnail',
                 alt: '',
                 width: 480,
                 height: 270,
@@ -47,6 +47,7 @@ class ContentHubSection extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final hub = content.contentHub;
     final recognition = hub.recognition;
 

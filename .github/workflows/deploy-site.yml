@@ -59,6 +59,11 @@ jobs:
       - name: Build site
         run: jaspr build --sitemap-domain https://gabrielbmoro.dev
 
+      - name: Normalize sitemap URLs
+        # Canonical URLs always end with a slash; the generated sitemap omits it
+        # on every route except the home page.
+        run: perl -pi -e 's#(<loc>[^<]*?)(?<!/)</loc>#$1/</loc>#g' build/jaspr/sitemap.xml
+
       - name: Pin custom domain
         # upload-pages-artifact publishes the CNAME that ships inside the
         # artifact, so write it explicitly instead of relying on jaspr copying

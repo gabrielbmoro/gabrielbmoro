@@ -6,12 +6,13 @@ import 'package:gabriel_moro_site/ui/components/text_link.dart';
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 class ExperienceSection extends StatelessComponent {
-  const ExperienceSection({required this.content, super.key});
+  const ExperienceSection({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
+    final content = page.content;
     final experience = content.experience;
 
     return section(classes: 'section', id: 'experience', [
@@ -35,7 +36,7 @@ class ExperienceSection extends StatelessComponent {
             ]),
         ]),
         p(classes: 'section-foot', [
-          TextLink(experience.linkLabel, href: content.links.linkedInUrl),
+          TextLink(experience.linkLabel, href: page.content.links.linkedInUrl),
         ]),
       ]),
     ]);

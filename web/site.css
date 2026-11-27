@@ -286,6 +286,11 @@ dd {
   color: var(--on-forest);
 }
 
+.tab--active {
+  background: var(--on-forest-glass);
+  color: var(--on-forest);
+}
+
 .masthead-tabs .btn {
   flex-shrink: 0;
   height: 36px;
@@ -516,6 +521,63 @@ dd {
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.5;
+}
+
+/* Page index -------------------------------------------------------------- */
+
+.page-index {
+  display: grid;
+  gap: 12px;
+}
+
+.page-card {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.page-card:hover {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow-card);
+  transform: translateY(-2px);
+}
+
+.page-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.page-card-label {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  letter-spacing: -0.008em;
+  line-height: 1.15;
+}
+
+.page-card-icon {
+  color: var(--accent);
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.page-card:hover .page-card-icon {
+  transform: translateX(3px);
+}
+
+.page-card-summary {
+  color: var(--muted);
+  font-size: 0.90625rem;
+  line-height: 1.6;
 }
 
 .portrait {
@@ -1148,6 +1210,75 @@ h2 {
   align-self: flex-start;
 }
 
+/* Mentoring --------------------------------------------------------------- */
+
+.mentoring-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.mentoring-availability {
+  margin-bottom: 0;
+}
+
+.mentoring-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mentoring-cta-note {
+  color: var(--faint);
+  font-size: 0.78125rem;
+}
+
+.mentoring-block {
+  margin-top: 56px;
+}
+
+.mentoring-block h3 {
+  margin-bottom: 22px;
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+  line-height: 1.15;
+}
+
+.mentoring-steps {
+  border-top: 1px solid var(--line-strong);
+}
+
+.mentoring-step {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.mentoring-step-label {
+  margin-bottom: 8px;
+  color: var(--faint);
+  font-size: 0.65625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+}
+
+.mentoring-step h4 {
+  margin-bottom: 6px;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: -0.008em;
+}
+
+.mentoring-step p:last-child {
+  max-width: 66ch;
+  color: var(--muted);
+  font-size: 0.90625rem;
+  line-height: 1.65;
+}
+
 /* Footer ------------------------------------------------------------------ */
 
 .site-footer {
@@ -1331,6 +1462,20 @@ h2 {
   }
 
   .hero-actions .btn {
+    width: 100%;
+  }
+
+  .page-card {
+    padding: 20px 22px;
+  }
+
+  .mentoring-actions {
+    align-items: stretch;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .mentoring-actions .btn {
     width: 100%;
   }
 

@@ -2,9 +2,9 @@ import 'package:jaspr/jaspr.dart';
 import 'package:jaspr_router/jaspr_router.dart';
 
 import 'package:gabriel_moro_site/domain/repository.dart';
-import 'package:gabriel_moro_site/ui/pages/home_page.dart';
+import 'package:gabriel_moro_site/ui/pages/site_page.dart';
 
-/// Static routes. Both locales are pre-rendered at build time.
+/// Static routes. Every localized page is pre-rendered at build time.
 class App extends StatelessComponent {
   const App({required this.repository, super.key});
 
@@ -12,14 +12,12 @@ class App extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    final contents = repository.contents;
-
     return Router(
       routes: [
-        for (final content in contents)
+        for (final page in repository.pages)
           Route(
-            path: content.route,
-            builder: (_, _) => HomePage(content: content, locales: contents),
+            path: page.route,
+            builder: (_, _) => SitePageView(page: page),
           ),
       ],
     );

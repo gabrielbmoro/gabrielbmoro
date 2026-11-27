@@ -2,7 +2,7 @@
 
 This repository holds two things:
 
-1. **The personal site** — a bilingual (English / Brazilian Portuguese) landing page for
+1. **The personal site** — a bilingual (English / Brazilian Portuguese) multi-page site for
    Gabriel Moro, built with [Jaspr](https://jaspr.site/) in static mode, and published with
    GitHub Pages at <https://gabrielbmoro.dev/>.
 2. **The GitHub profile READMEs** — `README.md` and `README_ptBr.md`, rendered on
@@ -13,8 +13,10 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 
 ## Stack
 
-- Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for the `/` (PT-BR, default) and `/en` routes.
-- Static mode: `jaspr build` pre-renders both routes to HTML.
+- Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for every localized page:
+  `/`, `/sobre`, `/artigos`, `/open-source`, `/experiencia`, `/mentoria`, and their
+  `/en/...` counterparts.
+- Static mode: `jaspr build` pre-renders every declared page to HTML.
 - `get_it` wires the JSON data source and repository at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
 - No client-side JavaScript is shipped: the site is entirely pre-rendered.
@@ -24,23 +26,24 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 ```
 lib/
   main.server.dart              # composition root: repository, Document <head>, JSON-LD, <body>
-  app.dart                      # Router derived from the repository's locales
+  app.dart                      # Router built from the repository's pages
   domain/
-    models/site_content.dart    # immutable content data classes (no copy)
+    models/site_content.dart    # immutable content + per-page metadata (no copy)
     models/site_links.dart      # canonical URLs and contact email
+    site_paths.dart             # page-relative hrefs and canonical URLs
     repository.dart             # SiteContentRepository abstraction
   data/
     repository_impl.dart        # SiteContentRepository implementation
-    site_content_data_source.dart # data-source contract
-    json_site_content_data_source.dart # reads assets/content/*.json
+    site_content_data_source.dart # data-source contract, returns content + pages
+    json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
   di/service_locator.dart       # GetIt registrations (data source + repository)
   ui/
     components/                 # header, footer, SEO head, shared UI
-    pages/home_page.dart        # composes the page for a locale
-    sections/                   # hero, about, content hub, experience, toolkit, work
+    pages/site_page.dart        # page shell: head, skip link, masthead, body, footer
+    sections/                   # hero, explore, about, content hub, experience, toolkit, work, mentoring
 assets/content/
-  en.json                       # ALL visible English copy, links and SEO data
-  pt-br.json                    # ALL visible PT-BR copy, links and SEO data
+  en.json                       # ALL visible English copy, page routes/SEO data, links
+  pt-br.json                    # ALL visible PT-BR copy, page routes/SEO data, links
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
@@ -83,13 +86,17 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - The site is served at <https://gabrielbmoro.dev/> from a custom domain pinned in `web/CNAME`.
   The workflow also writes `build/jaspr/CNAME` into the artifact, because Pages only publishes
   the domain carried by the deployed files. Keep that name, `web/CNAME`, the `Sitemap:` line in
-  `web/robots.txt` and the JSON `canonicalUrl` / `links.siteUrl` fields in sync.
+  `web/robots.txt` and the `links.siteUrl` field in both content assets in sync.
 - All site URLs are page-relative (`site.css`, `../site.css`, `en/`, `../`), so the site works
   both at the domain root and at `/` during local development, without a `<base>` element or a
-  build-time base flag. Keep new asset links relative; if you add a `<base>` tag, anchors will
-  break.
-- Canonical and Open Graph URLs live in the `links` and `canonicalUrl` fields of both JSON
-  content assets; update both if the domain or repository name changes.
+  build-time base flag. `lib/domain/site_paths.dart` derives every asset prefix, tab href, locale
+  switch and canonical URL from the page route; keep new links relative and never hardcode them
+  in JSON or widgets. If you add a `<base>` tag, anchors will break.
+- Canonical and Open Graph URLs are derived from `links.siteUrl` plus each page's route, and each
+  page owns its `<title>`, description and `hreflang` alternates. Update both content assets if
+  the domain or repository name changes.
+- `jaspr build` emits a sitemap with one entry per page; the workflow normalizes those URLs to a
+  trailing slash so they match the canonicals.
 
 ## Content conventions
 
@@ -101,17 +108,28 @@ The GitHub Actions workflow runs `dart format --output=none --set-exit-if-change
 - Every user-facing string exists in both JSON assets. Keep the two locales in sync and natural —
   Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
   identical; the data source fails the build otherwise.
+- Each locale JSON declares a `pages` array in tab order. Every page carries an `id` (one of the
+  `PageId` values), a localized `path` below the locale root (`''` for the home page), a `title`
+  and a `description`; pages in the tab bar also carry `navLabel` and a one-line `summary` for the
+  home page index. Both locales must declare the same page ids in the same order, or the build
+  fails. Page routes, asset prefixes, canonical URLs, `hreflang` alternates, tab hrefs and the
+  locale switch are computed by the data source from those paths — never hardcode them.
+- Adding a page means adding a `PageId` value, a `pages` entry in **both** locales, and its body
+  composition in `SitePageView._sections` (`lib/ui/pages/site_page.dart`). The router picks it up
+  from `SiteContentRepository.pages`, so there is no separate route list to edit.
 - `lib/domain/` holds plain data classes and the `SiteContentRepository` abstraction; it must not
   import `lib/data/`, Jaspr, or DOM code.
 - Register infrastructure dependencies in `lib/di/service_locator.dart`; UI widgets keep receiving
   their dependencies through constructors instead of resolving them from GetIt.
-- Sections are `lib/ui/sections/*.dart`; each takes `SiteContent` and reads its own slice. Locales are
-  discovered through `SiteContentRepository.contents`, so the router and the `hreflang` alternates
-  follow the repository.
+- Sections are `lib/ui/sections/*.dart`; each takes a `SitePage` and reads its slice from
+  `page.content`, using `page.assetPrefix` for images. Pages are discovered through
+  `SiteContentRepository.pages`, so the router and the `hreflang` alternates follow the
+  repository.
 - The masthead is the site identity: the avatar emblem, `siteTitle` (the wordmark) and
-  `tagline` are top-level fields in each JSON asset, followed by a tab bar built from `nav`,
-  `navCta` and the locale switch.
-- The page is a single column, with one exception: the About intro grid places the talk photo
+  `tagline` are top-level fields in each JSON asset, followed by a tab bar built from the pages
+  that carry a `navLabel`, plus `navCta` and the locale switch. The current tab links to its own
+  page and carries `aria-current="page"`.
+- Each page is a single column, with one exception: the About intro grid places the talk photo
   beside the running text on wide screens and stacks it above the text under 900 px. Sections,
   article cards, projects, channels, toolkit rows and the footer stack vertically; do not
   reintroduce other side-by-side column layouts.

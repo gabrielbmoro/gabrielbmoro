@@ -6,13 +6,13 @@ import 'package:gabriel_moro_site/domain/models/site_content.dart';
 
 /// Single-column page introduction that follows the masthead.
 class Hero extends StatelessComponent {
-  const Hero({required this.content, super.key});
+  const Hero({required this.page, super.key});
 
-  final SiteContent content;
+  final SitePage page;
 
   @override
   Component build(BuildContext context) {
-    final hero = content.hero;
+    final hero = page.content.hero;
 
     return section(classes: 'hero', [
       div(classes: 'container hero-inner', [
