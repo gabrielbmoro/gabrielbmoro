@@ -58,86 +58,86 @@ final class SiteContentRepositoryImpl implements SiteContentRepository {
     (content) => content.lang == lang,
     orElse: () => throw ArgumentError.value(lang, 'lang', 'Unknown site locale'),
   );
-}
 
-Future<List<MediumArticle>> _loadArticles(MediumArticleSource source) async {
-  try {
-    return await source.load();
-  } catch (error) {
-    stdout.writeln('[articles] Could not load Medium articles: $error');
-    return const [];
+  static Future<List<MediumArticle>> _loadArticles(MediumArticleSource source) async {
+    try {
+      return await source.load();
+    } catch (error) {
+      stdout.writeln('[articles] Could not load Medium articles: $error');
+      return const [];
+    }
   }
-}
 
-Future<List<YouTubeVideo>> _loadVideos(YouTubeVideoSource source) async {
-  try {
-    return await source.load();
-  } catch (error) {
-    stdout.writeln('[videos] Could not load YouTube videos: $error');
-    return const [];
+  static Future<List<YouTubeVideo>> _loadVideos(YouTubeVideoSource source) async {
+    try {
+      return await source.load();
+    } catch (error) {
+      stdout.writeln('[videos] Could not load YouTube videos: $error');
+      return const [];
+    }
   }
-}
 
-SiteCatalog _composeCatalog(
-  SiteCatalog catalog,
-  List<MediumArticle> articles,
-  List<YouTubeVideo> videos,
-) {
-  final contents = <SiteContent>[];
-  for (final content in catalog.contents) {
-    final hub = content.contentHub;
-    contents.add(
-      content.withContentHub(
-        hub.withContent(
-          articles: _articlesForLocale(articles, hub.articleMonths),
-          videos: _videosForLocale(videos, hub.articleMonths),
+  static SiteCatalog _composeCatalog(
+    SiteCatalog catalog,
+    List<MediumArticle> articles,
+    List<YouTubeVideo> videos,
+  ) {
+    final contents = <SiteContent>[];
+    for (final content in catalog.contents) {
+      final hub = content.contentHub;
+      contents.add(
+        content.withContentHub(
+          hub.withContent(
+            articles: _articlesForLocale(articles, hub.articleMonths),
+            videos: _videosForLocale(videos, hub.articleMonths),
+          ),
         ),
-      ),
+      );
+    }
+
+    final byLang = {for (final content in contents) content.lang: content};
+    final pages = [
+      for (final page in catalog.pages) page.withContent(byLang[page.content.lang]!),
+    ];
+
+    return SiteCatalog(
+      contents: List.unmodifiable(contents),
+      pages: List.unmodifiable(pages),
     );
   }
 
-  final byLang = {for (final content in contents) content.lang: content};
-  final pages = [
-    for (final page in catalog.pages) page.withContent(byLang[page.content.lang]!),
+  static List<Article> _articlesForLocale(List<MediumArticle> articles, List<String> months) => [
+    for (final article in articles)
+      Article(
+        title: article.title,
+        publication: article.publication,
+        sourceId: article.sourceId,
+        published: _formatDate(article.publishedAt, months),
+        url: article.url,
+        thumbnail: article.imageUrl,
+      ),
   ];
 
-  return SiteCatalog(
-    contents: List.unmodifiable(contents),
-    pages: List.unmodifiable(pages),
-  );
+  static List<Video> _videosForLocale(List<YouTubeVideo> videos, List<String> months) => [
+    for (final video in videos)
+      Video(
+        title: video.title,
+        published: _formatDate(video.publishedAt, months),
+        url: video.url,
+        thumbnail: video.thumbnailUrl,
+        embedUrl: 'https://www.youtube-nocookie.com/embed/${video.videoId}',
+      ),
+  ];
+
+  static int _compareArticles(MediumArticle a, MediumArticle b) {
+    final byDate = b.publishedAt.compareTo(a.publishedAt);
+    return byDate != 0 ? byDate : a.title.compareTo(b.title);
+  }
+
+  static int _compareVideos(YouTubeVideo a, YouTubeVideo b) {
+    final byDate = b.publishedAt.compareTo(a.publishedAt);
+    return byDate != 0 ? byDate : a.title.compareTo(b.title);
+  }
+
+  static String _formatDate(DateTime date, List<String> months) => '${months[date.month - 1]} ${date.year}';
 }
-
-List<Article> _articlesForLocale(List<MediumArticle> articles, List<String> months) => [
-  for (final article in articles)
-    Article(
-      title: article.title,
-      publication: article.publication,
-      sourceId: article.sourceId,
-      published: _formatDate(article.publishedAt, months),
-      url: article.url,
-      thumbnail: article.imageUrl,
-    ),
-];
-
-List<Video> _videosForLocale(List<YouTubeVideo> videos, List<String> months) => [
-  for (final video in videos)
-    Video(
-      title: video.title,
-      published: _formatDate(video.publishedAt, months),
-      url: video.url,
-      thumbnail: video.thumbnailUrl,
-      embedUrl: 'https://www.youtube-nocookie.com/embed/${video.videoId}',
-    ),
-];
-
-int _compareArticles(MediumArticle a, MediumArticle b) {
-  final byDate = b.publishedAt.compareTo(a.publishedAt);
-  return byDate != 0 ? byDate : a.title.compareTo(b.title);
-}
-
-int _compareVideos(YouTubeVideo a, YouTubeVideo b) {
-  final byDate = b.publishedAt.compareTo(a.publishedAt);
-  return byDate != 0 ? byDate : a.title.compareTo(b.title);
-}
-
-String _formatDate(DateTime date, List<String> months) => '${months[date.month - 1]} ${date.year}';
