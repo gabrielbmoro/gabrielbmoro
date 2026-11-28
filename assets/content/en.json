@@ -180,32 +180,8 @@
     "channelsTitle": "Also sharing",
     "channels": [
       {
-        "label": "Videos",
-        "description": "Tutorials, live coding and behind-the-scenes work on CodandoTV, with examples you can apply to your own project.",
-        "links": [
-          {
-            "label": "Watch on YouTube",
-            "url": "https://www.youtube.com/@CodandoTV"
-          },
-          {
-            "label": "codandotv.com",
-            "url": "https://codandotv.com/#creators"
-          }
-        ]
-      },
-      {
-        "label": "Podcast",
-        "description": "Conversations with developers about careers, architecture and the day-to-day of building mobile products.",
-        "links": [
-          {
-            "label": "Listen to the podcast",
-            "url": "https://codandotv.com/#creators"
-          }
-        ]
-      },
-      {
         "label": "Talks",
-        "description": "GDG groups and DevFest events, bringing mobile, architecture and Kotlin to the community.",
+        "description": "GDGs (Google Developer Groups) and DevFests, sharing content on mobile development (Kotlin Multiplatform, Flutter, native Android), AI applied to Software Engineering and best practices.",
         "links": [
           {
             "label": "Follow on LinkedIn",

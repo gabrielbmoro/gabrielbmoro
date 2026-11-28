@@ -29,4 +29,24 @@ void main() {
     expect(contentPages['pt-BR'], '/conteudo');
     expect(contentPages['en'], '/en/content');
   });
+
+  test('the content hub also-sharing block lists only talks', () {
+    final catalog = JsonSiteContentDataSource().load();
+    final channelsByLang = {
+      for (final content in catalog.contents) content.lang: content.contentHub.channels,
+    };
+
+    expect(channelsByLang['pt-BR']!.map((channel) => channel.label), ['Palestras']);
+    expect(channelsByLang['en']!.map((channel) => channel.label), ['Talks']);
+
+    for (final channel in channelsByLang.values.expand((channels) => channels)) {
+      expect(channel.description, contains('GDG'));
+      expect(channel.description, contains('DevFest'));
+      expect(channel.links, hasLength(1));
+      expect(
+        channel.links.single.url,
+        'https://www.linkedin.com/in/gabrielbronzattimoro15031994/',
+      );
+    }
+  });
 }
