@@ -13,7 +13,13 @@ import 'package:gabriel_moro_site/data/models/medium_article.dart';
 /// the content page personal. Update it if the Medium display name changes.
 const String mediumAuthorName = 'Gabriel Bronzatti Moro';
 
-/// The publications surfaced by the content page.
+/// The feeds surfaced by the content page.
+///
+/// Medium caps a publication feed to its ten newest items across every author,
+/// so each new post in the publication silently evicts the oldest article the
+/// author has there. The author profile feed is read as well, and its items are
+/// mapped back to their publication by URL, which keeps those evicted posts in
+/// the carousels.
 const List<MediumFeed> mediumFeeds = [
   MediumFeed(
     source: koinDevelopersSource,
@@ -23,6 +29,7 @@ const List<MediumFeed> mediumFeeds = [
     source: codandoTvSource,
     url: 'https://medium.com/feed/codandotv',
   ),
+  MediumFeed.author(url: 'https://medium.com/feed/@gabrielbronzattimoro.es'),
 ];
 
 /// Loads the configured Medium feeds and keeps the author's articles.
@@ -68,7 +75,7 @@ final class MediumArticleSource {
       final source = await _fetch(Uri.parse(feed.url)).timeout(timeout);
       return _parseFeed(source, feed);
     } catch (error) {
-      _warn('Could not load ${feed.label} from ${feed.url}: $error');
+      _warn('Could not load ${feed.name} from ${feed.url}: $error');
       return const [];
     }
   }
@@ -93,19 +100,25 @@ final class MediumArticleSource {
       final link = _text(item, 'link');
       final date = _text(item, 'pubDate');
       if (title == null || title.isEmpty || link == null || link.isEmpty || date == null || date.isEmpty) {
-        _warn('Skipping a ${feed.label} item with a missing title, link or date.');
+        _warn('Skipping a ${feed.name} item with a missing title, link or date.');
         continue;
       }
 
       final uri = Uri.tryParse(link);
       if (uri == null || !(uri.isScheme('http') || uri.isScheme('https'))) {
-        _warn('Skipping a ${feed.label} item with an invalid link: $link');
+        _warn('Skipping a ${feed.name} item with an invalid link: $link');
+        continue;
+      }
+
+      final articleSource = feed.mixedPublications ? articleSourceForUrl(uri) : feed.source;
+      if (articleSource == null) {
+        _warn('Skipping a ${feed.name} item from an unknown publication: $link');
         continue;
       }
 
       final publishedAt = _parseDate(date);
       if (publishedAt == null) {
-        _warn('Skipping a ${feed.label} item with an invalid date: $date');
+        _warn('Skipping a ${feed.name} item with an invalid date: $date');
         continue;
       }
 
@@ -120,8 +133,8 @@ final class MediumArticleSource {
           title: title,
           url: url,
           publishedAt: publishedAt,
-          publication: feed.label,
-          sourceId: feed.id,
+          publication: articleSource.label,
+          sourceId: articleSource.id,
           imageUrl: content == null ? null : _firstImage(content),
         ),
       );
