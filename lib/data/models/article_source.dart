@@ -7,6 +7,23 @@ final class ArticleSource {
 
   final String id;
   final String label;
+
+  /// Resolves the publication that owns an article from its canonical URL.
+  ///
+  /// The author profile feed mixes every publication, and the item link is the
+  /// only thing that says which one it came from. Returns null for a link
+  /// outside the publications the site lists.
+  static ArticleSource? fromUrl(Uri url) {
+    if (url.host == 'blog.insert-koin.io') {
+      return koinDevelopersSource;
+    }
+
+    final isMediumHost = url.host == 'medium.com' || url.host.endsWith('.medium.com');
+    if (isMediumHost && url.pathSegments.isNotEmpty && url.pathSegments.first == 'codandotv') {
+      return codandoTvSource;
+    }
+    return null;
+  }
 }
 
 const ArticleSource koinDevelopersSource = ArticleSource(
@@ -18,20 +35,3 @@ const ArticleSource codandoTvSource = ArticleSource(
   id: 'codandotv',
   label: 'CodandoTV',
 );
-
-/// Resolves the publication that owns an article from its canonical URL.
-///
-/// The author profile feed mixes every publication, and the item link is the
-/// only thing that says which one it came from. Returns null for a link outside
-/// the publications the site lists.
-ArticleSource? articleSourceForUrl(Uri url) {
-  if (url.host == 'blog.insert-koin.io') {
-    return koinDevelopersSource;
-  }
-
-  final isMediumHost = url.host == 'medium.com' || url.host.endsWith('.medium.com');
-  if (isMediumHost && url.pathSegments.isNotEmpty && url.pathSegments.first == 'codandotv') {
-    return codandoTvSource;
-  }
-  return null;
-}

@@ -48,7 +48,8 @@ final class JsonSiteContentDataSource {
     final routesByDocument = <String, Map<PageId, String>>{
       for (final document in ordered)
         document.path: {
-          for (final spec in pagesByDocument[document.path]!) spec.id: pageRoute(_localeRoute(document), spec.path),
+          for (final spec in pagesByDocument[document.path]!)
+            spec.id: SitePaths.pageRoute(_localeRoute(document), spec.path),
         },
     };
     _ensureUniquePageRoutes(ordered, routesByDocument);
@@ -60,7 +61,7 @@ final class JsonSiteContentDataSource {
         _parseContent(
           document,
           links,
-          (id) => relativeHref(_localeRoute(document), routes[id]!),
+          (id) => SitePaths.relativeHref(_localeRoute(document), routes[id]!),
         ),
       );
     }
@@ -87,10 +88,10 @@ final class JsonSiteContentDataSource {
             summary: spec.summary,
             title: spec.title,
             description: spec.description,
-            canonicalUrl: canonicalUrl(content.links.siteUrl, route),
-            assetPrefix: relativeHref(route, '/'),
-            homeHref: relativeHref(route, content.route),
-            switchHref: relativeHref(route, otherRoutes[spec.id]!),
+            canonicalUrl: SitePaths.canonicalUrl(content.links.siteUrl, route),
+            assetPrefix: SitePaths.relativeHref(route, '/'),
+            homeHref: SitePaths.relativeHref(route, content.route),
+            switchHref: SitePaths.relativeHref(route, otherRoutes[spec.id]!),
             nav: List.unmodifiable([
               for (final navSpec in specs)
                 if (navSpec.navLabel case final label?)
@@ -98,7 +99,7 @@ final class JsonSiteContentDataSource {
                     id: navSpec.id,
                     label: label,
                     summary: navSpec.summary!,
-                    href: relativeHref(route, routes[navSpec.id]!),
+                    href: SitePaths.relativeHref(route, routes[navSpec.id]!),
                     current: navSpec.id == spec.id,
                   ),
             ]),
@@ -106,7 +107,7 @@ final class JsonSiteContentDataSource {
               for (var localeIndex = 0; localeIndex < ordered.length; localeIndex++)
                 PageAlternate(
                   hrefLang: contents[localeIndex].lang,
-                  url: canonicalUrl(
+                  url: SitePaths.canonicalUrl(
                     content.links.siteUrl,
                     routesByDocument[ordered[localeIndex].path]![spec.id]!,
                   ),
@@ -612,23 +613,82 @@ final class JsonSiteContentDataSource {
       );
     }
   }
-}
 
-final _slugPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
-final _localeRoutePattern = RegExp(r'^/[a-z0-9]+(?:-[a-z0-9]+)*$');
+  static String _localeRoute(_ContentDocument document) => _nonEmptyString(document.json, 'route', document.path);
 
-String _localeRoute(_ContentDocument document) => _nonEmptyString(document.json, 'route', document.path);
-
-PageId _pageId(String value, String path) {
-  for (final id in PageId.values) {
-    if (id.name == value) {
-      return id;
+  static PageId _pageId(String value, String path) {
+    for (final id in PageId.values) {
+      if (id.name == value) {
+        return id;
+      }
     }
+    throw FormatException(
+      'Unknown page "$value" at $path. '
+      'Expected one of: ${PageId.values.map((id) => id.name).join(', ')}.',
+    );
   }
-  throw FormatException(
-    'Unknown page "$value" at $path. '
-    'Expected one of: ${PageId.values.map((id) => id.name).join(', ')}.',
-  );
+
+  static Map<String, dynamic> _object(Object? value, String path) {
+    if (value is Map<String, dynamic>) {
+      return value;
+    }
+    throw FormatException('Expected an object at $path.');
+  }
+
+  static List<dynamic> _array(Object? value, String path) {
+    if (value is List<dynamic>) {
+      return value;
+    }
+    throw FormatException('Expected an array at $path.');
+  }
+
+  static String _string(Map<String, dynamic> json, String key, String path) => _asString(json[key], '$path.$key');
+
+  static String? _optionalString(Map<String, dynamic> json, String key, String path) {
+    final value = json[key];
+    if (value == null) {
+      return null;
+    }
+    return _asString(value, '$path.$key');
+  }
+
+  static String _nonEmptyString(Map<String, dynamic> json, String key, String path) {
+    final value = _string(json, key, path);
+    if (value.isEmpty) {
+      throw FormatException('Expected a non-empty string at $path.$key.');
+    }
+    return value;
+  }
+
+  static String _asString(Object? value, String path) {
+    if (value is String) {
+      return value;
+    }
+    throw FormatException('Expected a string at $path.');
+  }
+
+  static List<String> _strings(Map<String, dynamic> json, String key, String path) {
+    final values = _array(json[key], '$path.$key');
+    return [
+      for (var index = 0; index < values.length; index++) _asString(values[index], '$path.$key[$index]'),
+    ];
+  }
+
+  static List<T> _mapList<T>(
+    Map<String, dynamic> json,
+    String key,
+    String path,
+    T Function(Map<String, dynamic> json, String path) parse,
+  ) {
+    final values = _array(json[key], '$path.$key');
+    return [
+      for (var index = 0; index < values.length; index++)
+        parse(
+          _object(values[index], '$path.$key[$index]'),
+          '$path.$key[$index]',
+        ),
+    ];
+  }
 }
 
 final class _ContentDocument {
@@ -656,64 +716,5 @@ final class _PageSpec {
   final String description;
 }
 
-Map<String, dynamic> _object(Object? value, String path) {
-  if (value is Map<String, dynamic>) {
-    return value;
-  }
-  throw FormatException('Expected an object at $path.');
-}
-
-List<dynamic> _array(Object? value, String path) {
-  if (value is List<dynamic>) {
-    return value;
-  }
-  throw FormatException('Expected an array at $path.');
-}
-
-String _string(Map<String, dynamic> json, String key, String path) => _asString(json[key], '$path.$key');
-
-String? _optionalString(Map<String, dynamic> json, String key, String path) {
-  final value = json[key];
-  if (value == null) {
-    return null;
-  }
-  return _asString(value, '$path.$key');
-}
-
-String _nonEmptyString(Map<String, dynamic> json, String key, String path) {
-  final value = _string(json, key, path);
-  if (value.isEmpty) {
-    throw FormatException('Expected a non-empty string at $path.$key.');
-  }
-  return value;
-}
-
-String _asString(Object? value, String path) {
-  if (value is String) {
-    return value;
-  }
-  throw FormatException('Expected a string at $path.');
-}
-
-List<String> _strings(Map<String, dynamic> json, String key, String path) {
-  final values = _array(json[key], '$path.$key');
-  return [
-    for (var index = 0; index < values.length; index++) _asString(values[index], '$path.$key[$index]'),
-  ];
-}
-
-List<T> _mapList<T>(
-  Map<String, dynamic> json,
-  String key,
-  String path,
-  T Function(Map<String, dynamic> json, String path) parse,
-) {
-  final values = _array(json[key], '$path.$key');
-  return [
-    for (var index = 0; index < values.length; index++)
-      parse(
-        _object(values[index], '$path.$key[$index]'),
-        '$path.$key[$index]',
-      ),
-  ];
-}
+final _slugPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
+final _localeRoutePattern = RegExp(r'^/[a-z0-9]+(?:-[a-z0-9]+)*$');

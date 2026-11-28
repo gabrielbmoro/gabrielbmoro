@@ -34,11 +34,11 @@ lib/
     models/site_catalog.dart    # localized content + pages returned by the data source
     models/site_content.dart    # immutable content models; copy lives in assets/content
     models/site_links.dart      # canonical URLs and contact email
-    site_paths.dart             # page-relative hrefs and canonical URLs
+    site_paths.dart             # SitePaths: page-relative hrefs and canonical URLs
     repository.dart             # SiteContentRepository abstraction
   data/
     models/
-      article_source.dart       # source ids/labels shared by the Medium feeds, the URL → publication resolver and the article carousels
+      article_source.dart       # source ids/labels shared by the Medium feeds, the ArticleSource.fromUrl resolver and the article carousels
       medium_article.dart       # Medium feed/article models and fetcher typedefs
       youtube_video.dart        # YouTube playlist video model and fetcher typedefs
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
@@ -135,10 +135,10 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
 - Medium caps a publication feed to its ten newest items across every author, so a new post in the
   publication silently evicts the author's oldest article there. The author profile feed
   (`https://medium.com/feed/@gabrielbronzattimoro.es`, a `MediumFeed.author`) is read alongside the
-  publication feeds, and `articleSourceForUrl` maps each of its items back to its publication
+  publication feeds, and `ArticleSource.fromUrl` maps each of its items back to its publication
   (`blog.insert-koin.io` → Koin Developers, `medium.com/codandotv/…` → CodandoTV) so those evicted
   posts stay in the carousels. Items from an unmapped publication are skipped with a warning; add
-  a rule to `articleSourceForUrl` when a new publication joins the feeds.
+  a rule to `ArticleSource.fromUrl` when a new publication joins the feeds.
 - The playlist id/URL/feed and the JSON `allVideosHref` must stay in sync. The constants live in
   `lib/data/youtube_video_source.dart`; the JSON test asserts that `allVideosHref` equals
   `moroVideosPlaylistUrl`. The feed returns at most 15 entries, so the source sorts by publication
@@ -180,6 +180,8 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   `lib/data/models/` and `lib/domain/`; they never import another data source or
   `repository_impl.dart`. The Eagle Eye rules `data-models-depend-only-on-data-models` and
   `data-sources-only-models-and-domain` enforce these boundaries.
+- No library-level functions live under `lib/data/` or `lib/domain/`; helpers are private static
+  members of the class that owns them, and only constants and typedefs stay top-level.
 - Register infrastructure dependencies in `lib/di/service_locator.dart`; UI widgets keep receiving
   their dependencies through constructors instead of resolving them from GetIt.
 - Sections are `lib/ui/sections/*.dart`; each takes a `SitePage` and reads its slice from
