@@ -81,14 +81,19 @@ class ContentHubSection extends StatelessComponent {
     ]);
   }
 
-  /// Publication filters in first-seen order, so the chips follow the newest
-  /// article's publication.
-  List<({String id, String label})> _articleSources(ContentHub hub) {
-    final sources = <String, String>{};
-    for (final article in hub.articles) {
-      sources.putIfAbsent(article.sourceId, () => article.publication);
-    }
-    return [for (final entry in sources.entries) (id: entry.key, label: entry.value)];
+  /// One horizontally scrolling carousel per publication.
+  Component _articleCarousel(ArticleGroup group) {
+    final headingId = 'article-carousel-${group.sourceId}';
+    return div(classes: 'article-carousel', [
+      h4(id: headingId, [.text(group.label)]),
+      ol(
+        classes: 'content-carousel',
+        attributes: {'aria-labelledby': headingId},
+        [
+          for (final article in group.articles) li(classes: 'content-item', [_articleLink(article)]),
+        ],
+      ),
+    ]);
   }
 
   Component _contentTypeFilter(ContentHub hub) {
@@ -109,28 +114,6 @@ class ContentHubSection extends StatelessComponent {
         chipLabel: hub.filterVideosLabel,
         inputClass: 'content-type-input',
       ),
-    ]);
-  }
-
-  Component _articleFilter(ContentHub hub, List<({String id, String label})> sources) {
-    return fieldset(classes: 'filter-bar article-filter', [
-      legend(classes: 'visually-hidden', [.text(hub.filterAriaLabel)]),
-      _filterOption(
-        id: 'article-filter-all',
-        name: 'article-source',
-        value: 'all',
-        chipLabel: hub.filterAllLabel,
-        inputClass: 'article-source-input',
-        checked: true,
-      ),
-      for (final source in sources)
-        _filterOption(
-          id: 'article-filter-${source.id}',
-          name: 'article-source',
-          value: source.id,
-          chipLabel: source.label,
-          inputClass: 'article-source-input',
-        ),
     ]);
   }
 
@@ -160,7 +143,6 @@ class ContentHubSection extends StatelessComponent {
     final content = page.content;
     final hub = content.contentHub;
     final recognition = hub.recognition;
-    final sources = _articleSources(hub);
     final hasArticles = hub.articles.isNotEmpty;
     final hasVideos = hub.videos.isNotEmpty;
     final showTypeFilter = hasArticles && hasVideos;
@@ -174,15 +156,7 @@ class ContentHubSection extends StatelessComponent {
           if (showArticles)
             div(classes: 'articles-block', [
               h3([.text(hub.latestTitle)]),
-              if (sources.length > 1) _articleFilter(hub, sources),
-              ol(classes: 'content-list', [
-                for (final article in hub.articles)
-                  li(
-                    classes: 'content-item',
-                    attributes: {'data-source': article.sourceId},
-                    [_articleLink(article)],
-                  ),
-              ]),
+              for (final group in hub.articleGroups) _articleCarousel(group),
               div(classes: 'content-all', [
                 TextLink(hub.allArticlesLabel, href: hub.allArticlesHref),
               ]),

@@ -2,7 +2,6 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 
 import 'package:gabriel_moro_site/domain/models/site_content.dart';
-import 'package:gabriel_moro_site/ui/components/action_link.dart';
 
 /// Full-bleed masthead: cover artwork, site wordmark, tagline and the tab bar.
 class SiteHeader extends StatelessComponent {
@@ -65,13 +64,6 @@ class SiteHeader extends StatelessComponent {
                 attributes: item.current ? const {'aria-current': 'page'} : null,
                 [.text(item.label)],
               ),
-            ActionLink(
-              href: content.navCtaHref,
-              label: content.navCta,
-              variant: ActionVariant.light,
-              small: true,
-              external: content.navCtaHref.startsWith('http'),
-            ),
             a(
               href: page.switchHref,
               classes: 'tab tab--lang',

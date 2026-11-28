@@ -230,8 +230,8 @@ class Article {
   final String title;
   final String publication;
 
-  /// Stable publication key used by the articles filter (`koin-developers`,
-  /// `codandotv`). It is not shown to readers.
+  /// Stable publication key used to group the article carousels
+  /// (`koin-developers`, `codandotv`). It is not shown to readers.
   final String sourceId;
 
   /// Localized publication date, such as `Sep 2026` or `Set 2026`.
@@ -241,6 +241,22 @@ class Article {
   /// Absolute HTTPS cover URL from Medium, or null when the article has no
   /// cover.
   final String? thumbnail;
+}
+
+/// One publication's articles, rendered as a carousel on the content page.
+class ArticleGroup {
+  const ArticleGroup({
+    required this.sourceId,
+    required this.label,
+    required this.articles,
+  });
+
+  /// Stable publication key, used to build the carousel's heading id.
+  final String sourceId;
+
+  /// Publication name shown as the carousel heading.
+  final String label;
+  final List<Article> articles;
 }
 
 class Video {
@@ -300,8 +316,6 @@ class ContentHub {
     required this.lede,
     required this.latestTitle,
     required this.videosTitle,
-    required this.filterAllLabel,
-    required this.filterAriaLabel,
     required this.contentFilterAriaLabel,
     required this.filterArticlesLabel,
     required this.filterVideosLabel,
@@ -328,12 +342,6 @@ class ContentHub {
   final String lede;
   final String latestTitle;
   final String videosTitle;
-
-  /// Label of the filter chip that shows every article.
-  final String filterAllLabel;
-
-  /// Accessible name of the article filter group.
-  final String filterAriaLabel;
 
   /// Accessible name of the article/video filter group.
   final String contentFilterAriaLabel;
@@ -366,6 +374,23 @@ class ContentHub {
   final String ctaButton;
   final String ctaHref;
 
+  /// Articles grouped by publication, in first-seen order from the
+  /// newest-first list, so each carousel keeps one publication.
+  List<ArticleGroup> get articleGroups {
+    final ordered = <String, List<Article>>{};
+    for (final article in articles) {
+      ordered.putIfAbsent(article.sourceId, () => <Article>[]).add(article);
+    }
+    return [
+      for (final entry in ordered.entries)
+        ArticleGroup(
+          sourceId: entry.key,
+          label: entry.value.first.publication,
+          articles: List.unmodifiable(entry.value),
+        ),
+    ];
+  }
+
   /// Returns a copy with different feed lists, keeping the rest of the hub
   /// untouched. The repository uses this after merging the feeds.
   ContentHub withContent({
@@ -377,8 +402,6 @@ class ContentHub {
     lede: lede,
     latestTitle: latestTitle,
     videosTitle: videosTitle,
-    filterAllLabel: filterAllLabel,
-    filterAriaLabel: filterAriaLabel,
     contentFilterAriaLabel: contentFilterAriaLabel,
     filterArticlesLabel: filterArticlesLabel,
     filterVideosLabel: filterVideosLabel,
@@ -597,8 +620,6 @@ class SiteContent {
     required this.homeLabel,
     required this.navAriaLabel,
     required this.socialAriaLabel,
-    required this.navCta,
-    required this.navCtaHref,
     required this.mailto,
     required this.links,
     required this.hero,
@@ -638,8 +659,6 @@ class SiteContent {
   final String homeLabel;
   final String navAriaLabel;
   final String socialAriaLabel;
-  final String navCta;
-  final String navCtaHref;
   final String mailto;
   final SiteLinks links;
   final HeroContent hero;
@@ -669,8 +688,6 @@ class SiteContent {
     homeLabel: homeLabel,
     navAriaLabel: navAriaLabel,
     socialAriaLabel: socialAriaLabel,
-    navCta: navCta,
-    navCtaHref: navCtaHref,
     mailto: mailto,
     links: links,
     hero: hero,

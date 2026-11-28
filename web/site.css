@@ -291,17 +291,6 @@ dd {
   color: var(--on-forest);
 }
 
-.masthead-tabs .btn {
-  flex-shrink: 0;
-  height: 36px;
-  margin: 0 10px;
-  border-radius: 12px;
-  font-size: 0.71875rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
 .tab--lang {
   margin-left: auto;
   color: var(--on-forest-faint);
@@ -868,9 +857,9 @@ h2 {
   border: 0;
 }
 
-/* CSS-only content filters. The publication source ids must stay in sync with
-   lib/data/models/article_source.dart; adding a source needs a static rule
-   below. Browsers without :has() keep every card and hide the chips. */
+/* CSS-only content-type filter. The chips switch between the article
+   carousels and the video grid. Browsers without :has() keep both blocks and
+   hide the chips. */
 .filter-bar {
   position: relative;
   display: flex;
@@ -935,22 +924,59 @@ h2 {
   display: none;
 }
 
-.articles-block:has(.article-source-input[value="koin-developers"]:checked)
-  .content-item:not([data-source="koin-developers"]),
-.articles-block:has(.article-source-input[value="codandotv"]:checked)
-  .content-item:not([data-source="codandotv"]) {
-  display: none;
-}
-
 @supports not selector(:has(*)) {
   .filter-bar {
     display: none;
   }
 }
 
-.content-list {
-  display: grid;
+.article-carousel + .article-carousel {
+  margin-top: 34px;
+}
+
+.article-carousel > h4 {
+  margin-bottom: 14px;
+  color: var(--ink-soft);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  letter-spacing: 0.005em;
+  line-height: 1.2;
+}
+
+.content-carousel {
+  display: flex;
   gap: 18px;
+  padding: 2px 2px 14px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+}
+
+.content-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.content-carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-carousel::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--line-strong);
+}
+
+.content-carousel .content-item {
+  flex: 0 0 min(300px, 82vw);
+  scroll-snap-align: start;
+}
+
+.content-carousel .content-thumb {
+  height: auto;
+  aspect-ratio: 16 / 9;
 }
 
 .content-item {
@@ -1602,10 +1628,6 @@ h2 {
     padding: 10px;
     font-size: 0.6875rem;
     letter-spacing: 0.07em;
-  }
-
-  .masthead-tabs .btn {
-    margin: 0 6px;
   }
 
   .hero-actions {

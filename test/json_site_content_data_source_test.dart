@@ -11,9 +11,8 @@ void main() {
     for (final content in catalog.contents) {
       expect(content.contentHub.articleMonths, hasLength(12));
       expect(content.contentHub.articles, isEmpty);
+      expect(content.contentHub.articleGroups, isEmpty);
       expect(content.contentHub.videos, isEmpty);
-      expect(content.contentHub.filterAllLabel, isNotEmpty);
-      expect(content.contentHub.filterAriaLabel, isNotEmpty);
       expect(content.contentHub.contentFilterAriaLabel, isNotEmpty);
       expect(content.contentHub.filterArticlesLabel, isNotEmpty);
       expect(content.contentHub.filterVideosLabel, isNotEmpty);

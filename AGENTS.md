@@ -20,9 +20,9 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 - `get_it` wires the three independent data sources (JSON content, Medium articles and the
   curated YouTube playlist) and the repository that composes them at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
-- No client-side JavaScript is shipped: the site is entirely pre-rendered, both the
-  article/video switch and the article publication filter are CSS-only (`:has()` + radio inputs),
-  and video playback uses third-party YouTube iframes rather than site JavaScript.
+- No client-side JavaScript is shipped: the site is entirely pre-rendered, the article/video
+  switch is CSS-only (`:has()` + radio inputs), the article carousels scroll with CSS snap, and
+  video playback uses third-party YouTube iframes rather than site JavaScript.
 
 ## Layout
 
@@ -38,7 +38,7 @@ lib/
     repository.dart             # SiteContentRepository abstraction
   data/
     models/
-      article_source.dart       # source ids/labels shared by the Medium feeds and the CSS filter
+      article_source.dart       # source ids/labels shared by the Medium feeds and the article carousels
       medium_article.dart       # Medium feed/article models and fetcher typedefs
       youtube_video.dart        # YouTube playlist video model and fetcher typedefs
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
@@ -124,34 +124,34 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
   identical; the data source fails the build otherwise.
 - Feed items are not stored in the content assets. `content` in each JSON asset keeps only the
-  section copy (`articleMonths`, filter labels and the video copy) and both sample lists empty.
-  Articles come from the Koin Developers + CodandoTV RSS feeds through `MediumArticleSource`;
-  videos come from the curated **Moro no CodandoTV** playlist through `YouTubeVideoSource`. The
-  data sources never import each other. `SiteContentRepositoryImpl` loads the feeds in parallel,
-  keeps Medium items only for `mediumAuthorName`, sorts both lists newest first, caps the video
-  list to 6, and rebuilds the pages so they see the derived lists. A feed failure logs a warning
-  and publishes an empty list; `SITE_SKIP_MEDIUM_FEEDS=1` and `SITE_SKIP_YOUTUBE_FEED=1` skip
-  fetching entirely.
+  section copy (`articleMonths`, content-type filter labels and the video copy) and both sample
+  lists empty. Articles come from the Koin Developers + CodandoTV RSS feeds through
+  `MediumArticleSource`; videos come from the curated **Moro no CodandoTV** playlist through
+  `YouTubeVideoSource`. The data sources never import each other.
+  `SiteContentRepositoryImpl` loads the feeds in parallel, keeps Medium items only for
+  `mediumAuthorName`, sorts both lists newest first, caps the video list to 6, and rebuilds the
+  pages so they see the derived lists. A feed failure logs a warning and publishes an empty list;
+  `SITE_SKIP_MEDIUM_FEEDS=1` and `SITE_SKIP_YOUTUBE_FEED=1` skip fetching entirely.
 - The playlist id/URL/feed and the JSON `allVideosHref` must stay in sync. The constants live in
   `lib/data/youtube_video_source.dart`; the JSON test asserts that `allVideosHref` equals
   `moroVideosPlaylistUrl`. The feed returns at most 15 entries, so the source sorts by publication
   date before applying the 6-video cap; the playlist's manual order is not used. Every valid entry
   must expose a video id: it feeds both the embed URL and the thumbnail fallback.
-- Filter chips are generated from the Medium list and their source ids
-  (`koin-developers`, `codandotv`) are static CSS selectors in `web/site.css` — adding a source
-  means updating `lib/data/models/article_source.dart` and the CSS rules. Article covers are
-  absolute Medium WebP URLs; there are no local article thumbnails to curate.
+- Articles are split into one horizontal, CSS scroll-snap carousel per publication (`Koin
+  Developers`, `CodandoTV`), in first-seen order from the newest-first feed list. The carousels
+  are derived in `ContentHubSection` from `Article.sourceId`/`Article.publication`, so adding a
+  feed source needs no widget change. Article covers are absolute Medium WebP URLs; there are
+  no local article thumbnails to curate.
 - Video thumbnails are absolute `i*.ytimg.com` URLs from the playlist feed (with an
   `i.ytimg.com/vi/<id>/hqdefault.jpg` fallback); there are no local video thumbnails either.
 - The video cards live in `.video-grid`: two columns above 760 px and one below. Each card shows
   the thumbnail as a poster behind a lazy `youtube-nocookie.com` iframe, and the title below is
   the direct watch link. The poster keeps the card sharp before the player loads; the iframe gets
   a `title` attribute and `allowfullscreen`.
-- Both filters are CSS-only: radio inputs plus `:has()` hide non-matching cards. The content-type
-  chips (`Artigos` / `Vídeos`) are rendered only when both lists exist, and the article
-  publication filter only when more than one publication exists. There is no JavaScript, no
-  client entrypoint, and no URL state for the selected filter. Without `:has()` the chips are
-  hidden and every card stays visible.
+- The content-type filter is CSS-only: radio inputs plus `:has()` hide the articles block or the
+  video grid. The chips (`Artigos` / `Vídeos`) are rendered only when both lists exist. There is
+  no JavaScript, no client entrypoint, and no URL state for the selected filter. Without `:has()`
+  the chips are hidden and both blocks stay visible.
 - The old `/artigos/` and `/en/articles/` URLs stay alive through static meta-refresh pages in
   `web/artigos/index.html` and `web/en/articles/index.html`; they are not routes, not in the
   sitemap, and use relative targets so they also work under a subdirectory.
@@ -181,12 +181,13 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   repository.
 - The masthead is the site identity: the avatar emblem, `siteTitle` (the wordmark) and
   `tagline` are top-level fields in each JSON asset, followed by a tab bar built from the pages
-  that carry a `navLabel`, plus `navCta` and the locale switch. The current tab links to its own
+  that carry a `navLabel`, plus the locale switch. The current tab links to its own
   page and carries `aria-current="page"`.
 - Each page is a single column, with two exceptions: the About intro grid places the talk photo
   beside the running text on wide screens and stacks it above the text under 900 px, and the
-  video grid uses two columns above 760 px. Sections, article cards, projects, channels, toolkit
-  rows and the footer stack vertically; do not reintroduce other side-by-side column layouts.
+  video grid uses two columns above 760 px. The article carousels scroll horizontally inside
+  their column. Sections, projects, channels, toolkit rows and the footer stack vertically; do
+  not reintroduce other side-by-side column layouts.
 - Keep the design quiet: deep forest canvas, sage ink, green accent, Montaga display + Inter body.
   Montaga ships a single 400 weight, so headings express hierarchy through size and spacing, never
   synthetic bold. Font sizes are expressed in `rem` on top of a `106.25%` root (17px), so legibility
