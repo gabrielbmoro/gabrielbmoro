@@ -49,6 +49,11 @@ void main() {
       en.contentHub.articles.map((article) => article.sourceId).toSet(),
       {'koin-developers', 'codandotv'},
     );
+    expect(
+      en.contentHub.articleGroups.map((group) => group.label),
+      ['Koin Developers', 'CodandoTV'],
+    );
+    expect(en.contentHub.articleGroups.map((group) => group.articles.length), [1, 1]);
 
     expect(en.contentHub.videos, hasLength(2));
     expect(pt.contentHub.videos, hasLength(2));
@@ -91,6 +96,8 @@ void main() {
 
     expect(en.contentHub.articles, isEmpty);
     expect(pt.contentHub.articles, isEmpty);
+    expect(en.contentHub.articleGroups, isEmpty);
+    expect(pt.contentHub.articleGroups, isEmpty);
     expect(en.contentHub.videos, isEmpty);
     expect(pt.contentHub.videos, isEmpty);
 

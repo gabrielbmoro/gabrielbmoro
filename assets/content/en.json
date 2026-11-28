@@ -13,8 +13,6 @@
   "homeLabel": "gabrielbmoro.dev — home",
   "navAriaLabel": "Primary navigation",
   "socialAriaLabel": "Social links",
-  "navCta": "Follow on Medium",
-  "navCtaHref": "https://medium.com/@gabrielbronzattimoro.es",
   "mailto": "mailto:gabrielbronzattimoro.es@gmail.com?subject=Website%20contact",
   "links": {
     "siteUrl": "https://gabrielbmoro.dev/",
@@ -168,8 +166,6 @@
     "latestTitle": "Latest articles",
     "videosTitle": "Latest videos",
     "articleMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
-    "filterAllLabel": "All",
-    "filterAriaLabel": "Filter articles by publication",
     "contentFilterAriaLabel": "Filter content by type",
     "filterArticlesLabel": "Articles",
     "filterVideosLabel": "Videos",
