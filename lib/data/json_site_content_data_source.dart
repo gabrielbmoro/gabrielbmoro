@@ -431,14 +431,21 @@ final class JsonSiteContentDataSource {
       heading: _string(json, 'heading', path),
       lede: _string(json, 'lede', path),
       latestTitle: _string(json, 'latestTitle', path),
+      videosTitle: _nonEmptyString(json, 'videosTitle', path),
       filterAllLabel: _nonEmptyString(json, 'filterAllLabel', path),
       filterAriaLabel: _nonEmptyString(json, 'filterAriaLabel', path),
+      contentFilterAriaLabel: _nonEmptyString(json, 'contentFilterAriaLabel', path),
+      filterArticlesLabel: _nonEmptyString(json, 'filterArticlesLabel', path),
+      filterVideosLabel: _nonEmptyString(json, 'filterVideosLabel', path),
       articleMonths: months,
-      // The repository fills this from the Medium data source; the JSON only
-      // owns the section copy around the article list.
+      // The repository fills these from the feed data sources; the JSON only
+      // owns the section copy around the article and video lists.
       articles: const <Article>[],
+      videos: const <Video>[],
       allArticlesLabel: _string(json, 'allArticlesLabel', path),
       allArticlesHref: _string(json, 'allArticlesHref', path),
+      allVideosLabel: _nonEmptyString(json, 'allVideosLabel', path),
+      allVideosHref: _nonEmptyString(json, 'allVideosHref', path),
       channelsTitle: _string(json, 'channelsTitle', path),
       channels: _mapList(
         json,

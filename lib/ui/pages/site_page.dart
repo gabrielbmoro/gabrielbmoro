@@ -40,7 +40,7 @@ class SitePageView extends StatelessComponent {
   List<Component> _sections() => switch (page.id) {
     PageId.home => [Hero(page: page), ExploreSection(page: page)],
     PageId.about => [AboutSection(page: page)],
-    PageId.articles => [ContentHubSection(page: page)],
+    PageId.content => [ContentHubSection(page: page)],
     PageId.work => [WorkSection(page: page)],
     PageId.experience => [ExperienceSection(page: page), ToolkitSection(page: page)],
     PageId.mentoring => [MentoringSection(page: page)],

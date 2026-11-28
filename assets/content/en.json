@@ -44,12 +44,12 @@
       "description": "Where I come from, what I do and how I learn: music, code and almost a decade building mobile apps."
     },
     {
-      "id": "articles",
-      "path": "articles",
-      "navLabel": "Articles",
-      "summary": "Technical writing on Android, KMP, architecture and careers.",
-      "title": "Articles — Gabriel Moro",
-      "description": "Articles on Android, Kotlin Multiplatform, Flutter, architecture and mobile careers, written from real decisions."
+      "id": "content",
+      "path": "content",
+      "navLabel": "Content",
+      "summary": "Articles, videos and behind-the-scenes on Android, KMP, architecture and careers.",
+      "title": "Content — Gabriel Moro",
+      "description": "Articles and videos on Android, Kotlin Multiplatform, Flutter, architecture and mobile careers, made from real decisions."
     },
     {
       "id": "work",
@@ -81,8 +81,8 @@
     "availability": "Sharing what I learn",
     "availabilityNote": "Articles · videos · talks",
     "lede": "I'm Gabriel Bronzatti Moro — people call me Moro! I create tech content at CodandoTV and I love talking about what I learn building Android, Kotlin Multiplatform and Flutter apps.",
-    "primaryCta": "Read the articles",
-    "primaryCtaPage": "articles",
+    "primaryCta": "Explore the content",
+    "primaryCtaPage": "content",
     "secondaryCta": "How I learn",
     "secondaryCtaPage": "about",
     "note": "Articles · Videos · Podcast · Talks",
@@ -162,15 +162,21 @@
     "contactText": "Want to trade ideas about mobile or maybe book a mentoring session with me? Reach me by email or LinkedIn — I answer personally."
   },
   "content": {
-    "eyebrow": "Articles",
-    "heading": "What I learn, I write down.",
-    "lede": "Technical writing on Android, Kotlin Multiplatform, architecture and mobile careers — written from real decisions, not abstract theory.",
+    "eyebrow": "Content",
+    "heading": "What I learn, I write down and record.",
+    "lede": "Technical writing and videos on Android, Kotlin Multiplatform, architecture and mobile careers — made from real decisions, not abstract theory.",
     "latestTitle": "Latest articles",
+    "videosTitle": "Latest videos",
     "articleMonths": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
     "filterAllLabel": "All",
     "filterAriaLabel": "Filter articles by publication",
+    "contentFilterAriaLabel": "Filter content by type",
+    "filterArticlesLabel": "Articles",
+    "filterVideosLabel": "Videos",
     "allArticlesLabel": "Read all on Medium",
     "allArticlesHref": "https://medium.com/@gabrielbronzattimoro.es",
+    "allVideosLabel": "Watch all on YouTube",
+    "allVideosHref": "https://www.youtube.com/playlist?list=PLe-UAjk0e26Y",
     "channelsTitle": "Also sharing",
     "channels": [
       {
@@ -224,7 +230,7 @@
       "linkLabel": "Explore the program",
       "url": "https://koinchampion.kotzilla.io/apply-now"
     },
-    "ctaTitle": "Keep up with the next articles.",
+    "ctaTitle": "Keep up with the next content.",
     "ctaText": "Articles land on Medium; videos and the podcast on CodandoTV. Pick your channel and follow along.",
     "ctaButton": "Follow on Medium",
     "ctaHref": "https://medium.com/@gabrielbronzattimoro.es"

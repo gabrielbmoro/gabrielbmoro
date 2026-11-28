@@ -6,8 +6,8 @@ import 'package:gabriel_moro_site/ui/components/action_link.dart';
 import 'package:gabriel_moro_site/ui/components/section_heading.dart';
 import 'package:gabriel_moro_site/ui/components/text_link.dart';
 
-/// The articles hub: the latest posts, where else to follow along, and the
-/// topics covered.
+/// The content hub: the latest articles, the latest videos, where else to
+/// follow along, and the topics covered.
 class ContentHubSection extends StatelessComponent {
   const ContentHubSection({required this.page, super.key});
 
@@ -18,13 +18,13 @@ class ContentHubSection extends StatelessComponent {
 
     return a(
       href: article.url,
-      classes: 'article-link',
+      classes: 'content-link',
       target: Target.blank,
       attributes: const {'rel': 'noopener noreferrer'},
       [
         if (thumbnail != null)
           span(
-            classes: 'article-thumb',
+            classes: 'content-thumb',
             attributes: const {'aria-hidden': 'true'},
             [
               img(
@@ -37,12 +37,48 @@ class ContentHubSection extends StatelessComponent {
               ),
             ],
           ),
-        span(classes: 'article-body', [
-          span(classes: 'article-meta', [.text('${article.publication} · ${article.published}')]),
-          span(classes: 'article-title', [.text(article.title)]),
+        span(classes: 'content-body', [
+          span(classes: 'content-meta', [.text('${article.publication} · ${article.published}')]),
+          span(classes: 'content-title', [.text(article.title)]),
         ]),
       ],
     );
+  }
+
+  Component _videoCard(Video video) {
+    return li(classes: 'content-item', [
+      div(classes: 'video-player', [
+        img(
+          src: video.thumbnail,
+          alt: '',
+          width: 480,
+          height: 360,
+          classes: 'video-poster',
+          loading: MediaLoading.lazy,
+          attributes: const {'decoding': 'async', 'aria-hidden': 'true'},
+        ),
+        iframe(
+          const [],
+          src: video.embedUrl,
+          width: 480,
+          height: 270,
+          classes: 'video-frame',
+          loading: MediaLoading.lazy,
+          allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+          attributes: {'title': video.title, 'allowfullscreen': ''},
+        ),
+      ]),
+      div(classes: 'content-body', [
+        span(classes: 'content-meta', [.text(video.published)]),
+        a(
+          href: video.url,
+          classes: 'content-title video-title-link',
+          target: Target.blank,
+          attributes: const {'rel': 'noopener noreferrer'},
+          [.text(video.title)],
+        ),
+      ]),
+    ]);
   }
 
   /// Publication filters in first-seen order, so the chips follow the newest
@@ -55,31 +91,67 @@ class ContentHubSection extends StatelessComponent {
     return [for (final entry in sources.entries) (id: entry.key, label: entry.value)];
   }
 
+  Component _contentTypeFilter(ContentHub hub) {
+    return fieldset(classes: 'filter-bar content-type-filter', [
+      legend(classes: 'visually-hidden', [.text(hub.contentFilterAriaLabel)]),
+      _filterOption(
+        id: 'content-type-articles',
+        name: 'content-type',
+        value: 'articles',
+        chipLabel: hub.filterArticlesLabel,
+        inputClass: 'content-type-input',
+        checked: true,
+      ),
+      _filterOption(
+        id: 'content-type-videos',
+        name: 'content-type',
+        value: 'videos',
+        chipLabel: hub.filterVideosLabel,
+        inputClass: 'content-type-input',
+      ),
+    ]);
+  }
+
   Component _articleFilter(ContentHub hub, List<({String id, String label})> sources) {
-    return fieldset(classes: 'article-filter', [
+    return fieldset(classes: 'filter-bar article-filter', [
       legend(classes: 'visually-hidden', [.text(hub.filterAriaLabel)]),
-      _filterOption(id: 'article-filter-all', value: 'all', chipLabel: hub.filterAllLabel, checked: true),
+      _filterOption(
+        id: 'article-filter-all',
+        name: 'article-source',
+        value: 'all',
+        chipLabel: hub.filterAllLabel,
+        inputClass: 'article-source-input',
+        checked: true,
+      ),
       for (final source in sources)
-        _filterOption(id: 'article-filter-${source.id}', value: source.id, chipLabel: source.label),
+        _filterOption(
+          id: 'article-filter-${source.id}',
+          name: 'article-source',
+          value: source.id,
+          chipLabel: source.label,
+          inputClass: 'article-source-input',
+        ),
     ]);
   }
 
   Component _filterOption({
     required String id,
+    required String name,
     required String value,
     required String chipLabel,
+    required String inputClass,
     bool checked = false,
   }) {
     return Component.fragment([
       input(
         type: InputType.radio,
         id: id,
-        name: 'article-source',
+        name: name,
         value: value,
         checked: checked,
-        classes: 'article-filter-input',
+        classes: 'filter-input $inputClass',
       ),
-      label([.text(chipLabel)], htmlFor: id, classes: 'article-filter-chip'),
+      label([.text(chipLabel)], htmlFor: id, classes: 'filter-chip'),
     ]);
   }
 
@@ -89,24 +161,42 @@ class ContentHubSection extends StatelessComponent {
     final hub = content.contentHub;
     final recognition = hub.recognition;
     final sources = _articleSources(hub);
+    final hasArticles = hub.articles.isNotEmpty;
+    final hasVideos = hub.videos.isNotEmpty;
+    final showTypeFilter = hasArticles && hasVideos;
+    final showArticles = hasArticles || !hasVideos;
 
-    return section(classes: 'section section--tint', id: 'articles', [
+    return section(classes: 'section section--tint', id: 'content', [
       div(classes: 'container', [
         SectionHeading(eyebrow: hub.eyebrow, title: hub.heading, lede: hub.lede),
-        div(classes: 'articles-block', [
-          h3([.text(hub.latestTitle)]),
-          if (sources.length > 1) _articleFilter(hub, sources),
-          ol(classes: 'article-list', [
-            for (final article in hub.articles)
-              li(
-                classes: 'article-item',
-                attributes: {'data-source': article.sourceId},
-                [_articleLink(article)],
-              ),
-          ]),
-          div(classes: 'articles-all', [
-            TextLink(hub.allArticlesLabel, href: hub.allArticlesHref),
-          ]),
+        div(classes: 'content-hub', [
+          if (showTypeFilter) _contentTypeFilter(hub),
+          if (showArticles)
+            div(classes: 'articles-block', [
+              h3([.text(hub.latestTitle)]),
+              if (sources.length > 1) _articleFilter(hub, sources),
+              ol(classes: 'content-list', [
+                for (final article in hub.articles)
+                  li(
+                    classes: 'content-item',
+                    attributes: {'data-source': article.sourceId},
+                    [_articleLink(article)],
+                  ),
+              ]),
+              div(classes: 'content-all', [
+                TextLink(hub.allArticlesLabel, href: hub.allArticlesHref),
+              ]),
+            ]),
+          if (hasVideos)
+            div(classes: 'videos-block', [
+              h3([.text(hub.videosTitle)]),
+              ol(classes: 'video-grid', [
+                for (final video in hub.videos) _videoCard(video),
+              ]),
+              div(classes: 'content-all', [
+                TextLink(hub.allVideosLabel, href: hub.allVideosHref),
+              ]),
+            ]),
         ]),
         div(classes: 'channels-block', [
           h3([.text(hub.channelsTitle)]),

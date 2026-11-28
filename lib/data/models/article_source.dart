@@ -1,4 +1,4 @@
-/// A publication the articles page can filter by.
+/// A publication the content page can filter by.
 ///
 /// The [id] is the stable key used by the CSS filter and by Medium feed
 /// entries; the [label] is what readers see. Keep the ids in sync with the
