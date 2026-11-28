@@ -38,11 +38,11 @@ lib/
     repository.dart             # SiteContentRepository abstraction
   data/
     models/
-      article_source.dart       # source ids/labels shared by the Medium feeds and the article carousels
+      article_source.dart       # source ids/labels shared by the Medium feeds, the URL → publication resolver and the article carousels
       medium_article.dart       # Medium feed/article models and fetcher typedefs
       youtube_video.dart        # YouTube playlist video model and fetcher typedefs
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
-    medium_article_source.dart  # Medium data source: fetches and parses the Koin Developers + CodandoTV RSS feeds
+    medium_article_source.dart  # Medium data source: fetches and parses the publication feeds + the author profile feed
     youtube_video_source.dart   # YouTube data source: reads the curated "Moro no CodandoTV" playlist feed
     repository_impl.dart        # loads all data sources and attaches articles/videos to the pages
   di/service_locator.dart       # GetIt registrations (three data sources + repository)
@@ -75,7 +75,7 @@ dart format lib test
 dart analyze
 dart test
 
-# Offline builds skip both feeds; the article and video lists stay empty.
+# Offline builds skip every feed; the article and video lists stay empty.
 SITE_SKIP_MEDIUM_FEEDS=1 SITE_SKIP_YOUTUBE_FEED=1 jaspr build
 
 # Architecture checks. Eagle Eye lives in an isolated tool package because it
@@ -90,7 +90,7 @@ intentionally has no client entrypoint and ships zero JavaScript.
 The GitHub Actions workflow runs `dart format --output=none --set-exit-if-changed lib test`,
 `dart analyze`, `dart test`, the Eagle Eye architecture check, and `jaspr build`, prunes compiler
 caches (`build/jaspr/packages`, `build/jaspr/.dart_tool`, `build/jaspr/.build.manifest`) from the
-artifact, then deploys `build/jaspr`. The build fetches the two Medium feeds and the curated
+artifact, then deploys `build/jaspr`. The build fetches the three Medium feeds and the curated
 YouTube playlist; a feed outage only logs a warning and publishes an empty list.
 
 ## Deployment
@@ -125,13 +125,20 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   identical; the data source fails the build otherwise.
 - Feed items are not stored in the content assets. `content` in each JSON asset keeps only the
   section copy (`articleMonths`, content-type filter labels and the video copy) and both sample
-  lists empty. Articles come from the Koin Developers + CodandoTV RSS feeds through
-  `MediumArticleSource`; videos come from the curated **Moro no CodandoTV** playlist through
-  `YouTubeVideoSource`. The data sources never import each other.
-  `SiteContentRepositoryImpl` loads the feeds in parallel, keeps Medium items only for
-  `mediumAuthorName`, sorts both lists newest first, caps the video list to 6, and rebuilds the
-  pages so they see the derived lists. A feed failure logs a warning and publishes an empty list;
+  lists empty. Articles come from the Koin Developers + CodandoTV RSS feeds and the author profile
+  feed through `MediumArticleSource`; videos come from the curated **Moro no CodandoTV** playlist
+  through `YouTubeVideoSource`. The data sources never import each other.
+  `MediumArticleSource` keeps items only for `mediumAuthorName`, sorts both lists newest first,
+  caps the video list to 6 in `SiteContentRepositoryImpl`, and rebuilds the pages so they see the
+  derived lists. A feed failure logs a warning and publishes an empty list;
   `SITE_SKIP_MEDIUM_FEEDS=1` and `SITE_SKIP_YOUTUBE_FEED=1` skip fetching entirely.
+- Medium caps a publication feed to its ten newest items across every author, so a new post in the
+  publication silently evicts the author's oldest article there. The author profile feed
+  (`https://medium.com/feed/@gabrielbronzattimoro.es`, a `MediumFeed.author`) is read alongside the
+  publication feeds, and `articleSourceForUrl` maps each of its items back to its publication
+  (`blog.insert-koin.io` → Koin Developers, `medium.com/codandotv/…` → CodandoTV) so those evicted
+  posts stay in the carousels. Items from an unmapped publication are skipped with a warning; add
+  a rule to `articleSourceForUrl` when a new publication joins the feeds.
 - The playlist id/URL/feed and the JSON `allVideosHref` must stay in sync. The constants live in
   `lib/data/youtube_video_source.dart`; the JSON test asserts that `allVideosHref` equals
   `moroVideosPlaylistUrl`. The feed returns at most 15 entries, so the source sorts by publication

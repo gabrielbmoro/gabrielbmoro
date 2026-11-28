@@ -1,18 +1,28 @@
 import 'package:gabriel_moro_site/data/models/article_source.dart';
 
-/// A Medium publication whose RSS feed contributes articles.
+/// A Medium RSS feed the site reads.
+///
+/// A publication feed returns items from one publication only, so every item
+/// belongs to [source]. The author's profile feed mixes every publication;
+/// create it with [MediumFeed.author] so each item's publication is resolved
+/// from its own link.
 final class MediumFeed {
-  const MediumFeed({required this.source, required this.url});
+  const MediumFeed({required this.source, required this.url}) : mixedPublications = false;
 
-  /// Publication identity shared with the CSS filter.
-  final ArticleSource source;
+  const MediumFeed.author({required this.url}) : source = null, mixedPublications = true;
+
+  /// Publication every item belongs to, or null when the feed mixes
+  /// publications.
+  final ArticleSource? source;
 
   final String url;
 
-  String get id => source.id;
+  /// Whether each item's publication must be resolved from its link because
+  /// the feed mixes publications.
+  final bool mixedPublications;
 
-  /// Publication name rendered by the filter chips.
-  String get label => source.label;
+  /// Feed name used in build warnings.
+  String get name => source?.label ?? 'the author feed';
 }
 
 /// One article fetched from a Medium feed.
