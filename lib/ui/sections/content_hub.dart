@@ -45,33 +45,40 @@ class ContentHubSection extends StatelessComponent {
     );
   }
 
-  Component _videoLink(Video video) {
-    return a(
-      href: video.url,
-      classes: 'content-link',
-      target: Target.blank,
-      attributes: const {'rel': 'noopener noreferrer'},
-      [
-        span(
-          classes: 'content-thumb',
-          attributes: const {'aria-hidden': 'true'},
-          [
-            img(
-              src: video.thumbnail,
-              alt: '',
-              width: 480,
-              height: 360,
-              loading: MediaLoading.lazy,
-              attributes: const {'decoding': 'async'},
-            ),
-          ],
+  Component _videoCard(Video video) {
+    return li(classes: 'content-item', [
+      div(classes: 'video-player', [
+        img(
+          src: video.thumbnail,
+          alt: '',
+          width: 480,
+          height: 360,
+          classes: 'video-poster',
+          loading: MediaLoading.lazy,
+          attributes: const {'decoding': 'async', 'aria-hidden': 'true'},
         ),
-        span(classes: 'content-body', [
-          span(classes: 'content-meta', [.text(video.published)]),
-          span(classes: 'content-title', [.text(video.title)]),
-        ]),
-      ],
-    );
+        iframe(
+          const [],
+          src: video.embedUrl,
+          width: 480,
+          height: 270,
+          classes: 'video-frame',
+          loading: MediaLoading.lazy,
+          allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+          attributes: {'title': video.title, 'allowfullscreen': ''},
+        ),
+      ]),
+      div(classes: 'content-body', [
+        span(classes: 'content-meta', [.text(video.published)]),
+        a(
+          href: video.url,
+          classes: 'content-title video-title-link',
+          target: Target.blank,
+          attributes: const {'rel': 'noopener noreferrer'},
+          [.text(video.title)],
+        ),
+      ]),
+    ]);
   }
 
   /// Publication filters in first-seen order, so the chips follow the newest
@@ -183,8 +190,8 @@ class ContentHubSection extends StatelessComponent {
           if (hasVideos)
             div(classes: 'videos-block', [
               h3([.text(hub.videosTitle)]),
-              ol(classes: 'content-list', [
-                for (final video in hub.videos) li(classes: 'content-item', [_videoLink(video)]),
+              ol(classes: 'video-grid', [
+                for (final video in hub.videos) _videoCard(video),
               ]),
               div(classes: 'content-all', [
                 TextLink(hub.allVideosLabel, href: hub.allVideosHref),

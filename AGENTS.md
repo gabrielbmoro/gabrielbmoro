@@ -20,8 +20,9 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 - `get_it` wires the three independent data sources (JSON content, Medium articles and the
   curated YouTube playlist) and the repository that composes them at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
-- No client-side JavaScript is shipped: the site is entirely pre-rendered and both the
-  article/video switch and the article publication filter are CSS-only (`:has()` + radio inputs).
+- No client-side JavaScript is shipped: the site is entirely pre-rendered, both the
+  article/video switch and the article publication filter are CSS-only (`:has()` + radio inputs),
+  and video playback uses third-party YouTube iframes rather than site JavaScript.
 
 ## Layout
 
@@ -134,13 +135,18 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
 - The playlist id/URL/feed and the JSON `allVideosHref` must stay in sync. The constants live in
   `lib/data/youtube_video_source.dart`; the JSON test asserts that `allVideosHref` equals
   `moroVideosPlaylistUrl`. The feed returns at most 15 entries, so the source sorts by publication
-  date before applying the 6-video cap; the playlist's manual order is not used.
+  date before applying the 6-video cap; the playlist's manual order is not used. Every valid entry
+  must expose a video id: it feeds both the embed URL and the thumbnail fallback.
 - Filter chips are generated from the Medium list and their source ids
   (`koin-developers`, `codandotv`) are static CSS selectors in `web/site.css` — adding a source
   means updating `lib/data/models/article_source.dart` and the CSS rules. Article covers are
   absolute Medium WebP URLs; there are no local article thumbnails to curate.
 - Video thumbnails are absolute `i*.ytimg.com` URLs from the playlist feed (with an
   `i.ytimg.com/vi/<id>/hqdefault.jpg` fallback); there are no local video thumbnails either.
+- The video cards live in `.video-grid`: two columns above 760 px and one below. Each card shows
+  the thumbnail as a poster behind a lazy `youtube-nocookie.com` iframe, and the title below is
+  the direct watch link. The poster keeps the card sharp before the player loads; the iframe gets
+  a `title` attribute and `allowfullscreen`.
 - Both filters are CSS-only: radio inputs plus `:has()` hide non-matching cards. The content-type
   chips (`Artigos` / `Vídeos`) are rendered only when both lists exist, and the article
   publication filter only when more than one publication exists. There is no JavaScript, no
@@ -177,10 +183,10 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   `tagline` are top-level fields in each JSON asset, followed by a tab bar built from the pages
   that carry a `navLabel`, plus `navCta` and the locale switch. The current tab links to its own
   page and carries `aria-current="page"`.
-- Each page is a single column, with one exception: the About intro grid places the talk photo
-  beside the running text on wide screens and stacks it above the text under 900 px. Sections,
-  article and video cards, projects, channels, toolkit rows and the footer stack vertically; do
-  not reintroduce other side-by-side column layouts.
+- Each page is a single column, with two exceptions: the About intro grid places the talk photo
+  beside the running text on wide screens and stacks it above the text under 900 px, and the
+  video grid uses two columns above 760 px. Sections, article cards, projects, channels, toolkit
+  rows and the footer stack vertically; do not reintroduce other side-by-side column layouts.
 - Keep the design quiet: deep forest canvas, sage ink, green accent, Montaga display + Inter body.
   Montaga ships a single 400 weight, so headings express hierarchy through size and spacing, never
   synthetic bold. Font sizes are expressed in `rem` on top of a `106.25%` root (17px), so legibility
@@ -209,7 +215,7 @@ YouTube playlist; a feed outage only logs a warning and publishes an empty list.
   absolute URL, or `null` when the post has no usable image.
 - Video thumbnails are also remote: the playlist feed supplies `i*.ytimg.com` URLs and the data
   source falls back to `https://i.ytimg.com/vi/<id>/hqdefault.jpg`. `Video.thumbnail` is always an
-  absolute HTTPS URL, so there are no local video thumbnails to curate.
+  absolute HTTPS URL used as the player poster, so there are no local video thumbnails to curate.
 - `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share a tab-first
   bugdroid-with-cuia emblem on a forest rounded-square. The SVG is the source and is drawn for
   16 px legibility, not as a miniature of the masthead-cover mark; the ICO carries 16/32/48 px renders,

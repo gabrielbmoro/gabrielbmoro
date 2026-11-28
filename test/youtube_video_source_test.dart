@@ -20,6 +20,7 @@ void main() {
       'Insecure thumbnail',
       'Older video',
     ]);
+    expect(videos.first.videoId, 'newest2');
     expect(videos.first.url, 'https://www.youtube.com/watch?v=newest2');
     expect(videos.first.publishedAt, DateTime.utc(2026, 11, 19, 21, 0, 37));
     expect(videos.first.thumbnailUrl, 'https://i2.ytimg.com/vi/newest2/hqdefault.jpg');
@@ -122,6 +123,14 @@ const _playlistXml = '''
     <title>Invalid date</title>
     <link rel="alternate" href="https://www.youtube.com/watch?v=bad-date"/>
     <published>not a date</published>
+  </entry>
+  <entry>
+    <title>Without a video id</title>
+    <link rel="alternate" href="https://www.youtube.com/watch"/>
+    <published>2026-02-01T10:00:00+00:00</published>
+    <media:group>
+      <media:thumbnail url="https://i1.ytimg.com/vi/no-id/hqdefault.jpg"/>
+    </media:group>
   </entry>
 </feed>
 ''';

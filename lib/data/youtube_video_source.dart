@@ -82,11 +82,12 @@ final class YouTubeVideoSource {
       }
 
       final videoId = _text(entry, 'videoId') ?? _videoIdFromUrl(url);
-      final thumbnail = _thumbnail(entry, videoId);
-      if (thumbnail == null) {
-        _warn('Skipping a video without a usable thumbnail: $url');
+      if (videoId == null || videoId.isEmpty) {
+        _warn('Skipping a video without a usable id: $url');
         continue;
       }
+
+      final thumbnail = _thumbnail(entry, videoId);
 
       if (!seen.add(url)) {
         continue;
@@ -94,6 +95,7 @@ final class YouTubeVideoSource {
 
       videos.add(
         YouTubeVideo(
+          videoId: videoId,
           title: title,
           url: url,
           publishedAt: publishedAt,
@@ -132,20 +134,10 @@ String? _alternateLink(XmlElement entry) {
   return null;
 }
 
-String? _thumbnail(XmlElement entry, String? videoId) {
+String _thumbnail(XmlElement entry, String videoId) {
   final group = _firstChild(entry, 'group');
   final raw = group == null ? null : _firstChild(group, 'thumbnail')?.getAttribute('url');
-  final normalized = _httpsUrl(raw);
-  if (normalized != null) {
-    return normalized;
-  }
-
-  final id = videoId?.trim();
-  if (id == null || id.isEmpty) {
-    return null;
-  }
-
-  return 'https://i.ytimg.com/vi/$id/hqdefault.jpg';
+  return _httpsUrl(raw) ?? 'https://i.ytimg.com/vi/$videoId/hqdefault.jpg';
 }
 
 String? _videoIdFromUrl(String url) {

@@ -126,6 +126,7 @@ List<Video> _videosForLocale(List<YouTubeVideo> videos, List<String> months) => 
       published: _formatDate(video.publishedAt, months),
       url: video.url,
       thumbnail: video.thumbnailUrl,
+      embedUrl: 'https://www.youtube-nocookie.com/embed/${video.videoId}',
     ),
 ];
 

@@ -58,6 +58,10 @@ void main() {
       en.contentHub.videos.first.thumbnail,
       'https://i1.ytimg.com/vi/newer-video/hqdefault.jpg',
     );
+    expect(
+      en.contentHub.videos.first.embedUrl,
+      'https://www.youtube-nocookie.com/embed/newer-video',
+    );
     expect(pt.contentHub.videos.first.published, 'Nov 2026');
     expect(en.contentHub.videos.last.title, 'An older Koin video');
     expect(en.contentHub.videos.last.published, 'Jul 2026');

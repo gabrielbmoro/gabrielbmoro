@@ -249,6 +249,7 @@ class Video {
     required this.published,
     required this.url,
     required this.thumbnail,
+    required this.embedUrl,
   });
 
   final String title;
@@ -261,6 +262,9 @@ class Video {
 
   /// Absolute HTTPS thumbnail URL.
   final String thumbnail;
+
+  /// Absolute YouTube embed URL used by the inline player.
+  final String embedUrl;
 }
 
 class ContentChannel {
