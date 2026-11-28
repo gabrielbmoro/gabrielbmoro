@@ -14,14 +14,14 @@ Jekyll is gone. Do not reintroduce `_config.yml`, `remote_theme`, or GitHub Page
 ## Stack
 
 - Dart (SDK `^3.10.0`) + Jaspr `0.23.x`, `jaspr_router` for every localized page:
-  `/`, `/sobre`, `/artigos`, `/open-source`, `/experiencia`, `/mentoria`, and their
-  `/en/...` counterparts.
+  `/`, `/sobre`, `/conteudo`, `/open-source`, `/experiencia`, `/mentoria`, and their
+  `/en/...` counterparts (`/en/content` for the content page).
 - Static mode: `jaspr build` pre-renders every declared page to HTML.
-- `get_it` wires the two independent data sources (JSON content + Medium articles) and the
-  repository that composes them at startup.
+- `get_it` wires the three independent data sources (JSON content, Medium articles and the
+  curated YouTube playlist) and the repository that composes them at startup.
 - Plain CSS in `web/site.css`, self-hosted Inter + Montaga in `web/fonts/`.
-- No client-side JavaScript is shipped: the site is entirely pre-rendered and the article
-  filter is CSS-only (`:has()` + radio inputs).
+- No client-side JavaScript is shipped: the site is entirely pre-rendered and both the
+  article/video switch and the article publication filter are CSS-only (`:has()` + radio inputs).
 
 ## Layout
 
@@ -39,10 +39,12 @@ lib/
     models/
       article_source.dart       # source ids/labels shared by the Medium feeds and the CSS filter
       medium_article.dart       # Medium feed/article models and fetcher typedefs
+      youtube_video.dart        # YouTube playlist video model and fetcher typedefs
     json_site_content_data_source.dart # reads assets/content/*.json, resolves routes and links
     medium_article_source.dart  # Medium data source: fetches and parses the Koin Developers + CodandoTV RSS feeds
-    repository_impl.dart        # loads both data sources and attaches Medium articles to the pages
-  di/service_locator.dart       # GetIt registrations (two data sources + repository)
+    youtube_video_source.dart   # YouTube data source: reads the curated "Moro no CodandoTV" playlist feed
+    repository_impl.dart        # loads all data sources and attaches articles/videos to the pages
+  di/service_locator.dart       # GetIt registrations (three data sources + repository)
   ui/
     components/                 # header, footer, SEO head, shared UI
     pages/site_page.dart        # page shell: head, skip link, masthead, body, footer
@@ -50,11 +52,12 @@ lib/
 assets/content/
   en.json                       # ALL visible English copy, page routes/SEO data, links
   pt-br.json                    # ALL visible PT-BR copy, page routes/SEO data, links
-test/                           # Medium parser, content source and repository composition tests
+test/                           # feed parsers, content source and repository composition tests
 web/
   site.css                      # design system and responsive rules
   fonts/                        # self-hosted woff2 files + attribution
   assets/                       # optimized avatar, about talk photo, icons and masthead cover
+  artigos/, en/articles/        # static meta-refresh redirects for the old content routes
   favicon.svg, robots.txt
 ```
 
@@ -71,8 +74,8 @@ dart format lib test
 dart analyze
 dart test
 
-# Offline builds skip the Medium fetch; the article list stays empty.
-SITE_SKIP_MEDIUM_FEEDS=1 jaspr build
+# Offline builds skip both feeds; the article and video lists stay empty.
+SITE_SKIP_MEDIUM_FEEDS=1 SITE_SKIP_YOUTUBE_FEED=1 jaspr build
 
 # Architecture checks. Eagle Eye lives in an isolated tool package because it
 # pins analyzer 8 while Jaspr 0.23 pins analyzer 12.
@@ -86,8 +89,8 @@ intentionally has no client entrypoint and ships zero JavaScript.
 The GitHub Actions workflow runs `dart format --output=none --set-exit-if-changed lib test`,
 `dart analyze`, `dart test`, the Eagle Eye architecture check, and `jaspr build`, prunes compiler
 caches (`build/jaspr/packages`, `build/jaspr/.dart_tool`, `build/jaspr/.build.manifest`) from the
-artifact, then deploys `build/jaspr`. The build fetches the two Medium feeds; a feed outage only
-logs a warning and publishes an empty article list.
+artifact, then deploys `build/jaspr`. The build fetches the two Medium feeds and the curated
+YouTube playlist; a feed outage only logs a warning and publishes an empty list.
 
 ## Deployment
 
@@ -119,20 +122,33 @@ logs a warning and publishes an empty article list.
 - Every user-facing string exists in both JSON assets. Keep the two locales in sync and natural —
   Portuguese is not a literal word-for-word translation. The shared `links` blocks must stay
   identical; the data source fails the build otherwise.
-- Articles are not stored in the content assets. `content` in each JSON asset keeps only the
-  section copy, `articleMonths`, `filterAllLabel` and `filterAriaLabel`;
-  `JsonSiteContentDataSource` returns an empty article list. Gabriel's posts come exclusively
-  from the Koin Developers + CodandoTV RSS feeds through `MediumArticleSource`; the two data
-  sources never import each other. `SiteContentRepositoryImpl` loads both, keeps feed items only
-  for `mediumAuthorName`, sorts them newest first, and rebuilds the pages so they see the
-  Medium-derived list. A feed failure logs a warning and publishes an empty article list;
-  `SITE_SKIP_MEDIUM_FEEDS=1` skips fetching entirely.
+- Feed items are not stored in the content assets. `content` in each JSON asset keeps only the
+  section copy (`articleMonths`, filter labels and the video copy) and both sample lists empty.
+  Articles come from the Koin Developers + CodandoTV RSS feeds through `MediumArticleSource`;
+  videos come from the curated **Moro no CodandoTV** playlist through `YouTubeVideoSource`. The
+  data sources never import each other. `SiteContentRepositoryImpl` loads the feeds in parallel,
+  keeps Medium items only for `mediumAuthorName`, sorts both lists newest first, caps the video
+  list to 6, and rebuilds the pages so they see the derived lists. A feed failure logs a warning
+  and publishes an empty list; `SITE_SKIP_MEDIUM_FEEDS=1` and `SITE_SKIP_YOUTUBE_FEED=1` skip
+  fetching entirely.
+- The playlist id/URL/feed and the JSON `allVideosHref` must stay in sync. The constants live in
+  `lib/data/youtube_video_source.dart`; the JSON test asserts that `allVideosHref` equals
+  `moroVideosPlaylistUrl`. The feed returns at most 15 entries, so the source sorts by publication
+  date before applying the 6-video cap; the playlist's manual order is not used.
 - Filter chips are generated from the Medium list and their source ids
   (`koin-developers`, `codandotv`) are static CSS selectors in `web/site.css` — adding a source
   means updating `lib/data/models/article_source.dart` and the CSS rules. Article covers are
   absolute Medium WebP URLs; there are no local article thumbnails to curate.
-- The article filter is CSS-only: radio inputs plus `:has()` hide non-matching cards. There is no
-  JavaScript, no client entrypoint, and no URL state for the selected filter.
+- Video thumbnails are absolute `i*.ytimg.com` URLs from the playlist feed (with an
+  `i.ytimg.com/vi/<id>/hqdefault.jpg` fallback); there are no local video thumbnails either.
+- Both filters are CSS-only: radio inputs plus `:has()` hide non-matching cards. The content-type
+  chips (`Artigos` / `Vídeos`) are rendered only when both lists exist, and the article
+  publication filter only when more than one publication exists. There is no JavaScript, no
+  client entrypoint, and no URL state for the selected filter. Without `:has()` the chips are
+  hidden and every card stays visible.
+- The old `/artigos/` and `/en/articles/` URLs stay alive through static meta-refresh pages in
+  `web/artigos/index.html` and `web/en/articles/index.html`; they are not routes, not in the
+  sitemap, and use relative targets so they also work under a subdirectory.
 - Each locale JSON declares a `pages` array in tab order. Every page carries an `id` (one of the
   `PageId` values), a localized `path` below the locale root (`''` for the home page), a `title`
   and a `description`; pages in the tab bar also carry `navLabel` and a one-line `summary` for the
@@ -144,12 +160,12 @@ logs a warning and publishes an empty article list.
   from `SiteContentRepository.pages`, so there is no separate route list to edit.
 - `lib/domain/` holds plain data classes, the `SiteCatalog` read model, and the
   `SiteContentRepository` abstraction; it must not import `lib/data/`, Jaspr, or DOM code.
-- The two data sources are concrete classes, not interfaces: `JsonSiteContentDataSource` and
-  `MediumArticleSource`. `SiteContentRepositoryImpl.load` receives those concrete instances and
-  GetIt registers the concrete types. `lib/data/models/` is domain-free: data models may import
-  only other data models. Data source implementations may import only `lib/data/models/` and
-  `lib/domain/`; they never import another data source or `repository_impl.dart`. The Eagle Eye
-  rules `data-models-depend-only-on-data-models` and
+- The three data sources are concrete classes, not interfaces: `JsonSiteContentDataSource`,
+  `MediumArticleSource` and `YouTubeVideoSource`. `SiteContentRepositoryImpl.load` receives those
+  concrete instances and GetIt registers the concrete types. `lib/data/models/` is domain-free:
+  data models may import only other data models. Data source implementations may import only
+  `lib/data/models/` and `lib/domain/`; they never import another data source or
+  `repository_impl.dart`. The Eagle Eye rules `data-models-depend-only-on-data-models` and
   `data-sources-only-models-and-domain` enforce these boundaries.
 - Register infrastructure dependencies in `lib/di/service_locator.dart`; UI widgets keep receiving
   their dependencies through constructors instead of resolving them from GetIt.
@@ -163,8 +179,8 @@ logs a warning and publishes an empty article list.
   page and carries `aria-current="page"`.
 - Each page is a single column, with one exception: the About intro grid places the talk photo
   beside the running text on wide screens and stacks it above the text under 900 px. Sections,
-  article cards, projects, channels, toolkit rows and the footer stack vertically; do not
-  reintroduce other side-by-side column layouts.
+  article and video cards, projects, channels, toolkit rows and the footer stack vertically; do
+  not reintroduce other side-by-side column layouts.
 - Keep the design quiet: deep forest canvas, sage ink, green accent, Montaga display + Inter body.
   Montaga ships a single 400 weight, so headings express hierarchy through size and spacing, never
   synthetic bold. Font sizes are expressed in `rem` on top of a `106.25%` root (17px), so legibility
@@ -191,6 +207,9 @@ logs a warning and publishes an empty article list.
   usable image and rewrites Medium CDN URLs to
   `https://miro.medium.com/v2/resize:fit:480/format:webp/<asset>`. `Article.thumbnail` is that
   absolute URL, or `null` when the post has no usable image.
+- Video thumbnails are also remote: the playlist feed supplies `i*.ytimg.com` URLs and the data
+  source falls back to `https://i.ytimg.com/vi/<id>/hqdefault.jpg`. `Video.thumbnail` is always an
+  absolute HTTPS URL, so there are no local video thumbnails to curate.
 - `web/favicon.svg`, `web/favicon.ico`, and `web/assets/apple-touch-icon.png` share a tab-first
   bugdroid-with-cuia emblem on a forest rounded-square. The SVG is the source and is drawn for
   16 px legibility, not as a miniature of the masthead-cover mark; the ICO carries 16/32/48 px renders,

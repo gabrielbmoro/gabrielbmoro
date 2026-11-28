@@ -10,10 +10,10 @@ import 'package:gabriel_moro_site/data/models/medium_article.dart';
 /// The author whose posts the site publishes.
 ///
 /// Publication feeds include every author, so matching this name is what keeps
-/// the articles page personal. Update it if the Medium display name changes.
+/// the content page personal. Update it if the Medium display name changes.
 const String mediumAuthorName = 'Gabriel Bronzatti Moro';
 
-/// The publications surfaced by the articles page.
+/// The publications surfaced by the content page.
 const List<MediumFeed> mediumFeeds = [
   MediumFeed(
     source: koinDevelopersSource,

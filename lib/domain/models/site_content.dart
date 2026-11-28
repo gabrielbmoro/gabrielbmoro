@@ -11,7 +11,7 @@ import 'package:gabriel_moro_site/domain/models/site_links.dart';
 ///
 /// The `id` is stable across locales; the localized URL slug lives in the
 /// content assets.
-enum PageId { home, about, articles, work, experience, mentoring }
+enum PageId { home, about, content, work, experience, mentoring }
 
 /// One `hreflang` alternate for a page.
 class PageAlternate {
@@ -243,6 +243,26 @@ class Article {
   final String? thumbnail;
 }
 
+class Video {
+  const Video({
+    required this.title,
+    required this.published,
+    required this.url,
+    required this.thumbnail,
+  });
+
+  final String title;
+
+  /// Localized publication date, such as `Sep 2026` or `Set 2026`.
+  final String published;
+
+  /// Absolute YouTube watch URL.
+  final String url;
+
+  /// Absolute HTTPS thumbnail URL.
+  final String thumbnail;
+}
+
 class ContentChannel {
   const ContentChannel({
     required this.label,
@@ -275,12 +295,19 @@ class ContentHub {
     required this.heading,
     required this.lede,
     required this.latestTitle,
+    required this.videosTitle,
     required this.filterAllLabel,
     required this.filterAriaLabel,
+    required this.contentFilterAriaLabel,
+    required this.filterArticlesLabel,
+    required this.filterVideosLabel,
     required this.articleMonths,
     required this.articles,
+    required this.videos,
     required this.allArticlesLabel,
     required this.allArticlesHref,
+    required this.allVideosLabel,
+    required this.allVideosHref,
     required this.channelsTitle,
     required this.channels,
     required this.topicsTitle,
@@ -296,6 +323,7 @@ class ContentHub {
   final String heading;
   final String lede;
   final String latestTitle;
+  final String videosTitle;
 
   /// Label of the filter chip that shows every article.
   final String filterAllLabel;
@@ -303,14 +331,27 @@ class ContentHub {
   /// Accessible name of the article filter group.
   final String filterAriaLabel;
 
+  /// Accessible name of the article/video filter group.
+  final String contentFilterAriaLabel;
+
+  /// Labels of the filter chips that switch between the two feed lists.
+  final String filterArticlesLabel;
+  final String filterVideosLabel;
+
   /// Localized month abbreviations used to format feed publication dates.
   final List<String> articleMonths;
 
   /// Articles rendered by the hub. The JSON data source leaves this empty;
   /// the repository fills it from the Medium data source.
   final List<Article> articles;
+
+  /// Videos rendered by the hub. The JSON data source leaves this empty;
+  /// the repository fills it from the YouTube playlist data source.
+  final List<Video> videos;
   final String allArticlesLabel;
   final String allArticlesHref;
+  final String allVideosLabel;
+  final String allVideosHref;
   final String channelsTitle;
   final List<ContentChannel> channels;
   final String topicsTitle;
@@ -321,19 +362,29 @@ class ContentHub {
   final String ctaButton;
   final String ctaHref;
 
-  /// Returns a copy with a different article list, keeping the rest of the
-  /// hub untouched. The repository uses this after merging feed articles.
-  ContentHub withArticles(List<Article> articles) => ContentHub(
+  /// Returns a copy with different feed lists, keeping the rest of the hub
+  /// untouched. The repository uses this after merging the feeds.
+  ContentHub withContent({
+    required List<Article> articles,
+    required List<Video> videos,
+  }) => ContentHub(
     eyebrow: eyebrow,
     heading: heading,
     lede: lede,
     latestTitle: latestTitle,
+    videosTitle: videosTitle,
     filterAllLabel: filterAllLabel,
     filterAriaLabel: filterAriaLabel,
+    contentFilterAriaLabel: contentFilterAriaLabel,
+    filterArticlesLabel: filterArticlesLabel,
+    filterVideosLabel: filterVideosLabel,
     articleMonths: articleMonths,
     articles: articles,
+    videos: videos,
     allArticlesLabel: allArticlesLabel,
     allArticlesHref: allArticlesHref,
+    allVideosLabel: allVideosLabel,
+    allVideosHref: allVideosHref,
     channelsTitle: channelsTitle,
     channels: channels,
     topicsTitle: topicsTitle,
