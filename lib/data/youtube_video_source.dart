@@ -29,8 +29,8 @@ final class YouTubeVideoSource {
     this.timeout = const Duration(seconds: 15),
     this.maxVideos = 6,
   }) : assert(maxVideos > 0),
-       _fetch = fetch ?? _fetchText,
-       _warn = warn ?? _defaultWarning;
+       _fetch = fetch ?? YouTubeVideoSource._fetchText,
+       _warn = warn ?? YouTubeVideoSource._defaultWarning;
 
   final String feedUrl;
   final YouTubeFeedFetcher _fetch;
@@ -107,114 +107,114 @@ final class YouTubeVideoSource {
     videos.sort(_compareVideos);
     return List.unmodifiable(videos.take(maxVideos));
   }
-}
 
-int _compareVideos(YouTubeVideo a, YouTubeVideo b) {
-  final byDate = b.publishedAt.compareTo(a.publishedAt);
-  return byDate != 0 ? byDate : a.title.compareTo(b.title);
-}
+  static int _compareVideos(YouTubeVideo a, YouTubeVideo b) {
+    final byDate = b.publishedAt.compareTo(a.publishedAt);
+    return byDate != 0 ? byDate : a.title.compareTo(b.title);
+  }
 
-String? _alternateLink(XmlElement entry) {
-  for (final link in entry.findElements('link')) {
-    if (link.getAttribute('rel') == 'alternate') {
+  static String? _alternateLink(XmlElement entry) {
+    for (final link in entry.findElements('link')) {
+      if (link.getAttribute('rel') == 'alternate') {
+        final href = link.getAttribute('href')?.trim();
+        if (href != null && href.isNotEmpty) {
+          return href;
+        }
+      }
+    }
+
+    for (final link in entry.findElements('link')) {
       final href = link.getAttribute('href')?.trim();
       if (href != null && href.isNotEmpty) {
         return href;
       }
     }
-  }
 
-  for (final link in entry.findElements('link')) {
-    final href = link.getAttribute('href')?.trim();
-    if (href != null && href.isNotEmpty) {
-      return href;
-    }
-  }
-
-  return null;
-}
-
-String _thumbnail(XmlElement entry, String videoId) {
-  final group = _firstChild(entry, 'group');
-  final raw = group == null ? null : _firstChild(group, 'thumbnail')?.getAttribute('url');
-  return _httpsUrl(raw) ?? 'https://i.ytimg.com/vi/$videoId/hqdefault.jpg';
-}
-
-String? _videoIdFromUrl(String url) {
-  final uri = Uri.tryParse(url);
-  if (uri == null) {
     return null;
   }
 
-  final value = uri.queryParameters['v'];
-  if (value != null && value.isNotEmpty) {
-    return value;
+  static String _thumbnail(XmlElement entry, String videoId) {
+    final group = _firstChild(entry, 'group');
+    final raw = group == null ? null : _firstChild(group, 'thumbnail')?.getAttribute('url');
+    return _httpsUrl(raw) ?? 'https://i.ytimg.com/vi/$videoId/hqdefault.jpg';
   }
 
-  if (uri.host == 'youtu.be' && uri.pathSegments.isNotEmpty) {
-    return uri.pathSegments.first;
-  }
+  static String? _videoIdFromUrl(String url) {
+    final uri = Uri.tryParse(url);
+    if (uri == null) {
+      return null;
+    }
 
-  return null;
-}
+    final value = uri.queryParameters['v'];
+    if (value != null && value.isNotEmpty) {
+      return value;
+    }
 
-String? _httpsUrl(String? value) {
-  if (value == null) {
+    if (uri.host == 'youtu.be' && uri.pathSegments.isNotEmpty) {
+      return uri.pathSegments.first;
+    }
+
     return null;
   }
 
-  final uri = Uri.tryParse(value.trim());
-  if (uri == null) {
+  static String? _httpsUrl(String? value) {
+    if (value == null) {
+      return null;
+    }
+
+    final uri = Uri.tryParse(value.trim());
+    if (uri == null) {
+      return null;
+    }
+
+    if (uri.isScheme('https')) {
+      return uri.toString();
+    }
+    if (uri.isScheme('http')) {
+      return uri.replace(scheme: 'https').toString();
+    }
+
     return null;
   }
 
-  if (uri.isScheme('https')) {
-    return uri.toString();
-  }
-  if (uri.isScheme('http')) {
-    return uri.replace(scheme: 'https').toString();
+  static XmlElement? _firstChild(XmlElement parent, String localName) {
+    for (final child in parent.childElements) {
+      if (child.name.local == localName) {
+        return child;
+      }
+    }
+    return null;
   }
 
-  return null;
-}
+  static String? _text(XmlElement parent, String localName) {
+    final element = _firstChild(parent, localName);
+    final text = element?.innerText.trim();
+    return text == null || text.isEmpty ? null : text;
+  }
 
-XmlElement? _firstChild(XmlElement parent, String localName) {
-  for (final child in parent.childElements) {
-    if (child.name.local == localName) {
-      return child;
+  static Future<String> _fetchText(Uri uri) async {
+    final client = HttpClient()
+      ..userAgent = 'gabrielbmoro.dev build (+https://gabrielbmoro.dev)'
+      ..connectionTimeout = const Duration(seconds: 10);
+    try {
+      final request = await client.getUrl(uri);
+      request.headers.set(HttpHeaders.acceptHeader, 'application/atom+xml, application/xml;q=0.9, */*;q=0.8');
+      final response = await request.close();
+      if (response.statusCode != HttpStatus.ok) {
+        throw HttpException('Unexpected status ${response.statusCode}', uri: uri);
+      }
+      // Await the body before returning: `return stream.join()` would run the
+      // finally block (and close the client) before the stream finishes.
+      final body = await response.transform(utf8.decoder).join();
+      return body;
+    } finally {
+      client.close(force: true);
     }
   }
-  return null;
-}
 
-String? _text(XmlElement parent, String localName) {
-  final element = _firstChild(parent, localName);
-  final text = element?.innerText.trim();
-  return text == null || text.isEmpty ? null : text;
-}
-
-Future<String> _fetchText(Uri uri) async {
-  final client = HttpClient()
-    ..userAgent = 'gabrielbmoro.dev build (+https://gabrielbmoro.dev)'
-    ..connectionTimeout = const Duration(seconds: 10);
-  try {
-    final request = await client.getUrl(uri);
-    request.headers.set(HttpHeaders.acceptHeader, 'application/atom+xml, application/xml;q=0.9, */*;q=0.8');
-    final response = await request.close();
-    if (response.statusCode != HttpStatus.ok) {
-      throw HttpException('Unexpected status ${response.statusCode}', uri: uri);
-    }
-    // Await the body before returning: `return stream.join()` would run the
-    // finally block (and close the client) before the stream finishes.
-    final body = await response.transform(utf8.decoder).join();
-    return body;
-  } finally {
-    client.close(force: true);
+  static void _defaultWarning(String message) {
+    // stdout keeps Jaspr's prerender logger from labelling a fallback as a build
+    // error; the build still succeeds.
+    stdout.writeln('[videos] $message');
   }
-}
-
-void _defaultWarning(String message) {
-  // stdout keeps Jaspr's prerender logger from labelling a fallback as a build
-  // error; the build still succeeds.
-  stdout.writeln('[videos] $message');
 }
