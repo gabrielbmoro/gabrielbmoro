@@ -180,32 +180,8 @@
     "channelsTitle": "Também compartilho",
     "channels": [
       {
-        "label": "Vídeos",
-        "description": "Tutoriais, lives e bastidores de código no CodandoTV, com exemplos que você pode aplicar no seu projeto.",
-        "links": [
-          {
-            "label": "Assistir no YouTube",
-            "url": "https://www.youtube.com/@CodandoTV"
-          },
-          {
-            "label": "codandotv.com",
-            "url": "https://codandotv.com/#creators"
-          }
-        ]
-      },
-      {
-        "label": "Podcast",
-        "description": "Conversas com desenvolvedores sobre carreira, arquitetura e o dia a dia de quem constrói mobile.",
-        "links": [
-          {
-            "label": "Ouvir o podcast",
-            "url": "https://codandotv.com/#creators"
-          }
-        ]
-      },
-      {
         "label": "Palestras",
-        "description": "GDGs e DevFests, levando mobile, arquitetura e Kotlin para a comunidade.",
+        "description": "GDGs (Google Developer Groups) e DevFests, levando conteúdo sobre desenvolvimento mobile (Kotlin Multiplatform, Flutter, Android nativo), IA aplicada à Engenharia de Software e boas práticas.",
         "links": [
           {
             "label": "Acompanhar no LinkedIn",
